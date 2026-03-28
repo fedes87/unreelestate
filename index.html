@@ -261,14 +261,14 @@ nav .container {
   height: 100%;
 }
 .ba-before {
-  background: linear-gradient(135deg, #2a2218, #1a1510);
+  background: linear-gradient(135deg, #2a2218, #1a1510) center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 .ba-after {
-  background: linear-gradient(135deg, #1a2a1a, #0a1a10);
+  background: linear-gradient(135deg, #1a2a1a, #0a1a10) center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1268,10 +1268,10 @@ function updateSlider(x) {
   handle.style.left = pos + '%';
 }
 
-slider.addEventListener('mousedown', (e) => { isDragging = true; updateSlider(e.clientX); });
-slider.addEventListener('touchstart', (e) => { isDragging = true; updateSlider(e.touches[0].clientX); });
+slider.addEventListener('mousedown', (e) => { isDragging = true; updateSlider(e.clientX); e.preventDefault(); });
+slider.addEventListener('touchstart', (e) => { isDragging = true; updateSlider(e.touches[0].clientX); }, { passive: true });
 window.addEventListener('mousemove', (e) => { if (isDragging) updateSlider(e.clientX); });
-window.addEventListener('touchmove', (e) => { if (isDragging) updateSlider(e.touches[0].clientX); });
+window.addEventListener('touchmove', (e) => { if (isDragging) { e.preventDefault(); updateSlider(e.touches[0].clientX); } }, { passive: false });
 window.addEventListener('mouseup', () => isDragging = false);
 window.addEventListener('touchend', () => isDragging = false);
 
