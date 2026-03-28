@@ -660,6 +660,230 @@ footer {
 .contact-btn.email { background: var(--gold); color: var(--bg-primary); }
 .contact-btn:hover { transform: scale(1.1); }
 
+/* === GALLERY === */
+.gallery {
+  padding: 120px 0;
+  position: relative;
+  background: var(--bg-primary);
+}
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 16px;
+  margin-top: 60px;
+}
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  background: var(--bg-card);
+}
+.gallery-item:first-child {
+  grid-column: 1 / 3;
+  grid-row: 1 / 2;
+}
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  min-height: 280px;
+}
+.gallery-item:first-child img { min-height: 380px; }
+.gallery-item:hover img { transform: scale(1.06); }
+.gallery-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.4s;
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+}
+.gallery-item:hover .gallery-overlay { opacity: 1; }
+.gallery-overlay-text {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+.lightbox.open {
+  opacity: 1;
+  pointer-events: all;
+}
+.lightbox img {
+  max-width: 90vw;
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: 8px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  transform: scale(0.95);
+  transition: transform 0.3s;
+}
+.lightbox.open img { transform: scale(1); }
+.lightbox-close {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  background: none;
+  border: none;
+  color: var(--gold);
+  font-size: 32px;
+  cursor: pointer;
+  line-height: 1;
+  transition: transform 0.2s;
+}
+.lightbox-close:hover { transform: rotate(90deg); }
+
+/* === STATS === */
+.stats {
+  padding: 80px 0;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  text-align: center;
+}
+.stat-item {}
+.stat-number {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 4vw, 56px);
+  font-weight: 900;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+/* === TESTIMONIALS === */
+.testimonials {
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+.testimonials::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+  pointer-events: none;
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 60px;
+}
+.testimonial-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 36px 32px;
+  position: relative;
+  transition: all 0.4s;
+}
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(201,169,110,0.25);
+}
+.testimonial-card::before {
+  content: '\201C';
+  position: absolute;
+  top: 20px;
+  left: 28px;
+  font-family: 'Playfair Display', serif;
+  font-size: 72px;
+  color: var(--gold);
+  opacity: 0.2;
+  line-height: 1;
+}
+.testimonial-stars {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+.testimonial-stars span { color: var(--gold); font-size: 14px; }
+.testimonial-text {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 28px;
+  font-style: italic;
+}
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.testimonial-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--bg-primary);
+  flex-shrink: 0;
+}
+.testimonial-name {
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 2px;
+}
+.testimonial-role {
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+}
+
+@media (max-width: 968px) {
+  .gallery-grid { grid-template-columns: 1fr; }
+  .gallery-item:first-child { grid-column: 1; }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 40px; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
 /* === ANIMATIONS === */
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }
@@ -710,6 +934,7 @@ footer {
     <a href="#" class="logo"><svg class="logo-icon" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#D94040"/><stop offset="100%" stop-color="#C9A96E"/></linearGradient></defs><path d="M40,8 L72,40 L40,72 L8,40 Z" fill="none" stroke="url(#rg)" stroke-width="3"/><path d="M40,22 L58,40 L40,58 L22,40 Z" fill="#D94040" fill-opacity="0.1" stroke="url(#rg)" stroke-width="1.5"/><circle cx="40" cy="40" r="4" fill="#D94040"/><circle cx="40" cy="8" r="2.5" fill="#D94040"/><circle cx="72" cy="40" r="2.5" fill="#C9A96E"/><circle cx="40" cy="72" r="2.5" fill="#C9A96E"/><circle cx="8" cy="40" r="2.5" fill="#D94040"/></svg><img src="IMG_9458.JPG" alt="Unreel Estate" style="height:52px;width:auto;"></a>
     <div class="nav-links">
       <a href="#features">Features</a>
+      <a href="#gallery">Gallery</a>
       <a href="#how">How it Works</a>
       <a href="#pricing">Pricing</a>
       <a href="#waitlist" class="nav-cta">Try Now</a>
@@ -741,6 +966,30 @@ footer {
           <div class="ba-tag before">BEFORE</div>
           <div class="ba-tag after">AFTER</div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <div class="stat-number" data-target="403">0<span>%</span></div>
+        <div class="stat-label">More Inquiries with Video</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-number" data-target="5"><span>&lt;</span>5<span>min</span></div>
+        <div class="stat-label">Photo to Polished Video</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-number" data-target="4">4<span>K</span></div>
+        <div class="stat-label">Cinematic Quality</div>
+      </div>
+      <div class="stat-item reveal">
+        <div class="stat-number">500<span>+</span></div>
+        <div class="stat-label">Listings Transformed</div>
       </div>
     </div>
   </div>
@@ -789,6 +1038,43 @@ footer {
   </div>
 </section>
 
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <div class="section-label">Our Work</div>
+      <div class="section-title">Real Listings.<br><em>Unreal</em> Results.</div>
+      <div class="section-subtitle" style="margin:0 auto;">See how our AI transforms ordinary property photos into stunning visual experiences.</div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal" onclick="openLightbox('IMG_9457.JPG')">
+        <img src="IMG_9457.JPG" alt="Property Photo 1" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-overlay-text">View Full Size ↗</span>
+        </div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox('IMG_9459.JPG')">
+        <img src="IMG_9459.JPG" alt="Property Photo 2" loading="lazy">
+        <div class="gallery-overlay">
+          <span class="gallery-overlay-text">View Full Size ↗</span>
+        </div>
+      </div>
+      <div class="gallery-item reveal" style="grid-column: 1 / -1;" onclick="openLightbox('IMG_9458.JPG')">
+        <img src="IMG_9458.JPG" alt="Unreel Estate Brand" loading="lazy" style="min-height:220px; object-position:center top;">
+        <div class="gallery-overlay">
+          <span class="gallery-overlay-text">Unreel Estate — AI Powered Real Estate Videos</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <button class="lightbox-close" onclick="closeLightbox()">×</button>
+  <img src="" id="lightboxImg" alt="Property Photo">
+</div>
+
 <!-- HOW IT WORKS -->
 <section class="how-it-works" id="how">
   <div class="container">
@@ -817,6 +1103,58 @@ footer {
         <div class="step-number">4</div>
         <h3>Download & Share</h3>
         <p>Get your 4K video, share on MLS, social media, or embed on your site.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="reveal" style="text-align:center;">
+      <div class="section-label">Client Stories</div>
+      <div class="section-title">Agents Love It.<br>Buyers Can't Look Away.</div>
+      <div class="section-subtitle" style="margin:0 auto;">Don't take our word for it — hear from the Houston agents who use Unreel Estate every day.</div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="testimonial-text">"I uploaded photos from a regular iPhone shoot and got back a cinematic video tour that looked like I hired a full production crew. My listing got 3x more showings that week."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">S</div>
+          <div>
+            <div class="testimonial-name">Sarah M.</div>
+            <div class="testimonial-role">Realtor · Keller Williams Houston</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="testimonial-text">"The virtual restaging feature is a game-changer. I listed an empty property and the AI staged it beautifully — sold in 6 days over asking price. Absolutely worth every penny."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">J</div>
+          <div>
+            <div class="testimonial-name">James R.</div>
+            <div class="testimonial-role">Broker · Compass Houston</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="testimonial-stars">
+          <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
+        </div>
+        <p class="testimonial-text">"Ready in under 5 minutes is no exaggeration. I use it for every single listing now. My clients are always impressed when they see the video — it sets the tone before buyers even walk through the door."</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">A</div>
+          <div>
+            <div class="testimonial-name">Amanda T.</div>
+            <div class="testimonial-role">Top Producer · RE/MAX Houston</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -936,6 +1274,22 @@ window.addEventListener('mousemove', (e) => { if (isDragging) updateSlider(e.cli
 window.addEventListener('touchmove', (e) => { if (isDragging) updateSlider(e.touches[0].clientX); });
 window.addEventListener('mouseup', () => isDragging = false);
 window.addEventListener('touchend', () => isDragging = false);
+
+// === LIGHTBOX ===
+function openLightbox(src) {
+  const lb = document.getElementById('lightbox');
+  const img = document.getElementById('lightboxImg');
+  img.src = src;
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') closeLightbox();
+});
 
 // === SCROLL REVEALS ===
 const observer = new IntersectionObserver((entries) => {
