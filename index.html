@@ -1249,7 +1249,7 @@ footer {
     <div class="hero-content">
       <div>
         <div class="hero-badge">Luxury Real Estate Content</div>
-        <h1>Make Every Property<br><em>Unreal.</em></h1>
+        <h1>Make Your Listings<br><em>Unreal.</em></h1>
         <p class="hero-desc">Unreel Estate turns extraordinary properties into cinematic productions that sell emotions before they sell square footage. Luxury content, crafted for the properties that deserve it most.</p>
         <div class="hero-buttons">
           <a href="#gallery" class="btn-primary">Explore Our Work →</a>
@@ -1545,7 +1545,9 @@ footer {
           <a href="#">📍 USA · Europe · Worldwide</a>
         </div>
       </div>
-      <form class="contact-form" onsubmit="handleContact(event)">
+      <form class="contact-form" action="https://formspree.io/info@unreelestate.com" method="POST" onsubmit="handleContact(event)">
+        <input type="hidden" name="_replyto" value="info@unreelestate.com">
+        <input type="hidden" name="_subject" value="New inquiry — UnreelEstate.com">
         <div class="form-group">
           <label>Full Name *</label>
           <input type="text" placeholder="Your name" required>
