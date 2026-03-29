@@ -696,6 +696,9 @@ nav .container {
 .steps {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+}
+.steps.steps-5 {
+  grid-template-columns: repeat(5, 1fr);
   gap: 32px;
   margin-top: 60px;
   position: relative;
@@ -1199,20 +1202,29 @@ footer {
 
 /* === RESPONSIVE === */
 @media (max-width: 968px) {
-  .hero-content { grid-template-columns: 1fr; text-align: center; }
   .hero-desc { margin: 0 auto 40px; }
-  .hero-buttons { justify-content: center; }
-  .features-grid { grid-template-columns: 1fr; }
-  .steps { grid-template-columns: repeat(2, 1fr); }
-  .steps::before { display: none; }
-  .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin-left: auto; margin-right: auto; margin-top: 60px; }
+  .hero-buttons { justify-content: center; flex-wrap: wrap; }
   .nav-links a:not(.nav-cta) { display: none; }
-  .hero-visual { max-width: 500px; margin: 0 auto; }
+  .steps { grid-template-columns: repeat(2, 1fr) !important; }
+  .steps::before { display: none; }
+  .services-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .about-inner { grid-template-columns: 1fr; gap: 40px; }
+  .about-image { aspect-ratio: 16/9; }
+  .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+  .contact-form { grid-template-columns: 1fr; }
+  .contact-form .full-width { grid-column: 1; }
+  .mid-cta .section-title { font-size: clamp(28px, 6vw, 44px); }
 }
 @media (max-width: 600px) {
-  .steps { grid-template-columns: 1fr; }
-  .waitlist-form { flex-direction: column; }
+  .steps { grid-template-columns: 1fr !important; }
   .footer-content { flex-direction: column; gap: 20px; text-align: center; }
+  .footer-links { flex-wrap: wrap; justify-content: center; }
+  .hero-buttons { flex-direction: column; align-items: center; }
+  .btn-primary, .btn-secondary { width: 100%; text-align: center; justify-content: center; }
+  .brand-body { font-size: 16px; }
+  .service-card { padding: 32px 24px; }
+  .why-card { padding: 32px 24px; }
 }
 </style>
 </head>
@@ -1237,8 +1249,8 @@ footer {
     <div class="hero-content">
       <div>
         <div class="hero-badge">Luxury Real Estate Content</div>
-        <h1>Every Home Has a Story.<br><em>We Make It Unforgettable.</em></h1>
-        <p class="hero-desc">Unreel Estate is the home of luxury real estate content. We turn extraordinary properties into cinematic productions that sell emotions before they sell square footage.</p>
+        <h1>Make Every Property<br><em>Unreal.</em></h1>
+        <p class="hero-desc">Unreel Estate turns extraordinary properties into cinematic productions that sell emotions before they sell square footage. Luxury content, crafted for the properties that deserve it most.</p>
         <div class="hero-buttons">
           <a href="#gallery" class="btn-primary">Explore Our Work →</a>
           <a href="#contact" class="btn-secondary">Tell Us About Your Property</a>
@@ -1407,7 +1419,7 @@ footer {
       <div class="section-title">A process designed to be<br><em>effortless for you.</em></div>
       <div class="section-subtitle" style="margin:0 auto;">A process designed to be effortless for you and flawless in execution.</div>
     </div>
-    <div class="steps" style="grid-template-columns: repeat(5,1fr);">
+    <div class="steps steps-5">
       <div class="step">
         <div class="step-number">1</div>
         <h3>Tell us about the property.</h3>
