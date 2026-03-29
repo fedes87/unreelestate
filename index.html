@@ -26,7 +26,7 @@
   --border: rgba(201, 169, 110, 0.12);
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   font-family: 'DM Sans', sans-serif;
@@ -136,8 +136,8 @@ nav .container {
   position: absolute;
   top: -20%;
   right: -10%;
-  width: 600px;
-  height: 600px;
+  width: min(600px, 80vw);
+  height: min(600px, 80vw);
   background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
   pointer-events: none;
 }
@@ -519,8 +519,8 @@ nav .container {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 700px;
-  height: 400px;
+  width: min(700px, 90vw);
+  height: min(400px, 60vw);
   background: radial-gradient(ellipse, rgba(201,169,110,0.08) 0%, transparent 70%);
   pointer-events: none;
 }
@@ -612,14 +612,6 @@ nav .container {
   font-size: 12px;
   color: var(--text-muted);
   margin-top: 4px;
-}
-
-@media (max-width: 968px) {
-  .services-grid { grid-template-columns: 1fr; }
-  .why-grid { grid-template-columns: 1fr; }
-  .about-inner { grid-template-columns: 1fr; gap: 40px; }
-  .contact-inner { grid-template-columns: 1fr; gap: 48px; }
-  .contact-form { grid-template-columns: 1fr; }
 }
 
 /* === FEATURES === */
@@ -1090,8 +1082,8 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 600px;
-  height: 600px;
+  width: min(600px, 90vw);
+  height: min(600px, 90vw);
   background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
   pointer-events: none;
 }
@@ -1264,9 +1256,9 @@ footer {
 <section class="brand-statement">
   <div class="container">
     <div class="brand-statement-inner">
-      <div class="section-label">Not a viewing. An experience.</div>
-      <p class="brand-body">Luxury real estate doesn't sell with a listing sheet and four photos. It sells with emotion, atmosphere, desire. Unreel Estate was built on the belief that every extraordinary property deserves a narrative to match — visual, emotional, irresistible.</p>
-      <p class="brand-body">We combine a director's vision with a real estate agent's precision. The result is content that doesn't just document a home — it makes people want to live in it.</p>
+      <div class="section-label">Not a photo shoot. A transformation.</div>
+      <p class="brand-body">Luxury real estate doesn't sell with a listing sheet and four flat photos. It sells with emotion, atmosphere, desire. Unreel Estate was built on the belief that every extraordinary property deserves visuals to match — enhanced, restyled, and brought to life.</p>
+      <p class="brand-body">We work entirely from your existing photos. No film crew, no location visits. We enhance what's there — or reimagine it completely — and turn it into cinematic content that makes people want to live in it before they ever set foot inside.</p>
     </div>
   </div>
 </section>
@@ -1276,69 +1268,56 @@ footer {
   <div class="container">
     <div style="text-align:center;">
       <div class="section-label">What We Do</div>
-      <div class="section-title">Five Ways to Make<br>a Property <em>Irresistible.</em></div>
-      <div class="section-subtitle" style="margin:0 auto;">Every service is designed to showcase a property in the most powerful way possible — from the first scroll to the signed contract.</div>
+      <div class="section-title">Four Ways to Make<br>a Property <em>Irresistible.</em></div>
+      <div class="section-subtitle" style="margin:0 auto;">Everything starts from your existing photos. No film crew, no location visits — just extraordinary results delivered remotely.</div>
     </div>
     <div class="services-grid">
       <div class="service-card">
         <div class="service-number">01</div>
-        <div class="service-name">Cinematic Property Film</div>
-        <h3>Your property. As you've never seen it before.</h3>
-        <p>Full cinematic video production — intentional lighting, fluid camera movements, bespoke soundtrack. Not a simple walkthrough: a luxury short film that places the buyer inside the home before they ever set foot through the door.</p>
+        <div class="service-name">AI Photo Enhancement</div>
+        <h3>Your photos. Elevated to perfection.</h3>
+        <p>We take your existing listing photos and enhance them to a level no standard photographer can match. Perfect lighting, refined details, flawless finish — the property exactly as it is, shown at its absolute best.</p>
         <ul class="service-includes">
-          <li>4K aerial drone footage</li>
-          <li>Interior filming with cinematic gimbal</li>
-          <li>Professional color grading</li>
-          <li>Premium royalty-free soundtrack</li>
-          <li>Web, social, and broadcast formats</li>
+          <li>Light correction and atmosphere enhancement</li>
+          <li>Detail refinement and texture improvement</li>
+          <li>Sky replacement and exterior polish</li>
+          <li>High-resolution delivery for all platforms</li>
         </ul>
       </div>
       <div class="service-card">
         <div class="service-number">02</div>
-        <div class="service-name">Luxury Property Photography</div>
-        <h3>Every angle, a magazine cover.</h3>
-        <p>Real estate photography that stands apart. Images that speak of light, atmosphere, and detail — crafted to capture the soul of a property, not just its dimensions. Every shot is a story in a single frame.</p>
+        <div class="service-name">Virtual Restyling & Staging</div>
+        <h3>Same property. A completely different world.</h3>
+        <p>We don't just improve — we transform. Change the flooring, repaint the walls, replace the furniture, restyle entire rooms. Our AI can take a vacant or outdated space and turn it into the luxury home a buyer is dreaming of.</p>
         <ul class="service-includes">
-          <li>Interior & exterior photography</li>
-          <li>Aerial drone photography</li>
-          <li>Professional editing and retouching</li>
-          <li>High-resolution delivery for print and digital</li>
+          <li>Full room restyling (floors, walls, ceilings)</li>
+          <li>Virtual furniture staging and replacement</li>
+          <li>Style selection: modern, classic, luxury, minimal</li>
+          <li>Multiple versions to A/B test buyer response</li>
         </ul>
       </div>
       <div class="service-card">
         <div class="service-number">03</div>
-        <div class="service-name">Social & Instagram Reels</div>
-        <h3>Capture attention. Hold it.</h3>
-        <p>Vertical content optimized for Instagram, TikTok, and YouTube Shorts. Short, visually explosive, designed to stop the scroll and trigger desire. Luxury doesn't wait — it needs to land in 3 seconds.</p>
+        <div class="service-name">Cinematic Video from Photos</div>
+        <h3>No camera needed. Just results.</h3>
+        <p>We create smooth, cinematic property videos using only your still images. Camera movements, transitions, ambient soundtrack — all generated from photos. The feel of a professional video shoot, without the cost or logistics.</p>
         <ul class="service-includes">
-          <li>Reels in 15", 30", and 60" formats</li>
-          <li>Dynamic editing with trending music</li>
-          <li>Optional subtitle and caption overlays</li>
-          <li>Optimized formats for every platform</li>
+          <li>Cinematic motion from static photos</li>
+          <li>Professional color grading and atmosphere</li>
+          <li>Premium royalty-free soundtrack</li>
+          <li>Delivered in web, social, and listing formats</li>
         </ul>
       </div>
       <div class="service-card">
         <div class="service-number">04</div>
-        <div class="service-name">Immersive 3D Walkthrough</div>
-        <h3>Step inside. From anywhere in the world.</h3>
-        <p>Interactive virtual tours that let potential buyers explore every room on their own terms — from any device, anywhere in the world. Technology in the service of luxury.</p>
+        <div class="service-name">Listing Presentation Video</div>
+        <h3>One video. Every platform. Maximum impact.</h3>
+        <p>A complete, polished presentation video ready to publish on MLS, Zillow, Realtor.com, Instagram, TikTok, and YouTube. Edited with titles, transitions, and your branding — ready to attract the right buyer from the first second.</p>
         <ul class="service-includes">
-          <li>Full 3D scan of the property</li>
-          <li>Interactive online walkthrough</li>
-          <li>Integration with website and real estate portals</li>
-          <li>3D dollhouse floor plan view</li>
-        </ul>
-      </div>
-      <div class="service-card">
-        <div class="service-number">05</div>
-        <div class="service-name">Agency Content Strategy</div>
-        <h3>Not just properties. A brand.</h3>
-        <p>For real estate agencies and agents who want to build a distinctive presence in the luxury market. We create the entire visual ecosystem: brand identity, content plan, ongoing production, and tailored storytelling.</p>
-        <ul class="service-includes">
-          <li>Visual audit of existing brand</li>
-          <li>Monthly editorial content plan</li>
-          <li>Recurring photo + video production</li>
-          <li>Performance reporting and optimization</li>
+          <li>Full-length listing video (60"–120")</li>
+          <li>Short-form cuts for social media (15" / 30")</li>
+          <li>Optimized for MLS and all listing portals</li>
+          <li>Optional agent branding and voiceover</li>
         </ul>
       </div>
     </div>
@@ -1416,34 +1395,34 @@ footer {
   <div class="container">
     <div style="text-align:center;">
       <div class="section-label">How It Works</div>
-      <div class="section-title">A process designed to be<br><em>effortless for you.</em></div>
-      <div class="section-subtitle" style="margin:0 auto;">A process designed to be effortless for you and flawless in execution.</div>
+      <div class="section-title">Send photos.<br><em>Get back magic.</em></div>
+      <div class="section-subtitle" style="margin:0 auto;">100% remote. No appointments, no film crew, no waiting weeks. Just upload your photos and let us do the rest.</div>
     </div>
     <div class="steps steps-5">
       <div class="step">
         <div class="step-number">1</div>
-        <h3>Tell us about the property.</h3>
-        <p>We start with a conversation — the home, the target buyer, the positioning, and what you want them to feel.</p>
+        <h3>Send us your photos.</h3>
+        <p>Upload your existing listing photos — any quality, any device. We work with what you have.</p>
       </div>
       <div class="step">
         <div class="step-number">2</div>
-        <h3>We study every detail.</h3>
-        <p>We visit the property to plan angles, lighting, and movement. Nothing is left to chance.</p>
+        <h3>Choose your direction.</h3>
+        <p>Keep the property exactly as it is and perfect it, or tell us the style you want — we'll transform it completely.</p>
       </div>
       <div class="step">
         <div class="step-number">3</div>
-        <h3>The magic on set.</h3>
-        <p>Our team brings professional equipment and a cinematic eye — working with discretion and precision.</p>
+        <h3>AI enhancement.</h3>
+        <p>Our AI refines every detail: light, atmosphere, staging, restyling. Each image becomes a magazine-quality shot.</p>
       </div>
       <div class="step">
         <div class="step-number">4</div>
-        <h3>Where footage becomes art.</h3>
-        <p>Editing, color grading, sound design, photo retouching. Every file that leaves our studio is ready to impress.</p>
+        <h3>Video production.</h3>
+        <p>We build a cinematic video from your enhanced photos — complete with motion, color grading, and soundtrack.</p>
       </div>
       <div class="step">
         <div class="step-number">5</div>
-        <h3>Ready to do their job.</h3>
-        <p>Delivered in formats optimized for every channel — and we can handle distribution and social launch too.</p>
+        <h3>Ready to publish.</h3>
+        <p>All files delivered in the right formats for MLS, Zillow, Instagram, TikTok, and every listing platform.</p>
       </div>
     </div>
   </div>
@@ -1508,9 +1487,9 @@ footer {
       <div class="about-text">
         <div class="section-label">Who We Are</div>
         <div class="section-title">Born between lenses<br>and <em>floor plans.</em></div>
-        <p class="about-body">Unreel Estate was born from the meeting of two passions: visual storytelling and the luxury real estate world. We're a team of filmmakers, photographers, and strategists who share one obsession — creating content that makes people desire a property before they ever visit it.</p>
-        <p class="about-body">We're not interested in being the cheapest option. We're interested in being the one you remember. The one that makes the difference between a property that sits on the market and one that finds its ideal buyer.</p>
-        <p class="about-body"><em>Every project is a film. Every property, a lead character.</em></p>
+        <p class="about-body">Unreel Estate was born from the meeting of two passions: visual storytelling and the luxury real estate market. We're a team of AI specialists, visual directors, and real estate creatives who share one obsession — making properties impossible to ignore from the very first image.</p>
+        <p class="about-body">We work 100% remotely, using cutting-edge AI to enhance, restyle, and transform listing photos into extraordinary visuals and cinematic videos — without a single site visit. Faster, more flexible, and more powerful than traditional photography.</p>
+        <p class="about-body"><em>Every listing is a story. We make sure it's told beautifully.</em></p>
       </div>
       <div class="about-image">
         <img src="IMG_9457.JPG" alt="Unreel Estate Team" loading="lazy">
@@ -1575,12 +1554,11 @@ footer {
           <label>Service of Interest</label>
           <select>
             <option value="">Select service…</option>
-            <option>Cinematic Video Tour</option>
-            <option>Luxury Photography</option>
-            <option>Social & Instagram Reels</option>
-            <option>3D Virtual Tour</option>
-            <option>Agency Content Strategy</option>
-            <option>Full Package</option>
+            <option>AI Photo Enhancement</option>
+            <option>Virtual Restyling & Staging</option>
+            <option>Cinematic Video from Photos</option>
+            <option>Listing Presentation Video</option>
+            <option>Full Package (All Services)</option>
           </select>
         </div>
         <div class="form-group full-width">
