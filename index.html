@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>UNREEL ESTATE — AI Powered Real Estate Videos and Photos </title>
+<title>Unreel Estate | Luxury Real Estate, Filmed Like Cinema</title>
+<meta name="description" content="Unreel Estate transforms luxury properties into extraordinary visual experiences. Cinematic video tours, premium photography and content strategy for the high-end real estate market.">
+<meta name="keywords" content="luxury real estate video, virtual property tours, premium real estate photography, real estate video marketing, unreel estate">
+<link rel="stylesheet" href="https://use.typekit.net/wor7cet.css">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding:0; box-sizing: border-box; }
@@ -333,6 +336,291 @@ nav .container {
 }
 .ba-tag.before { left: 16px; background: rgba(0,0,0,0.6); color: var(--text-secondary); }
 .ba-tag.after { right: 16px; background: rgba(201,169,110,0.2); color: var(--gold); }
+
+/* === BRAND STATEMENT === */
+.brand-statement {
+  padding: 100px 0;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.brand-statement-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.brand-body {
+  font-size: 18px;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  margin-bottom: 20px;
+}
+.brand-body:last-child { margin-bottom: 0; }
+
+/* === SERVICES === */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 60px;
+}
+.service-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 44px 36px;
+  transition: all 0.4s;
+  position: relative;
+  overflow: hidden;
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+.service-card:hover { background: var(--bg-card-hover); transform: translateY(-4px); border-color: rgba(201,169,110,0.25); }
+.service-card:hover::before { opacity: 1; }
+.service-card:nth-child(4), .service-card:nth-child(5) { grid-column: span 1; }
+.service-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 48px;
+  font-weight: 900;
+  color: rgba(201,169,110,0.15);
+  line-height: 1;
+  margin-bottom: 20px;
+}
+.service-name {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.service-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+.service-card p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 24px;
+}
+.service-includes {
+  list-style: none;
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+}
+.service-includes li {
+  font-size: 13px;
+  color: var(--text-muted);
+  padding: 6px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.service-includes li::before {
+  content: '—';
+  color: var(--gold);
+  font-weight: 700;
+}
+
+/* === WHY UNREEL === */
+.why-unreel {
+  padding: 120px 0;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+  margin-top: 60px;
+}
+.why-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 44px 40px;
+  transition: all 0.4s;
+}
+.why-card:hover { border-color: rgba(201,169,110,0.3); transform: translateY(-3px); }
+.why-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--text-primary);
+}
+.why-card p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+/* === ABOUT === */
+.about {
+  padding: 120px 0;
+}
+.about-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.about-text .section-title { margin-bottom: 28px; }
+.about-body {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  margin-bottom: 18px;
+}
+.about-body em {
+  color: var(--gold);
+  font-style: italic;
+}
+.about-image {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  aspect-ratio: 4/5;
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* === MID CTA === */
+.mid-cta {
+  padding: 100px 0;
+  text-align: center;
+  background: linear-gradient(180deg, var(--bg-primary) 0%, rgba(201,169,110,0.04) 50%, var(--bg-primary) 100%);
+  position: relative;
+}
+.mid-cta::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(201,169,110,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.mid-cta .section-title { margin-bottom: 20px; }
+.mid-cta .section-subtitle { margin: 0 auto 40px; }
+
+/* === CONTACT FORM === */
+.contact {
+  padding: 120px 0;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+}
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 80px;
+  align-items: start;
+}
+.contact-info .section-title { margin-bottom: 20px; }
+.contact-info p {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 32px;
+}
+.contact-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.contact-detail a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.contact-detail a:hover { color: var(--gold); }
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.contact-form .full-width { grid-column: 1 / -1; }
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.form-group label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 14px 18px;
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text-primary);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s;
+  width: 100%;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--text-muted); }
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color: var(--gold); }
+.form-group select {
+  appearance: none;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238A8478' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+}
+.form-group select option { background: var(--bg-card); }
+.form-group textarea { resize: vertical; min-height: 120px; }
+.form-note {
+  grid-column: 1 / -1;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+@media (max-width: 968px) {
+  .services-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .about-inner { grid-template-columns: 1fr; gap: 40px; }
+  .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+  .contact-form { grid-template-columns: 1fr; }
+}
 
 /* === FEATURES === */
 .features {
@@ -935,11 +1223,10 @@ footer {
   <div class="container">
     <a href="#" class="logo"><svg class="logo-icon" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#D94040"/><stop offset="100%" stop-color="#C9A96E"/></linearGradient></defs><path d="M40,8 L72,40 L40,72 L8,40 Z" fill="none" stroke="url(#rg)" stroke-width="3"/><path d="M40,22 L58,40 L40,58 L22,40 Z" fill="#D94040" fill-opacity="0.1" stroke="url(#rg)" stroke-width="1.5"/><circle cx="40" cy="40" r="4" fill="#D94040"/><circle cx="40" cy="8" r="2.5" fill="#D94040"/><circle cx="72" cy="40" r="2.5" fill="#C9A96E"/><circle cx="40" cy="72" r="2.5" fill="#C9A96E"/><circle cx="8" cy="40" r="2.5" fill="#D94040"/></svg><img src="IMG_9458.JPG" alt="Unreel Estate" style="height:52px;width:auto;"></a>
     <div class="nav-links">
-      <a href="#features">Features</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#how">How it Works</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#waitlist" class="nav-cta">Try Now</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Portfolio</a>
+      <a href="#about">About</a>
+      <a href="#contact" class="nav-cta">Get a Quote</a>
     </div>
   </div>
 </nav>
@@ -949,80 +1236,127 @@ footer {
   <div class="container">
     <div class="hero-content">
       <div>
-        <div class="hero-badge">AI-Powered • Houston TX</div>
-        <h1>Make Your Listings <em>Unreal</em></h1>
-        <p class="hero-desc">Transform static property photos into stunning cinematic video tours in minutes. AI-powered, agent-approved, buyer-obsessed.</p>
+        <div class="hero-badge">Luxury Real Estate Content</div>
+        <h1>Every Home Has a Story.<br><em>We Make It Unforgettable.</em></h1>
+        <p class="hero-desc">Unreel Estate is the home of luxury real estate content. We turn extraordinary properties into cinematic productions that sell emotions before they sell square footage.</p>
         <div class="hero-buttons">
-          <a href="#waitlist" class="btn-primary">Try It Free →</a>
-          <a href="#how" class="btn-secondary">See How It Works</a>
+          <a href="#gallery" class="btn-primary">Explore Our Work →</a>
+          <a href="#contact" class="btn-secondary">Tell Us About Your Property</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
-<section class="stats">
+<!-- BRAND STATEMENT -->
+<section class="brand-statement">
   <div class="container">
-    <div class="stats-grid">
-      <div class="stat-item">
-        <div class="stat-number" data-target="403">0<span>%</span></div>
-        <div class="stat-label">More Inquiries with Video</div>
+    <div class="brand-statement-inner">
+      <div class="section-label">Not a viewing. An experience.</div>
+      <p class="brand-body">Luxury real estate doesn't sell with a listing sheet and four photos. It sells with emotion, atmosphere, desire. Unreel Estate was built on the belief that every extraordinary property deserves a narrative to match — visual, emotional, irresistible.</p>
+      <p class="brand-body">We combine a director's vision with a real estate agent's precision. The result is content that doesn't just document a home — it makes people want to live in it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="features" id="services">
+  <div class="container">
+    <div style="text-align:center;">
+      <div class="section-label">What We Do</div>
+      <div class="section-title">Five Ways to Make<br>a Property <em>Irresistible.</em></div>
+      <div class="section-subtitle" style="margin:0 auto;">Every service is designed to showcase a property in the most powerful way possible — from the first scroll to the signed contract.</div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="service-number">01</div>
+        <div class="service-name">Cinematic Property Film</div>
+        <h3>Your property. As you've never seen it before.</h3>
+        <p>Full cinematic video production — intentional lighting, fluid camera movements, bespoke soundtrack. Not a simple walkthrough: a luxury short film that places the buyer inside the home before they ever set foot through the door.</p>
+        <ul class="service-includes">
+          <li>4K aerial drone footage</li>
+          <li>Interior filming with cinematic gimbal</li>
+          <li>Professional color grading</li>
+          <li>Premium royalty-free soundtrack</li>
+          <li>Web, social, and broadcast formats</li>
+        </ul>
       </div>
-      <div class="stat-item">
-        <div class="stat-number" data-target="5"><span>&lt;</span>5<span>min</span></div>
-        <div class="stat-label">Photo to Polished Video</div>
+      <div class="service-card">
+        <div class="service-number">02</div>
+        <div class="service-name">Luxury Property Photography</div>
+        <h3>Every angle, a magazine cover.</h3>
+        <p>Real estate photography that stands apart. Images that speak of light, atmosphere, and detail — crafted to capture the soul of a property, not just its dimensions. Every shot is a story in a single frame.</p>
+        <ul class="service-includes">
+          <li>Interior & exterior photography</li>
+          <li>Aerial drone photography</li>
+          <li>Professional editing and retouching</li>
+          <li>High-resolution delivery for print and digital</li>
+        </ul>
       </div>
-      <div class="stat-item">
-        <div class="stat-number" data-target="4">4<span>K</span></div>
-        <div class="stat-label">Cinematic Quality</div>
+      <div class="service-card">
+        <div class="service-number">03</div>
+        <div class="service-name">Social & Instagram Reels</div>
+        <h3>Capture attention. Hold it.</h3>
+        <p>Vertical content optimized for Instagram, TikTok, and YouTube Shorts. Short, visually explosive, designed to stop the scroll and trigger desire. Luxury doesn't wait — it needs to land in 3 seconds.</p>
+        <ul class="service-includes">
+          <li>Reels in 15", 30", and 60" formats</li>
+          <li>Dynamic editing with trending music</li>
+          <li>Optional subtitle and caption overlays</li>
+          <li>Optimized formats for every platform</li>
+        </ul>
       </div>
-      <div class="stat-item">
-        <div class="stat-number">500<span>+</span></div>
-        <div class="stat-label">Listings Transformed</div>
+      <div class="service-card">
+        <div class="service-number">04</div>
+        <div class="service-name">Immersive 3D Walkthrough</div>
+        <h3>Step inside. From anywhere in the world.</h3>
+        <p>Interactive virtual tours that let potential buyers explore every room on their own terms — from any device, anywhere in the world. Technology in the service of luxury.</p>
+        <ul class="service-includes">
+          <li>Full 3D scan of the property</li>
+          <li>Interactive online walkthrough</li>
+          <li>Integration with website and real estate portals</li>
+          <li>3D dollhouse floor plan view</li>
+        </ul>
+      </div>
+      <div class="service-card">
+        <div class="service-number">05</div>
+        <div class="service-name">Agency Content Strategy</div>
+        <h3>Not just properties. A brand.</h3>
+        <p>For real estate agencies and agents who want to build a distinctive presence in the luxury market. We create the entire visual ecosystem: brand identity, content plan, ongoing production, and tailored storytelling.</p>
+        <ul class="service-includes">
+          <li>Visual audit of existing brand</li>
+          <li>Monthly editorial content plan</li>
+          <li>Recurring photo + video production</li>
+          <li>Performance reporting and optimization</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FEATURES -->
-<section class="features" id="features">
+<!-- WHY UNREEL -->
+<section class="why-unreel" id="why">
   <div class="container">
-    <div class="">
-      <div class="section-label">Why Agents Love Us</div>
-      <div class="section-title">Sell Faster. Look Better.<br>Close More.</div>
-      <div class="section-subtitle">Every feature is designed to give real estate agents an unfair advantage in the market.</div>
+    <div style="text-align:center;">
+      <div class="section-label">Why Unreel Estate</div>
+      <div class="section-title">What Sets Us Apart.</div>
+      <div class="section-subtitle" style="margin:0 auto;"></div>
     </div>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">🤖</div>
-        <h3>AI Video Generation</h3>
-        <p>Upload listing photos, get cinematic 4K video tours. Our AI handles camera movement, lighting, and staging automatically.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <h3>Luxury is our only language.</h3>
+        <p>We don't work on everything. We specialize in the premium segment because luxury has a precise visual code — and we speak it fluently.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">⚡</div>
-        <h3>Ready in Minutes</h3>
-        <p>No filming crew, no editing, no waiting weeks. From photo to polished video in under 5 minutes.</p>
+      <div class="why-card">
+        <h3>Production is just the beginning.</h3>
+        <p>We think in terms of strategy, not individual deliverables. Every piece of content we produce is built to perform — on listing portals, social media, email campaigns, and client presentations.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">🏠</div>
-        <h3>Virtual Restaging</h3>
-        <p>AI transforms empty or outdated rooms into beautifully staged spaces in contemporary, modern, or luxury styles.</p>
+      <div class="why-card">
+        <h3>Speed without compromise.</h3>
+        <p>The real estate market doesn't wait. We deliver cinematic-quality materials on your timeline — without sacrificing a single pixel of quality.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">🎯</div>
-        <h3>MLS Ready</h3>
-        <p>Output formats optimized for MLS, Zillow, Realtor.com, Instagram, and all major listing platforms.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">🎬</div>
-        <h3>Cinematic Quality</h3>
-        <p>Smooth dolly shots, tracking moves, and ambient lighting that rival professional videography at a fraction of the cost.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">📈</div>
-        <h3>More Views, More Leads</h3>
-        <p>Listings with video get 403% more inquiries. Stand out in every search result and social feed.</p>
+      <div class="why-card">
+        <h3>A partner, not a vendor.</h3>
+        <p>We're with you from pre-production to content distribution. Your property deserves a team that believes in it as much as you do.</p>
       </div>
     </div>
   </div>
@@ -1033,8 +1367,8 @@ footer {
   <div class="container">
     <div class="" style="text-align:center;">
       <div class="section-label">Our Work</div>
-      <div class="section-title">Real Listings.<br><em>Unreal</em> Results.</div>
-      <div class="section-subtitle" style="margin:0 auto;">See how our AI transforms ordinary property photos into stunning visual experiences.</div>
+      <div class="section-title">Every project is unique.<br>Every property, <em>a story.</em></div>
+      <div class="section-subtitle" style="margin:0 auto;">Explore some of our recent productions. Each one crafted to make a property impossible to forget.</div>
     </div>
     <div class="gallery-grid">
       <div class="gallery-item" onclick="openLightbox('IMG_9457.JPG')">
@@ -1052,7 +1386,7 @@ footer {
       <div class="gallery-item" style="grid-column: 1 / -1;" onclick="openLightbox('IMG_9458.JPG')">
         <img src="IMG_9458.JPG" alt="Unreel Estate Brand" loading="lazy" style="min-height:220px; object-position:center top;">
         <div class="gallery-overlay">
-          <span class="gallery-overlay-text">Unreel Estate — AI Powered Real Estate Videos</span>
+          <span class="gallery-overlay-text">Unreel Estate — Where Luxury Meets Cinema</span>
         </div>
       </div>
     </div>
@@ -1068,31 +1402,36 @@ footer {
 <!-- HOW IT WORKS -->
 <section class="how-it-works" id="how">
   <div class="container">
-    <div class="" style="text-align:center;">
+    <div style="text-align:center;">
       <div class="section-label">How It Works</div>
-      <div class="section-title">Photo In. Video Out.</div>
-      <div class="section-subtitle" style="margin:0 auto;">Four simple steps to transform any listing into a cinematic experience.</div>
+      <div class="section-title">A process designed to be<br><em>effortless for you.</em></div>
+      <div class="section-subtitle" style="margin:0 auto;">A process designed to be effortless for you and flawless in execution.</div>
     </div>
-    <div class="steps">
+    <div class="steps" style="grid-template-columns: repeat(5,1fr);">
       <div class="step">
         <div class="step-number">1</div>
-        <h3>Upload Photos</h3>
-        <p>Drop your listing photos — any quality, any room, interior or exterior.</p>
+        <h3>Tell us about the property.</h3>
+        <p>We start with a conversation — the home, the target buyer, the positioning, and what you want them to feel.</p>
       </div>
       <div class="step">
         <div class="step-number">2</div>
-        <h3>AI Analyzes</h3>
-        <p>Our AI identifies the space, style, and optimal camera movement.</p>
+        <h3>We study every detail.</h3>
+        <p>We visit the property to plan angles, lighting, and movement. Nothing is left to chance.</p>
       </div>
       <div class="step">
         <div class="step-number">3</div>
-        <h3>Video Renders</h3>
-        <p>Cinematic video generates with smooth motion, perfect lighting, and staging.</p>
+        <h3>The magic on set.</h3>
+        <p>Our team brings professional equipment and a cinematic eye — working with discretion and precision.</p>
       </div>
       <div class="step">
         <div class="step-number">4</div>
-        <h3>Download & Share</h3>
-        <p>Get your 4K video, share on MLS, social media, or embed on your site.</p>
+        <h3>Where footage becomes art.</h3>
+        <p>Editing, color grading, sound design, photo retouching. Every file that leaves our studio is ready to impress.</p>
+      </div>
+      <div class="step">
+        <div class="step-number">5</div>
+        <h3>Ready to do their job.</h3>
+        <p>Delivered in formats optimized for every channel — and we can handle distribution and social launch too.</p>
       </div>
     </div>
   </div>
@@ -1101,22 +1440,22 @@ footer {
 <!-- TESTIMONIALS -->
 <section class="testimonials" id="testimonials">
   <div class="container">
-    <div class="" style="text-align:center;">
-      <div class="section-label">Client Stories</div>
-      <div class="section-title">Agents Love It.<br>Buyers Can't Look Away.</div>
-      <div class="section-subtitle" style="margin:0 auto;">Don't take our word for it — hear from the Houston agents who use Unreel Estate every day.</div>
+    <div style="text-align:center;">
+      <div class="section-label">What Our Clients Say</div>
+      <div class="section-title">The difference is<br><em>always visible.</em></div>
+      <div class="section-subtitle" style="margin:0 auto;"></div>
     </div>
     <div class="testimonials-grid">
       <div class="testimonial-card">
         <div class="testimonial-stars">
           <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
         </div>
-        <p class="testimonial-text">"I uploaded photos from a regular iPhone shoot and got back a cinematic video tour that looked like I hired a full production crew. My listing got 3x more showings that week."</p>
+        <p class="testimonial-text">"With Unreel Estate we sold in 18 days a property that had been sitting on the market for months. The video made all the difference."</p>
         <div class="testimonial-author">
-          <div class="testimonial-avatar">S</div>
+          <div class="testimonial-avatar">M</div>
           <div>
-            <div class="testimonial-name">Sarah M.</div>
-            <div class="testimonial-role">Realtor · Keller Williams Houston</div>
+            <div class="testimonial-name">Marco R.</div>
+            <div class="testimonial-role">Real Estate Agent · Milan</div>
           </div>
         </div>
       </div>
@@ -1124,12 +1463,12 @@ footer {
         <div class="testimonial-stars">
           <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
         </div>
-        <p class="testimonial-text">"The virtual restaging feature is a game-changer. I listed an empty property and the AI staged it beautifully — sold in 6 days over asking price. Absolutely worth every penny."</p>
+        <p class="testimonial-text">"Finally a team that truly understands luxury. They don't just execute — they think alongside you."</p>
         <div class="testimonial-author">
-          <div class="testimonial-avatar">J</div>
+          <div class="testimonial-avatar">C</div>
           <div>
-            <div class="testimonial-name">James R.</div>
-            <div class="testimonial-role">Broker · Compass Houston</div>
+            <div class="testimonial-name">Claudia M.</div>
+            <div class="testimonial-role">Real Estate Developer · Rome</div>
           </div>
         </div>
       </div>
@@ -1137,12 +1476,12 @@ footer {
         <div class="testimonial-stars">
           <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
         </div>
-        <p class="testimonial-text">"Ready in under 5 minutes is no exaggeration. I use it for every single listing now. My clients are always impressed when they see the video — it sets the tone before buyers even walk through the door."</p>
+        <p class="testimonial-text">"The quality of the photos and video completely transformed how the market perceived the property."</p>
         <div class="testimonial-author">
-          <div class="testimonial-avatar">A</div>
+          <div class="testimonial-avatar">L</div>
           <div>
-            <div class="testimonial-name">Amanda T.</div>
-            <div class="testimonial-role">Top Producer · RE/MAX Houston</div>
+            <div class="testimonial-name">Luca B.</div>
+            <div class="testimonial-role">Legal & Real Estate Studio · Lugano</div>
           </div>
         </div>
       </div>
@@ -1150,87 +1489,123 @@ footer {
   </div>
 </section>
 
-<!-- PRICING -->
-<section class="pricing" id="pricing">
+<!-- ABOUT -->
+<section class="about" id="about">
   <div class="container">
-    <div class="" style="text-align:center;">
-      <div class="section-label">Pricing</div>
-      <div class="section-title">Simple, Transparent Pricing</div>
-      <div class="section-subtitle" style="margin:0 auto;">No hidden fees. No contracts. Cancel anytime.</div>
-    </div>
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <div class="pricing-tier">Starter</div>
-        <div class="pricing-price">$29<span>/mo</span></div>
-        <div class="pricing-desc">Perfect for individual agents getting started.</div>
-        <ul class="pricing-features">
-          <li>5 videos per month</li>
-          <li>1080p HD quality</li>
-          <li>Basic camera movements</li>
-          <li>MLS-ready formats</li>
-          <li>Email support</li>
-        </ul>
-        <button class="pricing-btn">Get Started</button>
+    <div class="about-inner">
+      <div class="about-text">
+        <div class="section-label">Who We Are</div>
+        <div class="section-title">Born between lenses<br>and <em>floor plans.</em></div>
+        <p class="about-body">Unreel Estate was born from the meeting of two passions: visual storytelling and the luxury real estate world. We're a team of filmmakers, photographers, and strategists who share one obsession — creating content that makes people desire a property before they ever visit it.</p>
+        <p class="about-body">We're not interested in being the cheapest option. We're interested in being the one you remember. The one that makes the difference between a property that sits on the market and one that finds its ideal buyer.</p>
+        <p class="about-body"><em>Every project is a film. Every property, a lead character.</em></p>
       </div>
-      <div class="pricing-card featured">
-        <div class="pricing-tier">Professional</div>
-        <div class="pricing-price">$79<span>/mo</span></div>
-        <div class="pricing-desc">For top-producing agents who want the edge.</div>
-        <ul class="pricing-features">
-          <li>25 videos per month</li>
-          <li>4K cinematic quality</li>
-          <li>Virtual restaging included</li>
-          <li>Custom branding & watermark</li>
-          <li>Priority rendering</li>
-          <li>Priority support</li>
-        </ul>
-        <button class="pricing-btn">Get Started</button>
-      </div>
-      <div class="pricing-card">
-        <div class="pricing-tier">Brokerage</div>
-        <div class="pricing-price">$199<span>/mo</span></div>
-        <div class="pricing-desc">Unlimited power for teams and brokerages.</div>
-        <ul class="pricing-features">
-          <li>Unlimited videos</li>
-          <li>4K + aerial animations</li>
-          <li>Team accounts (up to 10)</li>
-          <li>API access</li>
-          <li>White-label option</li>
-          <li>Dedicated account manager</li>
-        </ul>
-        <button class="pricing-btn">Contact Sales</button>
+      <div class="about-image">
+        <img src="IMG_9457.JPG" alt="Unreel Estate Team" loading="lazy">
       </div>
     </div>
   </div>
 </section>
 
-<!-- WAITLIST -->
-<section class="waitlist" id="waitlist">
+<!-- MID CTA -->
+<section class="mid-cta">
   <div class="container">
-    <div class="">
-      <div class="section-label">Early Access</div>
-      <div class="section-title">Be First in Line</div>
-      <div class="section-subtitle">Join the waitlist and get 3 free videos when we launch. No credit card required.</div>
+    <div class="section-label">Your property deserves more.</div>
+    <div class="section-title">Every day that passes is<br>a day your property says <em>less.</em></div>
+    <p class="section-subtitle">Let's start changing that story.</p>
+    <div style="margin-top:40px;">
+      <a href="#contact" class="btn-primary">Request a Free Quote →</a>
     </div>
-    <div class="waitlist-form">
-      <input type="email" placeholder="Enter your email address" id="emailInput">
-      <button onclick="handleWaitlist()">Join Waitlist</button>
-    </div>
-    <p style="margin-top:16px; font-size:12px; color:var(--text-muted);" class="">🔒 No spam. Unsubscribe anytime. We respect your inbox.</p>
   </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="contact-inner">
+      <div class="contact-info">
+        <div class="section-label">Let's Talk.</div>
+        <div class="section-title">Tell us about<br>your project.</div>
+        <p>We respond within 24 hours with a tailored proposal.</p>
+        <div class="contact-detail">
+          <a href="mailto:info@unreelestate.com">✉ info@unreelestate.com</a>
+          <a href="https://wa.me/1XXXXXXXXXX" target="_blank">💬 WhatsApp</a>
+          <a href="#">📍 USA · Europe · Worldwide</a>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="handleContact(event)">
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" placeholder="Your name" required>
+        </div>
+        <div class="form-group">
+          <label>Email *</label>
+          <input type="email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+          <label>Phone</label>
+          <input type="tel" placeholder="+1 000 000 0000">
+        </div>
+        <div class="form-group">
+          <label>Property Type</label>
+          <select>
+            <option value="">Select type…</option>
+            <option>Villa</option>
+            <option>Apartment</option>
+            <option>Penthouse</option>
+            <option>Estate</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group full-width">
+          <label>Service of Interest</label>
+          <select>
+            <option value="">Select service…</option>
+            <option>Cinematic Video Tour</option>
+            <option>Luxury Photography</option>
+            <option>Social & Instagram Reels</option>
+            <option>3D Virtual Tour</option>
+            <option>Agency Content Strategy</option>
+            <option>Full Package</option>
+          </select>
+        </div>
+        <div class="form-group full-width">
+          <label>Message / Property Details</label>
+          <textarea placeholder="Tell us about the property and what you're looking for…"></textarea>
+        </div>
+        <div class="form-group full-width">
+          <label>How did you hear about us?</label>
+          <input type="text" placeholder="Instagram, referral, Google…">
+        </div>
+        <div class="full-width">
+          <button type="submit" class="btn-primary" style="width:100%; justify-content:center;">Send Your Request →</button>
+          <p class="form-note" style="margin-top:12px;">Your data is safe with us. We will never share it with third parties.</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- SPACER -->
+<div style="display:none;" id="waitlist">
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="container">
+    <div style="text-align:center; margin-bottom:32px;">
+      <p style="font-family:'Playfair Display',serif; font-size:15px; color:var(--text-muted); letter-spacing:2px; font-style:italic;">Unreel Estate — Where Luxury Meets Cinema.</p>
+    </div>
     <div class="footer-content">
       <a href="#" class="logo"><svg class="logo-icon" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="rg2" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#D94040"/><stop offset="100%" stop-color="#C9A96E"/></linearGradient></defs><path d="M40,8 L72,40 L40,72 L8,40 Z" fill="none" stroke="url(#rg2)" stroke-width="3"/><path d="M40,22 L58,40 L40,58 L22,40 Z" fill="#D94040" fill-opacity="0.1" stroke="url(#rg2)" stroke-width="1.5"/><circle cx="40" cy="40" r="4" fill="#D94040"/><circle cx="40" cy="8" r="2.5" fill="#D94040"/><circle cx="72" cy="40" r="2.5" fill="#C9A96E"/><circle cx="40" cy="72" r="2.5" fill="#C9A96E"/><circle cx="8" cy="40" r="2.5" fill="#D94040"/></svg><img src="IMG_9458.JPG" alt="Unreel Estate" style="height:52px;width:auto;"></a>
       <div class="footer-links">
-        <a href="#features">Features</a>
-        <a href="#pricing">Pricing</a>
-        <a href="/cdn-cgi/l/email-protection#39515c555556794c574b5c58555c4a4d584d5c175a5654">Contact</a>
+        <a href="#services">Services</a>
+        <a href="#gallery">Portfolio</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="#">Privacy Policy</a>
       </div>
-      <div class="footer-copy">© 2026 UnreelEstate. All rights reserved.</div>
+      <div class="footer-copy">© 2025 Unreel Estate. All rights reserved.</div>
     </div>
   </div>
 </footer>
@@ -1270,8 +1645,18 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-// === WAITLIST ===
-function handleWaitlist() {
-  const email = document.getElementById('emailInput').value;
-  if (email && email.includes('@')) {
-    alert('🎉 Wel
+// === CONTACT FORM ===
+function handleContact(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button[type="submit"]');
+  btn.textContent = 'Message Sent ✓';
+  btn.style.background = 'var(--gold-dark)';
+  btn.disabled = true;
+  setTimeout(() => { btn.textContent = 'Send Your Request →'; btn.style.background = ''; btn.disabled = false; }, 4000);
+}
+// legacy stub
+function handleWaitlist() { /* removed */ }
+
+</script>
+</body>
+</html>
