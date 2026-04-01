@@ -7,7 +7,7 @@
 .bg {
   position: absolute;
   inset: 0;
-  background-image: url('/img/aerial.png');
+  background-image: url('/img/cta-bg.png');
   background-size: cover;
   background-position: center 40%;
   z-index: 0;
