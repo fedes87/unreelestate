@@ -3,48 +3,52 @@ export const services = [
     number: '01',
     tag: 'AI Photo Enhancement',
     title: 'Your Photos. Elevated to Perfection.',
-    description: 'We take your existing listing photos and enhance them to a level no standard photographer can match. Perfect lighting, refined details, flawless finish — the property exactly as it is, shown at its absolute best.',
-    includes: ['Light correction and atmosphere enhancement', 'Detail refinement and texture improvement', 'Sky replacement and exterior polish', 'High-resolution delivery for all platforms'],
+    image: '/img/service-photo.png',
+    includes: ['Light correction and atmosphere', 'Detail refinement and texture', 'Sky replacement and exterior polish', 'High-res delivery for all platforms'],
   },
   {
     number: '02',
     tag: 'Virtual Restyling & Staging',
     title: 'Same Property. A Completely Different World.',
-    description: "We don't just improve — we transform. Change the flooring, repaint the walls, replace the furniture, restyle entire rooms. Our AI can take a vacant or outdated space and turn it into the luxury home a buyer is dreaming of.",
-    includes: ['Full room restyling (floors, walls, ceilings)', 'Virtual furniture staging and replacement', 'Style selection: modern, classic, luxury, minimal', 'Multiple versions to A/B test buyer response'],
+    image: '/img/service-staging.png',
+    includes: ['Full room restyling (floors, walls, ceilings)', 'Virtual furniture staging', 'Style options: modern, classic, luxury', 'Multiple versions for A/B testing'],
   },
   {
     number: '03',
     tag: 'Cinematic Video from Photos',
     title: 'No Camera Needed. Just Results.',
-    description: 'We create smooth, cinematic property videos using only your still images. Camera movements, transitions, ambient soundtrack — all generated from photos. The feel of a professional video shoot, without the cost or logistics.',
-    includes: ['Cinematic motion from static photos', 'Professional color grading and atmosphere', 'Premium royalty-free soundtrack', 'Delivered in web, social, and listing formats'],
+    image: '/img/service-video.png',
+    includes: ['Cinematic motion from static photos', 'Professional color grading', 'Premium royalty-free soundtrack', 'Web, social, and listing formats'],
   },
   {
     number: '04',
     tag: 'Listing Presentation Video',
     title: 'One Video. Every Platform. Maximum Impact.',
-    description: 'A complete, polished presentation video ready to publish on MLS, Zillow, Realtor.com, Instagram, TikTok, and YouTube. Edited with titles, transitions, and your branding — ready to attract the right buyer from the first impression.',
-    includes: ['Full edit with titles and transitions', 'Agent branding and contact info', 'Horizontal (16:9) and vertical (9:16) formats', 'Optimized for MLS, social, and web'],
+    image: '/img/service-listing.png',
+    includes: ['Full edit with titles and transitions', 'Agent branding and contact info', 'Horizontal (16:9) + Vertical (9:16)', 'Optimized for MLS, social, and web'],
   },
 ]
 
 export const whyUnreel = [
   {
-    title: 'No Film Crew. No Location Visit.',
-    body: "Everything starts from your existing photos. We work 100% remotely — you send us what you have, we deliver cinematic content within 48 hours. No scheduling conflicts, no weather delays, no logistical headaches.",
+    stat: '100%',
+    label: 'Remote',
+    body: 'No crew, no location visits. Send your photos and we handle everything.',
   },
   {
-    title: 'Results That Outperform Traditional Photography.',
-    body: 'Our AI-enhanced images consistently outperform standard real estate photography in click-through rates, time-on-listing, and perceived property value. Buyers spend more time on listings with cinematic visuals.',
+    stat: '10×',
+    label: 'More Engagement',
+    body: 'Listings with cinematic visuals consistently outperform standard photography.',
   },
   {
-    title: 'Built for Luxury. Priced for Volume.',
-    body: "We designed our process to deliver luxury-quality output at a price point that makes sense for active agents. Whether you're presenting one property or managing a full portfolio, our workflow scales with you.",
+    stat: '$399',
+    label: 'Starting Price',
+    body: 'Luxury-quality output at a price point that works for active agents.',
   },
   {
-    title: 'Every Format You Need, Delivered.',
-    body: 'From high-res photos for MLS to vertical reels for Instagram — we deliver every asset you need, formatted and optimized for every platform, in a single turnaround.',
+    stat: '∞',
+    label: 'Formats Included',
+    body: 'MLS, Instagram, TikTok, YouTube — every asset, every platform, one delivery.',
   },
 ]
 

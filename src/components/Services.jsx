@@ -32,15 +32,19 @@ export default function Services() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.1 }}
             >
-              <div className={styles.number}>{s.number}</div>
-              <div className={styles.tag}>{s.tag}</div>
-              <h3 className={styles.title}>{s.title}</h3>
-              <p className={styles.desc}>{s.description}</p>
-              <ul className={styles.list}>
-                {s.includes.map(item => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
+              <div className={styles.imgWrap}>
+                <img src={s.image} alt={s.tag} className={styles.img} loading="lazy" />
+                <div className={styles.imgOverlay} />
+                <div className={styles.tag}>{s.tag}</div>
+              </div>
+              <div className={styles.body}>
+                <h3 className={styles.title}>{s.title}</h3>
+                <ul className={styles.list}>
+                  {s.includes.map(item => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
             </motion.div>
           ))}
         </div>
