@@ -66,7 +66,7 @@ export default function RoomFurnishing() {
       if (scrollRange <= 0) return
       // Clamp progress so animation completes at ~80% scroll
       // This keeps the last frame visible for the remaining 20%
-      const raw = (-rect.top / scrollRange) * 1.25
+      const raw = (-rect.top / scrollRange) * 3.5
       setProgress(Math.max(0, Math.min(1, raw)))
     }
 
