@@ -95,21 +95,39 @@ export const pricingPackages = [
   {
     name: 'Listing',
     price: 399,
-    tagline: 'Everything you need to make a property irresistible.',
+    tagline: 'Everything you need to publish a property that stands out.',
+    highlight: false,
+    includes: [
+      '10 photos — we help you pick the best ones with AI',
+      'AI Enhancement: retouched, staged, or fully remodeled',
+      '10 × 4-second cinematic video clips',
+      '40-second reel — FHD, 16:9 + 9:16',
+      'Royalty-free music included',
+    ],
+    addons: [
+      { price: 20, description: 'per extra photo + video clip' },
+      { price: 50, description: 'AI Voiceover — choose from sample voices' },
+      { price: 20, description: 'Cover diagram + full property PDF' },
+    ],
+  },
+  {
+    name: 'Signature',
+    price: 599,
+    tagline: 'The complete content suite. One delivery, every platform.',
     highlight: true,
     includes: [
-      '10 photos (send from any device)',
-      'AI Enhancement — elevated to professional level',
-      'OR Virtual Remodel — fully transformed style',
-      'Each photo animated into a 4-second cinematic clip',
-      '~40-second reel — all clips edited together',
-      'Horizontal (16:9) + Vertical (9:16) delivery',
-      '48-hour turnaround',
+      '15 photos — AI-assisted selection included',
+      'AI Enhancement: retouched, staged, or fully remodeled',
+      '15 × 4-second cinematic video clips',
+      '1-minute reel — 4K, 16:9 + 9:16',
+      '15 individual clips ready for Stories & Reels',
+      'AI Voiceover included — choose your voice',
+      'Cover diagram + full property PDF included',
+      'Royalty-free music included',
     ],
-    addon: {
-      price: 20,
-      description: 'per additional photo (includes enhancement + video clip)',
-    },
+    addons: [
+      { price: 20, description: 'per extra photo + video clip' },
+    ],
   },
 ]
 
