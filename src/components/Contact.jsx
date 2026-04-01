@@ -6,7 +6,7 @@ import styles from './Contact.module.css'
 
 // Replace these with your EmailJS credentials from emailjs.com
 const EMAILJS_SERVICE_ID  = 'service_wjnl6an'
-const EMAILJS_TEMPLATE_ID = 'template_p9ixdng'
+const EMAILJS_TEMPLATE_ID = 'template_u89bf0y'
 const EMAILJS_PUBLIC_KEY  = 'Ee1GMS1i-dN7A6yTY'
 
 const INITIAL = { name: '', email: '', phone: '', propertyType: '', service: '', message: '', source: '' }
