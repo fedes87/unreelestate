@@ -30,6 +30,7 @@ export default function RoomFurnishing() {
   const { t } = useTranslation()
   const sectionRef = useRef(null)
   const canvasRef = useRef(null)
+  const canvasWrapRef = useRef(null)
   const lastFrame = useRef(-1)
   const rafId = useRef(null)
   const isMobile = useIsMobile()
@@ -52,21 +53,22 @@ export default function RoomFurnishing() {
     return () => obs.disconnect()
   }, [])
 
-  // Scroll handler — compute progress directly
+  // Scroll handler — progress based on how far the canvas has traveled through viewport
   useEffect(() => {
-    const el = sectionRef.current
-    if (!el) return
+    const wrap = canvasWrapRef.current
+    if (!wrap) return
 
     let listening = false
 
     const compute = () => {
-      const rect = el.getBoundingClientRect()
+      const rect = wrap.getBoundingClientRect()
       const vh = window.innerHeight
-      const scrollRange = rect.height - vh
-      if (scrollRange <= 0) return
-      // Clamp progress so animation completes at ~80% scroll
-      // This keeps the last frame visible for the remaining 20%
-      const raw = (-rect.top / scrollRange) * 3.5
+      // 0 = canvas top enters viewport bottom
+      // 1 = canvas bottom exits viewport top
+      const start = vh // canvas top at viewport bottom
+      const end = -rect.height // canvas bottom at viewport top
+      const current = rect.top
+      const raw = (start - current) / (start - end)
       setProgress(Math.max(0, Math.min(1, raw)))
     }
 
@@ -86,10 +88,10 @@ export default function RoomFurnishing() {
           listening = false
         }
       },
-      { rootMargin: '200px 0px' }
+      { rootMargin: '100px 0px' }
     )
 
-    obs.observe(el)
+    obs.observe(wrap)
     return () => {
       obs.disconnect()
       window.removeEventListener('scroll', onScroll)
@@ -151,58 +153,51 @@ export default function RoomFurnishing() {
   }, [progress])
 
   return (
-    <section
-      className={`${styles.section} ${reducedMotion ? styles.static : ''}`}
-      ref={sectionRef}
-    >
-      <div className={styles.sticky}>
-        <div className={styles.header}>
-          <span className="section-label">{t('roomFurnishing.label')}</span>
-          <h2 className="section-title">
-            {t('roomFurnishing.title1')}<br />
-            <em>{t('roomFurnishing.titleEm')}</em>
-          </h2>
-          {!loaded && shouldLoad && (
-            <p className={styles.loadingText}>
-              {Math.round(loadProgress * 100)}%
-            </p>
-          )}
-        </div>
-
-        <div className={styles.canvasWrap}>
-          {!loaded && (
-            <img
-              src="/img/furnishing/placeholder.webp"
-              alt=""
-              className={styles.placeholder}
-            />
-          )}
-
-          <canvas
-            ref={canvasRef}
-            className={`${styles.canvas} ${loaded ? styles.canvasVisible : ''}`}
-          />
-
-          <div
-            className={styles.progressBar}
-            style={{ width: `${Math.min(progress, 1) * 100}%` }}
-          />
-
-          {loaded && stages.map((stage) => (
-            <div
-              key={stage.key}
-              className={styles.overlayText}
-              style={{ opacity: getOverlayOpacity(stage) }}
-            >
-              {t(`roomFurnishing.${stage.key}`)}
-            </div>
-          ))}
-        </div>
-
-        {progress >= 0.95 && loaded && (
-          <p className={styles.subtitle}>{t('roomFurnishing.subtitle')}</p>
+    <section className={styles.section} ref={sectionRef}>
+      <div className={styles.header}>
+        <span className="section-label">{t('roomFurnishing.label')}</span>
+        <h2 className="section-title">
+          {t('roomFurnishing.title1')}<br />
+          <em>{t('roomFurnishing.titleEm')}</em>
+        </h2>
+        {!loaded && shouldLoad && (
+          <p className={styles.loadingText}>
+            {Math.round(loadProgress * 100)}%
+          </p>
         )}
       </div>
+
+      <div className={styles.canvasWrap} ref={canvasWrapRef}>
+        {!loaded && (
+          <img
+            src="/img/furnishing/placeholder.webp"
+            alt=""
+            className={styles.placeholder}
+          />
+        )}
+
+        <canvas
+          ref={canvasRef}
+          className={`${styles.canvas} ${loaded ? styles.canvasVisible : ''}`}
+        />
+
+        <div
+          className={styles.progressBar}
+          style={{ width: `${Math.min(progress, 1) * 100}%` }}
+        />
+
+        {loaded && stages.map((stage) => (
+          <div
+            key={stage.key}
+            className={styles.overlayText}
+            style={{ opacity: getOverlayOpacity(stage) }}
+          >
+            {t(`roomFurnishing.${stage.key}`)}
+          </div>
+        ))}
+      </div>
+
+      <p className={styles.subtitle}>{t('roomFurnishing.subtitle')}</p>
     </section>
   )
 }

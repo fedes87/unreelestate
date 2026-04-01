@@ -1,29 +1,10 @@
 .section {
   position: relative;
-  height: 130vh;
   background: var(--bg-primary);
-}
-
-.section.static {
-  height: auto;
-}
-
-.sticky {
-  position: sticky;
-  top: 0;
-  height: 100vh;
+  padding: 60px 24px 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 40px 24px;
-  overflow: hidden;
-}
-
-.static .sticky {
-  position: relative;
-  height: auto;
-  padding: 80px 24px;
 }
 
 .header {
@@ -108,11 +89,7 @@
 
 @media (max-width: 768px) {
   .section {
-    height: 130vh;
-  }
-
-  .sticky {
-    padding: 24px 16px;
+    padding: 40px 16px 60px;
   }
 
   .header {
