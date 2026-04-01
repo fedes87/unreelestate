@@ -16,11 +16,16 @@ export default function CTABanner() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
+          <span className="section-label">The Unreel Process</span>
           <h2 className={styles.heading}>
-            Ready to Make Your Listing <em>Unreal?</em>
+            Your iPhone Shot.<br /><em>Our Cinematic Standard.</em>
           </h2>
-          <p className={styles.sub}>Send us your photos — we handle the rest.</p>
-          <a href="#contact" className="btn-primary">Get a Quote →</a>
+          <p className={styles.sub}>
+            We take any photo — even straight from your phone — and transform it into a
+            professional-grade image. Then we animate it into a 4-second cinematic clip,
+            ready to publish.
+          </p>
+          <a href="#how" className={styles.link}>See How It Works →</a>
         </motion.div>
       </div>
     </section>

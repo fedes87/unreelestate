@@ -49,6 +49,26 @@
   line-height: 1.6;
 }
 
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(196,149,106,0.4);
+  padding-bottom: 3px;
+  transition: border-color 0.25s, color 0.25s;
+}
+
+.link:hover {
+  color: var(--gold-light);
+  border-color: var(--gold-light);
+}
+
 @media (max-width: 768px) {
   .section { padding: 72px 0; }
 }
