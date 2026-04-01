@@ -11,9 +11,9 @@ const MOBILE_PATH = '/img/furnishing/mobile/frame_'
 const EXT = 'webp'
 
 const stages = [
-  { start: 0.00, end: 0.12, key: 'stageEmpty' },
-  { start: 0.40, end: 0.60, key: 'stageVision' },
-  { start: 0.85, end: 1.00, key: 'stageComplete' },
+  { start: 0.00, end: 0.15, key: 'stageEmpty' },
+  { start: 0.38, end: 0.62, key: 'stageVision' },
+  { start: 0.82, end: 1.00, key: 'stageComplete' },
 ]
 
 function useIsMobile() {
@@ -75,7 +75,7 @@ export default function RoomFurnishing() {
     ctx.drawImage(img, 0, 0)
   }, [progress, images, loaded, frameCount])
 
-  // Prefers reduced motion — show final frame
+  // Prefers reduced motion
   const [reducedMotion, setReducedMotion] = useState(false)
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -97,66 +97,78 @@ export default function RoomFurnishing() {
 
   const getOverlayOpacity = useCallback((stage) => {
     const { start, end } = stage
-    const fadeIn = 0.05
-    const fadeOut = 0.05
+    const fadeIn = 0.06
+    const fadeOut = 0.06
     if (progress < start || progress > end) return 0
     if (progress < start + fadeIn) return (progress - start) / fadeIn
     if (progress > end - fadeOut) return (end - progress) / fadeOut
     return 1
   }, [progress])
 
+  // Which final image to use for the static result
+  const finalSrc = isMobile
+    ? '/img/furnishing/mobile/frame_020.webp'
+    : '/img/furnishing/frame_060.webp'
+
   return (
-    <section
-      className={`${styles.section} ${reducedMotion ? styles.static : ''}`}
-      ref={ref}
-    >
-      <div className={styles.sticky}>
-        <div className={styles.header}>
-          <span className="section-label">{t('roomFurnishing.label')}</span>
-          <h2 className="section-title">
-            {t('roomFurnishing.title1')}<br />
-            <em>{t('roomFurnishing.titleEm')}</em>
-          </h2>
-          {!loaded && shouldLoad && (
-            <p className={styles.loadingText}>
-              {Math.round(loadProgress * 100)}%
-            </p>
-          )}
-        </div>
+    <section className={`${styles.section} ${reducedMotion ? styles.static : ''}`}>
+      {/* Scroll-driven animation area */}
+      <div className={styles.scrollArea} ref={ref}>
+        <div className={styles.sticky}>
+          <div className={styles.header}>
+            <span className="section-label">{t('roomFurnishing.label')}</span>
+            <h2 className="section-title">
+              {t('roomFurnishing.title1')}<br />
+              <em>{t('roomFurnishing.titleEm')}</em>
+            </h2>
+            {!loaded && shouldLoad && (
+              <p className={styles.loadingText}>
+                {Math.round(loadProgress * 100)}%
+              </p>
+            )}
+          </div>
 
-        <div className={styles.canvasWrap}>
-          {!loaded && (
-            <img
-              src="/img/furnishing/placeholder.webp"
-              alt=""
-              className={styles.placeholder}
+          <div className={styles.canvasWrap}>
+            {!loaded && (
+              <img
+                src="/img/furnishing/placeholder.webp"
+                alt=""
+                className={styles.placeholder}
+              />
+            )}
+
+            <canvas
+              ref={canvasRef}
+              className={`${styles.canvas} ${loaded ? styles.canvasVisible : ''}`}
             />
-          )}
 
-          <canvas
-            ref={canvasRef}
-            className={`${styles.canvas} ${loaded ? styles.canvasVisible : ''}`}
-          />
-
-          <div
-            className={styles.progressBar}
-            style={{ width: `${progress * 100}%` }}
-          />
-
-          {loaded && stages.map((stage) => (
             <div
-              key={stage.key}
-              className={styles.overlayText}
-              style={{ opacity: getOverlayOpacity(stage) }}
-            >
-              {t(`roomFurnishing.${stage.key}`)}
-            </div>
-          ))}
-        </div>
+              className={styles.progressBar}
+              style={{ width: `${progress * 100}%` }}
+            />
 
-        {progress > 0.92 && loaded && (
-          <p className={styles.subtitle}>{t('roomFurnishing.subtitle')}</p>
-        )}
+            {loaded && stages.map((stage) => (
+              <div
+                key={stage.key}
+                className={styles.overlayText}
+                style={{ opacity: getOverlayOpacity(stage) }}
+              >
+                {t(`roomFurnishing.${stage.key}`)}
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* Static final result — always visible after scroll area */}
+      <div className={styles.finalResult}>
+        <img
+          src={finalSrc}
+          alt="Furnished luxury living room"
+          className={styles.finalImage}
+          loading="lazy"
+        />
+        <p className={styles.finalText}>{t('roomFurnishing.subtitle')}</p>
       </div>
     </section>
   )
