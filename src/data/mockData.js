@@ -68,18 +68,18 @@ export const howItWorks = [
 
 export const testimonials = [
   {
-    name: 'Michael R.',
+    name: 'Brandon Whitfield',
     role: 'Luxury Real Estate Agent, Houston TX',
     text: "The before/after difference is genuinely shocking. My listings now look like they belong in Architectural Digest. Buyers are reaching out within hours of posting.",
   },
   {
-    name: 'Sarah K.',
-    role: 'Real Estate Broker, Miami FL',
+    name: 'Ashley Tran',
+    role: 'Real Estate Broker, Houston TX',
     text: "I was skeptical about AI-generated visuals, but the results speak for themselves. Three listings sold above asking price within the first week. This is the future of real estate marketing.",
   },
   {
-    name: 'James T.',
-    role: 'Property Developer, Los Angeles CA',
+    name: 'Derek Calloway',
+    role: 'Property Developer, Houston TX',
     text: "Unreel Estate transformed our entire marketing approach. The cinematic videos generate 10x more engagement than our previous listing photos. Worth every penny.",
   },
 ]
