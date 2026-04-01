@@ -11,10 +11,24 @@
   text-align: center;
 }
 
-.inner p {
-  font-size: 18px;
+.headline {
+  font-family: 'Bodoni Moda', serif;
+  font-size: clamp(26px, 4.5vw, 52px);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--text-primary);
+  margin-top: 24px;
+}
+
+.headline em {
+  font-style: italic;
+  color: var(--gold);
+}
+
+.sub {
+  font-size: clamp(15px, 2vw, 18px);
   color: var(--text-secondary);
   line-height: 1.9;
-  margin-top: 20px;
+  margin-top: 28px;
   font-weight: 300;
 }
