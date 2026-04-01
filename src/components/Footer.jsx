@@ -6,11 +6,9 @@ export default function Footer() {
       <div className="container">
         <div className={styles.inner}>
           <div className={styles.brand}>
-            <span className={styles.logo}>
-              <span className={styles.un}>UN</span>
-              <span className={styles.reel}>REEL</span>
-              <span className={styles.estate}>ESTATE</span>
-            </span>
+            <a href="#" className={styles.logo}>
+              <img src="/logo.png" alt="Unreel Estate" className={styles.logoImg} />
+            </a>
             <p>Luxury real estate content, crafted for properties that deserve it most.</p>
           </div>
           <div className={styles.links}>

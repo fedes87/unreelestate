@@ -19,16 +19,8 @@
   max-width: 280px;
 }
 
-.logo {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 18px;
-  font-weight: 700;
-  letter-spacing: 1px;
-}
-
-.un { color: #E8342A; }
-.reel { color: var(--text-primary); }
-.estate { color: var(--gold); }
+.logo { display: inline-block; }
+.logoImg { height: 36px; width: auto; display: block; }
 
 .links, .contact {
   display: flex;
