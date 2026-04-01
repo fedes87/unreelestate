@@ -65,11 +65,11 @@
 
 .title {
   font-family: 'Bodoni Moda', serif;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   margin-bottom: 16px;
   line-height: 1.3;
-  color: var(--text-primary);
+  color: #ffffff;
 }
 
 .list {
@@ -80,8 +80,8 @@
 }
 
 .list li {
-  font-size: 13px;
-  color: var(--text-muted);
+  font-size: 14px;
+  color: rgba(255,255,255,0.72);
   display: flex;
   align-items: center;
   gap: 10px;
