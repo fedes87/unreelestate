@@ -4,12 +4,16 @@ import styles from './Navbar.module.css'
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
+  const [open, setOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+
+  // Close menu on link click
+  const handleLink = () => setOpen(false)
 
   return (
     <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
@@ -39,8 +43,32 @@ export default function Navbar() {
           <a href="#contact" className={`btn-primary ${styles.cta}`}>
             Get a Quote
           </a>
+
+          <button
+            className={styles.hamburger}
+            onClick={() => setOpen(o => !o)}
+            aria-label="Toggle menu"
+          >
+            {open ? '✕' : '☰'}
+          </button>
         </div>
       </div>
+
+      {/* Mobile overlay menu */}
+      {open && (
+        <div className={styles.mobileMenu}>
+          <ul>
+            {navLinks.map(link => (
+              <li key={link.label}>
+                <a href={link.href} onClick={handleLink}>{link.label}</a>
+              </li>
+            ))}
+            <li>
+              <a href="#contact" className={styles.mobileCta} onClick={handleLink}>Get a Quote →</a>
+            </li>
+          </ul>
+        </div>
+      )}
     </nav>
   )
 }
