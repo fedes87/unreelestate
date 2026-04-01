@@ -229,6 +229,15 @@
     "contact": "Contact",
     "copyright": "© {{year}} Unreel Estate. All rights reserved."
   },
+  "roomFurnishing": {
+    "label": "Virtual Staging",
+    "title1": "Watch a Room Come",
+    "titleEm": "To Life.",
+    "subtitle": "Scroll to see an empty space transform into a fully furnished luxury home.",
+    "stageEmpty": "Empty Space",
+    "stageVision": "Your Vision",
+    "stageComplete": "Our Creation"
+  },
   "styleTransformer": {
     "label": "Style Transformer",
     "title1": "Every Property Has",

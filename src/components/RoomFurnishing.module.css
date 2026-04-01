@@ -1,0 +1,163 @@
+.section {
+  height: 300vh;
+  position: relative;
+  background: var(--bg-primary);
+}
+
+.section.static {
+  height: auto;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+  overflow: hidden;
+}
+
+.static .sticky {
+  position: relative;
+  height: auto;
+  padding: 80px 24px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.loadingText {
+  font-size: 12px;
+  color: var(--gold);
+  letter-spacing: 2px;
+  font-weight: 500;
+  margin-top: 8px;
+}
+
+.canvasWrap {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--bg-card);
+}
+
+.placeholder {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: blur(4px);
+}
+
+.canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.canvasVisible {
+  opacity: 1;
+}
+
+.progressBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: var(--gold);
+  transition: width 0.05s linear;
+  z-index: 3;
+}
+
+.overlayText {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Bodoni Moda', serif;
+  color: var(--text-primary);
+  font-size: clamp(24px, 4vw, 48px);
+  font-weight: 400;
+  font-style: italic;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.7), 0 0 60px rgba(0, 0, 0, 0.4);
+  pointer-events: none;
+  z-index: 2;
+  transition: opacity 0.15s ease;
+}
+
+.subtitle {
+  font-size: 15px;
+  color: var(--text-secondary);
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 300;
+  opacity: 0;
+  animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+/* Mobile fallback */
+.mobileFallback {
+  display: none;
+}
+
+.mobileImages {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.mobileImg {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.mobileImg img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.mobileLabel {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  font-family: 'Bodoni Moda', serif;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--text-primary);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+  .section {
+    height: auto;
+  }
+
+  .sticky {
+    display: none;
+  }
+
+  .mobileFallback {
+    display: block;
+    padding: 72px 0;
+  }
+}

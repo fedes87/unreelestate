@@ -229,6 +229,15 @@
     "contact": "Contatti",
     "copyright": "© {{year}} Unreel Estate. Tutti i diritti riservati."
   },
+  "roomFurnishing": {
+    "label": "Virtual Staging",
+    "title1": "Guarda una Stanza Prendere",
+    "titleEm": "Vita.",
+    "subtitle": "Scorri per vedere uno spazio vuoto trasformarsi in una casa di lusso completamente arredata.",
+    "stageEmpty": "Spazio Vuoto",
+    "stageVision": "La Tua Visione",
+    "stageComplete": "La Nostra Creazione"
+  },
   "styleTransformer": {
     "label": "Style Transformer",
     "title1": "Ogni Proprietà Ha",

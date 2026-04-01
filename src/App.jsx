@@ -3,6 +3,7 @@ import Hero from './components/Hero'
 import BrandStatement from './components/BrandStatement'
 import Gallery from './components/Gallery'
 import CTABanner from './components/CTABanner'
+import RoomFurnishing from './components/RoomFurnishing'
 import StyleTransformer from './components/StyleTransformer'
 import VideoDemo from './components/VideoDemo'
 import Services from './components/Services'
@@ -23,6 +24,7 @@ export default function App() {
       <BrandStatement />
       <Gallery />
       <CTABanner />
+      <RoomFurnishing />
       <StyleTransformer />
       <VideoDemo />
       <Services />
