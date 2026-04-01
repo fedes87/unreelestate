@@ -1,10 +1,10 @@
 .section {
-  padding: 120px 0;
+  padding: 80px 0;
   background: var(--bg-secondary);
   border-top: 1px solid var(--border);
 }
 
-.header { max-width: 520px; margin-bottom: 64px; }
+.header { max-width: 520px; margin-bottom: 48px; }
 
 .grid {
   display: grid;

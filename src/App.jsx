@@ -10,8 +10,10 @@ import WhyUnreel from './components/WhyUnreel'
 import HowItWorks from './components/HowItWorks'
 import Pricing from './components/Pricing'
 import Testimonials from './components/Testimonials'
+import About from './components/About'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import CookieBanner from './components/CookieBanner'
 
 export default function App() {
   return (
@@ -28,8 +30,10 @@ export default function App() {
       <HowItWorks />
       <Pricing />
       <Testimonials />
+      <About />
       <Contact />
       <Footer />
+      <CookieBanner />
     </>
   )
 }

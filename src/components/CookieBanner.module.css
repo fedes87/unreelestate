@@ -1,0 +1,50 @@
+.banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 16px 32px;
+  background: var(--bg-card);
+  border-top: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+}
+
+.text {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  font-weight: 300;
+}
+
+.btn {
+  background: var(--gold);
+  color: var(--bg-primary);
+  border: none;
+  padding: 8px 24px;
+  border-radius: 2px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.25s;
+}
+
+.btn:hover {
+  background: var(--gold-light);
+}
+
+@media (max-width: 600px) {
+  .banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 16px 20px;
+  }
+}

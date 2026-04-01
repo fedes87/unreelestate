@@ -172,6 +172,26 @@
       "Unreel Estate transformó todo nuestro enfoque de marketing. Los videos cinematográficos generan 10 veces más engagement que nuestras fotos anteriores. Vale cada centavo."
     ]
   },
+  "about": {
+    "label": "Sobre Nosotros",
+    "title1": "Creado para Agentes Que",
+    "titleEm": "Exigen Más.",
+    "desc": "Unreel Estate nació de una idea simple: cada propiedad merece verse en su mejor versión. Combinamos tecnología AI con narrativa cinematográfica para crear contenido que vende — de forma remota, accesible y rápida.",
+    "points": [
+      {
+        "title": "100% Remoto",
+        "body": "Sin equipo en sitio, sin complicaciones de agenda. Envíanos tus fotos desde cualquier parte del mundo y nosotros nos encargamos del resto."
+      },
+      {
+        "title": "Calidad con IA",
+        "body": "Nuestro sistema de IA mejora, rediseña y anima cada imagen — con resultados que rivalizan con producciones cinematográficas tradicionales."
+      },
+      {
+        "title": "Entrega en 48 Horas",
+        "body": "Desde la carga hasta la entrega final en menos de dos días. El contenido de tu anuncio estará listo antes del open house."
+      }
+    ]
+  },
   "contact": {
     "label": "Hablemos",
     "title1": "Cuéntanos sobre",
@@ -244,6 +264,10 @@
     "btnPortfolio": "Ver Portafolio Completo →",
     "btnQuote": "Solicitar Cotización →",
     "labels": ["Sala de Estar", "Cocina", "Exterior", "Patio Trasero"]
+  },
+  "cookies": {
+    "text": "Este sitio no utiliza cookies de seguimiento. Solo usamos cookies esenciales para el correcto funcionamiento del sitio.",
+    "ok": "Entendido"
   },
   "portfolio": {
     "back": "← Volver",

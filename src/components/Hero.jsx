@@ -19,6 +19,7 @@ export default function Hero() {
         ref={videoRef}
         className={styles.video}
         autoPlay muted loop playsInline
+        poster="/hero-poster.jpg"
         onCanPlay={e => e.target.classList.add(styles.loaded)}
       >
         <source src="/hero.webm" type="video/webm" />

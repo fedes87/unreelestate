@@ -1,0 +1,63 @@
+.section {
+  padding: 100px 0;
+  border-top: 1px solid var(--border);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.desc {
+  font-size: 17px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-weight: 300;
+  max-width: 440px;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.point {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.number {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 28px;
+  color: var(--gold);
+  opacity: 0.5;
+  line-height: 1;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+.pointTitle {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.pointDesc {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}

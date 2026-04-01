@@ -172,6 +172,26 @@
       "Unreel Estate ha trasformato il nostro approccio al marketing. I video cinematografici generano 10 volte più engagement rispetto alle nostre foto precedenti. Vale ogni centesimo."
     ]
   },
+  "about": {
+    "label": "Chi Siamo",
+    "title1": "Creato per Agenti Che",
+    "titleEm": "Vogliono di Più.",
+    "desc": "Unreel Estate nasce da un'idea semplice: ogni proprietà merita di essere vista al meglio. Uniamo tecnologia AI e storytelling cinematografico per creare contenuti che vendono — da remoto, a prezzi accessibili e in tempi rapidi.",
+    "points": [
+      {
+        "title": "100% Da Remoto",
+        "body": "Nessun team sul posto, nessun problema di calendario. Inviaci le tue foto da qualsiasi parte del mondo e pensiamo a tutto noi."
+      },
+      {
+        "title": "Qualità AI",
+        "body": "La nostra pipeline AI proprietaria migliora, ridisegna e anima ogni immagine — con risultati che rivaleggiano con le produzioni cinematografiche tradizionali."
+      },
+      {
+        "title": "Consegna in 48 Ore",
+        "body": "Dal caricamento alla consegna finale in meno di due giorni. I contenuti del tuo annuncio sono pronti prima dell'open house."
+      }
+    ]
+  },
   "contact": {
     "label": "Parliamone",
     "title1": "Raccontaci",
@@ -244,6 +264,10 @@
     "btnPortfolio": "Vedi il Portfolio Completo →",
     "btnQuote": "Richiedi un Preventivo →",
     "labels": ["Soggiorno", "Cucina", "Esterno", "Giardino"]
+  },
+  "cookies": {
+    "text": "Questo sito non utilizza cookie di profilazione. Utilizziamo solo cookie tecnici essenziali per il corretto funzionamento del sito.",
+    "ok": "Ho capito"
   },
   "portfolio": {
     "back": "← Indietro",
