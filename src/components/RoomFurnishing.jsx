@@ -63,10 +63,10 @@ export default function RoomFurnishing() {
     const compute = () => {
       const rect = wrap.getBoundingClientRect()
       const vh = window.innerHeight
-      // 0 = canvas top enters viewport bottom
-      // 1 = canvas bottom exits viewport top
-      const start = vh // canvas top at viewport bottom
-      const end = -rect.height // canvas bottom at viewport top
+      // 0 = canvas top hits bottom third of viewport
+      // 1 = canvas top hits top quarter of viewport
+      const start = vh * 0.7
+      const end = vh * 0.15
       const current = rect.top
       const raw = (start - current) / (start - end)
       setProgress(Math.max(0, Math.min(1, raw)))

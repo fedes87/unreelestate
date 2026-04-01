@@ -1,7 +1,7 @@
 .section {
   position: relative;
   background: var(--bg-primary);
-  padding: 60px 24px 80px;
+  padding: 40px 24px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -89,7 +89,7 @@
 
 @media (max-width: 768px) {
   .section {
-    padding: 40px 16px 60px;
+    padding: 30px 16px 16px;
   }
 
   .header {
