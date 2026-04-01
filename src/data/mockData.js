@@ -1,138 +1,50 @@
-export const services = [
-  {
-    number: '01',
-    tag: 'AI Photo Enhancement',
-    title: 'Already Renovated? We Make It Magazine-Ready.',
-    image: '/img/service-photo.png',
-    includes: ['Original photo — elevated to editorial quality', 'Needs a remodel? Pick a style, we handle the rest', 'Light, atmosphere, textures — fully transformed', 'High-res delivery for MLS, web & social'],
-  },
-  {
-    number: '02',
-    tag: 'Virtual Staging & Restyling',
-    title: 'Any Style. Any Furniture. Your Vision.',
-    image: '/img/service-staging.png',
-    includes: ['Add furniture and decor of any style — in photos', 'Modern, classic, Scandinavian, luxury — you choose', 'Each staged photo becomes a 4-second cinematic clip', '4K delivery available in the Premium package'],
-  },
-  {
-    number: '03',
-    tag: 'Land & Development',
-    title: 'Empty Lot? We Show What It Could Be.',
-    image: '/img/service-land.png',
-    includes: ['Works on vacant land, lots, and development sites', 'From a rough sketch or hand drawing to photorealism', 'Visualize the finished build before breaking ground', 'Turn raw potential into a compelling listing'],
-  },
-  {
-    number: '04',
-    tag: 'Social & Listing Ready',
-    title: 'One Delivery. Every Platform. Zero Effort.',
-    image: '/img/service-social.png',
-    includes: ['Everything formatted for MLS, Zillow, and Realtor.com', 'Instagram Reels, TikTok, YouTube Shorts — all included', 'Agent branding, captions, and thumbnails ready', 'Post the same day you receive your delivery'],
-  },
+// Static metadata (non-translatable) — text content lives in src/i18n/locales/
+
+export const servicesMeta = [
+  { number: '01', image: '/img/service-photo.png' },
+  { number: '02', image: '/img/service-staging.png' },
+  { number: '03', image: '/img/service-land.png' },
+  { number: '04', image: '/img/service-social.png' },
 ]
 
-export const whyUnreel = [
-  {
-    stat: '100%',
-    label: 'Remote',
-    body: 'No crew, no location visits. Send your photos and we handle everything.',
-  },
-  {
-    stat: '10×',
-    label: 'More Engagement',
-    body: 'Listings with cinematic visuals consistently outperform standard photography.',
-  },
-  {
-    stat: '$399',
-    label: 'Starting Price',
-    body: 'Luxury-quality output at a price point that works for active agents.',
-  },
-  {
-    stat: '∞',
-    label: 'Formats Included',
-    body: 'MLS, Instagram, TikTok, YouTube — every asset, every platform, one delivery.',
-  },
+export const whyStats = ['100%', '10×', '$399', '∞']
+
+export const howSteps = ['01', '02', '03']
+
+export const testimonialMeta = [
+  { name: 'Brandon Whitfield', role: 'Luxury Real Estate Agent, Houston TX', avatar: '/img/testimonial-brandon.png' },
+  { name: 'Ashley Tran',       role: 'Real Estate Broker, Houston TX',       avatar: '/img/testimonial-ashley.png'  },
+  { name: 'Derek Calloway',    role: 'Property Developer, Houston TX',        avatar: '/img/testimonial-derek.png'   },
 ]
 
-export const howItWorks = [
-  {
-    step: '01',
-    title: 'Send Us Your Photos',
-    body: 'Upload your existing listing photos — even iPhone shots work. We accept any format, any quality. The more context you give us (style preferences, target buyer), the better the result.',
-  },
-  {
-    step: '02',
-    title: 'We Transform & Produce',
-    body: "Our AI and creative team go to work. We enhance, restyle, animate, and edit — producing a complete suite of cinematic content tailored to your property's unique character.",
-  },
-  {
-    step: '03',
-    title: 'You Receive & Publish',
-    body: 'Within 48 hours, you receive a complete delivery: enhanced photos, cinematic video, and all social formats. Ready to upload, share, and sell.',
-  },
+export const pricingMeta = [
+  { name: 'Listing',   price: 399, highlight: false, addonPrices: [20, 50, 20] },
+  { name: 'Signature', price: 599, highlight: true,  addonPrices: [20]         },
 ]
 
-export const testimonials = [
-  {
-    name: 'Brandon Whitfield',
-    role: 'Luxury Real Estate Agent, Houston TX',
-    avatar: '/img/testimonial-brandon.png',
-    text: "The before/after difference is genuinely shocking. My listings now look like they belong in Architectural Digest. Buyers are reaching out within hours of posting.",
-  },
-  {
-    name: 'Ashley Tran',
-    role: 'Real Estate Broker, Houston TX',
-    avatar: '/img/testimonial-ashley.png',
-    text: "I was skeptical about AI-generated visuals, but the results speak for themselves. Three listings sold above asking price within the first week. This is the future of real estate marketing.",
-  },
-  {
-    name: 'Derek Calloway',
-    role: 'Property Developer, Houston TX',
-    avatar: '/img/testimonial-derek.png',
-    text: "Unreel Estate transformed our entire marketing approach. The cinematic videos generate 10x more engagement than our previous listing photos. Worth every penny.",
-  },
+export const galleryPairs = [
+  { before: '/gallery/before/living.png',   after: '/gallery/after/living.png'   },
+  { before: '/gallery/before/kitchen.png',  after: '/gallery/after/kitchen.png'  },
+  { before: '/gallery/before/exterior.png', after: '/gallery/after/exterior.png' },
+  { before: '/gallery/before/backyard.png', after: '/gallery/after/backyard.png' },
 ]
 
-export const pricingPackages = [
-  {
-    name: 'Listing',
-    price: 399,
-    tagline: 'Everything you need to publish a property that stands out.',
-    highlight: false,
-    includes: [
-      '10 photos — we help you pick the best ones with AI',
-      'AI Enhancement: retouched, staged, or fully remodeled',
-      '10 × 4-second cinematic video clips',
-      '40-second reel — FHD, 16:9 + 9:16',
-      'Royalty-free music included',
-    ],
-    addons: [
-      { price: 20, description: 'per extra photo + video clip' },
-      { price: 50, description: 'AI Voiceover — choose from sample voices' },
-      { price: 20, description: 'Cover diagram + full property PDF' },
-    ],
-  },
-  {
-    name: 'Signature',
-    price: 599,
-    tagline: 'The complete content suite. One delivery, every platform.',
-    highlight: true,
-    includes: [
-      '15 photos — AI-assisted selection included',
-      'AI Enhancement: retouched, staged, or fully remodeled',
-      '15 × 4-second cinematic video clips',
-      '1-minute reel — 4K, 16:9 + 9:16',
-      '15 individual clips ready for Stories & Reels',
-      'AI Voiceover included — choose your voice',
-      'Cover diagram + full property PDF included',
-      'Royalty-free music included',
-    ],
-    addons: [
-      { price: 20, description: 'per extra photo + video clip' },
-    ],
-  },
+export const portfolioPairs = [
+  { before: '/gallery/before/living.png',   after: '/gallery/after/living.png'   },
+  { before: '/gallery/before/kitchen.png',  after: '/gallery/after/kitchen.png'  },
+  { before: '/gallery/before/bedroom.png',  after: '/gallery/after/bedroom.png'  },
+  { before: '/gallery/before/bathroom.png', after: '/gallery/after/bathroom.png' },
+  { before: '/gallery/before/exterior.png', after: '/gallery/after/exterior.png' },
+  { before: '/gallery/before/backyard.png', after: '/gallery/after/backyard.png' },
+  { before: '/gallery/before/pool.png',     after: '/gallery/after/pool.png'     },
+  { before: '/gallery/before/townhome.png', after: '/gallery/after/townhome.png' },
+  { before: '/gallery/before/office.png',   after: '/gallery/after/office.png'   },
+  { before: '/gallery/before/dining.png',   after: '/gallery/after/dining.png'   },
+  { before: '/gallery/before/entryway.png', after: '/gallery/after/entryway.png' },
 ]
 
-export const navLinks = [
-  { label: 'Services', href: '#services' },
-  { label: 'Portfolio', href: '#gallery' },
-  { label: 'About', href: '#about' },
+export const navHrefs = [
+  { key: 'services', href: '#services' },
+  { key: 'portfolio', href: '#gallery'   },
+  { key: 'about',    href: '#about'     },
 ]

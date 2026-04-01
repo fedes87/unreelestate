@@ -1,10 +1,13 @@
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { useInView } from '../hooks/useInView'
-import { testimonials } from '../data/mockData'
+import { testimonialMeta } from '../data/mockData'
 import styles from './Testimonials.module.css'
 
 export default function Testimonials() {
+  const { t } = useTranslation()
   const [ref, inView] = useInView()
+  const quotes = t('testimonials.items', { returnObjects: true })
 
   return (
     <section className={styles.section} ref={ref}>
@@ -15,26 +18,26 @@ export default function Testimonials() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <span className="section-label">What Agents Say</span>
-          <h2 className="section-title">Results That<br /><em>Speak.</em></h2>
+          <span className="section-label">{t('testimonials.label')}</span>
+          <h2 className="section-title">{t('testimonials.title1')}<br /><em>{t('testimonials.titleEm')}</em></h2>
         </motion.div>
 
         <div className={styles.grid}>
-          {testimonials.map((t, i) => (
+          {testimonialMeta.map((meta, i) => (
             <motion.div
-              key={t.name}
+              key={meta.name}
               className={styles.card}
               initial={{ opacity: 0, y: 28 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.12 }}
             >
               <div className={styles.quote}>"</div>
-              <p className={styles.text}>{t.text}</p>
+              <p className={styles.text}>{quotes[i]}</p>
               <div className={styles.author}>
-                {t.avatar && <img src={t.avatar} alt={t.name} className={styles.avatar} />}
+                {meta.avatar && <img src={meta.avatar} alt={meta.name} className={styles.avatar} />}
                 <div>
-                  <div className={styles.name}>{t.name}</div>
-                  <div className={styles.role}>{t.role}</div>
+                  <div className={styles.name}>{meta.name}</div>
+                  <div className={styles.role}>{meta.role}</div>
                 </div>
               </div>
             </motion.div>

@@ -1,17 +1,14 @@
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { useInView } from '../hooks/useInView'
+import { galleryPairs } from '../data/mockData'
 import BeforeAfterSlider from './BeforeAfterSlider'
 import styles from './Gallery.module.css'
 
-const featured = [
-  { label: 'Living Room',  before: '/gallery/before/living.png',   after: '/gallery/after/living.png'   },
-  { label: 'Kitchen',      before: '/gallery/before/kitchen.png',  after: '/gallery/after/kitchen.png'  },
-  { label: 'Exterior',     before: '/gallery/before/exterior.png', after: '/gallery/after/exterior.png' },
-  { label: 'Backyard',     before: '/gallery/before/backyard.png', after: '/gallery/after/backyard.png' },
-]
-
 export default function Gallery() {
+  const { t } = useTranslation()
   const [ref, inView] = useInView()
+  const labels = t('gallery.labels', { returnObjects: true })
 
   return (
     <section className={styles.section} id="gallery" ref={ref}>
@@ -22,18 +19,18 @@ export default function Gallery() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <span className="section-label">Portfolio</span>
-          <h2 className="section-title">Drag to See<br /><em>The Transformation.</em></h2>
+          <span className="section-label">{t('gallery.label')}</span>
+          <h2 className="section-title">{t('gallery.title1')}<br /><em>{t('gallery.titleEm')}</em></h2>
           <p className="section-subtitle">
-            Every image started as a standard listing photo.<br />
-            Slide left and right to see what we deliver.
+            {t('gallery.subtitle1')}<br />
+            {t('gallery.subtitle2')}
           </p>
         </motion.div>
 
         <div className={styles.grid}>
-          {featured.map((pair, i) => (
+          {galleryPairs.map((pair, i) => (
             <motion.div
-              key={pair.label}
+              key={i}
               className={`${styles.item} ${i === 0 ? styles.featured : ''}`}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -42,7 +39,7 @@ export default function Gallery() {
               <BeforeAfterSlider
                 before={pair.before}
                 after={pair.after}
-                label={pair.label}
+                label={labels[i]}
               />
             </motion.div>
           ))}
@@ -54,8 +51,8 @@ export default function Gallery() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
         >
-          <a href="/portfolio" className="btn-secondary">View Full Portfolio →</a>
-          <a href="#contact" className="btn-primary">Get a Quote →</a>
+          <a href="/portfolio" className="btn-secondary">{t('gallery.btnPortfolio')}</a>
+          <a href="#contact" className="btn-primary">{t('gallery.btnQuote')}</a>
         </motion.div>
       </div>
     </section>

@@ -1,0 +1,233 @@
+{
+  "nav": {
+    "services": "Servicios",
+    "portfolio": "Portafolio",
+    "about": "Nosotros",
+    "cta": "Cotización",
+    "ctaMobile": "Solicitar Cotización →"
+  },
+  "hero": {
+    "badge": "Contenido Inmobiliario de Lujo",
+    "title1": "Haz que tus Propiedades",
+    "titleEm": "Sean Increíbles.",
+    "desc": "Unreel Estate transforma propiedades extraordinarias en producciones cinematográficas que venden emociones antes que metros cuadrados.",
+    "btnWork": "Explora Nuestro Trabajo →",
+    "btnContact": "Cuéntanos tu Propiedad"
+  },
+  "brand": {
+    "label": "Lo que realmente hacemos.",
+    "line1": "Nos envías tus fotos —",
+    "line2prefix": "incluso",
+    "line2em": "las del teléfono sin editar.",
+    "line3": "Las transformamos. Las",
+    "line3em": "animamos.",
+    "sub1": "Tu listado supera a la competencia. Tus redes explotan.",
+    "sub2": "Y todos querrán saber cómo lo lograste."
+  },
+  "ctaBanner": {
+    "label": "El Proceso Unreel",
+    "title1": "Tu Foto de iPhone.",
+    "titleEm": "Nuestro Estándar Cinematográfico.",
+    "sub": "Tomamos cualquier foto — incluso directamente de tu teléfono — y la transformamos en una imagen de nivel profesional. Luego la animamos en un clip cinematográfico de 4 segundos, listo para publicar.",
+    "link": "Ver Cómo Funciona →"
+  },
+  "services": {
+    "label": "Lo Que Hacemos",
+    "title1": "Cuatro Formas de Hacer",
+    "title2": "una Propiedad",
+    "titleEm": "Irresistible.",
+    "subtitle": "Todo comienza con tus fotos existentes. Sin equipo de filmación, sin visitas — solo resultados extraordinarios entregados de forma remota.",
+    "items": [
+      {
+        "tag": "Mejora de Fotos con IA",
+        "title": "¿Ya Renovada? La Convertimos en Nivel Revista.",
+        "includes": [
+          "Foto original — elevada a calidad editorial",
+          "¿Necesita remodelación? Elige un estilo, nosotros nos encargamos",
+          "Luz, atmósfera, texturas — completamente transformados",
+          "Entrega en alta resolución para MLS, web y redes"
+        ]
+      },
+      {
+        "tag": "Staging & Restyling Virtual",
+        "title": "Cualquier Estilo. Cualquier Mueble. Tu Visión.",
+        "includes": [
+          "Agrega muebles y decoración de cualquier estilo — en fotos",
+          "Moderno, clásico, escandinavo, lujo — tú eliges",
+          "Cada foto amueblada se convierte en un clip cinematográfico de 4 segundos",
+          "Entrega 4K disponible en el paquete Premium"
+        ]
+      },
+      {
+        "tag": "Terrenos & Desarrollo",
+        "title": "¿Lote Vacío? Mostramos Lo Que Podría Ser.",
+        "includes": [
+          "Funciona en terrenos, lotes y desarrollos",
+          "De un boceto o dibujo a mano al fotorrealismo",
+          "Visualiza la construcción terminada antes de empezar",
+          "Transforma el potencial en un listado convincente"
+        ]
+      },
+      {
+        "tag": "Listo para Redes y Listados",
+        "title": "Una Entrega. Cada Plataforma. Sin Esfuerzo.",
+        "includes": [
+          "Todo formateado para MLS, Zillow y Realtor.com",
+          "Instagram Reels, TikTok, YouTube Shorts — todo incluido",
+          "Branding del agente, captions y miniaturas listos",
+          "Publica el mismo día que recibes la entrega"
+        ]
+      }
+    ]
+  },
+  "why": {
+    "items": [
+      {
+        "label": "Remoto",
+        "body": "Sin equipo, sin visitas. Envíanos tus fotos y nosotros nos encargamos de todo."
+      },
+      {
+        "label": "Más Engagement",
+        "body": "Los listados con visuales cinematográficos superan consistentemente la fotografía estándar."
+      },
+      {
+        "label": "Precio Inicial",
+        "body": "Resultados de calidad de lujo a un precio accesible para agentes activos."
+      },
+      {
+        "label": "Formatos Incluidos",
+        "body": "MLS, Instagram, TikTok, YouTube — cada asset, cada plataforma, una entrega."
+      }
+    ]
+  },
+  "how": {
+    "label": "Cómo Funciona",
+    "title1": "Tres Pasos hacia lo",
+    "titleEm": "Cinematográfico.",
+    "cta": "Empieza tu Listado →",
+    "imgAlt": "Tus listados entregados en todos los dispositivos",
+    "steps": [
+      {
+        "title": "Envíanos Tus Fotos",
+        "body": "Sube tus fotos existentes del listado — incluso las de iPhone funcionan. Aceptamos cualquier formato, cualquier calidad. Cuanto más contexto nos des (preferencias de estilo, comprador objetivo), mejor será el resultado."
+      },
+      {
+        "title": "Transformamos y Producimos",
+        "body": "Nuestro equipo de IA y creativos se pone a trabajar. Mejoramos, rediseñamos, animamos y editamos — produciendo una suite completa de contenido cinematográfico adaptado al carácter único de tu propiedad."
+      },
+      {
+        "title": "Recibes y Publicas",
+        "body": "En 48 horas recibes una entrega completa: fotos mejoradas, video cinematográfico y todos los formatos sociales. Listo para subir, compartir y vender."
+      }
+    ]
+  },
+  "pricing": {
+    "label": "Precios",
+    "title1": "Simple. Transparente.",
+    "titleEm": "Poderoso.",
+    "subtitle": "Dos paquetes, sin confusiones. Elige el que se adapta a tu listado y recibe todo.",
+    "popular": "Más Popular",
+    "cta": "Comenzar →",
+    "addonsLabel": "Extras",
+    "note": "Todos los formatos incluidos · Sin costos ocultos",
+    "packages": [
+      {
+        "tagline": "Todo lo que necesitas para publicar una propiedad que se destaque.",
+        "includes": [
+          "10 fotos — te ayudamos a elegir las mejores con IA",
+          "AI Enhancement: retocadas, amuebladas o completamente remodeladas",
+          "10 clips de video cinematográfico de 4 segundos",
+          "Reel de 40 segundos — FHD, 16:9 + 9:16",
+          "Música libre de regalías incluida"
+        ],
+        "addons": [
+          "por foto + clip de video extra",
+          "Voz en off con IA — elige entre voces de muestra",
+          "Plano + PDF completo de la propiedad"
+        ]
+      },
+      {
+        "tagline": "La suite de contenido completa. Una entrega, cada plataforma.",
+        "includes": [
+          "15 fotos — selección asistida por IA incluida",
+          "AI Enhancement: retocadas, amuebladas o completamente remodeladas",
+          "15 clips de video cinematográfico de 4 segundos",
+          "Reel de 1 minuto — 4K, 16:9 + 9:16",
+          "15 clips individuales listos para Stories & Reels",
+          "Voz en off con IA incluida — elige tu voz",
+          "Plano + PDF completo de la propiedad incluidos",
+          "Música libre de regalías incluida"
+        ],
+        "addons": [
+          "por foto + clip de video extra"
+        ]
+      }
+    ]
+  },
+  "testimonials": {
+    "label": "Lo Que Dicen los Agentes",
+    "title1": "Resultados Que",
+    "titleEm": "Hablan.",
+    "items": [
+      "La diferencia antes/después es genuinamente impactante. Mis listados ahora parecen pertenecer a Architectural Digest. Los compradores me contactan en horas de publicar.",
+      "Era escéptico sobre los visuales generados por IA, pero los resultados hablan por sí solos. Tres propiedades vendidas sobre el precio pedido en la primera semana. Este es el futuro del marketing inmobiliario.",
+      "Unreel Estate transformó todo nuestro enfoque de marketing. Los videos cinematográficos generan 10 veces más engagement que nuestras fotos anteriores. Vale cada centavo."
+    ]
+  },
+  "contact": {
+    "label": "Hablemos",
+    "title1": "Cuéntanos sobre",
+    "titleEm": "tu Propiedad.",
+    "desc": "Respondemos en 24 horas con una propuesta personalizada.",
+    "location": "USA · Europa · Worldwide",
+    "whatsapp": "WhatsApp",
+    "successTitle": "Solicitud Recibida.",
+    "successDesc": "Nos pondremos en contacto en 24 horas con tu propuesta personalizada.",
+    "name": "Nombre Completo *",
+    "namePlaceholder": "Tu nombre",
+    "email": "Email *",
+    "phone": "Teléfono",
+    "phonePlaceholder": "+1 000 000 0000",
+    "propertyType": "Tipo de Propiedad",
+    "propertyTypePlaceholder": "Selecciona tipo...",
+    "propertyTypes": ["Casa de Lujo", "Condominio / Apartamento", "Propiedad Comercial", "Terreno / Desarrollo", "Otro"],
+    "service": "Servicio de Interés",
+    "servicePlaceholder": "Selecciona servicio...",
+    "services": ["Paquete Listing ($399)", "Mejora de Fotos con IA", "Staging & Restyling Virtual", "Video Cinematográfico desde Fotos", "Presentación Completa del Listado"],
+    "message": "Mensaje / Detalles de la Propiedad",
+    "messagePlaceholder": "Cuéntanos sobre la propiedad y lo que buscas...",
+    "source": "¿Cómo nos conociste?",
+    "sourcePlaceholder": "Instagram, referido, Google...",
+    "submit": "Enviar Solicitud →",
+    "sending": "Enviando...",
+    "error": "Algo salió mal. Inténtalo de nuevo o escríbenos directamente por email.",
+    "privacy": "Tus datos están seguros con nosotros. Nunca los compartiremos con terceros."
+  },
+  "footer": {
+    "tagline": "Contenido inmobiliario de lujo, creado para las propiedades que más lo merecen.",
+    "services": "Servicios",
+    "portfolio": "Portafolio",
+    "pricing": "Precios",
+    "contact": "Contacto",
+    "copyright": "© {{year}} Unreel Estate. Todos los derechos reservados."
+  },
+  "gallery": {
+    "label": "Portafolio",
+    "title1": "Arrastra para Ver",
+    "titleEm": "La Transformación.",
+    "subtitle1": "Cada imagen comenzó como una foto estándar de listado.",
+    "subtitle2": "Desliza a izquierda y derecha para ver lo que entregamos.",
+    "btnPortfolio": "Ver Portafolio Completo →",
+    "btnQuote": "Solicitar Cotización →",
+    "labels": ["Sala de Estar", "Cocina", "Exterior", "Patio Trasero"]
+  },
+  "portfolio": {
+    "back": "← Volver",
+    "label": "Portafolio Completo",
+    "title1": "Cada Propiedad,",
+    "titleEm": "Transformada.",
+    "subtitle": "Arrastra cada slider para revelar la transformación.",
+    "cta": "Solicitar Cotización →",
+    "labels": ["Sala de Estar", "Cocina", "Suite Principal", "Baño", "Exterior", "Patio Trasero", "Piscina", "Townhome", "Oficina en Casa", "Comedor", "Entrada"]
+  }
+}

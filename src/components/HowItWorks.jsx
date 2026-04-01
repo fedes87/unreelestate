@@ -1,10 +1,13 @@
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { useInView } from '../hooks/useInView'
-import { howItWorks } from '../data/mockData'
+import { howSteps } from '../data/mockData'
 import styles from './HowItWorks.module.css'
 
 export default function HowItWorks() {
+  const { t } = useTranslation()
   const [ref, inView] = useInView()
+  const steps = t('how.steps', { returnObjects: true })
 
   return (
     <section className={styles.section} id="how" ref={ref}>
@@ -17,20 +20,20 @@ export default function HowItWorks() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.7 }}
             >
-              <span className="section-label">How It Works</span>
-              <h2 className="section-title">Three Steps to<br /><em>Cinematic.</em></h2>
+              <span className="section-label">{t('how.label')}</span>
+              <h2 className="section-title">{t('how.title1')}<br /><em>{t('how.titleEm')}</em></h2>
             </motion.div>
 
             <div className={styles.steps}>
-              {howItWorks.map((step, i) => (
+              {steps.map((step, i) => (
                 <motion.div
-                  key={step.step}
+                  key={i}
                   className={styles.step}
                   initial={{ opacity: 0, x: -20 }}
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.55, delay: 0.2 + i * 0.12 }}
                 >
-                  <div className={styles.stepNum}>{step.step}</div>
+                  <div className={styles.stepNum}>{howSteps[i]}</div>
                   <div className={styles.stepContent}>
                     <h3>{step.title}</h3>
                     <p>{step.body}</p>
@@ -44,7 +47,7 @@ export default function HowItWorks() {
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.7 }}
             >
-              <a href="#contact" className="btn-primary">Start Your Listing →</a>
+              <a href="#contact" className="btn-primary">{t('how.cta')}</a>
             </motion.div>
           </div>
 
@@ -56,7 +59,7 @@ export default function HowItWorks() {
           >
             <img
               src="/img/devices.png"
-              alt="Your listings delivered across all devices"
+              alt={t('how.imgAlt')}
               className={styles.mockup}
               loading="lazy"
               width="600"

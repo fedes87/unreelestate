@@ -1,8 +1,12 @@
 import { useState, useEffect } from 'react'
-import { navLinks } from '../data/mockData'
+import { useTranslation } from 'react-i18next'
+import { navHrefs } from '../data/mockData'
 import styles from './Navbar.module.css'
 
+const LANGS = ['en', 'it', 'es']
+
 export default function Navbar() {
+  const { t, i18n } = useTranslation()
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
 
@@ -12,7 +16,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  // Close menu on link click
   const handleLink = () => setOpen(false)
 
   return (
@@ -27,16 +30,33 @@ export default function Navbar() {
           </a>
 
           <ul className={styles.links}>
-            {navLinks.map(link => (
-              <li key={link.label}>
-                <a href={link.href}>{link.label}</a>
+            {navHrefs.map(link => (
+              <li key={link.key}>
+                <a href={link.href}>{t(`nav.${link.key}`)}</a>
               </li>
             ))}
           </ul>
 
-          <a href="#contact" className={`btn-primary ${styles.cta}`}>
-            Get a Quote
-          </a>
+          <div className={styles.right}>
+            <div className={styles.langSwitcher} aria-label="Language selector">
+              {LANGS.map((lang, idx) => (
+                <span key={lang} className={styles.langGroup}>
+                  <button
+                    className={`${styles.langBtn} ${i18n.language === lang ? styles.langActive : ''}`}
+                    onClick={() => i18n.changeLanguage(lang)}
+                    aria-label={`Switch to ${lang.toUpperCase()}`}
+                  >
+                    {lang.toUpperCase()}
+                  </button>
+                  {idx < LANGS.length - 1 && <span className={styles.langDivider} aria-hidden="true">|</span>}
+                </span>
+              ))}
+            </div>
+
+            <a href="#contact" className={`btn-primary ${styles.cta}`}>
+              {t('nav.cta')}
+            </a>
+          </div>
 
           <button
             className={styles.hamburger}
@@ -57,15 +77,27 @@ export default function Navbar() {
       {open && (
         <div className={styles.mobileMenu}>
           <ul>
-            {navLinks.map(link => (
-              <li key={link.label}>
-                <a href={link.href} onClick={handleLink}>{link.label}</a>
+            {navHrefs.map(link => (
+              <li key={link.key}>
+                <a href={link.href} onClick={handleLink}>{t(`nav.${link.key}`)}</a>
               </li>
             ))}
             <li>
-              <a href="#contact" className={styles.mobileCta} onClick={handleLink}>Get a Quote →</a>
+              <a href="#contact" className={styles.mobileCta} onClick={handleLink}>{t('nav.ctaMobile')}</a>
             </li>
           </ul>
+          <div className={styles.mobileLangSwitcher} aria-label="Language selector">
+            {LANGS.map(lang => (
+              <button
+                key={lang}
+                className={`${styles.langBtn} ${i18n.language === lang ? styles.langActive : ''}`}
+                onClick={() => { i18n.changeLanguage(lang); setOpen(false) }}
+                aria-label={`Switch to ${lang.toUpperCase()}`}
+              >
+                {lang.toUpperCase()}
+              </button>
+            ))}
+          </div>
         </div>
       )}
     </nav>

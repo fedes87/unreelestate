@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { useInView } from '../hooks/useInView'
 import styles from './CTABanner.module.css'
 
 export default function CTABanner() {
+  const { t } = useTranslation()
   const [ref, inView] = useInView()
 
   return (
@@ -16,16 +18,12 @@ export default function CTABanner() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <span className="section-label">The Unreel Process</span>
+          <span className="section-label">{t('ctaBanner.label')}</span>
           <h2 className={styles.heading}>
-            Your iPhone Shot.<br /><em>Our Cinematic Standard.</em>
+            {t('ctaBanner.title1')}<br /><em>{t('ctaBanner.titleEm')}</em>
           </h2>
-          <p className={styles.sub}>
-            We take any photo — even straight from your phone — and transform it into a
-            professional-grade image. Then we animate it into a 4-second cinematic clip,
-            ready to publish.
-          </p>
-          <a href="#how" className={styles.link}>See How It Works →</a>
+          <p className={styles.sub}>{t('ctaBanner.sub')}</p>
+          <a href="#how" className={styles.link}>{t('ctaBanner.link')}</a>
         </motion.div>
       </div>
     </section>

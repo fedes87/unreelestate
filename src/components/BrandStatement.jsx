@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { useInView } from '../hooks/useInView'
 import styles from './BrandStatement.module.css'
 
 export default function BrandStatement() {
+  const { t } = useTranslation()
   const [ref, inView] = useInView()
 
   return (
@@ -14,15 +16,15 @@ export default function BrandStatement() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <span className="section-label">What we actually do.</span>
+          <span className="section-label">{t('brand.label')}</span>
           <h2 className={styles.headline}>
-            You send us your photos —<br />
-            even <em>rough ones from your phone.</em><br />
-            We transform them. We <em>animate them.</em>
+            {t('brand.line1')}<br />
+            {t('brand.line2prefix')} <em>{t('brand.line2em')}</em><br />
+            {t('brand.line3')} <em>{t('brand.line3em')}</em>
           </h2>
           <p className={styles.sub}>
-            Your listing outperforms. Your social blows up.<br />
-            And everyone will want to know how you did it.
+            {t('brand.sub1')}<br />
+            {t('brand.sub2')}
           </p>
         </motion.div>
       </div>

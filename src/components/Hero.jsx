@@ -1,8 +1,10 @@
 import { useRef, useEffect } from 'react'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import styles from './Hero.module.css'
 
 export default function Hero() {
+  const { t } = useTranslation()
   const videoRef = useRef(null)
 
   useEffect(() => {
@@ -38,7 +40,7 @@ export default function Hero() {
             transition={{ duration: 0.7 }}
           >
             <span className={styles.dot} />
-            Luxury Real Estate Content
+            {t('hero.badge')}
           </motion.div>
 
           <motion.h1
@@ -47,8 +49,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.15 }}
           >
-            Make Your Listings<br />
-            <em>Unreal.</em>
+            {t('hero.title1')}<br />
+            <em>{t('hero.titleEm')}</em>
           </motion.h1>
 
           <motion.p
@@ -57,8 +59,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Unreel Estate turns extraordinary properties into cinematic productions
-            that sell emotions before they sell square footage.
+            {t('hero.desc')}
           </motion.p>
 
           <motion.div
@@ -67,8 +68,8 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.45 }}
           >
-            <a href="#gallery" className="btn-primary">Explore Our Work →</a>
-            <a href="#contact" className="btn-secondary">Tell Us About Your Property</a>
+            <a href="#gallery" className="btn-primary">{t('hero.btnWork')}</a>
+            <a href="#contact" className="btn-secondary">{t('hero.btnContact')}</a>
           </motion.div>
         </motion.div>
       </div>

@@ -1,6 +1,9 @@
+import { useTranslation } from 'react-i18next'
 import styles from './Footer.module.css'
 
 export default function Footer() {
+  const { t } = useTranslation()
+
   return (
     <footer className={styles.footer}>
       <div className="container">
@@ -9,13 +12,13 @@ export default function Footer() {
             <a href="#" className={styles.logo}>
               <img src="/logo.png" alt="Unreel Estate" className={styles.logoImg} width="160" height="40" />
             </a>
-            <p>Luxury real estate content, crafted for properties that deserve it most.</p>
+            <p>{t('footer.tagline')}</p>
           </div>
           <div className={styles.links}>
-            <a href="#services">Services</a>
-            <a href="#gallery">Portfolio</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#contact">Contact</a>
+            <a href="#services">{t('footer.services')}</a>
+            <a href="#gallery">{t('footer.portfolio')}</a>
+            <a href="#pricing">{t('footer.pricing')}</a>
+            <a href="#contact">{t('footer.contact')}</a>
           </div>
           <div className={styles.contact}>
             <a href="mailto:info@unreelestate.com">info@unreelestate.com</a>
@@ -23,7 +26,7 @@ export default function Footer() {
           </div>
         </div>
         <div className={styles.bottom}>
-          <span>© {new Date().getFullYear()} Unreel Estate. All rights reserved.</span>
+          <span>{t('footer.copyright', { year: new Date().getFullYear() })}</span>
         </div>
       </div>
     </footer>

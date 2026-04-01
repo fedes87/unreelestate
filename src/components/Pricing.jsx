@@ -1,10 +1,13 @@
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { useInView } from '../hooks/useInView'
-import { pricingPackages } from '../data/mockData'
+import { pricingMeta } from '../data/mockData'
 import styles from './Pricing.module.css'
 
 export default function Pricing() {
+  const { t } = useTranslation()
   const [ref, inView] = useInView()
+  const packages = t('pricing.packages', { returnObjects: true })
 
   return (
     <section className={styles.section} id="pricing" ref={ref}>
@@ -15,58 +18,59 @@ export default function Pricing() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
         >
-          <span className="section-label">Pricing</span>
-          <h2 className="section-title">Simple. Transparent.<br /><em>Powerful.</em></h2>
-          <p className="section-subtitle">
-            Two packages, zero guesswork. Pick what fits your listing and get everything delivered.
-          </p>
+          <span className="section-label">{t('pricing.label')}</span>
+          <h2 className="section-title">{t('pricing.title1')}<br /><em>{t('pricing.titleEm')}</em></h2>
+          <p className="section-subtitle">{t('pricing.subtitle')}</p>
         </motion.div>
 
         <div className={styles.grid}>
-          {pricingPackages.map((pkg, i) => (
-            <motion.div
-              key={pkg.name}
-              className={`${styles.card} ${pkg.highlight ? styles.featured : ''}`}
-              initial={{ opacity: 0, y: 32 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.15 + i * 0.15 }}
-            >
-              {pkg.highlight && <div className={styles.badge}>Most Popular</div>}
+          {pricingMeta.map((meta, i) => {
+            const pkg = packages[i]
+            return (
+              <motion.div
+                key={meta.name}
+                className={`${styles.card} ${meta.highlight ? styles.featured : ''}`}
+                initial={{ opacity: 0, y: 32 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.7, delay: 0.15 + i * 0.15 }}
+              >
+                {meta.highlight && <div className={styles.badge}>{t('pricing.popular')}</div>}
 
-              <div className={styles.top}>
-                <div className={styles.packageName}>{pkg.name}</div>
-                <div className={styles.price}>
-                  <span className={styles.currency}>$</span>
-                  <span className={styles.amount}>{pkg.price}</span>
-                </div>
-                <p className={styles.tagline}>{pkg.tagline}</p>
-                <a href="#contact" className={pkg.highlight ? 'btn-primary' : 'btn-secondary'}>
-                  Get Started →
-                </a>
-              </div>
-
-              <div className={styles.divider} />
-
-              <ul className={styles.list}>
-                {pkg.includes.map((item) => (
-                  <li key={item}>
-                    <span className={styles.check} aria-hidden="true">✓</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-
-              <div className={styles.addonsSection}>
-                <div className={styles.addonsLabel}>Add-ons</div>
-                {pkg.addons.map((a) => (
-                  <div key={a.description} className={styles.addon}>
-                    <span className={styles.addonPrice}>+${a.price}</span>
-                    <span className={styles.addonDesc}>{a.description}</span>
+                <div className={styles.top}>
+                  <div className={styles.packageName}>{meta.name}</div>
+                  <div className={styles.price}>
+                    <span className={styles.currency}>$</span>
+                    <span className={styles.amount}>{meta.price}</span>
                   </div>
-                ))}
-              </div>
-            </motion.div>
-          ))}
+                  <p className={styles.tagline}>{pkg.tagline}</p>
+                  <a href="#contact" className={meta.highlight ? 'btn-primary' : 'btn-secondary'}>
+                    {t('pricing.cta')}
+                  </a>
+                </div>
+
+                <div className={styles.divider} />
+
+                <ul className={styles.list}>
+                  {pkg.includes.map((item, j) => (
+                    <li key={j}>
+                      <span className={styles.check} aria-hidden="true">✓</span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className={styles.addonsSection}>
+                  <div className={styles.addonsLabel}>{t('pricing.addonsLabel')}</div>
+                  {pkg.addons.map((desc, j) => (
+                    <div key={j} className={styles.addon}>
+                      <span className={styles.addonPrice}>+${meta.addonPrices[j]}</span>
+                      <span className={styles.addonDesc}>{desc}</span>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+            )
+          })}
         </div>
 
         <motion.p
@@ -75,7 +79,7 @@ export default function Pricing() {
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.8 }}
         >
-          All formats included · No hidden fees
+          {t('pricing.note')}
         </motion.p>
       </div>
     </section>
