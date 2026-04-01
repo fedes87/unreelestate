@@ -28,6 +28,7 @@ export default function Contact() {
         {
           from_name:     form.name,
           from_email:    form.email,
+          email:         form.email,
           phone:         form.phone,
           property_type: form.propertyType,
           service:       form.service,
