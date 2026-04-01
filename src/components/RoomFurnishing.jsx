@@ -65,8 +65,9 @@ export default function RoomFurnishing() {
       const vh = window.innerHeight
       // 0 = canvas top hits bottom third of viewport
       // 1 = canvas top hits top quarter of viewport
-      const start = vh * 0.7
-      const end = vh * 0.15
+      // Slower, more gradual animation range
+      const start = vh * 0.85  // starts earlier (canvas just entering viewport)
+      const end = -rect.height * 0.6  // ends when canvas is 60% out of viewport top
       const current = rect.top
       const raw = (start - current) / (start - end)
       setProgress(Math.max(0, Math.min(1, raw)))
