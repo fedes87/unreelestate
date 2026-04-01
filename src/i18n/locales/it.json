@@ -214,6 +214,7 @@
     "title1": "Ogni Proprietà Ha",
     "titleEm": "Una Visione. Trovala.",
     "subtitle": "Clicca uno stile per vedere la casa trasformata. Lo stesso spazio, infinite possibilità.",
+    "hint": "Scegli uno stile per trasformare",
     "rooms": ["Soggiorno", "Cucina", "Camera da Letto"],
     "cta": "Trasforma il Tuo Annuncio →"
   },

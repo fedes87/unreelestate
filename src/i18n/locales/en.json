@@ -214,6 +214,7 @@
     "title1": "Every Property Has",
     "titleEm": "A Vision. Find Yours.",
     "subtitle": "Click a style to see this home transformed. The same space, infinite possibilities.",
+    "hint": "Select a style to transform",
     "rooms": ["Living Room", "Kitchen", "Bedroom"],
     "cta": "Transform Your Listing →"
   },

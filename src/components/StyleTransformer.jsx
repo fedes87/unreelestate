@@ -28,18 +28,17 @@ export default function StyleTransformer() {
   const [activeStyle, setActiveStyle] = useState('neutral')
   const [displayStyle, setDisplayStyle] = useState('neutral')
   const [fading, setFading] = useState(false)
+  const [activeRoom, setActiveRoom] = useState(0)
   const preloadedRef = useRef(false)
 
-  // Preload all images once
+  // Preload all images
   useEffect(() => {
     if (preloadedRef.current) return
     preloadedRef.current = true
-    STYLES.forEach(s => {
-      ROOMS.forEach(r => {
-        const img = new Image()
-        img.src = imgSrc(s.key, r)
-      })
-    })
+    STYLES.forEach(s => ROOMS.forEach(r => {
+      const img = new Image()
+      img.src = imgSrc(s.key, r)
+    }))
   }, [])
 
   const handleStyleChange = (key) => {
@@ -59,6 +58,7 @@ export default function StyleTransformer() {
     <section className={styles.section} id="styles">
       <div className="container">
 
+        {/* Header */}
         <motion.div
           className={styles.header}
           initial={{ opacity: 0, y: 24 }}
@@ -72,64 +72,132 @@ export default function StyleTransformer() {
             <em>{t('styleTransformer.titleEm')}</em>
           </h2>
           <p className="section-subtitle">{t('styleTransformer.subtitle')}</p>
+          <div className={styles.hint}>
+            <span className={styles.hintDot} />
+            {t('styleTransformer.hint')}
+          </div>
         </motion.div>
 
-        {/* Style selector */}
-        <motion.div
-          className={styles.selector}
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={vp}
-          transition={{ duration: 0.6, delay: 0.15 }}
-        >
-          {STYLES.map(s => (
-            <button
-              key={s.key}
-              className={`${styles.pill} ${activeStyle === s.key ? styles.pillActive : ''}`}
-              onClick={() => handleStyleChange(s.key)}
-            >
-              {s.label}
-            </button>
-          ))}
-        </motion.div>
+        {/* ── DESKTOP: 3-column grid + pills above ── */}
+        <div className={styles.desktopLayout}>
+          <motion.div
+            className={styles.selector}
+            initial={{ opacity: 0, y: 16 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={vp}
+            transition={{ duration: 0.6, delay: 0.15 }}
+          >
+            {STYLES.map(s => (
+              <button
+                key={s.key}
+                className={`${styles.pill} ${activeStyle === s.key ? styles.pillActive : ''}`}
+                onClick={() => handleStyleChange(s.key)}
+              >
+                {s.label}
+              </button>
+            ))}
+          </motion.div>
 
-        {/* Active style name */}
-        <motion.div
-          className={styles.activeLabel}
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={vp}
-          transition={{ duration: 0.5, delay: 0.2 }}
-        >
-          <span className={styles.activeDot} />
-          {currentStyleLabel}
-        </motion.div>
+          <motion.div
+            className={styles.activeLabel}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={vp}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <span className={styles.activeDot} />
+            {currentStyleLabel}
+          </motion.div>
 
-        {/* Photo grid */}
-        <motion.div
-          className={styles.grid}
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={vp}
-          transition={{ duration: 0.7, delay: 0.25 }}
-        >
-          {ROOMS.map((room, i) => (
-            <div key={room} className={styles.photoWrap}>
-              {STYLES.map(s => (
-                <img
-                  key={s.key}
-                  src={imgSrc(s.key, room)}
-                  alt={`${s.label} ${roomLabels[i]}`}
-                  className={`${styles.photo} ${
-                    s.key === displayStyle && !fading ? styles.photoVisible : ''
-                  } ${fading && s.key === activeStyle ? styles.photoFading : ''}`}
-                />
-              ))}
-              <div className={styles.roomLabel}>{roomLabels[i]}</div>
-            </div>
-          ))}
-        </motion.div>
+          <motion.div
+            className={styles.grid}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={vp}
+            transition={{ duration: 0.7, delay: 0.25 }}
+          >
+            {ROOMS.map((room, i) => (
+              <div key={room} className={styles.photoWrap}>
+                {STYLES.map(s => (
+                  <img
+                    key={s.key}
+                    src={imgSrc(s.key, room)}
+                    alt={`${s.label} ${roomLabels[i]}`}
+                    className={`${styles.photo}
+                      ${s.key === displayStyle && !fading ? styles.photoVisible : ''}
+                      ${fading && s.key === activeStyle ? styles.photoFading : ''}`}
+                  />
+                ))}
+                <div className={styles.roomLabel}>{roomLabels[i]}</div>
+              </div>
+            ))}
+          </motion.div>
+        </div>
 
+        {/* ── MOBILE: room tabs + single photo + pills below ── */}
+        <div className={styles.mobileLayout}>
+          {/* Room tabs */}
+          <motion.div
+            className={styles.roomTabs}
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={vp}
+            transition={{ duration: 0.5, delay: 0.1 }}
+          >
+            {roomLabels.map((label, i) => (
+              <button
+                key={i}
+                className={`${styles.roomTab} ${activeRoom === i ? styles.roomTabActive : ''}`}
+                onClick={() => setActiveRoom(i)}
+              >
+                {label}
+              </button>
+            ))}
+          </motion.div>
+
+          {/* Single photo */}
+          <motion.div
+            className={styles.mobilePhotoWrap}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={vp}
+            transition={{ duration: 0.6, delay: 0.15 }}
+          >
+            {STYLES.map(s => (
+              <img
+                key={s.key}
+                src={imgSrc(s.key, ROOMS[activeRoom])}
+                alt={`${s.label} ${roomLabels[activeRoom]}`}
+                className={`${styles.photo}
+                  ${s.key === displayStyle && !fading ? styles.photoVisible : ''}
+                  ${fading && s.key === activeStyle ? styles.photoFading : ''}`}
+              />
+            ))}
+            <div className={styles.roomLabel}>{roomLabels[activeRoom]}</div>
+            <div className={styles.mobileStyleBadge}>{currentStyleLabel}</div>
+          </motion.div>
+
+          {/* Style pills below the photo */}
+          <motion.div
+            className={`${styles.selector} ${styles.mobilePills}`}
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={vp}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            {STYLES.map(s => (
+              <button
+                key={s.key}
+                className={`${styles.pill} ${activeStyle === s.key ? styles.pillActive : ''}`}
+                onClick={() => handleStyleChange(s.key)}
+              >
+                {s.label}
+              </button>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* CTA */}
         <motion.div
           className={styles.cta}
           initial={{ opacity: 0, y: 16 }}

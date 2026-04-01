@@ -3,6 +3,7 @@
   background: var(--bg-secondary);
 }
 
+/* Header */
 .header {
   text-align: center;
   margin-bottom: 48px;
@@ -10,6 +11,34 @@
 
 .header .section-subtitle {
   margin: 0 auto;
+}
+
+/* Hint line */
+.hint {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.hintDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  display: inline-block;
+  animation: pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.7); }
 }
 
 /* Style pill selector */
@@ -48,7 +77,7 @@
   color: var(--bg-primary);
 }
 
-/* Active style indicator */
+/* Active style label */
 .activeLabel {
   display: flex;
   align-items: center;
@@ -72,7 +101,7 @@
   display: inline-block;
 }
 
-/* Photo grid */
+/* Photo grid (desktop) */
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -87,7 +116,7 @@
   background: var(--bg-card);
 }
 
-/* All images stacked */
+/* Shared photo stack */
 .photo {
   position: absolute;
   inset: 0;
@@ -112,15 +141,15 @@
 /* Room label overlay */
 .roomLabel {
   position: absolute;
-  bottom: 16px;
-  left: 16px;
+  bottom: 14px;
+  left: 14px;
   font-family: 'DM Sans', sans-serif;
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
-  color: rgba(250, 247, 242, 0.85);
-  background: rgba(13, 11, 9, 0.55);
+  color: rgba(250, 247, 242, 0.9);
+  background: rgba(13, 11, 9, 0.6);
   backdrop-filter: blur(8px);
   padding: 5px 12px;
   border-radius: 2px;
@@ -134,27 +163,88 @@
   margin-top: 52px;
 }
 
-/* Mobile */
+/* ─── Mobile layout ─── */
+.mobileLayout { display: none; }
+.desktopLayout { display: block; }
+
+/* Room tabs */
+.roomTabs {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.roomTab {
+  flex: 1;
+  background: transparent;
+  border: none;
+  border-right: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 11px 8px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.roomTab:last-child { border-right: none; }
+.roomTab:hover { color: var(--text-primary); }
+.roomTabActive {
+  background: var(--gold);
+  color: var(--bg-primary);
+}
+
+/* Mobile single photo */
+.mobilePhotoWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--bg-card);
+  margin-bottom: 16px;
+}
+
+/* Style badge on mobile photo */
+.mobileStyleBadge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--bg-primary);
+  background: var(--gold);
+  padding: 5px 12px;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+/* Mobile pills: no wrap, horizontal scroll */
+.mobilePills {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  justify-content: flex-start;
+  padding-bottom: 6px;
+  margin-bottom: 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.mobilePills::-webkit-scrollbar { display: none; }
+
+/* ─── Responsive ─── */
 @media (max-width: 768px) {
   .section { padding: 72px 0; }
-
-  .selector {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    justify-content: flex-start;
-    padding-bottom: 8px;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  .selector::-webkit-scrollbar { display: none; }
-
-  .grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .photoWrap {
-    aspect-ratio: 4 / 3;
-  }
+  .desktopLayout { display: none; }
+  .mobileLayout  { display: block; }
 }
