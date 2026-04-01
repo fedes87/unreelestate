@@ -17,14 +17,14 @@ export const services = [
     number: '03',
     tag: 'Land & Development',
     title: 'Empty Lot? We Show What It Could Be.',
-    image: '/img/service-video.png',
+    image: '/img/service-land.png',
     includes: ['Works on vacant land, lots, and development sites', 'From a rough sketch or hand drawing to photorealism', 'Visualize the finished build before breaking ground', 'Turn raw potential into a compelling listing'],
   },
   {
     number: '04',
     tag: 'Social & Listing Ready',
     title: 'One Delivery. Every Platform. Zero Effort.',
-    image: '/img/service-listing.png',
+    image: '/img/service-social.png',
     includes: ['Everything formatted for MLS, Zillow, and Realtor.com', 'Instagram Reels, TikTok, YouTube Shorts — all included', 'Agent branding, captions, and thumbnails ready', 'Post the same day you receive your delivery'],
   },
 ]
