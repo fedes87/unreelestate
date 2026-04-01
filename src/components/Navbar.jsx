@@ -20,16 +20,7 @@ export default function Navbar() {
       <div className="container">
         <div className={styles.inner}>
           <a href="#" className={styles.logo}>
-            <svg className={styles.logoIcon} viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 26L4 14L16 6L28 14V26H20V20H12V26H4Z" stroke="#C4956A" strokeWidth="1.5" fill="none"/>
-              <circle cx="22" cy="10" r="4" fill="#E8342A"/>
-              <polygon points="20,9 24,11 20,13" fill="#FAF7F2"/>
-            </svg>
-            <span>
-              <span className={styles.un}>UN</span>
-              <span className={styles.reel}>REEL</span>
-              <span className={styles.estate}>ESTATE</span>
-            </span>
+            <img src="/logo.png" alt="Unreel Estate" className={styles.logoImg} />
           </a>
 
           <ul className={styles.links}>

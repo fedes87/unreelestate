@@ -32,10 +32,7 @@
   gap: 10px;
 }
 
-.logoIcon { width: 30px; height: 30px; flex-shrink: 0; }
-.un { color: #E8342A; }
-.reel { color: var(--text-primary); }
-.estate { color: var(--gold); }
+.logoImg { height: 40px; width: auto; display: block; }
 
 .links {
   display: flex;
