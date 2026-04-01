@@ -57,8 +57,12 @@
 }
 
 .cta {
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
   margin-top: 56px;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 768px) {

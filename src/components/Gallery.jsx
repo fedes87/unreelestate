@@ -3,12 +3,11 @@ import { useInView } from '../hooks/useInView'
 import BeforeAfterSlider from './BeforeAfterSlider'
 import styles from './Gallery.module.css'
 
-const pairs = [
+const featured = [
   { label: 'Living Room',  before: '/gallery/before/living.png',   after: '/gallery/after/living.png'   },
   { label: 'Kitchen',      before: '/gallery/before/kitchen.png',  after: '/gallery/after/kitchen.png'  },
-  { label: 'Master Suite', before: '/gallery/before/bedroom.png',  after: '/gallery/after/bedroom.png'  },
-  { label: 'Bathroom',     before: '/gallery/before/bathroom.png', after: '/gallery/after/bathroom.png' },
   { label: 'Exterior',     before: '/gallery/before/exterior.png', after: '/gallery/after/exterior.png' },
+  { label: 'Backyard',     before: '/gallery/before/backyard.png', after: '/gallery/after/backyard.png' },
 ]
 
 export default function Gallery() {
@@ -32,7 +31,7 @@ export default function Gallery() {
         </motion.div>
 
         <div className={styles.grid}>
-          {pairs.map((pair, i) => (
+          {featured.map((pair, i) => (
             <motion.div
               key={pair.label}
               className={`${styles.item} ${i === 0 ? styles.featured : ''}`}
@@ -53,9 +52,10 @@ export default function Gallery() {
           className={styles.cta}
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.6 }}
+          transition={{ duration: 0.6, delay: 0.5 }}
         >
-          <a href="#contact" className="btn-primary">Transform Your Listing →</a>
+          <a href="/portfolio" className="btn-secondary">View Full Portfolio →</a>
+          <a href="#contact" className="btn-primary">Get a Quote →</a>
         </motion.div>
       </div>
     </section>
