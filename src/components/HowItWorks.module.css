@@ -1,0 +1,57 @@
+.section { padding: 120px 0; }
+
+.header { max-width: 520px; margin-bottom: 64px; }
+
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 720px;
+}
+
+.step {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  position: relative;
+}
+
+.stepNum {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  flex-shrink: 0;
+  width: 72px;
+  text-align: right;
+}
+
+.stepContent {
+  padding: 4px 0 56px;
+  border-left: 1px solid var(--border);
+  padding-left: 40px;
+  flex: 1;
+}
+
+.step:last-child .stepContent { border-left-color: transparent; padding-bottom: 0; }
+
+.stepContent h3 {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.stepContent p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .stepNum { font-size: 36px; width: 48px; }
+  .stepContent { padding-left: 24px; }
+}

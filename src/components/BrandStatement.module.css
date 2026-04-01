@@ -1,0 +1,20 @@
+.section {
+  padding: 100px 0;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.inner {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.inner p {
+  font-size: 18px;
+  color: var(--text-secondary);
+  line-height: 1.9;
+  margin-top: 20px;
+  font-weight: 300;
+}
