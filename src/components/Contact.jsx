@@ -1,7 +1,13 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import emailjs from '@emailjs/browser'
 import { useInView } from '../hooks/useInView'
 import styles from './Contact.module.css'
+
+// Replace these with your EmailJS credentials from emailjs.com
+const EMAILJS_SERVICE_ID  = 'service_wjnl6an'
+const EMAILJS_TEMPLATE_ID = 'template_p9ixdng'
+const EMAILJS_PUBLIC_KEY  = 'Ee1GMS1i-dN7A6yTY'
 
 const INITIAL = { name: '', email: '', phone: '', propertyType: '', service: '', message: '', source: '' }
 
@@ -16,12 +22,21 @@ export default function Contact() {
     e.preventDefault()
     setStatus('sending')
     try {
-      const res = await fetch('https://formspree.io/f/info@unreelestate.com', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify(form),
-      })
-      setStatus(res.ok ? 'sent' : 'error')
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name:     form.name,
+          from_email:    form.email,
+          phone:         form.phone,
+          property_type: form.propertyType,
+          service:       form.service,
+          message:       form.message,
+          source:        form.source,
+        },
+        EMAILJS_PUBLIC_KEY
+      )
+      setStatus('sent')
     } catch {
       setStatus('error')
     }
