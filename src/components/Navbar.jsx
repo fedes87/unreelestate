@@ -23,10 +23,7 @@ export default function Navbar() {
       <div className="container">
         <div className={styles.inner}>
           <a href="#" className={styles.logo}>
-            <picture>
-              <source media="(max-width: 768px)" srcSet="/logo-mobile.png" />
-              <img src="/logo.png" alt="Unreel Estate" className={styles.logoImg} width="160" height="40" />
-            </picture>
+            <img src="/logo-mobile.png" alt="Unreel Estate" className={styles.logoImg} />
           </a>
 
           <ul className={styles.links}>
