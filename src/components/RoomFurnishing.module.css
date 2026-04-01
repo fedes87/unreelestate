@@ -1,5 +1,5 @@
 .section {
-  height: 300vh;
+  height: 250vh;
   position: relative;
   background: var(--bg-primary);
 }
@@ -112,52 +112,30 @@
   to { opacity: 1; }
 }
 
-/* Mobile fallback */
-.mobileFallback {
-  display: none;
-}
-
-.mobileImages {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-
-.mobileImg {
-  position: relative;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid var(--border);
-}
-
-.mobileImg img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.mobileLabel {
-  position: absolute;
-  bottom: 12px;
-  left: 12px;
-  font-family: 'Bodoni Moda', serif;
-  font-size: 14px;
-  font-style: italic;
-  color: var(--text-primary);
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.8);
-}
-
 @media (max-width: 768px) {
   .section {
-    height: auto;
+    height: 200vh;
   }
 
   .sticky {
-    display: none;
+    padding: 24px 16px;
   }
 
-  .mobileFallback {
-    display: block;
-    padding: 72px 0;
+  .header {
+    margin-bottom: 16px;
+  }
+
+  .canvasWrap {
+    border-radius: 6px;
+  }
+
+  .overlayText {
+    font-size: clamp(18px, 5vw, 28px);
+  }
+
+  .subtitle {
+    font-size: 13px;
+    margin-top: 12px;
+    padding: 0 8px;
   }
 }

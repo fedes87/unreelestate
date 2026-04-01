@@ -4,8 +4,10 @@ import { useScrollProgress } from '../hooks/useScrollProgress'
 import { useFrameSequence } from '../hooks/useFrameSequence'
 import styles from './RoomFurnishing.module.css'
 
-const FRAME_COUNT = 60
-const BASE_PATH = '/img/furnishing/frame_'
+const DESKTOP_FRAMES = 60
+const MOBILE_FRAMES = 20
+const DESKTOP_PATH = '/img/furnishing/frame_'
+const MOBILE_PATH = '/img/furnishing/mobile/frame_'
 const EXT = 'webp'
 
 const stages = [
@@ -14,13 +16,28 @@ const stages = [
   { start: 0.85, end: 1.00, key: 'stageComplete' },
 ]
 
+function useIsMobile() {
+  const [mobile, setMobile] = useState(false)
+  useEffect(() => {
+    const check = () => setMobile(window.innerWidth <= 768)
+    check()
+    window.addEventListener('resize', check)
+    return () => window.removeEventListener('resize', check)
+  }, [])
+  return mobile
+}
+
 export default function RoomFurnishing() {
   const { t } = useTranslation()
   const canvasRef = useRef(null)
   const lastFrame = useRef(-1)
-  const { ref, progress, isActive } = useScrollProgress()
+  const isMobile = useIsMobile()
+  const { ref, progress } = useScrollProgress()
   const [shouldLoad, setShouldLoad] = useState(false)
-  const { images, loaded, loadProgress } = useFrameSequence(FRAME_COUNT, BASE_PATH, EXT, shouldLoad)
+
+  const frameCount = isMobile ? MOBILE_FRAMES : DESKTOP_FRAMES
+  const basePath = isMobile ? MOBILE_PATH : DESKTOP_PATH
+  const { images, loaded, loadProgress } = useFrameSequence(frameCount, basePath, EXT, shouldLoad)
 
   // Start loading when section is near viewport
   useEffect(() => {
@@ -38,8 +55,8 @@ export default function RoomFurnishing() {
   useEffect(() => {
     if (!loaded || !canvasRef.current) return
     const frameIdx = Math.min(
-      FRAME_COUNT - 1,
-      Math.max(0, Math.floor(progress * (FRAME_COUNT - 1)))
+      frameCount - 1,
+      Math.max(0, Math.floor(progress * (frameCount - 1)))
     )
     if (frameIdx === lastFrame.current) return
     lastFrame.current = frameIdx
@@ -50,14 +67,13 @@ export default function RoomFurnishing() {
     const canvas = canvasRef.current
     const ctx = canvas.getContext('2d')
 
-    // Set canvas size from first frame (once)
     if (canvas.width !== img.naturalWidth) {
       canvas.width = img.naturalWidth
       canvas.height = img.naturalHeight
     }
 
     ctx.drawImage(img, 0, 0)
-  }, [progress, images, loaded])
+  }, [progress, images, loaded, frameCount])
 
   // Prefers reduced motion — show final frame
   const [reducedMotion, setReducedMotion] = useState(false)
@@ -69,18 +85,16 @@ export default function RoomFurnishing() {
     return () => mq.removeEventListener('change', handler)
   }, [])
 
-  // For reduced motion, draw last frame once loaded
   useEffect(() => {
     if (!reducedMotion || !loaded || !canvasRef.current) return
-    const img = images[FRAME_COUNT - 1]
+    const img = images[frameCount - 1]
     if (!img) return
     const canvas = canvasRef.current
     canvas.width = img.naturalWidth
     canvas.height = img.naturalHeight
     canvas.getContext('2d').drawImage(img, 0, 0)
-  }, [reducedMotion, loaded, images])
+  }, [reducedMotion, loaded, images, frameCount])
 
-  // Compute overlay text opacity
   const getOverlayOpacity = useCallback((stage) => {
     const { start, end } = stage
     const fadeIn = 0.05
@@ -111,7 +125,6 @@ export default function RoomFurnishing() {
         </div>
 
         <div className={styles.canvasWrap}>
-          {/* Placeholder blur while loading */}
           {!loaded && (
             <img
               src="/img/furnishing/placeholder.webp"
@@ -125,13 +138,11 @@ export default function RoomFurnishing() {
             className={`${styles.canvas} ${loaded ? styles.canvasVisible : ''}`}
           />
 
-          {/* Gold progress bar */}
           <div
             className={styles.progressBar}
             style={{ width: `${progress * 100}%` }}
           />
 
-          {/* Text overlays */}
           {loaded && stages.map((stage) => (
             <div
               key={stage.key}
@@ -146,30 +157,6 @@ export default function RoomFurnishing() {
         {progress > 0.92 && loaded && (
           <p className={styles.subtitle}>{t('roomFurnishing.subtitle')}</p>
         )}
-      </div>
-
-      {/* Mobile fallback */}
-      <div className={styles.mobileFallback}>
-        <div className="container">
-          <span className="section-label">{t('roomFurnishing.label')}</span>
-          <h2 className="section-title">
-            {t('roomFurnishing.title1')}<br />
-            <em>{t('roomFurnishing.titleEm')}</em>
-          </h2>
-          <p className="section-subtitle" style={{ marginBottom: 32 }}>
-            {t('roomFurnishing.subtitle')}
-          </p>
-          <div className={styles.mobileImages}>
-            <div className={styles.mobileImg}>
-              <img src="/img/furnishing/before.webp" alt="Empty room" />
-              <span className={styles.mobileLabel}>{t('roomFurnishing.stageEmpty')}</span>
-            </div>
-            <div className={styles.mobileImg}>
-              <img src="/img/furnishing/after.webp" alt="Furnished room" />
-              <span className={styles.mobileLabel}>{t('roomFurnishing.stageComplete')}</span>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   )
