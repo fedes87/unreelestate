@@ -3,6 +3,7 @@ import Hero from './components/Hero'
 import BrandStatement from './components/BrandStatement'
 import Gallery from './components/Gallery'
 import CTABanner from './components/CTABanner'
+import StyleTransformer from './components/StyleTransformer'
 import Services from './components/Services'
 import WhyUnreel from './components/WhyUnreel'
 import HowItWorks from './components/HowItWorks'
@@ -19,6 +20,7 @@ export default function App() {
       <BrandStatement />
       <Gallery />
       <CTABanner />
+      <StyleTransformer />
       <Services />
       <WhyUnreel />
       <HowItWorks />

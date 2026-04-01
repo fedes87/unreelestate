@@ -209,6 +209,14 @@
     "contact": "Contact",
     "copyright": "© {{year}} Unreel Estate. All rights reserved."
   },
+  "styleTransformer": {
+    "label": "Style Transformer",
+    "title1": "Every Property Has",
+    "titleEm": "A Vision. Find Yours.",
+    "subtitle": "Click a style to see this home transformed. The same space, infinite possibilities.",
+    "rooms": ["Living Room", "Kitchen", "Bedroom"],
+    "cta": "Transform Your Listing →"
+  },
   "gallery": {
     "label": "Portfolio",
     "title1": "Drag to See",

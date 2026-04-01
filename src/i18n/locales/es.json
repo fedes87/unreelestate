@@ -209,6 +209,14 @@
     "contact": "Contacto",
     "copyright": "© {{year}} Unreel Estate. Todos los derechos reservados."
   },
+  "styleTransformer": {
+    "label": "Style Transformer",
+    "title1": "Cada Propiedad Tiene",
+    "titleEm": "Una Visión. Encuéntrala.",
+    "subtitle": "Haz clic en un estilo para ver esta casa transformada. El mismo espacio, infinitas posibilidades.",
+    "rooms": ["Sala de Estar", "Cocina", "Dormitorio"],
+    "cta": "Transforma tu Propiedad →"
+  },
   "gallery": {
     "label": "Portafolio",
     "title1": "Arrastra para Ver",

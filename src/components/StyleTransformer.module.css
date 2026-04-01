@@ -1,0 +1,160 @@
+.section {
+  padding: 100px 0;
+  background: var(--bg-secondary);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.header .section-subtitle {
+  margin: 0 auto;
+}
+
+/* Style pill selector */
+.selector {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.pill {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 9px 20px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: border-color 0.25s, color 0.25s, background 0.25s;
+  white-space: nowrap;
+}
+
+.pill:hover {
+  border-color: var(--gold);
+  color: var(--text-primary);
+}
+
+.pillActive {
+  background: var(--gold);
+  border-color: var(--gold);
+  color: var(--bg-primary);
+}
+
+/* Active style indicator */
+.activeLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 36px;
+  min-height: 20px;
+}
+
+.activeDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  display: inline-block;
+}
+
+/* Photo grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.photoWrap {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 2px;
+  background: var(--bg-card);
+}
+
+/* All images stacked */
+.photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.35s ease, transform 0.5s ease;
+  transform: scale(1.03);
+}
+
+.photoVisible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.photoFading {
+  opacity: 0;
+  transform: scale(1.03);
+}
+
+/* Room label overlay */
+.roomLabel {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(250, 247, 242, 0.85);
+  background: rgba(13, 11, 9, 0.55);
+  backdrop-filter: blur(8px);
+  padding: 5px 12px;
+  border-radius: 2px;
+  pointer-events: none;
+}
+
+/* CTA */
+.cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 52px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .section { padding: 72px 0; }
+
+  .selector {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: 8px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .selector::-webkit-scrollbar { display: none; }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .photoWrap {
+    aspect-ratio: 4 / 3;
+  }
+}

@@ -209,6 +209,14 @@
     "contact": "Contatti",
     "copyright": "© {{year}} Unreel Estate. Tutti i diritti riservati."
   },
+  "styleTransformer": {
+    "label": "Style Transformer",
+    "title1": "Ogni Proprietà Ha",
+    "titleEm": "Una Visione. Trovala.",
+    "subtitle": "Clicca uno stile per vedere la casa trasformata. Lo stesso spazio, infinite possibilità.",
+    "rooms": ["Soggiorno", "Cucina", "Camera da Letto"],
+    "cta": "Trasforma il Tuo Annuncio →"
+  },
   "gallery": {
     "label": "Portfolio",
     "title1": "Trascina per Vedere",
