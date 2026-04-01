@@ -218,6 +218,23 @@
     "rooms": ["Living Room", "Kitchen", "Bedroom"],
     "cta": "Transform Your Listing →"
   },
+  "videoDemo": {
+    "label": "The Unreel Process",
+    "title1": "Your Photo.",
+    "titleEm": "Our Cinematic Result.",
+    "subtitle": "See the full transformation live — from a phone shot to a Modern-styled photo to a 4-second cinematic clip.",
+    "rooms": ["Living Room", "Kitchen", "Bedroom"],
+    "steps": ["Your Photo", "Transformed", "Animated"],
+    "badgeBefore": "Your Photo",
+    "badgeAfter": "Modern Style",
+    "badgeVideo": "Cinematic Video",
+    "descBefore": "This is what the original listing photo looks like — straight from a phone, no staging, no editing.",
+    "descAfter": "We enhanced the photo, added Modern-style staging, and corrected the lighting. Same room, completely transformed.",
+    "descVideo": "Then we animated it into a 4-second cinematic clip. This is what your listing posts look like.",
+    "ctaTransform": "See It Transformed",
+    "ctaAnimate": "See the Video",
+    "ctaContact": "Transform Your Property →"
+  },
   "gallery": {
     "label": "Portfolio",
     "title1": "Drag to See",

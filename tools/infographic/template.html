@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Unreel Estate — Listing Card</title>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --gold: #C4956A;
+    --gold-light: #E0C9A8;
+    --bg: #0D0B09;
+    --bg2: #131110;
+    --bg3: #1A1714;
+    --text: #FAF7F2;
+    --muted: rgba(250,247,242,0.5);
+  }
+
+  body {
+    width: 1080px;
+    height: 1920px;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* Background texture */
+  body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 20% 10%, rgba(196,149,106,0.08) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 90%, rgba(196,149,106,0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  .card {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 80px 90px;
+    position: relative;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 70px;
+  }
+
+  .logo {
+    height: 72px;
+    width: auto;
+  }
+
+  .badge {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(196,149,106,0.3);
+    padding: 10px 24px;
+    border-radius: 2px;
+  }
+
+  /* ── PHOTO AREA ── */
+  .photo {
+    width: 100%;
+    height: 520px;
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 60px;
+    background: var(--bg3);
+  }
+
+  .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .photo-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(13,11,9,0.85) 0%, transparent 50%);
+  }
+
+  .photo-address {
+    position: absolute;
+    bottom: 40px;
+    left: 50px;
+    right: 50px;
+  }
+
+  .neighborhood {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 12px;
+  }
+
+  .address {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 68px;
+    font-weight: 700;
+    line-height: 1.05;
+    color: var(--text);
+  }
+
+  .city {
+    font-size: 26px;
+    font-weight: 300;
+    color: rgba(250,247,242,0.7);
+    margin-top: 8px;
+    letter-spacing: 1px;
+  }
+
+  /* ── PRICE HERO ── */
+  .price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 24px;
+    margin-bottom: 60px;
+  }
+
+  .price {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 100px;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+    letter-spacing: -2px;
+  }
+
+  .price-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .price-sqft {
+    font-size: 28px;
+    font-weight: 500;
+    color: var(--muted);
+  }
+
+  .price-status {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  /* ── STATS ROW ── */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-bottom: 60px;
+    background: rgba(196,149,106,0.1);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .stat {
+    background: var(--bg2);
+    padding: 36px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .stat-icon {
+    font-size: 36px;
+    line-height: 1;
+  }
+
+  .stat-value {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ── GOLD DIVIDER ── */
+  .divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    margin-bottom: 60px;
+  }
+
+  /* ── HIGHLIGHTS ── */
+  .highlights {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 60px;
+  }
+
+  .highlight {
+    background: var(--bg3);
+    border: 1px solid rgba(196,149,106,0.15);
+    border-radius: 4px;
+    padding: 36px 32px;
+  }
+
+  .highlight-icon {
+    font-size: 32px;
+    margin-bottom: 14px;
+    display: block;
+  }
+
+  .highlight-title {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 30px;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .highlight-desc {
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--muted);
+  }
+
+  /* ── SPECS GRID ── */
+  .specs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    margin-bottom: 70px;
+  }
+
+  .spec-label {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+
+  .spec-value {
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--text);
+  }
+
+  /* ── CTA ── */
+  .cta {
+    margin-top: auto;
+    background: var(--gold);
+    border-radius: 4px;
+    padding: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .cta-text {
+    font-family: 'Bodoni Moda', serif;
+    font-size: 40px;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--bg);
+  }
+
+  .cta-sub {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: rgba(13,11,9,0.6);
+    margin-top: 6px;
+  }
+
+  .cta-arrow {
+    font-size: 56px;
+    color: var(--bg);
+    line-height: 1;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 36px;
+    gap: 12px;
+    opacity: 0.4;
+  }
+
+  .footer-line {
+    width: 60px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  .footer-text {
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <!-- HEADER -->
+  <div class="header">
+    <img class="logo" src="../../public/logo.png" alt="Unreel Estate" />
+    <div class="badge">For Sale</div>
+  </div>
+
+  <!-- PHOTO -->
+  <div class="photo">
+    <img src="../../public/gallery/after/exterior.png" alt="Property" />
+    <div class="photo-overlay"></div>
+    <div class="photo-address">
+      <div class="neighborhood">Midtown · Houston TX</div>
+      <div class="address">4521 Oakdale St</div>
+      <div class="city">Houston, TX 77004</div>
+    </div>
+  </div>
+
+  <!-- PRICE -->
+  <div class="price-row">
+    <div class="price">$875,000</div>
+    <div class="price-detail">
+      <div class="price-sqft">$312 / sqft</div>
+      <div class="price-status">Active Listing</div>
+    </div>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-icon">🛏</div>
+      <div class="stat-value">4</div>
+      <div class="stat-label">Beds</div>
+    </div>
+    <div class="stat">
+      <div class="stat-icon">🛁</div>
+      <div class="stat-value">3.5</div>
+      <div class="stat-label">Baths</div>
+    </div>
+    <div class="stat">
+      <div class="stat-icon">📐</div>
+      <div class="stat-value">2,805</div>
+      <div class="stat-label">Sqft</div>
+    </div>
+    <div class="stat">
+      <div class="stat-icon">🚗</div>
+      <div class="stat-value">2</div>
+      <div class="stat-label">Garage</div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- HIGHLIGHTS -->
+  <div class="highlights">
+    <div class="highlight">
+      <span class="highlight-icon">🌇</span>
+      <div class="highlight-title">Private Rooftop Terrace</div>
+      <div class="highlight-desc">Panoramic Houston skyline views</div>
+    </div>
+    <div class="highlight">
+      <span class="highlight-icon">🏠</span>
+      <div class="highlight-title">ADU Studio</div>
+      <div class="highlight-desc">Private entrance — rental income ready</div>
+    </div>
+  </div>
+
+  <!-- SPECS -->
+  <div class="specs">
+    <div>
+      <div class="spec-label">Year Built</div>
+      <div class="spec-value">2025</div>
+    </div>
+    <div>
+      <div class="spec-label">Style</div>
+      <div class="spec-value">Contemporary</div>
+    </div>
+    <div>
+      <div class="spec-label">Stories</div>
+      <div class="spec-value">3</div>
+    </div>
+    <div>
+      <div class="spec-label">Area</div>
+      <div class="spec-value">Midtown</div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta">
+    <div>
+      <div class="cta-text">Book a Private Tour</div>
+      <div class="cta-sub">unreelestate.com</div>
+    </div>
+    <div class="cta-arrow">→</div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-line"></div>
+    <div class="footer-text">Unreel Estate · Houston</div>
+    <div class="footer-line"></div>
+  </div>
+
+</div>
+</body>
+</html>

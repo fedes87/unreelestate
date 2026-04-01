@@ -218,6 +218,23 @@
     "rooms": ["Sala de Estar", "Cocina", "Dormitorio"],
     "cta": "Transforma tu Propiedad →"
   },
+  "videoDemo": {
+    "label": "El Proceso Unreel",
+    "title1": "Tu Foto.",
+    "titleEm": "Nuestro Resultado Cinematográfico.",
+    "subtitle": "Ve la transformación completa en vivo — desde una foto de teléfono hasta una foto en estilo Moderno y un clip cinematográfico de 4 segundos.",
+    "rooms": ["Sala de Estar", "Cocina", "Dormitorio"],
+    "steps": ["Tu Foto", "Transformada", "Animada"],
+    "badgeBefore": "Tu Foto",
+    "badgeAfter": "Estilo Moderno",
+    "badgeVideo": "Video Cinematográfico",
+    "descBefore": "Así se ve la foto original del listado — directo del teléfono, sin staging, sin edición.",
+    "descAfter": "Mejoramos la foto, añadimos staging en estilo Moderno y corregimos la iluminación. Misma habitación, completamente transformada.",
+    "descVideo": "Luego la animamos en un clip cinematográfico de 4 segundos. Así se ven tus publicaciones de listado.",
+    "ctaTransform": "Ver la Transformación",
+    "ctaAnimate": "Ver el Video",
+    "ctaContact": "Transforma tu Propiedad →"
+  },
   "gallery": {
     "label": "Portafolio",
     "title1": "Arrastra para Ver",
