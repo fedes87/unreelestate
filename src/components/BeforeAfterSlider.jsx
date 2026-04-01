@@ -40,10 +40,14 @@ export default function BeforeAfterSlider({ before, after, label }) {
       {/* After (bottom layer) */}
       <img src={after} alt="After" className={styles.imgAfter} draggable={false} />
 
-      {/* Before (clipped top layer) */}
-      <div className={styles.beforeWrap} style={{ width: `${pos}%` }}>
-        <img src={before} alt="Before" className={styles.imgBefore} draggable={false} />
-      </div>
+      {/* Before (full size, clipped via clip-path — no scaling) */}
+      <img
+        src={before}
+        alt="Before"
+        className={styles.imgBefore}
+        style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
+        draggable={false}
+      />
 
       {/* Divider handle */}
       <div
