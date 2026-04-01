@@ -16,9 +16,9 @@ export default function App() {
       <Navbar />
       <Hero />
       <BrandStatement />
+      <Gallery />
       <Services />
       <WhyUnreel />
-      <Gallery />
       <HowItWorks />
       <Pricing />
       <Testimonials />
