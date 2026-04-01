@@ -1,5 +1,5 @@
 .section {
-  height: 250vh;
+  height: 180vh;
   position: relative;
   background: var(--bg-primary);
 }
@@ -114,7 +114,7 @@
 
 @media (max-width: 768px) {
   .section {
-    height: 200vh;
+    height: 180vh;
   }
 
   .sticky {
