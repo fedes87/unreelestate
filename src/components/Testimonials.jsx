@@ -31,8 +31,11 @@ export default function Testimonials() {
               <div className={styles.quote}>"</div>
               <p className={styles.text}>{t.text}</p>
               <div className={styles.author}>
-                <div className={styles.name}>{t.name}</div>
-                <div className={styles.role}>{t.role}</div>
+                {t.avatar && <img src={t.avatar} alt={t.name} className={styles.avatar} />}
+                <div>
+                  <div className={styles.name}>{t.name}</div>
+                  <div className={styles.role}>{t.role}</div>
+                </div>
               </div>
             </motion.div>
           ))}

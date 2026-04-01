@@ -44,7 +44,22 @@
   flex: 1;
 }
 
-.author { border-top: 1px solid var(--border); padding-top: 20px; }
+.author {
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid rgba(196,149,106,0.3);
+}
 
 .name {
   font-size: 14px;
