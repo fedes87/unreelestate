@@ -87,6 +87,13 @@
 .group select:focus,
 .group textarea:focus { border-color: var(--gold); }
 
+.group input:focus-visible,
+.group select:focus-visible,
+.group textarea:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
 .group select {
   appearance: none;
   cursor: pointer;

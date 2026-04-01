@@ -7,7 +7,7 @@ export default function Footer() {
         <div className={styles.inner}>
           <div className={styles.brand}>
             <a href="#" className={styles.logo}>
-              <img src="/logo.png" alt="Unreel Estate" className={styles.logoImg} />
+              <img src="/logo.png" alt="Unreel Estate" className={styles.logoImg} width="160" height="40" />
             </a>
             <p>Luxury real estate content, crafted for properties that deserve it most.</p>
           </div>

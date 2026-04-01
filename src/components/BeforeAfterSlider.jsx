@@ -12,6 +12,11 @@ export default function BeforeAfterSlider({ before, after, label }) {
     return (x / rect.width) * 100
   }, [])
 
+  const onKeyDown = useCallback((e) => {
+    if (e.key === 'ArrowLeft')  setPos(p => Math.max(0, p - 2))
+    if (e.key === 'ArrowRight') setPos(p => Math.min(100, p + 2))
+  }, [])
+
   const onMouseDown = (e) => {
     dragging.current = true
     e.preventDefault()
@@ -38,12 +43,12 @@ export default function BeforeAfterSlider({ before, after, label }) {
       onTouchMove={onTouchMove}
     >
       {/* After (bottom layer) */}
-      <img src={after} alt="After" className={styles.imgAfter} draggable={false} />
+      <img src={after} alt={`${label} — after`} className={styles.imgAfter} draggable={false} />
 
       {/* Before (full size, clipped via clip-path — no scaling) */}
       <img
         src={before}
-        alt="Before"
+        alt={`${label} — before`}
         className={styles.imgBefore}
         style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
         draggable={false}
@@ -55,11 +60,18 @@ export default function BeforeAfterSlider({ before, after, label }) {
         style={{ left: `${pos}%` }}
         onMouseDown={onMouseDown}
         onTouchStart={onMouseDown}
+        onKeyDown={onKeyDown}
+        role="slider"
+        tabIndex={0}
+        aria-label={`${label} before/after comparison`}
+        aria-valuemin={0}
+        aria-valuemax={100}
+        aria-valuenow={Math.round(pos)}
       >
         <div className={styles.line} />
         <div className={styles.circle}>
-          <span>◀</span>
-          <span>▶</span>
+          <span aria-hidden="true">◀</span>
+          <span aria-hidden="true">▶</span>
         </div>
         <div className={styles.line} />
       </div>

@@ -56,7 +56,7 @@ export default function Pricing() {
                   animate={inView ? { opacity: 1, x: 0 } : {}}
                   transition={{ duration: 0.5, delay: 0.3 + i * 0.07 }}
                 >
-                  <span className={styles.check}>✓</span>
+                  <span className={styles.check} aria-hidden="true">✓</span>
                   {item}
                 </motion.li>
               ))}

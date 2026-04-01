@@ -82,7 +82,7 @@ body::before {
   letter-spacing: 1.5px;
   text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: background-color 0.25s, transform 0.25s, box-shadow 0.25s;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -107,7 +107,7 @@ body::before {
   letter-spacing: 1.5px;
   text-transform: uppercase;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: border-color 0.25s, color 0.25s;
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -121,4 +121,12 @@ body::before {
 
 @media (max-width: 768px) {
   .container { padding: 0 20px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
