@@ -14,16 +14,15 @@ export default function BrandStatement() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <span className="section-label">Not a photo shoot. A transformation.</span>
+          <span className="section-label">What we actually do.</span>
           <p>
-            Luxury real estate doesn't sell with a listing sheet and four flat photos. It sells
-            with emotion, atmosphere, desire. Unreel Estate was built on the belief that every
-            extraordinary property deserves visuals to match — enhanced, restyled, and brought to life.
+            You send us your photos — even rough ones straight from your phone.
+            We transform them the way you want: enhanced, restyled, completely reimagined.
+            Then we animate them into cinematic video.
           </p>
           <p>
-            We work entirely from your existing photos. No film crew, no location visits. We enhance
-            what's there — or reimagine it completely — and turn it into cinematic content that makes
-            people want to live in it before they ever set foot inside.
+            Your listing outperforms. Your social blows up.
+            And everyone will want to know how you did it.
           </p>
         </motion.div>
       </div>
