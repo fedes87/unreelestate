@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion'
 import { useInView } from '../hooks/useInView'
+import BeforeAfterSlider from './BeforeAfterSlider'
 import styles from './Gallery.module.css'
 
-const galleryItems = [
-  { id: 1, src: '/gallery/shot_01_exterior.jpg', label: 'Exterior — Twilight' },
-  { id: 2, src: '/gallery/shot_02_living.jpg', label: 'Living Room' },
-  { id: 3, src: '/gallery/shot_03_bedroom.jpg', label: 'Master Suite' },
-  { id: 4, src: '/gallery/shot_04_pool.jpg', label: 'Infinity Pool' },
-  { id: 5, src: '/gallery/shot_05_kitchen.jpg', label: 'Kitchen' },
-  { id: 6, src: '/gallery/shot_06_night.jpg', label: 'Night View' },
+const pairs = [
+  { label: 'Living Room',  before: '/gallery/before/living.png',   after: '/gallery/after/living.png'   },
+  { label: 'Kitchen',      before: '/gallery/before/kitchen.png',  after: '/gallery/after/kitchen.png'  },
+  { label: 'Master Suite', before: '/gallery/before/bedroom.png',  after: '/gallery/after/bedroom.png'  },
+  { label: 'Bathroom',     before: '/gallery/before/bathroom.png', after: '/gallery/after/bathroom.png' },
+  { label: 'Exterior',     before: '/gallery/before/exterior.png', after: '/gallery/after/exterior.png' },
 ]
 
 export default function Gallery() {
@@ -24,28 +24,27 @@ export default function Gallery() {
           transition={{ duration: 0.7 }}
         >
           <span className="section-label">Portfolio</span>
-          <h2 className="section-title">Properties We've Made<br /><em>Unforgettable.</em></h2>
+          <h2 className="section-title">Drag to See<br /><em>The Transformation.</em></h2>
           <p className="section-subtitle">
-            Every image below started as a standard listing photo.
-            This is what we deliver.
+            Every image started as a standard listing photo.<br />
+            Slide left and right to see what we deliver.
           </p>
         </motion.div>
 
         <div className={styles.grid}>
-          {galleryItems.map((item, i) => (
+          {pairs.map((pair, i) => (
             <motion.div
-              key={item.id}
+              key={pair.label}
               className={`${styles.item} ${i === 0 ? styles.featured : ''}`}
-              initial={{ opacity: 0, scale: 0.97 }}
-              animate={inView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.6, delay: i * 0.08 }}
+              initial={{ opacity: 0, y: 20 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
             >
-              <div className={styles.imgWrap}>
-                <img src={item.src} alt={item.label} loading="lazy" />
-                <div className={styles.imgOverlay}>
-                  <span>{item.label}</span>
-                </div>
-              </div>
+              <BeforeAfterSlider
+                before={pair.before}
+                after={pair.after}
+                label={pair.label}
+              />
             </motion.div>
           ))}
         </div>
@@ -54,7 +53,7 @@ export default function Gallery() {
           className={styles.cta}
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.5 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
         >
           <a href="#contact" className="btn-primary">Transform Your Listing →</a>
         </motion.div>
