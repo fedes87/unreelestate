@@ -70,8 +70,10 @@ export default function BeforeAfterSlider({ before, after, label }) {
       >
         <div className={styles.line} />
         <div className={styles.circle}>
-          <span aria-hidden="true">◀</span>
-          <span aria-hidden="true">▶</span>
+          <svg aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M7 4L2 9L7 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            <path d="M11 4L16 9L11 14" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
         </div>
         <div className={styles.line} />
       </div>

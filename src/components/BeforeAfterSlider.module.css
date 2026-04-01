@@ -43,23 +43,27 @@
 
 .line {
   flex: 1;
-  width: 2px;
-  background: rgba(255,255,255,0.9);
+  width: 1px;
+  background: rgba(255,255,255,0.5);
 }
 
 .circle {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background: white;
+  background: var(--gold);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 2px;
-  font-size: 10px;
-  color: #1a1a1a;
+  color: #0d0b09;
   flex-shrink: 0;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 20px rgba(0,0,0,0.45);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.handle:hover .circle {
+  transform: scale(1.1);
+  box-shadow: 0 4px 28px rgba(0,0,0,0.55);
 }
 
 /* Labels */
