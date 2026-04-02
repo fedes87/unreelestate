@@ -197,7 +197,7 @@ export default function StyleTransformer() {
           </motion.div>
 
           <div className={styles.swipeHint}>
-            Swipe to explore styles <span className={styles.swipeArrow}>→</span>
+            <span className={styles.swipeHand}>👆</span> Swipe to explore styles
           </div>
         </div>
 

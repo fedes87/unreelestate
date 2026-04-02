@@ -66,6 +66,11 @@
   white-space: nowrap;
 }
 
+@keyframes subtle-glow {
+  0%, 100% { border-color: var(--border); }
+  50% { border-color: rgba(196, 149, 106, 0.5); }
+}
+
 .pill:not(.pillActive) { animation: subtle-glow 2.5s ease-in-out infinite; }
 .pill:hover {
   border-color: var(--gold);
@@ -249,29 +254,26 @@
   display: none;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  margin-top: 10px;
-  font-size: 11px;
-  color: var(--text-muted);
-  letter-spacing: 1px;
+  gap: 10px;
+  margin-top: 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  color: var(--gold);
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  font-weight: 500;
-  animation: swipeHintFade 3s ease-in-out infinite;
+  font-weight: 600;
 }
 
-.swipeArrow {
+.swipeHand {
   display: inline-block;
-  animation: swipeSlide 1.5s ease-in-out infinite;
+  font-size: 18px;
+  animation: swipeMove 1.8s ease-in-out infinite;
 }
 
-@keyframes swipeSlide {
+@keyframes swipeMove {
   0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(6px); }
-}
-
-@keyframes swipeHintFade {
-  0%, 100% { opacity: 0.5; }
-  50% { opacity: 1; }
+  30% { transform: translateX(12px); }
+  60% { transform: translateX(-4px); }
 }
 
 /* ─── Responsive ─── */

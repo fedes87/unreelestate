@@ -38,6 +38,11 @@
 }
 .roomTab:last-child { border-right: none; }
 .roomTab:hover { color: var(--text-primary); }
+@keyframes subtle-glow {
+  0%, 100% { border-color: var(--border); }
+  50% { border-color: rgba(196, 149, 106, 0.5); }
+}
+
 .roomTab:not(.roomTabActive) { animation: subtle-glow 2.5s ease-in-out infinite; }
 .roomTabActive {
   background: var(--gold);
