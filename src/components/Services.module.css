@@ -19,12 +19,12 @@
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.3s, border-color 0.3s;
-  animation: subtle-glow 2.5s ease-in-out infinite;
+  animation: pulse-ring-card 2.5s ease-in-out infinite;
 }
 
-@keyframes subtle-glow {
-  0%, 100% { border-color: var(--border); }
-  50% { border-color: rgba(196, 149, 106, 0.5); }
+@keyframes pulse-ring-card {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(196, 149, 106, 0.2); }
+  50% { box-shadow: 0 0 0 8px rgba(196, 149, 106, 0); }
 }
 
 .card:hover {

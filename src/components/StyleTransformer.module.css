@@ -66,12 +66,15 @@
   white-space: nowrap;
 }
 
-@keyframes subtle-glow {
-  0%, 100% { border-color: var(--border); }
-  50% { border-color: rgba(196, 149, 106, 0.5); }
+@keyframes pulse-ring {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(196, 149, 106, 0.3); }
+  50% { box-shadow: 0 0 0 6px rgba(196, 149, 106, 0); }
 }
 
-.pill:not(.pillActive) { animation: subtle-glow 2.5s ease-in-out infinite; }
+.pill:not(.pillActive) {
+  animation: pulse-ring 2s ease-in-out infinite;
+  border-color: rgba(196, 149, 106, 0.3);
+}
 .pill:hover {
   border-color: var(--gold);
   color: var(--text-primary);
@@ -202,7 +205,10 @@
 
 .roomTab:last-child { border-right: none; }
 .roomTab:hover { color: var(--text-primary); }
-.roomTab:not(.roomTabActive) { animation: subtle-glow 2.5s ease-in-out infinite; }
+.roomTab:not(.roomTabActive) {
+  animation: pulse-ring 2s ease-in-out infinite;
+  border-color: rgba(196, 149, 106, 0.3);
+}
 .roomTabActive {
   background: var(--gold);
   color: var(--bg-primary);
