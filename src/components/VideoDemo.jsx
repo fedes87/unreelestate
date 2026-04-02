@@ -127,19 +127,23 @@ export default function VideoDemo() {
 
           {/* Step controls */}
           <div className={styles.steps}>
-            {STEPS.map((s, i) => (
+            {STEPS.map((s, i) => {
+              const currentIdx = STEPS.indexOf(step)
+              const isNext = i === currentIdx + 1
+              return (
               <button
                 key={s}
                 className={`${styles.stepBtn} ${step === s ? styles.stepActive : ''} ${
-                  STEPS.indexOf(step) > i ? styles.stepDone : ''
-                }`}
+                  currentIdx > i ? styles.stepDone : ''
+                } ${isNext ? styles.stepNext : ''}`}
                 onClick={() => setStep(s)}
               >
                 <span className={styles.stepNum}>{i + 1}</span>
                 <span className={styles.stepLabel}>{stepLabels[i]}</span>
-                {STEPS.indexOf(step) > i && <span className={styles.stepCheck}>✓</span>}
+                {currentIdx > i && <span className={styles.stepCheck}>✓</span>}
               </button>
-            ))}
+              )
+            })}
 
             {/* Connector lines */}
             <div className={styles.connectors}>

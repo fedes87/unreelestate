@@ -38,6 +38,19 @@
 
 .links a:hover, .contact a:hover { color: var(--gold); }
 
+.socials {
+  display: flex;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.socials a {
+  color: var(--text-muted);
+  transition: color 0.3s;
+}
+
+.socials a:hover { color: var(--gold); }
+
 .bottom {
   border-top: 1px solid var(--border);
   padding-top: 28px;

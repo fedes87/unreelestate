@@ -157,6 +157,9 @@
 
 @media (max-width: 768px) {
   .links { display: none; }
-  .right { display: none; }
+  .cta { display: none; }
   .hamburger { display: block; }
+  .langSwitcher { display: flex; }
+  .langBtn { font-size: 12px; padding: 6px 8px; }
+  .right { gap: 12px; }
 }

@@ -195,6 +195,10 @@ export default function StyleTransformer() {
               </button>
             ))}
           </motion.div>
+
+          <div className={styles.swipeHint}>
+            Swipe to explore styles <span className={styles.swipeArrow}>→</span>
+          </div>
         </div>
 
         {/* CTA */}
