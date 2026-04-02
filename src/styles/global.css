@@ -116,6 +116,16 @@ body {
   .container { padding: 0 20px; }
 }
 
+/* Subtle glow animation for interactive elements */
+@keyframes subtle-glow {
+  0%, 100% { border-color: var(--border); }
+  50% { border-color: rgba(196, 149, 106, 0.4); }
+}
+
+.glow-hint {
+  animation: subtle-glow 2.5s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;

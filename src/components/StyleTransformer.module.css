@@ -66,6 +66,7 @@
   white-space: nowrap;
 }
 
+.pill:not(.pillActive) { animation: subtle-glow 2.5s ease-in-out infinite; }
 .pill:hover {
   border-color: var(--gold);
   color: var(--text-primary);
@@ -196,6 +197,7 @@
 
 .roomTab:last-child { border-right: none; }
 .roomTab:hover { color: var(--text-primary); }
+.roomTab:not(.roomTabActive) { animation: subtle-glow 2.5s ease-in-out infinite; }
 .roomTabActive {
   background: var(--gold);
   color: var(--bg-primary);
