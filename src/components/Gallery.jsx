@@ -31,7 +31,7 @@ export default function Gallery() {
           {galleryPairs.map((pair, i) => (
             <motion.div
               key={i}
-              className={`${styles.item} ${i === 0 ? styles.featured : ''}`}
+              className={styles.item}
               initial={{ opacity: 0, y: 20 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: i * 0.1 }}

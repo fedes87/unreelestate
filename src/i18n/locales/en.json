@@ -272,7 +272,7 @@
     "subtitle2": "Slide left and right to see what we deliver.",
     "btnPortfolio": "View Full Portfolio →",
     "btnQuote": "Get a Quote →",
-    "labels": ["Living Room", "Kitchen", "Exterior", "Backyard"]
+    "labels": ["Exterior", "Entryway", "Open Space"]
   },
   "cookies": {
     "text": "This website does not use profiling cookies. We only use essential cookies to ensure the site functions properly.",
@@ -285,6 +285,6 @@
     "titleEm": "Transformed.",
     "subtitle": "Drag each slider to reveal the transformation.",
     "cta": "Get a Quote →",
-    "labels": ["Living Room", "Kitchen", "Master Suite", "Bathroom", "Exterior", "Backyard", "Pool", "Townhome", "Home Office", "Dining Room", "Entryway"]
+    "labels": ["Exterior", "Entryway", "Open Space", "Living Room", "Kitchen", "Master Bath", "Rooftop Terrace", "Bedroom", "Bathroom", "Backyard", "Pool", "Townhome", "Home Office", "Dining Room"]
   }
 }

@@ -272,7 +272,7 @@
     "subtitle2": "Scorri a sinistra e destra per vedere cosa consegniamo.",
     "btnPortfolio": "Vedi il Portfolio Completo →",
     "btnQuote": "Richiedi un Preventivo →",
-    "labels": ["Soggiorno", "Cucina", "Esterno", "Giardino"]
+    "labels": ["Esterno", "Ingresso", "Open Space"]
   },
   "cookies": {
     "text": "Questo sito non utilizza cookie di profilazione. Utilizziamo solo cookie tecnici essenziali per il corretto funzionamento del sito.",
@@ -285,6 +285,6 @@
     "titleEm": "Trasformato.",
     "subtitle": "Trascina ogni slider per rivelare la trasformazione.",
     "cta": "Richiedi un Preventivo →",
-    "labels": ["Soggiorno", "Cucina", "Camera da Letto", "Bagno", "Esterno", "Giardino", "Piscina", "Villetta", "Studio", "Sala da Pranzo", "Ingresso"]
+    "labels": ["Esterno", "Ingresso", "Open Space", "Soggiorno", "Cucina", "Bagno Padronale", "Terrazza Panoramica", "Camera da Letto", "Bagno", "Giardino", "Piscina", "Villetta", "Studio", "Sala da Pranzo"]
   }
 }

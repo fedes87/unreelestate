@@ -23,24 +23,26 @@ export const pricingMeta = [
 ]
 
 export const galleryPairs = [
-  { before: '/gallery/before/living.png',   after: '/gallery/after/living.png'   },
-  { before: '/gallery/before/kitchen.png',  after: '/gallery/after/kitchen.png'  },
-  { before: '/gallery/before/exterior.png', after: '/gallery/after/exterior.png' },
-  { before: '/gallery/before/backyard.png', after: '/gallery/after/backyard.png' },
+  { before: '/gallery/before/exterior.png',  after: '/gallery/after/exterior.png'  },
+  { before: '/gallery/before/entryway.png',  after: '/gallery/after/entryway.png'  },
+  { before: '/gallery/before/openspace.png', after: '/gallery/after/openspace.png' },
 ]
 
 export const portfolioPairs = [
-  { before: '/gallery/before/living.png',   after: '/gallery/after/living.png'   },
-  { before: '/gallery/before/kitchen.png',  after: '/gallery/after/kitchen.png'  },
-  { before: '/gallery/before/bedroom.png',  after: '/gallery/after/bedroom.png'  },
-  { before: '/gallery/before/bathroom.png', after: '/gallery/after/bathroom.png' },
-  { before: '/gallery/before/exterior.png', after: '/gallery/after/exterior.png' },
-  { before: '/gallery/before/backyard.png', after: '/gallery/after/backyard.png' },
-  { before: '/gallery/before/pool.png',     after: '/gallery/after/pool.png'     },
-  { before: '/gallery/before/townhome.png', after: '/gallery/after/townhome.png' },
-  { before: '/gallery/before/office.png',   after: '/gallery/after/office.png'   },
-  { before: '/gallery/before/dining.png',   after: '/gallery/after/dining.png'   },
-  { before: '/gallery/before/entryway.png', after: '/gallery/after/entryway.png' },
+  { before: '/gallery/before/exterior.png',   after: '/gallery/after/exterior.png'   },
+  { before: '/gallery/before/entryway.png',   after: '/gallery/after/entryway.png'   },
+  { before: '/gallery/before/openspace.png',  after: '/gallery/after/openspace.png'  },
+  { before: '/gallery/before/living.png',     after: '/gallery/after/living.png'     },
+  { before: '/gallery/before/kitchen.png',    after: '/gallery/after/kitchen.png'    },
+  { before: '/gallery/before/masterbath.png', after: '/gallery/after/masterbath.png' },
+  { before: '/gallery/before/rooftop.png',    after: '/gallery/after/rooftop.png'    },
+  { before: '/gallery/before/bedroom.png',    after: '/gallery/after/bedroom.png'    },
+  { before: '/gallery/before/bathroom.png',   after: '/gallery/after/bathroom.png'   },
+  { before: '/gallery/before/backyard.png',   after: '/gallery/after/backyard.png'   },
+  { before: '/gallery/before/pool.png',       after: '/gallery/after/pool.png'       },
+  { before: '/gallery/before/townhome.png',   after: '/gallery/after/townhome.png'   },
+  { before: '/gallery/before/office.png',     after: '/gallery/after/office.png'     },
+  { before: '/gallery/before/dining.png',     after: '/gallery/after/dining.png'     },
 ]
 
 export const navHrefs = [

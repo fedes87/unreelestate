@@ -272,7 +272,7 @@
     "subtitle2": "Desliza a izquierda y derecha para ver lo que entregamos.",
     "btnPortfolio": "Ver Portafolio Completo →",
     "btnQuote": "Solicitar Cotización →",
-    "labels": ["Sala de Estar", "Cocina", "Exterior", "Patio Trasero"]
+    "labels": ["Exterior", "Entrada", "Espacio Abierto"]
   },
   "cookies": {
     "text": "Este sitio no utiliza cookies de seguimiento. Solo usamos cookies esenciales para el correcto funcionamiento del sitio.",
@@ -285,6 +285,6 @@
     "titleEm": "Transformada.",
     "subtitle": "Arrastra cada slider para revelar la transformación.",
     "cta": "Solicitar Cotización →",
-    "labels": ["Sala de Estar", "Cocina", "Suite Principal", "Baño", "Exterior", "Patio Trasero", "Piscina", "Townhome", "Oficina en Casa", "Comedor", "Entrada"]
+    "labels": ["Exterior", "Entrada", "Espacio Abierto", "Sala de Estar", "Cocina", "Baño Principal", "Terraza Panorámica", "Dormitorio", "Baño", "Patio Trasero", "Piscina", "Townhome", "Oficina en Casa", "Comedor"]
   }
 }
