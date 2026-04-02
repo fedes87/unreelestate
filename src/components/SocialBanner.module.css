@@ -1,0 +1,33 @@
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 28px 24px;
+  background: var(--bg-primary);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.text {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 16px;
+  font-style: italic;
+  color: var(--text-secondary);
+  letter-spacing: 0.5px;
+}
+
+.icons {
+  display: flex;
+  gap: 14px;
+}
+
+.icons a {
+  color: var(--text-muted);
+  transition: color 0.3s, transform 0.3s;
+}
+
+.icons a:hover {
+  color: var(--gold);
+  transform: scale(1.15);
+}

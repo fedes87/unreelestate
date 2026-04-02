@@ -7,6 +7,7 @@ import RoomFurnishing from './components/RoomFurnishing'
 import StyleTransformer from './components/StyleTransformer'
 import VideoDemo from './components/VideoDemo'
 import Services from './components/Services'
+import SocialBanner from './components/SocialBanner'
 import WhyUnreel from './components/WhyUnreel'
 import HowItWorks from './components/HowItWorks'
 import Pricing from './components/Pricing'
@@ -28,6 +29,7 @@ export default function App() {
       <StyleTransformer />
       <VideoDemo />
       <Services />
+      <SocialBanner />
       <WhyUnreel />
       <HowItWorks />
       <Pricing />
