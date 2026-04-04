@@ -253,6 +253,32 @@
     letter-spacing: 1px;
   }
 
+  /* WEATHER */
+  .weather-banner {
+    background: rgba(255,255,255,0.08);
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 12px;
+    color: #ddd;
+    text-align: center;
+    margin-top: 4px;
+  }
+  .weather-banner strong { color: #fff; }
+
+  .weather-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    background: rgba(0,0,0,0.06);
+    border-radius: 20px;
+    padding: 2px 8px;
+    margin-top: 4px;
+    color: #555;
+    white-space: nowrap;
+  }
+  .weather-chip .wi { font-size: 14px; }
+
   @media print {
     .clock-bar { display: none; }
     body { background: white; padding: 20px; }
@@ -270,6 +296,7 @@
       <div class="clock-time" id="clock">--:-- --</div>
     </div>
     <div class="clock-next" id="next-event">Loading...</div>
+    <div class="weather-banner" id="weather-now">Fetching weather...</div>
   </div>
 
   <header>
@@ -637,6 +664,71 @@
 
   updateClock();
   setInterval(updateClock, 1000);
+
+  // ── WEATHER (Open-Meteo, no API key) ──────────────────────────────
+  const LAT = 30.0741, LON = -97.5547; // Hyatt Lost Pines, Cedar Creek TX
+
+  const WMO = {
+    0:'☀️ Clear', 1:'🌤️ Mainly clear', 2:'⛅ Partly cloudy', 3:'☁️ Overcast',
+    45:'🌫️ Foggy', 48:'🌫️ Foggy',
+    51:'🌦️ Light drizzle', 53:'🌦️ Drizzle', 55:'🌦️ Heavy drizzle',
+    61:'🌧️ Light rain', 63:'🌧️ Rain', 65:'🌧️ Heavy rain',
+    71:'❄️ Light snow', 73:'❄️ Snow', 75:'❄️ Heavy snow',
+    80:'🌦️ Showers', 81:'🌧️ Showers', 82:'🌧️ Heavy showers',
+    95:'⛈️ Thunderstorm', 96:'⛈️ Thunderstorm', 99:'⛈️ Thunderstorm'
+  };
+
+  function wmoLabel(code) { return WMO[code] || '🌡️'; }
+  function wmoEmoji(code) { return (WMO[code] || '🌡️').split(' ')[0]; }
+
+  async function fetchWeather() {
+    try {
+      const url = `https://api.open-meteo.com/v1/forecast?latitude=${LAT}&longitude=${LON}`
+        + `&hourly=temperature_2m,weathercode,precipitation_probability`
+        + `&temperature_unit=fahrenheit&timezone=America%2FChicago&forecast_days=3`;
+      const res = await fetch(url);
+      const data = await res.json();
+
+      const hours = data.hourly.time;          // ["2025-04-05T00:00", ...]
+      const temps = data.hourly.temperature_2m;
+      const codes = data.hourly.weathercode;
+      const precip = data.hourly.precipitation_probability;
+
+      // Build a lookup: "YYYY-MM-DDTHH:00" → {temp, code, precip}
+      const byHour = {};
+      hours.forEach((t, i) => { byHour[t] = { temp: temps[i], code: codes[i], precip: precip[i] }; });
+
+      // Current conditions
+      const now = getAustinTime();
+      const todayStr = now.toLocaleDateString('en-CA', { timeZone: 'America/Chicago' }); // YYYY-MM-DD
+      const curHour = now.getHours();
+      const curKey = `${todayStr}T${String(curHour).padStart(2,'0')}:00`;
+      const cur = byHour[curKey];
+      if (cur) {
+        document.getElementById('weather-now').innerHTML =
+          `📍 Lost Pines &nbsp;|&nbsp; <strong>${Math.round(cur.temp)}°F</strong> &nbsp;${wmoLabel(cur.code)}`
+          + (cur.precip > 10 ? ` &nbsp;💧 ${cur.precip}% rain` : '');
+      }
+
+      // Inject chip into each timeline item
+      items.forEach(item => {
+        const startH = parseInt(item.dataset.start.split(':')[0]);
+        const key = `${todayStr}T${String(startH).padStart(2,'0')}:00`;
+        const w = byHour[key];
+        if (!w) return;
+        const chip = document.createElement('span');
+        chip.className = 'weather-chip';
+        chip.innerHTML = `<span class="wi">${wmoEmoji(w.code)}</span> ${Math.round(w.temp)}°F`
+          + (w.precip > 10 ? ` · 💧${w.precip}%` : '');
+        item.querySelector('.item-content').appendChild(chip);
+      });
+
+    } catch(e) {
+      document.getElementById('weather-now').textContent = 'Weather unavailable';
+    }
+  }
+
+  fetchWeather();
 </script>
 </body>
 </html>
