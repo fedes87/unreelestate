@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faryal & Zaheer — Wedding Day Timeline</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Georgia', serif;
+    background: #f9f6f0;
+    color: #2c2c2c;
+    padding: 40px 20px;
+  }
+
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+  }
+
+  /* HEADER */
+  header {
+    text-align: center;
+    margin-bottom: 48px;
+    padding-bottom: 32px;
+    border-bottom: 2px solid #c9a96e;
+  }
+  header .date-label {
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c9a96e;
+    margin-bottom: 10px;
+  }
+  header h1 {
+    font-size: 38px;
+    font-weight: normal;
+    color: #1a1a1a;
+    letter-spacing: 1px;
+  }
+  header h1 em {
+    font-style: italic;
+    color: #c9a96e;
+  }
+  header .subtitle {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #888;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  /* LEGEND */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: #555;
+    letter-spacing: 0.5px;
+  }
+  .legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  /* PHASE HEADER */
+  .phase-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 36px 0 16px;
+  }
+  .phase-header .phase-label {
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .phase-header .phase-line {
+    flex: 1;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.2;
+  }
+
+  /* TIMELINE ITEM */
+  .item {
+    display: flex;
+    gap: 0;
+    margin-bottom: 6px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .item-time {
+    min-width: 80px;
+    padding: 12px 14px;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: right;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    letter-spacing: 0.3px;
+    padding-top: 14px;
+  }
+  .item-bar {
+    width: 4px;
+    flex-shrink: 0;
+  }
+  .item-content {
+    flex: 1;
+    padding: 12px 16px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  .item-content .title {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 2px;
+  }
+  .item-content .detail {
+    font-size: 13px;
+    opacity: 0.75;
+    margin-top: 4px;
+  }
+  .item-content ul {
+    margin: 6px 0 0 16px;
+    font-size: 13px;
+    opacity: 0.85;
+  }
+  .item-content ul li {
+    margin-bottom: 3px;
+  }
+
+  /* HIGHLIGHT BADGE */
+  .badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  /* NOTE BOX */
+  .note-box {
+    background: #fff8ec;
+    border-left: 4px solid #c9a96e;
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    margin: 6px 0 6px 84px;
+    font-size: 13px;
+    color: #5a4a2a;
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  /* COLOR THEMES */
+  /* PREP — warm grey */
+  .phase-prep .phase-label { background: #e8e3dc; color: #6b5c4a; }
+  .phase-prep .phase-line { color: #6b5c4a; }
+
+  .prep { background: #f4f0eb; }
+  .prep .item-time { color: #7a6a58; background: #ede8e0; }
+  .prep .item-bar { background: #b5a08a; }
+
+  /* BRIDE — rose */
+  .phase-bride .phase-label { background: #fde8ec; color: #a0394f; }
+  .phase-bride .phase-line { color: #a0394f; }
+
+  .bride { background: #fff0f3; }
+  .bride .item-time { color: #a0394f; background: #fce0e6; }
+  .bride .item-bar { background: #d4758a; }
+  .bride .badge { background: #fce0e6; color: #a0394f; }
+
+  /* GROOM — navy */
+  .phase-groom .phase-label { background: #dde5f0; color: #2a4a7a; }
+  .phase-groom .phase-line { color: #2a4a7a; }
+
+  .groom { background: #edf2fa; }
+  .groom .item-time { color: #2a4a7a; background: #d8e4f5; }
+  .groom .item-bar { background: #5a82c0; }
+  .groom .badge { background: #d8e4f5; color: #2a4a7a; }
+
+  /* CEREMONY — gold */
+  .phase-ceremony .phase-label { background: #fef3d0; color: #7a5a00; }
+  .phase-ceremony .phase-line { color: #7a5a00; }
+
+  .ceremony { background: #fffbee; }
+  .ceremony .item-time { color: #7a5a00; background: #fef0c0; }
+  .ceremony .item-bar { background: #c9a400; }
+  .ceremony .badge { background: #fef0c0; color: #7a5a00; }
+
+  /* KEY MOMENT — deep gold highlight */
+  .key-moment {
+    background: #fff7e0;
+    border: 1px solid #e8c84a;
+  }
+  .key-moment .item-time { background: #fde96a; color: #5a4200; }
+  .key-moment .item-bar { background: #c9a400; }
+
+  /* RECEPTION — emerald */
+  .phase-reception .phase-label { background: #d8f0e8; color: #1a6642; }
+  .phase-reception .phase-line { color: #1a6642; }
+
+  .reception { background: #eef8f2; }
+  .reception .item-time { color: #1a6642; background: #d4f0e2; }
+  .reception .item-bar { background: #3a9e68; }
+  .reception .badge { background: #d4f0e2; color: #1a6642; }
+
+  /* CRITICAL alert */
+  .critical {
+    background: #fff0e8;
+    border: 1px solid #e89060;
+  }
+  .critical .item-time { background: #ffd8c0; color: #7a3010; }
+  .critical .item-bar { background: #e07040; }
+
+  /* FOOTER */
+  footer {
+    margin-top: 48px;
+    padding-top: 24px;
+    border-top: 1px solid #ddd;
+    text-align: center;
+    font-size: 12px;
+    color: #aaa;
+    letter-spacing: 1px;
+  }
+
+  @media print {
+    body { background: white; padding: 20px; }
+    .item { break-inside: avoid; }
+    .phase-header { break-before: auto; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="date-label">Wedding Day Timeline</div>
+    <h1>Faryal <em>&</em> Zaheer</h1>
+    <div class="subtitle">Photography Coverage Schedule</div>
+  </header>
+
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:#b5a08a"></div> Logistics</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#d4758a"></div> Bride</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#5a82c0"></div> Groom</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#c9a400"></div> Ceremony</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#3a9e68"></div> Reception</div>
+    <div class="legend-item"><div class="legend-dot" style="background:#e07040"></div> Critical / Action Required</div>
+  </div>
+
+  <!-- ARRIVAL -->
+  <div class="phase-header phase-prep">
+    <span class="phase-label">Arrival & Setup</span>
+    <div class="phase-line"></div>
+  </div>
+
+  <div class="item prep">
+    <div class="item-time">1:30</div>
+    <div class="item-bar"></div>
+    <div class="item-content"><div class="title">Head out to venue</div></div>
+  </div>
+  <div class="item prep">
+    <div class="item-time">1:45</div>
+    <div class="item-bar"></div>
+    <div class="item-content"><div class="title">Arrive at venue</div></div>
+  </div>
+  <div class="item prep">
+    <div class="item-time">2:30</div>
+    <div class="item-bar"></div>
+    <div class="item-content"><div class="title">Begin coverage</div></div>
+  </div>
+
+  <!-- BRIDE PREP -->
+  <div class="phase-header phase-bride">
+    <span class="phase-label">Bride — Getting Ready</span>
+    <div class="phase-line"></div>
+  </div>
+
+  <div class="item bride">
+    <div class="item-time">3:00</div>
+    <div class="item-bar"></div>
+    <div class="item-content"><div class="title">Faryal is dressed</div></div>
+  </div>
+
+  <div class="item bride critical">
+    <div class="item-time">3:10</div>
+    <div class="item-bar"></div>
+    <div class="item-content">
+      <div class="title">Mohur delivered <span class="badge" style="background:#ffd8c0;color:#7a3010;">PRIVATE MOMENT</span></div>
+      <div class="detail">Gift from groom — delivered by Zaheer's parents (Zaheer's parents deliver it)<br>
+      <strong>Faryal must be completely alone when she opens it</strong></div>
+    </div>
+  </div>
+
+  <div class="item bride">
+    <div class="item-time">3:20</div>
+    <div class="item-bar"></div>
+    <div class="item-content">
+      <div class="title">Nikkah permission moment</div>
+      <div class="detail">Witnesses, Imam, and Parents enter to ask Faryal for her permission</div>
+    </div>
+  </div>
+
+  <div class="item bride">
+    <div class="item-time">3:30–4:30</div>
+    <div class="item-bar"></div>
+    <div class="item-content">
+      <div class="title">Faryal family pictures <span class="badge">PHOTO BLOCK</span></div>
+    </div>
+  </div>
+
+  <!-- GROOM PREP -->
+  <div class="phase-header phase-groom">
+    <span class="phase-label">Groom — Getting Ready</span>
+    <div class="phase-line"></div>
+  </div>
+
+  <div class="item groom">
+    <div class="item-time">3:30</div>
+    <div class="item-bar"></div>
+    <div class="item-content"><div class="title">Capture Zaheer getting ready</div></div>
+  </div>
+  <div class="item groom">
+    <div class="item-time">4:00</div>
+    <div class="item-bar"></div>
+    <div class="item-content"><div class="title">Zaheer dressed</div></div>
+  </div>
+  <div class="item groom">
+    <div class="item-time">4:00–4:45</div>
+    <div class="item-bar"></div>
+    <div class="item-content">
+      <div class="title">Zaheer family pictures <span class="badge">PHOTO BLOCK</span></div>
+    </div>
+  </div>
+
+  <!-- CEREMONY -->
+  <div class="phase-header phase-ceremony">
+    <span class="phase-label">Nikkah Ceremony</span>
+    <div class="phase-line"></div>
+  </div>
+
+  <div class="item ceremony">
+    <div class="item-time">~5:00</div>
+    <div class="item-bar"></div>
+    <div class="item-content">
+      <div class="title">"Official Start" <span class="badge" style="background:#fff0a0;color:#5a4200;">SOFT TIME</span></div>
+      <div class="detail">Accommodates late arrivals. Faryal's guests already seated in amphitheater. Zaheer's guests gather in lobby. Faryal's parents driven to amphitheater.</div>
+    </div>
+  </div>
+
+  <div class="item ceremony key-moment">
+    <div class="item-time">5:15</div>
+    <div class="item-bar"></div>
+    <div class="item-content">
+      <div class="title">Zaheer Bharat begins</div>
+      <div class="detail">Tassa leads the way from Riversong Lawn</div>
+    </div>
+  </div>
+
+  <div class="item ceremony key-moment">
+    <div class="item-time">~5:45</div>
+    <div class="item-bar"></div>
+    <div class="item-content">
+      <div class="title">Zaheer arrives at amphitheater</div>
+      <div class="detail">Faryal's parents welcome Zaheer's parents</div>
+    </div>
+  </div>
+
+  <div class="item ceremony">
+    <div class="item-time">~5:50</div>
+    <div class="item-bar"></div>
+    <div class="item-content">
+      <div class="title">Faryal & Freya driven to amphitheater</div>
+      <div class="detail">Driven by Gina</div>
+    </div>
+  </div>
+
+  <div class="note-box">
+    <strong>Ceremony order:</strong><br>
+    • Short welcome + please silence phones<br>
+    • Music plays — ring bearer and flower girl enter<br>
+    • Ask everyone to rise for the bride<br>
+    • Music plays — <strong>bride enters 59 seconds after song starts</strong><br>
+    • Welcome / officiant introduction<br>
+    • Explanation of the Nikkah ceremony<br>
+    • Opening Dua — <em>Faryal's uncle Noman Kazmi</em><br>
+    • Surah Ar-rum 30:20–22 — read by Noman Kazmi<br>
+    • English summary of Surah Ar-rum & Khutba<br>
+    &nbsp;&nbsp;<em>(love, family, togetherness, responsibilities in this next chapter)</em><br>
+    • Nikkah Ceremony — <strong>ask bride three times</strong><br>
+    • Ring exchange (groom first) + garland exchange<br>
+    • Arsi Mushaf explanation & ceremony<br>
+    &nbsp;&nbsp;<em>"Newlyweds see each other's faces for the first time under the light of marriage. In the mirror, they see their future — the two of them facing the rest of the world."</em><br>
+    • Closing Dua<br>
+    • Ask couple to stand — pronounce them husband and wife<br>
+    • Music plays — bride and groom exit
+  </div>
+
+  <div class="item ceremony critical">
+    <div class="item-time">Exit</div>
+    <div class="item-bar"></div>
+    <div class="item-content">
+      <div class="title">⚠ Photographer boards golf cart immediately</div>
+      <div class="detail"><strong>Photographer gets in the golf cart with the couple and is driven away at the top of the stairs</strong></div>
+    </div>
+  </div>
+
+  <!-- RECEPTION -->
+  <div class="phase-header phase-reception">
+    <span class="phase-label">Reception</span>
+    <div class="phase-line"></div>
+  </div>
+
+  <div class="item reception">
+    <div class="item-time">6:45</div>
+    <div class="item-bar"></div>
+    <div class="item-content">
+      <div class="title">Guests walk to ballroom</div>
+      <div class="detail">Doors open — food served immediately after Nikkah. Couple does Indian clothes pictures.</div>
+    </div>
+  </div>
+
+  <div class="item reception">
+    <div class="item-time">7:15</div>
+    <div class="item-bar"></div>
+    <div class="item-content"><div class="title">Zaheer & Faryal eat and change clothes</div></div>
+  </div>
+
+  <div class="item reception">
+    <div class="item-time">7:45–8:30</div>
+    <div class="item-bar"></div>
+    <div class="item-content">
+      <div class="title">Western clothes pictures <span class="badge">PHOTO BLOCK</span></div>
+    </div>
+  </div>
+
+  <div class="item reception">
+    <div class="item-time">~8:00</div>
+    <div class="item-bar"></div>
+    <div class="item-content"><div class="title">Last call for food</div></div>
+  </div>
+
+  <div class="item reception">
+    <div class="item-time">8:15</div>
+    <div class="item-bar"></div>
+    <div class="item-content">
+      <div class="title">Food service ends</div>
+      <div class="detail">Agas removes all tables and equipment except serpentine and chai/lassi tables. Hotel staff puts dessert boxes and cake on serpentine tables.</div>
+    </div>
+  </div>
+
+  <div class="item reception">
+    <div class="item-time">~8:25</div>
+    <div class="item-bar"></div>
+    <div class="item-content">
+      <div class="title">Ask guests to take their seats</div>
+      <div class="detail">MC introduces himself</div>
+    </div>
+  </div>
+
+  <div class="item reception key-moment" style="background:#e8f5ee;border:1px solid #5cb88a;">
+    <div class="item-time" style="background:#c8edd8;color:#1a5535;">~8:30</div>
+    <div class="item-bar" style="background:#3a9e68;"></div>
+    <div class="item-content">
+      <div class="title">Grand Entrances</div>
+      <ul>
+        <li><strong>Siblings & Nephews:</strong> Billal, Hafeeza, Noor, Farah, Josh, Romeo, Ejaz, Zayd</li>
+        <li><strong>Faryal's Parents:</strong> Syed Sajjad Zafar and Nusrat Fatima</li>
+        <li><strong>Zaheer's Parents:</strong> Naeem and Sally Kamal</li>
+        <li><strong>Couple:</strong> Mr. and Mrs. Zaheer and Faryal Kamal</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="item reception key-moment" style="background:#e8f5ee;border:1px solid #5cb88a;">
+    <div class="item-time" style="background:#c8edd8;color:#1a5535;">8:40</div>
+    <div class="item-bar" style="background:#3a9e68;"></div>
+    <div class="item-content"><div class="title">First Dance</div></div>
+  </div>
+
+  <div class="item reception">
+    <div class="item-time">8:45</div>
+    <div class="item-bar"></div>
+    <div class="item-content">
+      <div class="title">Siblings' speeches</div>
+      <ul>
+        <li>1. Hafeeza Kamal</li>
+        <li>2. Billal Haider</li>
+        <li>3. Farah Gill</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="item reception">
+    <div class="item-time">9:00</div>
+    <div class="item-bar"></div>
+    <div class="item-content">
+      <div class="title">Parents' speeches</div>
+      <ul>
+        <li>1. Syed Sajjad Zafar and Nusrat Fatima</li>
+        <li>2. Naeem and Sally Kamal</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="item reception">
+    <div class="item-time">9:10</div>
+    <div class="item-bar"></div>
+    <div class="item-content"><div class="title">Zaheer & Faryal speech</div></div>
+  </div>
+
+  <div class="item reception key-moment" style="background:#e8f5ee;border:1px solid #5cb88a;">
+    <div class="item-time" style="background:#c8edd8;color:#1a5535;">9:15</div>
+    <div class="item-bar" style="background:#3a9e68;"></div>
+    <div class="item-content">
+      <div class="title">Group selfie + Dance floor opens</div>
+      <div class="detail">Invite everyone to dancefloor for a selfie — DJ starts music immediately after</div>
+    </div>
+  </div>
+
+  <div class="item reception critical">
+    <div class="item-time">10:30</div>
+    <div class="item-bar"></div>
+    <div class="item-content"><div class="title">End of coverage</div></div>
+  </div>
+
+</div>
+
+<footer>
+  Faryal & Zaheer · Wedding Day Timeline · Photography Reference
+</footer>
+
+</div>
+</body>
+</html>
