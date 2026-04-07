@@ -95,15 +95,17 @@ export default function VideoDemo() {
             {/* Before photo */}
             <img
               src={room.before}
-              alt="before"
+              alt={`Real estate listing photo before AI enhancement — ${room.key}`}
               className={`${styles.media} ${step === 'before' ? styles.mediaVisible : ''}`}
+              loading="lazy"
             />
 
             {/* After photo */}
             <img
               src={room.after}
-              alt="after"
+              alt={`AI-enhanced real estate photo after transformation — ${room.key}`}
               className={`${styles.media} ${step === 'after' ? styles.mediaVisible : ''}`}
+              loading="lazy"
             />
 
             {/* Video */}

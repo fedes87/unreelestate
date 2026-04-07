@@ -43,15 +43,16 @@ export default function BeforeAfterSlider({ before, after, label }) {
       onTouchMove={onTouchMove}
     >
       {/* After (bottom layer) */}
-      <img src={after} alt={`${label} — after`} className={styles.imgAfter} draggable={false} />
+      <img src={after} alt={`${label} — AI-enhanced real estate photo after`} className={styles.imgAfter} draggable={false} loading="lazy" />
 
       {/* Before (full size, clipped via clip-path — no scaling) */}
       <img
         src={before}
-        alt={`${label} — before`}
+        alt={`${label} — real estate listing photo before`}
         className={styles.imgBefore}
         style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
         draggable={false}
+        loading="lazy"
       />
 
       {/* Divider handle */}

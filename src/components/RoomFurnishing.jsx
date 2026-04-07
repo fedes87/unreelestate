@@ -172,8 +172,9 @@ export default function RoomFurnishing() {
         {!loaded && (
           <img
             src="/img/furnishing/placeholder.webp"
-            alt=""
+            alt="AI virtual staging room furnishing preview | Unreel Estate"
             className={styles.placeholder}
+            loading="lazy"
           />
         )}
 

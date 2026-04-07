@@ -32,7 +32,7 @@
     "link": "Ver Cómo Funciona →"
   },
   "services": {
-    "label": "Lo Que Hacemos",
+    "label": "Fotografía Inmobiliaria AI & Virtual Staging",
     "title1": "Cuatro Formas de Hacer",
     "title2": "una Propiedad",
     "titleEm": "Irresistible.",
@@ -101,7 +101,7 @@
     ]
   },
   "how": {
-    "label": "Cómo Funciona",
+    "label": "Cómo Funciona Nuestro Proceso de Fotografía Inmobiliaria AI",
     "title1": "Tres Pasos hacia lo",
     "titleEm": "Cinematográfico.",
     "cta": "Empieza tu Listado →",
@@ -278,11 +278,11 @@
     "ctaContact": "Transforma tu Propiedad →"
   },
   "gallery": {
-    "label": "Portafolio",
+    "label": "Transformaciones de Fotos Inmobiliarias AI",
     "title1": "Arrastra para Ver",
     "titleEm": "La Transformación.",
-    "subtitle1": "Cada imagen comenzó como una foto estándar de listado.",
-    "subtitle2": "Desliza a izquierda y derecha para ver lo que entregamos.",
+    "subtitle1": "Cada imagen comenzó como una foto estándar de listado — mejorada con IA por Unreel Estate.",
+    "subtitle2": "Desliza para ver lo que entrega nuestra fotografía inmobiliaria con IA.",
     "btnPortfolio": "Ver Portafolio Completo →",
     "btnQuote": "Solicitar Cotización →",
     "labels": ["Exterior", "Entrada", "Espacio Abierto"]

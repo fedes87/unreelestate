@@ -122,10 +122,11 @@ export default function StyleTransformer() {
                   <img
                     key={s.key}
                     src={imgSrc(s.key, room)}
-                    alt={`${s.label} ${roomLabels[i]}`}
+                    alt={`${s.label} virtual staging — AI real estate photo ${roomLabels[i]}`}
                     className={`${styles.photo}
                       ${s.key === displayStyle && !fading ? styles.photoVisible : ''}
                       ${fading && s.key === activeStyle ? styles.photoFading : ''}`}
+                    loading="lazy"
                   />
                 ))}
                 <div className={styles.roomLabel}>{roomLabels[i]}</div>
@@ -167,10 +168,11 @@ export default function StyleTransformer() {
               <img
                 key={s.key}
                 src={imgSrc(s.key, ROOMS[activeRoom])}
-                alt={`${s.label} ${roomLabels[activeRoom]}`}
+                alt={`${s.label} virtual staging — AI real estate photo ${roomLabels[activeRoom]}`}
                 className={`${styles.photo}
                   ${s.key === displayStyle && !fading ? styles.photoVisible : ''}
                   ${fading && s.key === activeStyle ? styles.photoFading : ''}`}
+                loading="lazy"
               />
             ))}
             <div className={styles.roomLabel}>{roomLabels[activeRoom]}</div>

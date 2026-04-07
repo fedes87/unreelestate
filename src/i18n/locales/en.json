@@ -32,11 +32,11 @@
     "link": "See How It Works →"
   },
   "services": {
-    "label": "What We Do",
+    "label": "AI Real Estate Photography & Virtual Staging",
     "title1": "Four Ways to Make",
     "title2": "a Property",
     "titleEm": "Irresistible.",
-    "subtitle": "Everything starts from your existing photos. No film crew, no location visits — just extraordinary results delivered remotely.",
+    "subtitle": "AI-enhanced real estate photography and virtual staging — from your existing photos. No film crew, no location visits. Extraordinary results delivered remotely in 48 hours.",
     "items": [
       {
         "tag": "AI Photo Enhancement",
@@ -101,11 +101,11 @@
     ]
   },
   "how": {
-    "label": "How It Works",
+    "label": "How Our AI Real Estate Process Works",
     "title1": "Three Steps to",
     "titleEm": "Cinematic.",
     "cta": "Start Your Listing →",
-    "imgAlt": "Your listings delivered across all devices",
+    "imgAlt": "AI real estate photography and cinematic video delivered across all devices",
     "steps": [
       {
         "title": "Send Us Your Photos",
@@ -278,11 +278,11 @@
     "ctaContact": "Transform Your Property →"
   },
   "gallery": {
-    "label": "Portfolio",
+    "label": "Real Estate Photo Transformations",
     "title1": "Drag to See",
     "titleEm": "The Transformation.",
-    "subtitle1": "Every image started as a standard listing photo.",
-    "subtitle2": "Slide left and right to see what we deliver.",
+    "subtitle1": "Every image started as a standard listing photo — AI-enhanced by Unreel Estate.",
+    "subtitle2": "Slide left and right to see what our AI real estate photography delivers.",
     "btnPortfolio": "View Full Portfolio →",
     "btnQuote": "Get a Quote →",
     "labels": ["Exterior", "Entryway", "Open Space"]

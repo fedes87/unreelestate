@@ -32,11 +32,11 @@
     "link": "Scopri Come Funziona →"
   },
   "services": {
-    "label": "Cosa Facciamo",
+    "label": "Fotografia Immobiliare AI & Virtual Staging",
     "title1": "Quattro Modi per Rendere",
     "title2": "una Proprietà",
     "titleEm": "Irresistibile.",
-    "subtitle": "Tutto parte dalle tue foto esistenti. Nessuna troupe, nessuna visita — solo risultati straordinari consegnati da remoto.",
+    "subtitle": "Fotografia immobiliare AI e virtual staging — dalle tue foto esistenti. Nessuna troupe, nessuna visita. Risultati straordinari consegnati da remoto in 48 ore.",
     "items": [
       {
         "tag": "Miglioramento Foto AI",
@@ -101,7 +101,7 @@
     ]
   },
   "how": {
-    "label": "Come Funziona",
+    "label": "Come Funziona il Nostro Processo AI Immobiliare",
     "title1": "Tre Passi verso il",
     "titleEm": "Cinematografico.",
     "cta": "Inizia il Tuo Annuncio →",
@@ -278,11 +278,11 @@
     "ctaContact": "Trasforma la Tua Proprietà →"
   },
   "gallery": {
-    "label": "Portfolio",
+    "label": "Trasformazioni Foto Immobiliari AI",
     "title1": "Trascina per Vedere",
     "titleEm": "La Trasformazione.",
-    "subtitle1": "Ogni immagine è partita come una foto di annuncio standard.",
-    "subtitle2": "Scorri a sinistra e destra per vedere cosa consegniamo.",
+    "subtitle1": "Ogni immagine è partita come una foto di annuncio standard — migliorata con AI da Unreel Estate.",
+    "subtitle2": "Scorri a sinistra e destra per vedere cosa consegna la nostra fotografia immobiliare AI.",
     "btnPortfolio": "Vedi il Portfolio Completo →",
     "btnQuote": "Richiedi un Preventivo →",
     "labels": ["Esterno", "Ingresso", "Open Space"]

@@ -34,7 +34,7 @@ export default function Testimonials() {
               <div className={styles.quote}>"</div>
               <p className={styles.text}>{quotes[i]}</p>
               <div className={styles.author}>
-                {meta.avatar && <img src={meta.avatar} alt={meta.name} className={styles.avatar} />}
+                {meta.avatar && <img src={meta.avatar} alt={meta.name} className={styles.avatar} loading="lazy" width="56" height="56" />}
                 <div>
                   <div className={styles.name}>{meta.name}</div>
                   <div className={styles.role}>{meta.role}</div>

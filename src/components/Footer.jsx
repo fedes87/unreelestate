@@ -35,6 +35,7 @@ export default function Footer() {
         </div>
         <div className={styles.bottom}>
           <span>{t('footer.copyright', { year: new Date().getFullYear() })}</span>
+          <a href="/privacy-policy" className={styles.privacyLink}>Privacy Policy</a>
         </div>
       </div>
     </footer>
