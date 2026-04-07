@@ -10,6 +10,7 @@ import Services from './components/Services'
 import SocialBanner from './components/SocialBanner'
 import WhyUnreel from './components/WhyUnreel'
 import HowItWorks from './components/HowItWorks'
+import WaitingList from './components/WaitingList'
 import Pricing from './components/Pricing'
 import Testimonials from './components/Testimonials'
 import About from './components/About'
@@ -32,6 +33,7 @@ export default function App() {
       <SocialBanner />
       <WhyUnreel />
       <HowItWorks />
+      <WaitingList />
       <Pricing />
       <Testimonials />
       <About />

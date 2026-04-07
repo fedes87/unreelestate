@@ -134,7 +134,7 @@
       {
         "tagline": "Todo lo que necesitas para publicar una propiedad que se destaque.",
         "includes": [
-          "10 fotos — te ayudamos a elegir las mejores con IA",
+          "20 fotos — te ayudamos a elegir las mejores con IA",
           "AI Enhancement: retocadas, amuebladas o completamente remodeladas",
           "Reel cinematográfico completo de 40 segundos — FHD, 16:9 + 9:16",
           "Música libre de regalías incluida"
@@ -148,10 +148,10 @@
       {
         "tagline": "La suite de contenido completa. Una entrega, cada plataforma.",
         "includes": [
-          "15 fotos — selección asistida por IA incluida",
+          "40 fotos — selección asistida por IA incluida",
           "AI Enhancement: retocadas, amuebladas o completamente remodeladas",
           "Reel cinematográfico completo de 1 minuto — 4K, 16:9 + 9:16",
-          "15 clips verticales individuales — listos para Stories & Reels",
+          "40 clips verticales individuales — listos para Stories & Reels",
           "Voz en off con IA incluida — elige tu voz",
           "Plano + PDF completo de la propiedad incluidos",
           "Música libre de regalías incluida"
@@ -220,6 +220,19 @@
     "sending": "Enviando...",
     "error": "Algo salió mal. Inténtalo de nuevo o escríbenos directamente por email.",
     "privacy": "Tus datos están seguros con nosotros. Nunca los compartiremos con terceros."
+  },
+  "waitlist": {
+    "badge": "Acceso Anticipado · Ahora Abierto",
+    "title1": "Estamos Apenas",
+    "titleEm": "Empezando.",
+    "desc": "Unreel Estate está en fase de lanzamiento. Estamos incorporando a nuestros primeros clientes uno por uno — y los primeros reciben algo especial.",
+    "offer": "Los primeros clientes reciben un proyecto gratuito — nosotros creamos el caso de estudio, tú te quedas con todo el contenido.",
+    "placeholder": "Ingresa tu correo electrónico",
+    "cta": "Únete a la Lista de Espera →",
+    "sending": "Enviando...",
+    "success": "Estás en la lista. Te contactaremos pronto.",
+    "error": "Algo salió mal. Inténtalo de nuevo.",
+    "note": "Sin spam, nunca. Te contactaremos personalmente."
   },
   "footer": {
     "tagline": "Contenido inmobiliario de lujo, creado para las propiedades que más lo merecen.",

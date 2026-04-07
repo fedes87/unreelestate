@@ -134,7 +134,7 @@
       {
         "tagline": "Tutto quello che ti serve per pubblicare una proprietà che si distingue.",
         "includes": [
-          "10 foto — ti aiutiamo a scegliere le migliori con l'AI",
+          "20 foto — ti aiutiamo a scegliere le migliori con l'AI",
           "AI Enhancement: ritoccate, arredate o completamente ristrutturate",
           "Reel cinematografico completo da 40 secondi — FHD, 16:9 + 9:16",
           "Musica royalty-free inclusa"
@@ -148,10 +148,10 @@
       {
         "tagline": "La suite di contenuti completa. Una consegna, ogni piattaforma.",
         "includes": [
-          "15 foto — selezione assistita da AI inclusa",
+          "40 foto — selezione assistita da AI inclusa",
           "AI Enhancement: ritoccate, arredate o completamente ristrutturate",
           "Reel cinematografico completo da 1 minuto — 4K, 16:9 + 9:16",
-          "15 clip verticali individuali — pronte per Stories & Reels",
+          "40 clip verticali individuali — pronte per Stories & Reels",
           "Voiceover AI incluso — scegli la tua voce",
           "Planimetria + PDF completo della proprietà inclusi",
           "Musica royalty-free inclusa"
@@ -220,6 +220,19 @@
     "sending": "Invio in corso...",
     "error": "Qualcosa è andato storto. Riprova o scrivici direttamente via email.",
     "privacy": "I tuoi dati sono al sicuro con noi. Non li condivideremo mai con terze parti."
+  },
+  "waitlist": {
+    "badge": "Accesso Anticipato · Ora Aperto",
+    "title1": "Stiamo Solo",
+    "titleEm": "Iniziando.",
+    "desc": "Unreel Estate è in fase di lancio. Stiamo onboardando i primi clienti uno alla volta — e i primi hanno qualcosa di speciale.",
+    "offer": "I primi clienti ricevono un progetto gratuito — creiamo il case study, tu tieni tutti i contenuti.",
+    "placeholder": "Inserisci la tua email",
+    "cta": "Unisciti alla Waiting List →",
+    "sending": "Invio in corso...",
+    "success": "Sei nella lista. Ti contatteremo presto.",
+    "error": "Qualcosa è andato storto. Riprova.",
+    "note": "Zero spam. Ti contatteremo personalmente."
   },
   "footer": {
     "tagline": "Contenuti immobiliari di lusso, creati per le proprietà che lo meritano di più.",
