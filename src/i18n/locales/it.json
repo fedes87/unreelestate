@@ -299,5 +299,45 @@
     "subtitle": "Trascina ogni slider per rivelare la trasformazione.",
     "cta": "Richiedi un Preventivo →",
     "labels": ["Esterno", "Ingresso", "Open Space", "Soggiorno", "Cucina", "Bagno Padronale", "Terrazza Panoramica", "Camera da Letto", "Bagno", "Giardino", "Piscina", "Villetta", "Studio", "Sala da Pranzo"]
+  },
+  "faq": {
+    "label": "FAQ",
+    "title1": "Tutto Quello Che Devi",
+    "titleEm": "Sapere.",
+    "cta": "Richiedi un Preventivo →",
+    "items": [
+      {
+        "q": "Quanto costa la fotografia immobiliare AI?",
+        "a": "Il pacchetto Listing parte da $399 e include 20 foto migliorate con AI più un reel cinematografico completo da 40 secondi. Il pacchetto Signature è $599 e include 40 foto, un reel 4K da 1 minuto, 40 clip verticali per i social, voiceover AI e PDF completo della proprietà. Nessun costo nascosto — tutti i formati e le piattaforme sono inclusi."
+      },
+      {
+        "q": "Quanto tempo ci vuole per la consegna?",
+        "a": "Consegniamo il pacchetto completo entro 48 ore dal ricevimento delle foto. Include foto migliorate, video cinematografico e tutti i formati social — pronti da pubblicare lo stesso giorno in cui li ricevi."
+      },
+      {
+        "q": "Devo assumere un fotografo o una troupe?",
+        "a": "No. Unreel Estate è 100% remoto. Ci invii le tue foto esistenti del listino — anche gli scatti da iPhone funzionano — e noi le trasformiamo con l'AI. Nessuna troupe, nessuna visita in loco, nessun problema di agenda."
+      },
+      {
+        "q": "Che tipo di foto posso inviare?",
+        "a": "Accettiamo qualsiasi formato e qualsiasi qualità. Foto da iPhone, scatti DSLR, foto di vecchi annunci — va tutto bene. Più contesto ci dai (preferenze di stile, acquirente target, punti di forza della proprietà), migliore sarà il risultato."
+      },
+      {
+        "q": "Cos'è il virtual staging e come funziona?",
+        "a": "Il virtual staging è il processo di aggiungere digitalmente mobili, decorazioni e finiture alle foto di spazi vuoti o non arredati. Prendiamo le foto delle tue stanze vuote e le trasformiamo in immagini di qualità magazine completamente stilizzate — nello stile che preferisci (moderno, classico, scandinavo, lusso e altro)."
+      },
+      {
+        "q": "Lavorate anche su terreni o progetti di sviluppo?",
+        "a": "Sì. Lavoriamo su lotti vuoti, terreni non edificati e progetti pre-costruzione. Da uno schizzo o disegno a mano, creiamo render fotorealistici che mostrano l'edificio finito — trasformando il potenziale grezzo in un annuncio convincente."
+      },
+      {
+        "q": "Quali formati ricevo nella consegna finale?",
+        "a": "Ogni consegna include formati pronti per MLS, Zillow e Realtor.com, più Instagram Reels, TikTok e YouTube Shorts (sia 16:9 che 9:16). Branding agente, didascalie e thumbnail sono inclusi. Pubblichi lo stesso giorno in cui ricevi."
+      },
+      {
+        "q": "Lavorate con agenti fuori dagli Stati Uniti?",
+        "a": "Sì. Serviamo clienti negli USA, in Italia e a livello internazionale. Il nostro servizio è completamente remoto, quindi la posizione non è mai un ostacolo. Lavoriamo in inglese, italiano e spagnolo."
+      }
+    ]
   }
 }

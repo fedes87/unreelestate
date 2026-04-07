@@ -58,7 +58,7 @@ export default function HowItWorks() {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <img
-              src="/img/devices.png"
+              src="/img/devices.webp"
               alt={t('how.imgAlt')}
               className={styles.mockup}
               loading="lazy"

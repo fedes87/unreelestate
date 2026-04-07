@@ -14,6 +14,7 @@ import WaitingList from './components/WaitingList'
 import Pricing from './components/Pricing'
 import Testimonials from './components/Testimonials'
 import About from './components/About'
+import FAQ from './components/FAQ'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import CookieBanner from './components/CookieBanner'
@@ -37,6 +38,7 @@ export default function App() {
       <Pricing />
       <Testimonials />
       <About />
+      <FAQ />
       <Contact />
       <Footer />
       <CookieBanner />

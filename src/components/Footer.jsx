@@ -10,7 +10,7 @@ export default function Footer() {
         <div className={styles.inner}>
           <div className={styles.brand}>
             <a href="#" className={styles.logo}>
-              <img src="/logo.png" alt="Unreel Estate" className={styles.logoImg} width="160" height="40" />
+              <img src="/logo.webp" alt="Unreel Estate" className={styles.logoImg} width="160" height="40" />
             </a>
             <p>{t('footer.tagline')}</p>
           </div>

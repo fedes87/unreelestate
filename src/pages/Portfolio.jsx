@@ -22,7 +22,7 @@ export default function Portfolio() {
     <div className={styles.page}>
       <header className={styles.header}>
         <a href="/" className={styles.back}>{t('portfolio.back')}</a>
-        <img src="/logo.png" alt="Unreel Estate" className={styles.logo} loading="lazy" width="160" height="40" />
+        <img src="/logo.webp" alt="Unreel Estate" className={styles.logo} loading="lazy" width="160" height="40" />
         <span className="section-label">{t('portfolio.label')}</span>
         <h1 className={styles.title}>{t('portfolio.title1')}<br /><em>{t('portfolio.titleEm')}</em></h1>
         <p className={styles.subtitle}>{t('portfolio.subtitle')}</p>

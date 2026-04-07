@@ -17,8 +17,8 @@ const STYLES = [
 const ROOMS = ['living', 'kitchen', 'bedroom']
 
 function imgSrc(styleKey, room) {
-  if (styleKey === 'neutral') return `/img/styles/base-${room}.png`
-  return `/img/styles/${styleKey}-${room}.png`
+  if (styleKey === 'neutral') return `/img/styles/base-${room}.webp`
+  return `/img/styles/${styleKey}-${room}.webp`
 }
 
 const vp = { once: true, amount: 0.1 }

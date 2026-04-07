@@ -4,9 +4,9 @@ import { useTranslation } from 'react-i18next'
 import styles from './VideoDemo.module.css'
 
 const ROOMS = [
-  { key: 'living',  before: '/img/demo/before-living.png',  after: '/img/demo/modern-living.png',  video: '/video/demo/modern-living.mp4'  },
-  { key: 'kitchen', before: '/img/demo/before-kitchen.png', after: '/img/demo/modern-kitchen.png', video: '/video/demo/modern-kitchen.mp4' },
-  { key: 'bedroom', before: '/img/demo/before-bedroom.png', after: '/img/demo/modern-bedroom.png', video: '/video/demo/modern-bedroom.mp4' },
+  { key: 'living',  before: '/img/demo/before-living.webp',  after: '/img/demo/modern-living.webp',  video: '/video/demo/modern-living.mp4'  },
+  { key: 'kitchen', before: '/img/demo/before-kitchen.webp', after: '/img/demo/modern-kitchen.webp', video: '/video/demo/modern-kitchen.mp4' },
+  { key: 'bedroom', before: '/img/demo/before-bedroom.webp', after: '/img/demo/modern-bedroom.webp', video: '/video/demo/modern-bedroom.mp4' },
 ]
 
 const STEPS = ['before', 'after', 'video']
