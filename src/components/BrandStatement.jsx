@@ -26,6 +26,14 @@ export default function BrandStatement() {
             {t('brand.sub1')}<br />
             {t('brand.sub2')}
           </p>
+          <div className={styles.ctas}>
+            <a href="https://app.unreelestate.com/auth/login" className={styles.ctaPrimary}>
+              {t('brand.ctaRegister', 'Sign Up & Create Your First Listing')}
+            </a>
+            <a href="#contact" className={styles.ctaSecondary}>
+              {t('brand.ctaQuote', 'Need a Custom Quote? Contact Us')}
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>
