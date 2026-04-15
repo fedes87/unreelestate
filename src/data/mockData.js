@@ -12,9 +12,9 @@ export const whyStats = ['100%', '10×', '$399', '∞']
 export const howSteps = ['01', '02', '03']
 
 export const testimonialMeta = [
-  { name: 'Brandon Whitfield', role: 'Luxury Real Estate Agent, Houston TX', avatar: '/img/testimonial-brandon.webp' },
-  { name: 'Ashley Tran',       role: 'Real Estate Broker, Houston TX',       avatar: '/img/testimonial-ashley.webp'  },
-  { name: 'Derek Calloway',    role: 'Property Developer, Houston TX',        avatar: '/img/testimonial-derek.webp'   },
+  { name: 'B. W.', role: 'Real Estate Agent, Houston TX' },
+  { name: 'A. T.', role: 'Real Estate Broker, Houston TX' },
+  { name: 'D. C.', role: 'Property Developer, Houston TX' },
 ]
 
 export const pricingMeta = [

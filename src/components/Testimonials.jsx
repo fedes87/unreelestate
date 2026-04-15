@@ -43,6 +43,8 @@ export default function Testimonials() {
             </motion.div>
           ))}
         </div>
+
+        <p className={styles.disclaimer}>{t('testimonials.disclaimer')}</p>
       </div>
     </section>
   )

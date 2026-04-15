@@ -163,14 +163,15 @@
     ]
   },
   "testimonials": {
-    "label": "What Agents Say",
+    "label": "What Our Clients Say",
     "title1": "Results That",
     "titleEm": "Speak.",
     "items": [
-      "The before/after difference is genuinely shocking. My listings now look like they belong in Architectural Digest. Buyers are reaching out within hours of posting.",
-      "I was skeptical about AI-generated visuals, but the results speak for themselves. Three listings sold above asking price within the first week. This is the future of real estate marketing.",
-      "Unreel Estate transformed our entire marketing approach. The cinematic videos generate 10x more engagement than our previous listing photos. Worth every penny."
-    ]
+      "The quality of the enhanced photos exceeded my expectations. My listings look completely different now, and I've noticed buyers engaging much faster since I started using this service.",
+      "I was hesitant at first, but the turnaround time and the final product really impressed me. The cinematic videos have become a key part of how I present properties to clients.",
+      "Working with Unreel Estate simplified my entire listing workflow. I send photos from my phone and get back professional content ready to post everywhere. It's been a game changer for my business."
+    ],
+    "disclaimer": "Names changed for privacy."
   },
   "about": {
     "label": "About Us",

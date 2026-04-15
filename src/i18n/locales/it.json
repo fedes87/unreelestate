@@ -163,14 +163,15 @@
     ]
   },
   "testimonials": {
-    "label": "Cosa Dicono gli Agenti",
+    "label": "Cosa Dicono i Nostri Clienti",
     "title1": "Risultati Che",
     "titleEm": "Parlano.",
     "items": [
-      "La differenza prima/dopo è davvero sorprendente. I miei annunci ora sembrano appartenere ad Architectural Digest. Gli acquirenti mi contattano entro poche ore dalla pubblicazione.",
-      "Ero scettico sui visual generati dall'AI, ma i risultati parlano da soli. Tre proprietà vendute sopra il prezzo richiesto nella prima settimana. Questo è il futuro del marketing immobiliare.",
-      "Unreel Estate ha trasformato il nostro approccio al marketing. I video cinematografici generano 10 volte più engagement rispetto alle nostre foto precedenti. Vale ogni centesimo."
-    ]
+      "La qualità delle foto migliorate ha superato le mie aspettative. I miei annunci hanno un aspetto completamente diverso e ho notato che gli acquirenti interagiscono molto più velocemente.",
+      "Ero titubante all'inizio, ma i tempi di consegna e il prodotto finale mi hanno davvero impressionato. I video cinematografici sono diventati una parte fondamentale di come presento le proprietà.",
+      "Lavorare con Unreel Estate ha semplificato tutto il mio flusso di lavoro. Invio le foto dal telefono e ricevo contenuti professionali pronti da pubblicare ovunque. Ha cambiato il mio modo di lavorare."
+    ],
+    "disclaimer": "Nomi modificati per privacy."
   },
   "about": {
     "label": "Chi Siamo",
