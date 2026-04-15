@@ -63,15 +63,28 @@
   flex-wrap: wrap;
 }
 
-.privacyLink {
+.legalLinks {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.legalLink {
   color: var(--text-muted);
   text-decoration: none;
   font-size: 12px;
   transition: color 0.2s;
 }
 
-.privacyLink:hover {
+.legalLink:hover {
   color: var(--gold);
+}
+
+.legalSep {
+  color: var(--text-muted);
+  font-size: 12px;
+  opacity: 0.5;
 }
 
 @media (max-width: 768px) {

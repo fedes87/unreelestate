@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next'
+import { Link } from 'react-router-dom'
 import styles from './Footer.module.css'
 
 export default function Footer() {
@@ -35,7 +36,13 @@ export default function Footer() {
         </div>
         <div className={styles.bottom}>
           <span>{t('footer.copyright', { year: new Date().getFullYear() })}</span>
-          <a href="/privacy-policy" className={styles.privacyLink}>Privacy Policy</a>
+          <div className={styles.legalLinks}>
+            <Link to="/privacy-policy" className={styles.legalLink}>Privacy Policy</Link>
+            <span className={styles.legalSep}>&middot;</span>
+            <Link to="/terms" className={styles.legalLink}>Terms of Service</Link>
+            <span className={styles.legalSep}>&middot;</span>
+            <Link to="/cookie-policy" className={styles.legalLink}>Cookie Policy</Link>
+          </div>
         </div>
       </div>
     </footer>

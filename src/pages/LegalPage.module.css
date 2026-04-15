@@ -1,0 +1,146 @@
+.page {
+  background: #0d0b09;
+  min-height: 100vh;
+  padding: 60px 0 120px;
+}
+
+.container {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.back {
+  display: inline-block;
+  color: #a08860;
+  font-size: 0.875rem;
+  text-decoration: none;
+  margin-bottom: 48px;
+  transition: color 0.2s;
+}
+
+.back:hover {
+  color: #c9a96e;
+}
+
+.title {
+  font-family: 'Bodoni Moda', 'Playfair Display', Georgia, serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: #f5f0e8;
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.updated {
+  color: #6b5f50;
+  font-size: 0.875rem;
+  margin-bottom: 48px;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.section h2 {
+  font-family: 'Bodoni Moda', 'Playfair Display', Georgia, serif;
+  font-size: 1.25rem;
+  color: #c9a96e;
+  margin-bottom: 16px;
+  font-weight: 600;
+}
+
+.section h3 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1rem;
+  color: #f5f0e8;
+  margin-top: 24px;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.section p {
+  color: #b8a898;
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  margin-bottom: 12px;
+}
+
+.section ul {
+  color: #b8a898;
+  font-size: 0.9375rem;
+  line-height: 1.75;
+  padding-left: 24px;
+  margin-bottom: 12px;
+}
+
+.section li {
+  margin-bottom: 6px;
+}
+
+.section a {
+  color: #c9a96e;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.section a:hover {
+  color: #f5f0e8;
+}
+
+.section strong {
+  color: #f5f0e8;
+  font-weight: 500;
+}
+
+.section code {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.8125rem;
+  color: #c9a96e;
+  background: rgba(196, 149, 106, 0.08);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+/* Tables for cookie policy */
+.table {
+  margin: 12px 0 20px;
+  border: 1px solid rgba(196, 149, 106, 0.12);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.table thead tr {
+  border-bottom: 1px solid rgba(196, 149, 106, 0.12);
+}
+
+.table th {
+  text-align: left;
+  padding: 12px 16px;
+  color: #f5f0e8;
+  font-weight: 500;
+  font-size: 0.8125rem;
+  background: rgba(196, 149, 106, 0.04);
+}
+
+.table td {
+  padding: 12px 16px;
+  color: #b8a898;
+  font-size: 0.8125rem;
+  border-bottom: 1px solid rgba(196, 149, 106, 0.06);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+@media (max-width: 600px) {
+  .table {
+    overflow-x: auto;
+  }
+}

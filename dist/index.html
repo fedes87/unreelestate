@@ -2,11 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/assets/logo%20copia-D73bNpk2.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary SEO -->
-    <title>Unreel Estate | Luxury Real Estate Photography & Cinematic Video</title>
+    <title>AI Real Estate Photos & Cinematic Video | Unreel Estate</title>
     <meta name="description" content="Turn your listings into cinematic experiences. AI-enhanced photography, virtual remodeling, and 40-second reels — starting at $399. Serving Houston TX and beyond." />
     <meta name="keywords" content="real estate photography Houston, luxury listing video, AI real estate photos, cinematic real estate, virtual staging, real estate reels" />
     <meta name="author" content="Unreel Estate" />
@@ -15,25 +17,187 @@
     <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.unreelestate.com/" />
-    <meta property="og:title" content="Unreel Estate | Make Your Listings Unreal" />
-    <meta property="og:description" content="AI-enhanced photos + cinematic video reels for real estate agents. Send 10 photos, get a full listing presentation. Starting at $399." />
+    <meta property="og:title" content="AI Real Estate Photos & Cinematic Video | Unreel Estate" />
+    <meta property="og:description" content="AI-enhanced real estate photos + cinematic video reels. Send us your photos — we transform them. 48-hour delivery. Starting at $399." />
     <meta property="og:image" content="https://www.unreelestate.com/og-image.png" />
-    <meta property="og:image:width" content="1024" />
-    <meta property="og:image:height" content="1024" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="Unreel Estate" />
     <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="it_IT" />
+    <meta property="og:locale:alternate" content="es_ES" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://www.unreelestate.com/" />
-    <meta name="twitter:title" content="Unreel Estate | Make Your Listings Unreal" />
+    <meta name="twitter:title" content="AI Real Estate Photos & Cinematic Video | Unreel Estate" />
     <meta name="twitter:description" content="AI-enhanced photos + cinematic video reels for real estate agents. Starting at $399." />
     <meta name="twitter:image" content="https://www.unreelestate.com/og-image.png" />
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/assets/index-CZaizvdo.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CYYKgD9J.css">
+    <!-- Theme color -->
+    <meta name="theme-color" content="#0d0b09" />
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V63ZMFFKGP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-V63ZMFFKGP');
+    </script>
+
+    <!-- Fonts (non-render-blocking) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;700&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;700&display=swap"></noscript>
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.unreelestate.com/#organization",
+          "name": "Unreel Estate",
+          "url": "https://www.unreelestate.com",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://www.unreelestate.com/img/logo-mobile.png"
+          },
+          "description": "AI-enhanced real estate photography, virtual staging, and cinematic video reels for luxury property listings. Serving Houston TX, Italy, and Spanish-speaking US markets.",
+          "email": "info@unreelestate.com",
+          "knowsLanguage": ["en", "it", "es"],
+          "areaServed": [
+            { "@type": "City", "name": "Houston", "containedInPlace": { "@type": "State", "name": "Texas" } },
+            { "@type": "Country", "name": "Italy" },
+            { "@type": "Country", "name": "United States" }
+          ],
+          "sameAs": [
+            "https://www.instagram.com/unreel_estate",
+            "https://www.facebook.com/profile.php?id=61576479466293"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://www.unreelestate.com/#website",
+          "name": "Unreel Estate",
+          "url": "https://www.unreelestate.com",
+          "publisher": { "@id": "https://www.unreelestate.com/#organization" },
+          "inLanguage": ["en", "it", "es"],
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": { "@type": "EntryPoint", "urlTemplate": "https://www.unreelestate.com/?q={search_term_string}" },
+            "query-input": "required name=search_term_string"
+          }
+        },
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://www.unreelestate.com/#localbusiness",
+          "name": "Unreel Estate",
+          "description": "Luxury real estate photography, AI photo enhancement, virtual staging, and cinematic video reels for real estate agents.",
+          "url": "https://www.unreelestate.com",
+          "email": "info@unreelestate.com",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Houston",
+            "addressRegion": "TX",
+            "addressCountry": "US"
+          },
+          "priceRange": "$399-$599",
+          "currenciesAccepted": "USD",
+          "openingHours": "Mo-Fr 09:00-18:00",
+          "sameAs": [
+            "https://www.instagram.com/unreel_estate",
+            "https://www.facebook.com/profile.php?id=61576479466293"
+          ]
+        },
+        {
+          "@type": "Service",
+          "name": "AI Real Estate Photo Enhancement",
+          "provider": { "@id": "https://www.unreelestate.com/#organization" },
+          "description": "Professional AI-powered photo enhancement for real estate listings. Raw photos transformed into magazine-quality images with virtual staging and remodeling.",
+          "offers": [
+            {
+              "@type": "Offer",
+              "name": "Listing Package",
+              "price": "399",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock",
+              "description": "20 AI-enhanced photos + 40-second cinematic reel"
+            },
+            {
+              "@type": "Offer",
+              "name": "Signature Package",
+              "price": "599",
+              "priceCurrency": "USD",
+              "availability": "https://schema.org/InStock",
+              "description": "40 AI-enhanced photos + 1-minute 4K cinematic reel + 40 vertical clips"
+            }
+          ],
+          "areaServed": "Houston, TX"
+        },
+        {
+          "@type": "AggregateRating",
+          "itemReviewed": { "@id": "https://www.unreelestate.com/#organization" },
+          "ratingValue": "5",
+          "bestRating": "5",
+          "ratingCount": "3",
+          "reviewCount": "3"
+        },
+        {
+          "@type": "FAQPage",
+          "@id": "https://www.unreelestate.com/#faq",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How much does AI real estate photography cost?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Our Listing package starts at $399 and includes 20 AI-enhanced photos plus a complete 40-second cinematic reel. The Signature package is $599 and includes 40 photos, a 4K 1-minute reel, 40 vertical clips for social media, AI voiceover, and a full property PDF. There are no hidden fees — all formats and platforms are included." }
+            },
+            {
+              "@type": "Question",
+              "name": "How long does delivery take?",
+              "acceptedAnswer": { "@type": "Answer", "text": "We deliver your complete content package within 48 hours of receiving your photos. That includes enhanced photos, the cinematic video, and all social media formats — ready to post the same day you receive them." }
+            },
+            {
+              "@type": "Question",
+              "name": "Do I need to hire a photographer or film crew?",
+              "acceptedAnswer": { "@type": "Answer", "text": "No. Unreel Estate is 100% remote. You send us your existing listing photos — even iPhone shots work — and we transform them using AI. No crew, no location visits, no scheduling headaches." }
+            },
+            {
+              "@type": "Question",
+              "name": "What types of photos can I send?",
+              "acceptedAnswer": { "@type": "Answer", "text": "We accept any format and any quality. iPhone photos, DSLR shots, older listing photos — it all works. The more context you give us (style preferences, target buyer, property highlights), the better the result." }
+            },
+            {
+              "@type": "Question",
+              "name": "What is virtual staging and how does it work?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Virtual staging is the process of digitally adding furniture, decor, and finishing touches to photos of empty or unfurnished spaces. We take your bare-room photos and transform them into fully styled, magazine-quality images — in any style you choose (modern, classic, Scandinavian, luxury, and more)." }
+            },
+            {
+              "@type": "Question",
+              "name": "Can you work on vacant land or development projects?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes. We work on vacant lots, undeveloped land, and pre-construction projects. From a rough sketch or hand drawing, we create photorealistic renders showing the finished build." }
+            },
+            {
+              "@type": "Question",
+              "name": "What formats do I receive in the final delivery?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Every delivery includes formats ready for MLS, Zillow, and Realtor.com, plus Instagram Reels, TikTok, and YouTube Shorts (both 16:9 and 9:16). Agent branding, captions, and thumbnails are included." }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you work with agents outside the United States?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes. We serve clients across the USA, Italy, and internationally. Our service is fully remote. We work in English, Italian, and Spanish." }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+    <script type="module" crossorigin src="/assets/index-5t0-R2i5.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-4FZi6ATd.css">
   </head>
   <body>
     <div id="root"></div>

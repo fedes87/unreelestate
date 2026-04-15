@@ -17,8 +17,6 @@ import About from './components/About'
 import FAQ from './components/FAQ'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import CookieBanner from './components/CookieBanner'
-
 export default function App() {
   return (
     <>
@@ -41,7 +39,6 @@ export default function App() {
       <FAQ />
       <Contact />
       <Footer />
-      <CookieBanner />
     </>
   )
 }
