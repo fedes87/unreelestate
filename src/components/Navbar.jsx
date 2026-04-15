@@ -50,6 +50,9 @@ export default function Navbar() {
               ))}
             </div>
 
+            <a href="https://app.unreelestate.com/auth/login" className={styles.portalLink}>
+              Client Portal
+            </a>
             <a href="#contact" className={`btn-primary ${styles.cta}`}>
               {t('nav.cta')}
             </a>
@@ -79,6 +82,9 @@ export default function Navbar() {
                 <a href={link.href} onClick={handleLink}>{t(`nav.${link.key}`)}</a>
               </li>
             ))}
+            <li>
+              <a href="https://app.unreelestate.com/auth/login" onClick={handleLink}>Client Portal</a>
+            </li>
             <li>
               <a href="#contact" className={styles.mobileCta} onClick={handleLink}>{t('nav.ctaMobile')}</a>
             </li>
