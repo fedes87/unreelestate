@@ -37,15 +37,48 @@
     <!-- Theme color -->
     <meta name="theme-color" content="#0d0b09" />
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-V63ZMFFKGP"></script>
+    <!-- Google Analytics / Google Ads (gtag.js) -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-V63ZMFFKGP');
+      // Only load if user consented to analytics
+      (function() {
+        try {
+          var consent = JSON.parse(localStorage.getItem('unreel-cookie-consent') || '{}');
+          if (consent.analytics) {
+            var s = document.createElement('script');
+            s.async = true;
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX';
+            document.head.appendChild(s);
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXXXXX');
+          }
+        } catch(e) {}
+      })();
     </script>
 
+    <!-- Meta Pixel -->
+    <script>
+      // Only load if user consented to marketing
+      (function() {
+        try {
+          var consent = JSON.parse(localStorage.getItem('unreel-cookie-consent') || '{}');
+          if (consent.marketing) {
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', 'XXXXXXXXXXXXXXX');
+            fbq('track', 'PageView');
+          }
+        } catch(e) {}
+      })();
+    </script>
     <!-- Fonts (non-render-blocking) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -198,6 +231,11 @@
     </script>
   </head>
   <body>
+    <!-- Meta Pixel noscript fallback -->
+    <noscript>
+      <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=XXXXXXXXXXXXXXX&ev=PageView&noscript=1" />
+    </noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
