@@ -88,15 +88,15 @@ export default function Contact() {
                 <p>{t('contact.successDesc')}</p>
               </div>
             ) : (
-              <form className={styles.form} onSubmit={handleSubmit}>
+              <form className={styles.form} onSubmit={handleSubmit} aria-describedby={status === 'error' ? 'form-error' : undefined}>
                 <div className={styles.row}>
                   <div className={styles.group}>
                     <label htmlFor="name">{t('contact.name')}</label>
-                    <input id="name" name="name" placeholder={t('contact.namePlaceholder')} required autoComplete="name" value={form.name} onChange={handleChange} />
+                    <input id="name" name="name" placeholder={t('contact.namePlaceholder')} required aria-required="true" autoComplete="name" value={form.name} onChange={handleChange} />
                   </div>
                   <div className={styles.group}>
                     <label htmlFor="email">{t('contact.email')}</label>
-                    <input id="email" name="email" type="email" placeholder="your@email.com" required autoComplete="email" value={form.email} onChange={handleChange} />
+                    <input id="email" name="email" type="email" placeholder="your@email.com" required aria-required="true" autoComplete="email" value={form.email} onChange={handleChange} />
                   </div>
                 </div>
 
@@ -136,7 +136,7 @@ export default function Contact() {
                   <input id="source" name="source" placeholder={t('contact.sourcePlaceholder')} value={form.source} onChange={handleChange} />
                 </div>
 
-                {status === 'error' && <p className={styles.error}>{t('contact.error')}</p>}
+                {status === 'error' && <p className={styles.error} role="alert" id="form-error">{t('contact.error')}</p>}
 
                 <button type="submit" className="btn-primary" disabled={status === 'sending'} style={{ width: '100%', justifyContent: 'center' }}>
                   {status === 'sending' ? t('contact.sending') : t('contact.submit')}

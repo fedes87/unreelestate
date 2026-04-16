@@ -113,6 +113,7 @@ export default function VideoDemo() {
               ref={videoRef}
               key={room.key}
               src={room.video}
+              aria-label={`Cinematic video walkthrough — ${room.key}`}
               className={`${styles.media} ${step === 'video' ? styles.mediaVisible : ''}`}
               loop
               muted

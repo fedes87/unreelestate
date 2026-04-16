@@ -7,7 +7,7 @@
 .bg {
   position: absolute;
   inset: 0;
-  background-image: url('/img/cta-bg.png');
+  background-image: url('/img/cta-bg.webp');
   background-size: cover;
   background-position: center 40%;
   z-index: 0;

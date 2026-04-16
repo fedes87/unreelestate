@@ -340,5 +340,11 @@
         "a": "Sì. Serviamo clienti negli USA, in Italia e a livello internazionale. Il nostro servizio è completamente remoto, quindi la posizione non è mai un ostacolo. Lavoriamo in inglese, italiano e spagnolo."
       }
     ]
+  },
+  "notFound": {
+    "title": "Pagina Non Trovata",
+    "desc": "La pagina che cerchi non esiste o e stata spostata.",
+    "home": "Torna alla Home",
+    "portfolio": "Vedi Portfolio"
   }
 }

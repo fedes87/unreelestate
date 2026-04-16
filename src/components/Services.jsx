@@ -35,7 +35,7 @@ export default function Services() {
                 transition={{ duration: 0.6, delay: i * 0.1 }}
               >
                 <div className={styles.imgWrap}>
-                  <img src={meta.image} alt={item.tag} className={styles.img} loading="lazy" />
+                  <img src={meta.image} alt={`${item.tag} — ${item.title}`} className={styles.img} loading="lazy" />
                   <div className={styles.imgOverlay} />
                   <div className={styles.tag}>{item.tag}</div>
                 </div>
