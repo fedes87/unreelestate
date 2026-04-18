@@ -25,9 +25,9 @@ export default function PrivacyPolicy() {
           <h2>1. Who We Are</h2>
           <p>
             Unreel Estate is a service operated by <strong>Galli Productions LLC</strong>,
-            2804 Holman Street, Houston, TX 77004, United States. We provide AI-powered real estate
-            marketing services including cinematic video production, photo enhancement, and social
-            media content creation.
+            a limited liability company registered in the State of Texas, United States.
+            We provide AI-powered real estate marketing services including cinematic video
+            production, photo enhancement, and social media content creation.
           </p>
           <p>
             For any privacy-related inquiries, contact us at:{' '}
@@ -164,8 +164,7 @@ export default function PrivacyPolicy() {
           <h2>13. Contact</h2>
           <p>
             <strong>Galli Productions LLC</strong><br />
-            2804 Holman Street<br />
-            Houston, TX 77004<br />
+            State of Texas, United States<br />
             <a href="mailto:info@unreelestate.com">info@unreelestate.com</a>
           </p>
         </section>

@@ -140,8 +140,7 @@ export default function TermsOfService() {
           <h2>13. Contact</h2>
           <p>
             <strong>Galli Productions LLC</strong><br />
-            2804 Holman Street<br />
-            Houston, TX 77004<br />
+            State of Texas, United States<br />
             <a href="mailto:info@unreelestate.com">info@unreelestate.com</a>
           </p>
         </section>
