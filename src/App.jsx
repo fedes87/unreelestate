@@ -12,6 +12,7 @@ import WhyUnreel from './components/WhyUnreel'
 import HowItWorks from './components/HowItWorks'
 import WaitingList from './components/WaitingList'
 import Pricing from './components/Pricing'
+import StudioSection from './components/StudioSection'
 import Testimonials from './components/Testimonials'
 import About from './components/About'
 import FAQ from './components/FAQ'
@@ -34,6 +35,7 @@ export default function App() {
       <HowItWorks />
       <WaitingList />
       <Pricing />
+      <StudioSection />
       <Testimonials />
       <About />
       <FAQ />

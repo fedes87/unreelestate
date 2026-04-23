@@ -3,11 +3,13 @@
     "services": "Services",
     "portfolio": "Portfolio",
     "about": "About",
+    "studio": "Studio",
+    "studioAria": "Open the Studio app in a new tab",
     "cta": "Get a Quote",
     "ctaMobile": "Get a Quote →"
   },
   "hero": {
-    "badge": "Luxury Real Estate Content",
+    "badge": "Netflix-Approved Cinema Equipment · Houston",
     "title1": "Make Your Listings",
     "titleEm": "Unreal.",
     "desc": "Unreel Estate turns extraordinary properties into cinematic productions that sell emotions before they sell square footage.",
@@ -122,45 +124,105 @@
     ]
   },
   "pricing": {
-    "label": "Pricing",
-    "title1": "Simple. Transparent.",
-    "titleEm": "Powerful.",
-    "subtitle": "Two packages, zero guesswork. Pick what fits your listing and get everything delivered.",
+    "label": "Packages",
+    "title1": "Three packages.",
+    "titleEm": "One studio.",
+    "subtitle": "Pick how you want to work with us — we come to you, we handle it remotely, or you take the keys.",
     "popular": "Most Popular",
-    "cta": "Get Started →",
+    "netflixBadge": "Netflix-Approved",
+    "houstonOnly": "Houston & surroundings",
+    "ctaInLocation": "Book a Consultation →",
+    "ctaRemote": "Get Started →",
     "addonsLabel": "Add-ons",
-    "note": "All formats included · No hidden fees",
+    "note": "All deliveries include multi-platform formats · No hidden fees",
+    "from": "from",
     "packages": [
       {
-        "tagline": "Everything you need to publish a property that stands out.",
+        "tagline": "We come to you — Netflix-approved cinema, not cheap DSLRs.",
         "includes": [
-          "20 photos — we help you pick the best ones with AI",
+          "3–4h on-site shoot + 2h editing — scaled by property size",
+          "Cinema cameras + cinema lenses (Netflix-approved)",
+          "Drone aerial 4K + stabilizers + slider + professional lights",
+          "Photos + video + cinematic reel — full gallery delivered",
+          "In-house editor and colorist on every project",
+          "Pricing ladder: $1,200 up to 3,000 sqft · $1,800 3K–5K · $2,500+ luxury"
+        ],
+        "addons": []
+      },
+      {
+        "tagline": "Upload your photos. We handle cinema editing, video, reel — everything.",
+        "includes": [
+          "40 enhanced photos — AI-assisted selection",
+          "20 cinematic 5-second video clips",
+          "Complete 1-minute reel + 30s + 15s cuts",
+          "Multi-platform formats: 16:9, 9:16, 1:1",
           "AI Enhancement: retouched, staged, or fully remodeled",
-          "Complete 40-second cinematic reel — FHD, 16:9 + 9:16",
-          "Royalty-free music included"
+          "Delivered in 24–48 hours"
         ],
         "addons": [
-          "per extra photo + video clip",
-          "AI Voiceover — choose from sample voices",
-          "Cover diagram + full property PDF"
+          "per extra cinematic video clip",
+          "12-hour rush delivery",
+          "additional reel version / cut"
         ]
       },
       {
-        "tagline": "The complete content suite. One delivery, every platform.",
+        "tagline": "Upload your photos. Top quality, essentials only.",
         "includes": [
-          "40 photos — AI-assisted selection included",
+          "20 enhanced photos — AI-assisted selection",
+          "5 cinematic video clips",
+          "Base multi-platform formats",
           "AI Enhancement: retouched, staged, or fully remodeled",
-          "Complete 1-minute cinematic reel — 4K, 16:9 + 9:16",
-          "40 individual vertical clips — ready for Stories & Reels",
-          "AI Voiceover included — choose your voice",
-          "Cover diagram + full property PDF included",
-          "Royalty-free music included"
+          "Delivered in 24–48 hours",
+          "Same quality as Signature, smaller scope"
         ],
         "addons": [
-          "per extra photo + video clip"
+          "per extra cinematic video clip",
+          "12-hour rush delivery"
         ]
       }
     ]
+  },
+  "studio": {
+    "label": "Self-serve",
+    "title1": "Prefer to tinker?",
+    "titleEm": "Here are the keys to the studio.",
+    "subtitle": "AI-powered web app. Pay-as-you-go credits or monthly plans. Your pace, your control, 24/7.",
+    "imageAlt": "Unreel Estate agent handing over keys to the Studio",
+    "featuresLabel": "Everything inside the Studio",
+    "features": [
+      { "name": "Enhance", "desc": "Pro lighting, sharpening, color correction" },
+      { "name": "Declutter", "desc": "Tidy or empty a room with one click" },
+      { "name": "Restyle", "desc": "Seven interior styles — same architecture" },
+      { "name": "Animate", "desc": "Turn any photo into a cinematic clip" },
+      { "name": "AI Descriptions", "desc": "MLS-ready listing copy, auto-generated" },
+      { "name": "Palette Presets", "desc": "Five curated moods + materials library" }
+    ],
+    "packsLabel": "Credit packs (pay-as-you-go)",
+    "subsLabel": "Monthly subscriptions",
+    "creditsSuffix": "credits",
+    "monthSuffix": "/mo",
+    "popular": "Best value",
+    "spendLabel": "Every action, every price",
+    "spend": {
+      "photoEnhance": "Photo enhance",
+      "aiDescription": "AI description",
+      "videoFast": "Video — Fast",
+      "videoHd": "Video — HD"
+    },
+    "creditsUnit": "cr",
+    "cta": "Open the Studio →",
+    "ctaSecondary": "First 100 credits on us — no credit card",
+    "footNote": "Credits don't expire with an active subscription. Exceed your monthly credits? Buy any pack and keep going."
+  },
+  "mobileApp": {
+    "label": "Coming Soon",
+    "title1": "The Studio —",
+    "titleEm": "in your pocket.",
+    "subtitle": "Native iOS + Android app launching soon. Free to download. Shoot it, transform it, post it — before you leave the property.",
+    "waitlistCta": "Notify me at launch",
+    "placeholder": "your@email.com",
+    "successMsg": "You're on the list. We'll email you at launch.",
+    "errorMsg": "Something went wrong. Please try again."
   },
   "testimonials": {
     "label": "What Our Clients Say",

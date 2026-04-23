@@ -26,25 +26,48 @@ export default function Pricing() {
         <div className={styles.grid}>
           {pricingMeta.map((meta, i) => {
             const pkg = packages[i]
+            const ctaLabel = meta.ctaType === 'mailto' ? t('pricing.ctaInLocation') : t('pricing.ctaRemote')
+            const ctaHref = meta.ctaType === 'mailto'
+              ? 'mailto:info@unreelestate.com?subject=In-Location%20Shoot%20Inquiry'
+              : '#contact'
+            const ctaClass = meta.highlight ? 'btn-primary' : 'btn-secondary'
             return (
               <motion.div
-                key={meta.name}
-                className={`${styles.card} ${meta.highlight ? styles.featured : ''}`}
+                key={meta.key}
+                className={[
+                  styles.card,
+                  meta.highlight ? styles.featured : '',
+                  meta.isPremium ? styles.premium : '',
+                ].filter(Boolean).join(' ')}
                 initial={{ opacity: 0, y: 32 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.7, delay: 0.15 + i * 0.15 }}
               >
                 {meta.highlight && <div className={styles.badge}>{t('pricing.popular')}</div>}
+                {meta.isPremium && (
+                  <div className={styles.netflixBadge}>
+                    <span className={styles.netflixDot} aria-hidden="true" />
+                    {t('pricing.netflixBadge')}
+                  </div>
+                )}
 
                 <div className={styles.top}>
                   <div className={styles.packageName}>{meta.name}</div>
+                  {meta.isHouston && (
+                    <div className={styles.locationTag}>{t('pricing.houstonOnly')}</div>
+                  )}
                   <div className={styles.price}>
+                    {meta.priceLabel && <span className={styles.priceLabel}>{t('pricing.from')}</span>}
                     <span className={styles.currency}>$</span>
                     <span className={styles.amount}>{meta.price}</span>
                   </div>
                   <p className={styles.tagline}>{pkg.tagline}</p>
-                  <a href="#contact" className={meta.highlight ? 'btn-primary' : 'btn-secondary'}>
-                    {t('pricing.cta')}
+                  <a
+                    href={ctaHref}
+                    className={ctaClass}
+                    {...(meta.ctaType === 'mailto' ? {} : {})}
+                  >
+                    {ctaLabel}
                   </a>
                 </div>
 
@@ -59,15 +82,17 @@ export default function Pricing() {
                   ))}
                 </ul>
 
-                <div className={styles.addonsSection}>
-                  <div className={styles.addonsLabel}>{t('pricing.addonsLabel')}</div>
-                  {pkg.addons.map((desc, j) => (
-                    <div key={j} className={styles.addon}>
-                      <span className={styles.addonPrice}>+${meta.addonPrices[j]}</span>
-                      <span className={styles.addonDesc}>{desc}</span>
-                    </div>
-                  ))}
-                </div>
+                {pkg.addons && pkg.addons.length > 0 && (
+                  <div className={styles.addonsSection}>
+                    <div className={styles.addonsLabel}>{t('pricing.addonsLabel')}</div>
+                    {pkg.addons.map((desc, j) => (
+                      <div key={j} className={styles.addon}>
+                        <span className={styles.addonPrice}>+${meta.addonPrices[j]}</span>
+                        <span className={styles.addonDesc}>{desc}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </motion.div>
             )
           })}

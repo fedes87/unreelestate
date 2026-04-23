@@ -17,9 +17,54 @@ export const testimonialMeta = [
   { name: 'D. C.', role: 'Property Developer, Houston TX' },
 ]
 
+// Three done-for-you packages — graduated by scope + price.
+// In-Location is Houston-only cinema crew; Signature + Light are remote worldwide.
 export const pricingMeta = [
-  { name: 'Listing',   price: 399, highlight: false, addonPrices: [20, 50, 20] },
-  { name: 'Signature', price: 599, highlight: true,  addonPrices: [20]         },
+  {
+    key: 'inLocation',
+    name: 'In-Location',
+    price: 1200,
+    priceLabel: 'from',
+    highlight: false,
+    isHouston: true,
+    isPremium: true,
+    ctaType: 'mailto', // opens info@unreelestate.com
+    addonPrices: [],
+  },
+  {
+    key: 'signature',
+    name: 'Signature',
+    price: 599,
+    highlight: true,
+    ctaType: 'anchor', // scroll to #contact
+    addonPrices: [29, 49, 99], // extra video, rush 12h, add-on reel cuts
+  },
+  {
+    key: 'light',
+    name: 'Light',
+    price: 199,
+    highlight: false,
+    ctaType: 'anchor',
+    addonPrices: [29, 19], // extra video, rush 12h
+  },
+]
+
+// Studio self-serve — credits-based pricing for DIY agents.
+export const studioPacks = [
+  { key: 'starter', price: 9,  credits: 100  },
+  { key: 'std',     price: 29, credits: 350  },
+  { key: 'pro',     price: 99, credits: 1250 },
+]
+export const studioSubs = [
+  { key: 'pro',    price: 39, credits: 500,  popular: true },
+  { key: 'agency', price: 89, credits: 1500, popular: false },
+]
+// Spend rates (display only — authoritative rates live in the app)
+export const studioSpend = [
+  { key: 'photoEnhance', credits: 2 },
+  { key: 'aiDescription', credits: 1 },
+  { key: 'videoFast',  credits: '20–40' },
+  { key: 'videoHd',    credits: '50–110' },
 ]
 
 export const galleryPairs = [

@@ -50,8 +50,18 @@ export default function Navbar() {
               ))}
             </div>
 
-            <a href="https://app.unreelestate.com/auth/login" className={styles.portalLink}>
-              Client Portal
+            <a
+              href="https://app.unreelestate.com/dashboard/studio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.studioLink}
+              aria-label={t('nav.studioAria')}
+            >
+              <span className={styles.studioDot} aria-hidden="true" />
+              {t('nav.studio')}
+              <svg className={styles.studioExt} width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M7 17L17 7M9 7h8v8" />
+              </svg>
             </a>
             <a href="#contact" className={`btn-primary ${styles.cta}`}>
               {t('nav.cta')}
@@ -83,7 +93,15 @@ export default function Navbar() {
               </li>
             ))}
             <li>
-              <a href="https://app.unreelestate.com/auth/login" onClick={handleLink}>Client Portal</a>
+              <a
+                href="https://app.unreelestate.com/dashboard/studio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.mobileStudioLink}
+                onClick={handleLink}
+              >
+                {t('nav.studio')} ↗
+              </a>
             </li>
             <li>
               <a href="#contact" className={styles.mobileCta} onClick={handleLink}>{t('nav.ctaMobile')}</a>

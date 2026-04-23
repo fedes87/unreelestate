@@ -3,11 +3,13 @@
     "services": "Servicios",
     "portfolio": "Portafolio",
     "about": "Nosotros",
+    "studio": "Studio",
+    "studioAria": "Abrir la app Studio en una nueva pestaña",
     "cta": "Cotización",
     "ctaMobile": "Solicitar Cotización →"
   },
   "hero": {
-    "badge": "Contenido Inmobiliario de Lujo",
+    "badge": "Netflix-Approved Cinema Equipment · Houston",
     "title1": "Haz que tus Propiedades",
     "titleEm": "Sean Increíbles.",
     "desc": "Unreel Estate transforma propiedades extraordinarias en producciones cinematográficas que venden emociones antes que metros cuadrados.",
@@ -122,45 +124,105 @@
     ]
   },
   "pricing": {
-    "label": "Precios",
-    "title1": "Simple. Transparente.",
-    "titleEm": "Poderoso.",
-    "subtitle": "Dos paquetes, sin confusiones. Elige el que se adapta a tu listado y recibe todo.",
-    "popular": "Más Popular",
-    "cta": "Comenzar →",
-    "addonsLabel": "Extras",
-    "note": "Todos los formatos incluidos · Sin costos ocultos",
+    "label": "Packages",
+    "title1": "Three packages.",
+    "titleEm": "One studio.",
+    "subtitle": "Pick how you want to work with us — we come to you, we handle it remotely, or you take the keys.",
+    "popular": "Most Popular",
+    "netflixBadge": "Netflix-Approved",
+    "houstonOnly": "Houston & surroundings",
+    "ctaInLocation": "Book a Consultation →",
+    "ctaRemote": "Get Started →",
+    "addonsLabel": "Add-ons",
+    "note": "All deliveries include multi-platform formats · No hidden fees",
+    "from": "from",
     "packages": [
       {
-        "tagline": "Todo lo que necesitas para publicar una propiedad que se destaque.",
+        "tagline": "We come to you — Netflix-approved cinema, not cheap DSLRs.",
         "includes": [
-          "20 fotos — te ayudamos a elegir las mejores con IA",
-          "AI Enhancement: retocadas, amuebladas o completamente remodeladas",
-          "Reel cinematográfico completo de 40 segundos — FHD, 16:9 + 9:16",
-          "Música libre de regalías incluida"
+          "3–4h on-site shoot + 2h editing — scaled by property size",
+          "Cinema cameras + cinema lenses (Netflix-approved)",
+          "Drone aerial 4K + stabilizers + slider + professional lights",
+          "Photos + video + cinematic reel — full gallery delivered",
+          "In-house editor and colorist on every project",
+          "Pricing ladder: $1,200 up to 3,000 sqft · $1,800 3K–5K · $2,500+ luxury"
+        ],
+        "addons": []
+      },
+      {
+        "tagline": "Upload your photos. We handle cinema editing, video, reel — everything.",
+        "includes": [
+          "40 enhanced photos — AI-assisted selection",
+          "20 cinematic 5-second video clips",
+          "Complete 1-minute reel + 30s + 15s cuts",
+          "Multi-platform formats: 16:9, 9:16, 1:1",
+          "AI Enhancement: retouched, staged, or fully remodeled",
+          "Delivered in 24–48 hours"
         ],
         "addons": [
-          "por foto + clip de video extra",
-          "Voz en off con IA — elige entre voces de muestra",
-          "Plano + PDF completo de la propiedad"
+          "per extra cinematic video clip",
+          "12-hour rush delivery",
+          "additional reel version / cut"
         ]
       },
       {
-        "tagline": "La suite de contenido completa. Una entrega, cada plataforma.",
+        "tagline": "Upload your photos. Top quality, essentials only.",
         "includes": [
-          "40 fotos — selección asistida por IA incluida",
-          "AI Enhancement: retocadas, amuebladas o completamente remodeladas",
-          "Reel cinematográfico completo de 1 minuto — 4K, 16:9 + 9:16",
-          "40 clips verticales individuales — listos para Stories & Reels",
-          "Voz en off con IA incluida — elige tu voz",
-          "Plano + PDF completo de la propiedad incluidos",
-          "Música libre de regalías incluida"
+          "20 enhanced photos — AI-assisted selection",
+          "5 cinematic video clips",
+          "Base multi-platform formats",
+          "AI Enhancement: retouched, staged, or fully remodeled",
+          "Delivered in 24–48 hours",
+          "Same quality as Signature, smaller scope"
         ],
         "addons": [
-          "por foto + clip de video extra"
+          "per extra cinematic video clip",
+          "12-hour rush delivery"
         ]
       }
     ]
+  },
+  "studio": {
+    "label": "Self-serve",
+    "title1": "Prefer to tinker?",
+    "titleEm": "Here are the keys to the studio.",
+    "subtitle": "AI-powered web app. Pay-as-you-go credits or monthly plans. Your pace, your control, 24/7.",
+    "imageAlt": "Unreel Estate agent handing over keys to the Studio",
+    "featuresLabel": "Everything inside the Studio",
+    "features": [
+      { "name": "Enhance", "desc": "Pro lighting, sharpening, color correction" },
+      { "name": "Declutter", "desc": "Tidy or empty a room with one click" },
+      { "name": "Restyle", "desc": "Seven interior styles — same architecture" },
+      { "name": "Animate", "desc": "Turn any photo into a cinematic clip" },
+      { "name": "AI Descriptions", "desc": "MLS-ready listing copy, auto-generated" },
+      { "name": "Palette Presets", "desc": "Five curated moods + materials library" }
+    ],
+    "packsLabel": "Credit packs (pay-as-you-go)",
+    "subsLabel": "Monthly subscriptions",
+    "creditsSuffix": "credits",
+    "monthSuffix": "/mo",
+    "popular": "Best value",
+    "spendLabel": "Every action, every price",
+    "spend": {
+      "photoEnhance": "Photo enhance",
+      "aiDescription": "AI description",
+      "videoFast": "Video — Fast",
+      "videoHd": "Video — HD"
+    },
+    "creditsUnit": "cr",
+    "cta": "Open the Studio →",
+    "ctaSecondary": "First 100 credits on us — no credit card",
+    "footNote": "Credits don't expire with an active subscription. Exceed your monthly credits? Buy any pack and keep going."
+  },
+  "mobileApp": {
+    "label": "Coming Soon",
+    "title1": "The Studio —",
+    "titleEm": "in your pocket.",
+    "subtitle": "Native iOS + Android app launching soon. Free to download. Shoot it, transform it, post it — before you leave the property.",
+    "waitlistCta": "Notify me at launch",
+    "placeholder": "your@email.com",
+    "successMsg": "You're on the list. We'll email you at launch.",
+    "errorMsg": "Something went wrong. Please try again."
   },
   "testimonials": {
     "label": "Lo Que Dicen Nuestros Clientes",
