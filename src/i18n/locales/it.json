@@ -408,5 +408,32 @@
     "desc": "La pagina che cerchi non esiste o e stata spostata.",
     "home": "Torna alla Home",
     "portfolio": "Vedi Portfolio"
+  },
+  "aria": {
+    "bubbleTooltip": "Ciao, sono Aria — serve una mano?",
+    "header": "Aria",
+    "subheader": "AI concierge · online",
+    "closeLabel": "Chiudi Aria",
+    "openLabel": "Apri chat Aria",
+    "greeting": "Ciao! Sono Aria. Stai cercando uno shoot a Houston, una produzione remote o vuoi provare lo Studio in autonomia?",
+    "placeholder": "Chiedimi di prezzi, pacchetti, qualsiasi cosa…",
+    "send": "Invia",
+    "thinking": "Aria sta pensando…",
+    "you": "Tu",
+    "chips": [
+      "Shoot a Houston",
+      "Produzione remote",
+      "Provare lo Studio",
+      "Vedi i prezzi"
+    ],
+    "leadTitle": "Vuoi una proposta personalizzata?",
+    "leadDesc": "Lascia la tua email — rispondiamo entro 24h con un piano su misura.",
+    "leadPlaceholder": "tu@agenzia.com",
+    "leadSubmit": "Invia email",
+    "leadSuccess": "Ricevuto — ti scriviamo a breve.",
+    "leadSkip": "Più tardi",
+    "errorGeneric": "Ops, c'è stato un intoppo. Riprova tra un attimo?",
+    "errorRate": "Abbiamo chattato parecchio — scrivici a info@unreelestate.com e continuiamo da lì.",
+    "poweredBy": "Powered by Unreel Estate"
   }
 }

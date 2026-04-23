@@ -408,5 +408,32 @@
     "desc": "The page you're looking for doesn't exist or has been moved.",
     "home": "Go Home",
     "portfolio": "View Portfolio"
+  },
+  "aria": {
+    "bubbleTooltip": "Hey, I'm Aria — need a hand?",
+    "header": "Aria",
+    "subheader": "AI concierge · online",
+    "closeLabel": "Close Aria",
+    "openLabel": "Open Aria chat",
+    "greeting": "Hey! I'm Aria. Looking for a Houston shoot, a remote production, or to try the Studio yourself?",
+    "placeholder": "Ask me about pricing, packages, anything…",
+    "send": "Send",
+    "thinking": "Aria is thinking…",
+    "you": "You",
+    "chips": [
+      "Houston shoot",
+      "Remote production",
+      "Try the Studio",
+      "See pricing"
+    ],
+    "leadTitle": "Want a personalized proposal?",
+    "leadDesc": "Drop your email — we reply within 24h with a tailored plan.",
+    "leadPlaceholder": "you@brokerage.com",
+    "leadSubmit": "Send my email",
+    "leadSuccess": "Got it — we'll be in touch soon.",
+    "leadSkip": "Maybe later",
+    "errorGeneric": "Something hiccupped. Try again in a moment?",
+    "errorRate": "You've chatted quite a bit — drop us an email at info@unreelestate.com and we'll take over.",
+    "poweredBy": "Powered by Unreel Estate"
   }
 }
