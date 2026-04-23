@@ -124,105 +124,105 @@
     ]
   },
   "pricing": {
-    "label": "Packages",
-    "title1": "Three packages.",
-    "titleEm": "One studio.",
-    "subtitle": "Pick how you want to work with us — we come to you, we handle it remotely, or you take the keys.",
-    "popular": "Most Popular",
+    "label": "Pacchetti",
+    "title1": "Tre pacchetti.",
+    "titleEm": "Un solo studio.",
+    "subtitle": "Scegli come lavorare con noi — veniamo noi da te, gestiamo tutto da remoto, oppure prendi tu le chiavi.",
+    "popular": "Più Richiesto",
     "netflixBadge": "Netflix-Approved",
-    "houstonOnly": "Houston & surroundings",
-    "ctaInLocation": "Book a Consultation →",
-    "ctaRemote": "Get Started →",
-    "addonsLabel": "Add-ons",
-    "note": "All deliveries include multi-platform formats · No hidden fees",
-    "from": "from",
+    "houstonOnly": "Houston e dintorni",
+    "ctaInLocation": "Prenota una Consulenza →",
+    "ctaRemote": "Inizia Ora →",
+    "addonsLabel": "Extra",
+    "note": "Tutte le consegne includono formati multi-piattaforma · Nessun costo nascosto",
+    "from": "da",
     "packages": [
       {
-        "tagline": "We come to you — Netflix-approved cinema, not cheap DSLRs.",
+        "tagline": "Veniamo noi da te — cinema Netflix-approved, non DSLR economiche.",
         "includes": [
-          "3–4h on-site shoot + 2h editing — scaled by property size",
-          "Cinema cameras + cinema lenses (Netflix-approved)",
-          "Drone aerial 4K + stabilizers + slider + professional lights",
-          "Photos + video + cinematic reel — full gallery delivered",
-          "In-house editor and colorist on every project",
-          "Pricing ladder: $1,200 up to 3,000 sqft · $1,800 3K–5K · $2,500+ luxury"
+          "3–4h di shoot in location + 2h di editing — calibrato sulla dimensione della proprietà",
+          "Cinema camera + ottiche cinema (Netflix-approved)",
+          "Drone 4K + stabilizzatori + slider + luci professionali",
+          "Foto + video + reel cinematografico — galleria completa consegnata",
+          "Editor e colorist in-house su ogni progetto",
+          "Listino prezzi: $1,200 fino a 3,000 sqft · $1,800 3K–5K · $2,500+ luxury"
         ],
         "addons": []
       },
       {
-        "tagline": "Upload your photos. We handle cinema editing, video, reel — everything.",
+        "tagline": "Carica le tue foto. Pensiamo noi a editing cinematografico, video, reel — tutto.",
         "includes": [
-          "40 enhanced photos — AI-assisted selection",
-          "20 cinematic 5-second video clips",
-          "Complete 1-minute reel + 30s + 15s cuts",
-          "Multi-platform formats: 16:9, 9:16, 1:1",
-          "AI Enhancement: retouched, staged, or fully remodeled",
-          "Delivered in 24–48 hours"
+          "40 foto migliorate — selezione assistita da AI",
+          "20 clip video cinematografici da 5 secondi",
+          "Reel completo da 1 minuto + tagli da 30s e 15s",
+          "Formati multi-piattaforma: 16:9, 9:16, 1:1",
+          "AI Enhancement: ritoccata, arredata o completamente ristrutturata",
+          "Consegna in 24–48 ore"
         ],
         "addons": [
-          "per extra cinematic video clip",
-          "12-hour rush delivery",
-          "additional reel version / cut"
+          "per ogni clip video cinematografico extra",
+          "consegna rush in 12 ore",
+          "versione / taglio reel aggiuntivo"
         ]
       },
       {
-        "tagline": "Upload your photos. Top quality, essentials only.",
+        "tagline": "Carica le tue foto. Massima qualità, solo l'essenziale.",
         "includes": [
-          "20 enhanced photos — AI-assisted selection",
-          "5 cinematic video clips",
-          "Base multi-platform formats",
-          "AI Enhancement: retouched, staged, or fully remodeled",
-          "Delivered in 24–48 hours",
-          "Same quality as Signature, smaller scope"
+          "20 foto migliorate — selezione assistita da AI",
+          "5 clip video cinematografici",
+          "Formati multi-piattaforma base",
+          "AI Enhancement: ritoccata, arredata o completamente ristrutturata",
+          "Consegna in 24–48 ore",
+          "Stessa qualità di Signature, scope ridotto"
         ],
         "addons": [
-          "per extra cinematic video clip",
-          "12-hour rush delivery"
+          "per ogni clip video cinematografico extra",
+          "consegna rush in 12 ore"
         ]
       }
     ]
   },
   "studio": {
     "label": "Self-serve",
-    "title1": "Prefer to tinker?",
-    "titleEm": "Here are the keys to the studio.",
-    "subtitle": "AI-powered web app. Pay-as-you-go credits or monthly plans. Your pace, your control, 24/7.",
-    "imageAlt": "Unreel Estate agent handing over keys to the Studio",
-    "featuresLabel": "Everything inside the Studio",
+    "title1": "Preferisci fare da te?",
+    "titleEm": "Ecco le chiavi dello Studio.",
+    "subtitle": "Web app AI. Crediti pay-as-you-go o piani mensili. Il tuo ritmo, il tuo controllo, 24/7.",
+    "imageAlt": "Agente Unreel Estate consegna le chiavi dello Studio",
+    "featuresLabel": "Tutto ciò che trovi nello Studio",
     "features": [
-      { "name": "Enhance", "desc": "Pro lighting, sharpening, color correction" },
-      { "name": "Declutter", "desc": "Tidy or empty a room with one click" },
-      { "name": "Restyle", "desc": "Seven interior styles — same architecture" },
-      { "name": "Animate", "desc": "Turn any photo into a cinematic clip" },
-      { "name": "AI Descriptions", "desc": "MLS-ready listing copy, auto-generated" },
-      { "name": "Palette Presets", "desc": "Five curated moods + materials library" }
+      { "name": "Enhance", "desc": "Luce professionale, nitidezza, correzione colore" },
+      { "name": "Declutter", "desc": "Ordina o svuota una stanza con un click" },
+      { "name": "Restyle", "desc": "Sette stili d'interni — stessa architettura" },
+      { "name": "Animate", "desc": "Trasforma qualsiasi foto in un clip cinematografico" },
+      { "name": "AI Descriptions", "desc": "Testi per annunci MLS, generati in automatico" },
+      { "name": "Palette Presets", "desc": "Cinque mood curati + libreria materiali" }
     ],
-    "packsLabel": "Credit packs (pay-as-you-go)",
-    "subsLabel": "Monthly subscriptions",
-    "creditsSuffix": "credits",
-    "monthSuffix": "/mo",
-    "popular": "Best value",
-    "spendLabel": "Every action, every price",
+    "packsLabel": "Pacchetti crediti (pay-as-you-go)",
+    "subsLabel": "Abbonamenti mensili",
+    "creditsSuffix": "crediti",
+    "monthSuffix": "/mese",
+    "popular": "Miglior valore",
+    "spendLabel": "Ogni azione, ogni prezzo",
     "spend": {
-      "photoEnhance": "Photo enhance",
-      "aiDescription": "AI description",
+      "photoEnhance": "Miglioramento foto",
+      "aiDescription": "Descrizione AI",
       "videoFast": "Video — Fast",
       "videoHd": "Video — HD"
     },
     "creditsUnit": "cr",
-    "cta": "Open the Studio →",
-    "ctaSecondary": "First 100 credits on us — no credit card",
-    "footNote": "Credits don't expire with an active subscription. Exceed your monthly credits? Buy any pack and keep going."
+    "cta": "Apri lo Studio →",
+    "ctaSecondary": "I primi 100 crediti sono in regalo — senza carta",
+    "footNote": "Con un abbonamento attivo i crediti non scadono. Hai superato i crediti mensili? Compra un pacchetto e continua."
   },
   "mobileApp": {
-    "label": "Coming Soon",
-    "title1": "The Studio —",
-    "titleEm": "in your pocket.",
-    "subtitle": "Native iOS + Android app launching soon. Free to download. Shoot it, transform it, post it — before you leave the property.",
-    "waitlistCta": "Notify me at launch",
+    "label": "In Arrivo",
+    "title1": "Lo Studio —",
+    "titleEm": "in tasca.",
+    "subtitle": "App nativa iOS + Android in arrivo. Download gratuito. Scatta, trasforma, pubblica — prima di lasciare la proprietà.",
+    "waitlistCta": "Avvisami al lancio",
     "placeholder": "your@email.com",
-    "successMsg": "You're on the list. We'll email you at launch.",
-    "errorMsg": "Something went wrong. Please try again."
+    "successMsg": "Sei nella lista. Ti scriveremo al lancio.",
+    "errorMsg": "Qualcosa è andato storto. Riprova."
   },
   "testimonials": {
     "label": "Cosa Dicono i Nostri Clienti",
