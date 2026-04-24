@@ -65,6 +65,7 @@ export default function AriaWidget() {
   const [messages, setMessages] = useState([])
   const [draft, setDraft] = useState('')
   const [thinking, setThinking] = useState(false)
+  const [streamingMsgId, setStreamingMsgId] = useState(null)
   const [showLead, setShowLead] = useState(false)
   const [leadEmail, setLeadEmail] = useState('')
   const [leadSubmitted, setLeadSubmitted] = useState(false)
@@ -138,7 +139,7 @@ export default function AriaWidget() {
   const sendMessage = useCallback(
     async (raw) => {
       const content = (raw ?? draft).trim()
-      if (!content || thinking || rateLimited) return
+      if (!content || thinking || streamingMsgId || rateLimited) return
 
       setError(null)
       const userMsg = {
@@ -146,13 +147,26 @@ export default function AriaWidget() {
         role: 'user',
         content,
       }
+      const ariaMsgId = `a_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`
+      const emptyAriaMsg = { id: ariaMsgId, role: 'aria', content: '' }
+
       // Build history for API: skip the auto-greeting so Aria sees a clean start
       const history = messages
         .filter((m) => m.id !== 'greeting')
         .map((m) => ({ role: m.role, content: m.content }))
-      setMessages((prev) => [...prev, userMsg])
+
+      // Append user bubble + empty aria bubble (typing dots will render inside)
+      setMessages((prev) => [...prev, userMsg, emptyAriaMsg])
       setDraft('')
       setThinking(true)
+      setStreamingMsgId(ariaMsgId)
+
+      // Helper to patch the aria message content
+      const updateAria = (updater) => {
+        setMessages((prev) =>
+          prev.map((m) => (m.id === ariaMsgId ? { ...m, content: updater(m.content) } : m))
+        )
+      }
 
       try {
         const res = await fetch(API_URL, {
@@ -169,36 +183,80 @@ export default function AriaWidget() {
         if (res.status === 429) {
           setRateLimited(true)
           setError(t('aria.errorRate'))
-          setThinking(false)
+          setMessages((prev) => prev.filter((m) => m.id !== ariaMsgId))
           return
         }
-        if (!res.ok) {
+        if (!res.ok || !res.body) {
           throw new Error(`HTTP ${res.status}`)
         }
 
-        const data = await res.json()
-        const ariaMsg = {
-          id: `a_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
-          role: 'aria',
-          content: data.reply,
-        }
-        setMessages((prev) => [...prev, ariaMsg])
+        const reader = res.body.getReader()
+        const decoder = new TextDecoder()
+        let buffer = ''
+        let sawAnyText = false
+        let streamFinished = false
 
-        if (data.leadCaptured) {
-          setLeadSubmitted(true)
-          setShowLead(false)
-        } else if (data.suggestLead && !leadSubmitted) {
-          // Surface the lead card after Aria's reply settles
-          setTimeout(() => setShowLead(true), 600)
+        // eslint-disable-next-line no-constant-condition
+        while (true) {
+          const { done, value } = await reader.read()
+          if (done) break
+          buffer += decoder.decode(value, { stream: true })
+          const events = buffer.split('\n\n')
+          buffer = events.pop() ?? ''
+          for (const evt of events) {
+            if (!evt.startsWith('data: ')) continue
+            const json = evt.slice(6).trim()
+            if (!json) continue
+            let parsed
+            try {
+              parsed = JSON.parse(json)
+            } catch {
+              continue
+            }
+
+            if (parsed.type === 'delta' && parsed.text) {
+              if (!sawAnyText) {
+                setThinking(false)
+                sawAnyText = true
+              }
+              updateAria((prev) => prev + parsed.text)
+            } else if (parsed.type === 'reset' && typeof parsed.text === 'string') {
+              // Safety bailout / empty fallback — overwrite the partial
+              setThinking(false)
+              sawAnyText = true
+              updateAria(() => parsed.text)
+            } else if (parsed.type === 'done') {
+              streamFinished = true
+              if (parsed.leadCaptured) {
+                setLeadSubmitted(true)
+                setShowLead(false)
+              } else if (parsed.suggestLead && !leadSubmitted) {
+                setTimeout(() => setShowLead(true), 600)
+              }
+            } else if (parsed.type === 'error') {
+              setError(t('aria.errorGeneric'))
+              // Keep whatever partial text we have but stop the cursor
+            }
+          }
+        }
+
+        // If the stream closed without a 'done' event and we have no text, show fallback
+        if (!sawAnyText && !streamFinished) {
+          updateAria(() => t('aria.errorGeneric'))
         }
       } catch (e) {
-        console.error('[AriaWidget] send error', e)
+        console.error('[AriaWidget] stream error', e)
         setError(t('aria.errorGeneric'))
+        // Remove the empty aria bubble if nothing streamed
+        setMessages((prev) =>
+          prev.filter((m) => !(m.id === ariaMsgId && !m.content))
+        )
       } finally {
         setThinking(false)
+        setStreamingMsgId(null)
       }
     },
-    [draft, thinking, rateLimited, messages, leadSubmitted, i18n.language, t]
+    [draft, thinking, streamingMsgId, rateLimited, messages, leadSubmitted, i18n.language, t]
   )
 
   const submitLead = async () => {
@@ -278,45 +336,48 @@ export default function AriaWidget() {
           </header>
 
           <div className={styles.messages} ref={scrollRef}>
-            {messages.map((m) => (
-              <div
-                key={m.id}
-                className={`${styles.msg} ${
-                  m.role === 'aria' ? styles.msgAria : styles.msgUser
-                }`}
-              >
-                {m.role === 'aria' && (
-                  <div className={styles.msgAv} aria-hidden="true">
-                    <SparkleIcon size={12} />
+            {messages.map((m) => {
+              const isStreaming = m.id === streamingMsgId
+              const isEmpty = !m.content
+              // Empty streaming aria message → show typing dots inside the bubble
+              const showDots = isStreaming && isEmpty
+              const lines = isEmpty ? [] : m.content.split('\n')
+              return (
+                <div
+                  key={m.id}
+                  className={`${styles.msg} ${
+                    m.role === 'aria' ? styles.msgAria : styles.msgUser
+                  } ${isStreaming ? styles.msgStreaming : ''}`}
+                >
+                  {m.role === 'aria' && (
+                    <div className={styles.msgAv} aria-hidden="true">
+                      <SparkleIcon size={12} />
+                    </div>
+                  )}
+                  <div className={styles.msgBody}>
+                    {showDots ? (
+                      <span className={styles.typing} aria-label={t('aria.thinking')}>
+                        <span />
+                        <span />
+                        <span />
+                      </span>
+                    ) : (
+                      lines.map((line, i) => (
+                        <p key={i} className={styles.msgLine}>
+                          {line || '\u00A0'}
+                          {isStreaming && i === lines.length - 1 && (
+                            <span className={styles.cursor} aria-hidden="true" />
+                          )}
+                        </p>
+                      ))
+                    )}
                   </div>
-                )}
-                <div className={styles.msgBody}>
-                  {m.content.split('\n').map((line, i) => (
-                    <p key={i} className={styles.msgLine}>
-                      {line || '\u00A0'}
-                    </p>
-                  ))}
                 </div>
-              </div>
-            ))}
+              )
+            })}
 
-            {thinking && (
-              <div className={`${styles.msg} ${styles.msgAria}`}>
-                <div className={styles.msgAv} aria-hidden="true">
-                  <SparkleIcon size={12} />
-                </div>
-                <div className={styles.msgBody}>
-                  <span className={styles.typing} aria-label={t('aria.thinking')}>
-                    <span />
-                    <span />
-                    <span />
-                  </span>
-                </div>
-              </div>
-            )}
-
-            {/* Suggestion chips — only before any user message */}
-            {messages.length <= 1 && !thinking && chips.length > 0 && (
+            {/* Suggestion chips — only before any user message, not while streaming */}
+            {messages.length <= 1 && !thinking && !streamingMsgId && chips.length > 0 && (
               <div className={styles.chips}>
                 {chips.map((c) => (
                   <button
@@ -382,7 +443,7 @@ export default function AriaWidget() {
               value={draft}
               onChange={(e) => setDraft(e.target.value)}
               onKeyDown={handleKeyDown}
-              disabled={thinking || rateLimited}
+              disabled={thinking || !!streamingMsgId || rateLimited}
               rows={1}
               maxLength={2000}
             />
@@ -390,7 +451,7 @@ export default function AriaWidget() {
               type="button"
               className={styles.sendBtn}
               onClick={() => sendMessage()}
-              disabled={!draft.trim() || thinking || rateLimited}
+              disabled={!draft.trim() || thinking || !!streamingMsgId || rateLimited}
               aria-label={t('aria.send')}
             >
               <SendIcon size={15} />

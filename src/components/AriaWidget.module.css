@@ -307,6 +307,30 @@
   margin-top: 6px;
 }
 
+/* ─── Streaming cursor — shown at the end of the last line while Aria types ─── */
+.cursor {
+  display: inline-block;
+  width: 6px;
+  height: 14px;
+  background: var(--gold);
+  margin-left: 3px;
+  vertical-align: -2px;
+  border-radius: 1px;
+  animation: ariaCursorBlink 1s step-end infinite;
+  box-shadow: 0 0 6px rgba(196, 149, 106, 0.4);
+}
+
+@keyframes ariaCursorBlink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+/* While streaming, the "online" dot in the header can shift to "typing" green */
+.msgStreaming .msgBody {
+  /* Very subtle glow on the active bubble — gives a sense of "live typing" */
+  box-shadow: 0 0 0 1px rgba(196, 149, 106, 0.12);
+}
+
 /* ─── Typing indicator ─── */
 .typing {
   display: inline-flex;
