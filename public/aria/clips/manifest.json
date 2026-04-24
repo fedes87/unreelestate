@@ -1,0 +1,14 @@
+{
+  "base_path": "/aria/clips/",
+  "formats": ["webm", "mp4"],
+  "dimensions": "256x256",
+  "fps": 24,
+  "clips": {
+    "idle": { "loop": true, "priority": "preload" },
+    "thinking": { "loop": true, "priority": "preload" },
+    "typing": { "loop": true, "priority": "lazy" },
+    "greeting": { "loop": false, "priority": "preload" },
+    "looking": { "loop": false, "priority": "lazy" },
+    "caught": { "loop": false, "priority": "lazy" }
+  }
+}

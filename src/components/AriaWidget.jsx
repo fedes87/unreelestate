@@ -58,6 +58,61 @@ function SendIcon({ size = 16 }) {
   )
 }
 
+// Animated Aria avatar — renders a looping video clip based on state, with
+// SparkleIcon fallback if the video fails to load or clips aren't deployed.
+// Available states: 'idle' | 'thinking' | 'greeting' | 'typing' | 'caught' | 'looking' | 'selfie'
+const CLIP_BASE = '/aria/clips'
+function AriaVideoAvatar({ state = 'idle', size = 40, loop = true, fallbackSize = 16 }) {
+  const videoRef = useRef(null)
+  const [failed, setFailed] = useState(false)
+
+  useEffect(() => {
+    const v = videoRef.current
+    if (!v || failed) return
+    try {
+      v.currentTime = 0
+      const p = v.play()
+      if (p && typeof p.catch === 'function') p.catch(() => {})
+    } catch {
+      /* autoplay blocked — user gesture will resume */
+    }
+  }, [state, failed])
+
+  if (failed) {
+    return (
+      <div
+        className={styles.avatarFallback}
+        style={{ width: size, height: size }}
+        aria-hidden="true"
+      >
+        <SparkleIcon size={fallbackSize} />
+      </div>
+    )
+  }
+
+  return (
+    <div
+      className={styles.videoAvatar}
+      style={{ width: size, height: size }}
+      aria-hidden="true"
+    >
+      <video
+        ref={videoRef}
+        key={state}
+        autoPlay
+        loop={loop}
+        muted
+        playsInline
+        preload={state === 'idle' ? 'auto' : 'metadata'}
+        onError={() => setFailed(true)}
+      >
+        <source src={`${CLIP_BASE}/aria_${state}.webm`} type="video/webm" />
+        <source src={`${CLIP_BASE}/aria_${state}.mp4`} type="video/mp4" />
+      </video>
+    </div>
+  )
+}
+
 export default function AriaWidget() {
   const { t, i18n } = useTranslation()
 
@@ -72,8 +127,14 @@ export default function AriaWidget() {
   const [error, setError] = useState(null)
   const [rateLimited, setRateLimited] = useState(false)
   const [entered, setEntered] = useState(false)
+  const [showBadge, setShowBadge] = useState(false)
+  const [greetingPlaying, setGreetingPlaying] = useState(false)
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== 'undefined' && window.innerWidth < 640
+  )
 
   const sessionId = useRef(ensureSessionId())
+  const panelRef = useRef(null)
   const scrollRef = useRef(null)
   const textareaRef = useRef(null)
   const triggerRef = useRef(null)
@@ -88,6 +149,51 @@ export default function AriaWidget() {
     const id = setTimeout(() => setEntered(true), 6000)
     return () => clearTimeout(id)
   }, [])
+
+  // Nudge badge — trigger "caught" animation after 30s idle if user hasn't opened
+  useEffect(() => {
+    if (open || messages.length > 0) {
+      setShowBadge(false)
+      return
+    }
+    const id = setTimeout(() => setShowBadge(true), 30000)
+    return () => clearTimeout(id)
+  }, [open, messages.length])
+
+  // Responsive detection (mobile ≤ 640px gets fullscreen overlay)
+  useEffect(() => {
+    const onResize = () => setIsMobile(window.innerWidth < 640)
+    window.addEventListener('resize', onResize)
+    return () => window.removeEventListener('resize', onResize)
+  }, [])
+
+  // Outside-click close (desktop only — mobile is full-screen modal)
+  useEffect(() => {
+    if (!open || isMobile) return
+    const onClick = (e) => {
+      if (
+        panelRef.current &&
+        !panelRef.current.contains(e.target) &&
+        !triggerRef.current?.contains(e.target)
+      ) {
+        setOpen(false)
+      }
+    }
+    // Delay so the opening click doesn't immediately close
+    const t0 = setTimeout(() => document.addEventListener('mousedown', onClick), 100)
+    return () => {
+      clearTimeout(t0)
+      document.removeEventListener('mousedown', onClick)
+    }
+  }, [open, isMobile])
+
+  // Play greeting animation once when opening the panel
+  useEffect(() => {
+    if (!open) return
+    setGreetingPlaying(true)
+    const id = setTimeout(() => setGreetingPlaying(false), 3200)
+    return () => clearTimeout(id)
+  }, [open])
 
   // Greeting when opening for the first time
   useEffect(() => {
@@ -161,12 +267,61 @@ export default function AriaWidget() {
       setThinking(true)
       setStreamingMsgId(ariaMsgId)
 
-      // Helper to patch the aria message content
-      const updateAria = (updater) => {
+      // ── Typewriter buffer ──────────────────────────────────────────
+      // Gemini streams in big multi-word chunks. To make Aria feel like she's
+      // actually TYPING (matching the animated avatar), we queue incoming
+      // text and reveal it char-by-char at a human-ish pace, with adaptive
+      // catch-up if the buffer grows too fast.
+      const tw = {
+        target: '',        // full text received from stream
+        displayed: 0,      // chars revealed to state so far
+        intervalId: null,
+        streamEnded: false,
+        pendingDone: null, // callback fired once typewriter catches up
+      }
+
+      const tick = () => {
+        const remaining = tw.target.length - tw.displayed
+        if (remaining <= 0) {
+          if (tw.intervalId != null) {
+            clearInterval(tw.intervalId)
+            tw.intervalId = null
+          }
+          if (tw.streamEnded && tw.pendingDone) {
+            const cb = tw.pendingDone
+            tw.pendingDone = null
+            cb()
+          }
+          return
+        }
+        // Adaptive step — baseline 1 char / tick (~55 chars/sec at 18ms),
+        // scales up when Gemini dumps a big chunk so latency stays bounded.
+        const step =
+          remaining > 250 ? 5 : remaining > 120 ? 3 : remaining > 40 ? 2 : 1
+        tw.displayed = Math.min(tw.target.length, tw.displayed + step)
+        const display = tw.target.slice(0, tw.displayed)
         setMessages((prev) =>
-          prev.map((m) => (m.id === ariaMsgId ? { ...m, content: updater(m.content) } : m))
+          prev.map((m) => (m.id === ariaMsgId ? { ...m, content: display } : m))
         )
       }
+
+      const ensureTicking = () => {
+        if (tw.intervalId == null) {
+          tw.intervalId = setInterval(tick, 18)
+        }
+      }
+
+      const waitForTypewriter = () =>
+        new Promise((resolve) => {
+          const check = () => {
+            if (tw.displayed >= tw.target.length && tw.intervalId == null) {
+              resolve()
+            } else {
+              setTimeout(check, 30)
+            }
+          }
+          check()
+        })
 
       try {
         const res = await fetch(API_URL, {
@@ -219,19 +374,32 @@ export default function AriaWidget() {
                 setThinking(false)
                 sawAnyText = true
               }
-              updateAria((prev) => prev + parsed.text)
+              tw.target += parsed.text
+              ensureTicking()
             } else if (parsed.type === 'reset' && typeof parsed.text === 'string') {
-              // Safety bailout / empty fallback — overwrite the partial
+              // Safety bailout / empty fallback — restart the typewriter cleanly
               setThinking(false)
               sawAnyText = true
-              updateAria(() => parsed.text)
+              tw.target = parsed.text
+              tw.displayed = 0
+              ensureTicking()
             } else if (parsed.type === 'done') {
               streamFinished = true
-              if (parsed.leadCaptured) {
-                setLeadSubmitted(true)
-                setShowLead(false)
-              } else if (parsed.suggestLead && !leadSubmitted) {
-                setTimeout(() => setShowLead(true), 600)
+              const handleDone = () => {
+                if (parsed.leadCaptured) {
+                  setLeadSubmitted(true)
+                  setShowLead(false)
+                } else if (parsed.suggestLead && !leadSubmitted) {
+                  setTimeout(() => setShowLead(true), 600)
+                }
+              }
+              // Fire metadata ONLY after typewriter catches up,
+              // so the lead card doesn't appear mid-typing.
+              if (tw.displayed >= tw.target.length && tw.intervalId == null) {
+                handleDone()
+              } else {
+                tw.streamEnded = true
+                tw.pendingDone = handleDone
               }
             } else if (parsed.type === 'error') {
               setError(t('aria.errorGeneric'))
@@ -240,9 +408,15 @@ export default function AriaWidget() {
           }
         }
 
+        tw.streamEnded = true
+        // Wait for the typewriter to drain before clearing the cursor.
+        await waitForTypewriter()
+
         // If the stream closed without a 'done' event and we have no text, show fallback
         if (!sawAnyText && !streamFinished) {
-          updateAria(() => t('aria.errorGeneric'))
+          setMessages((prev) =>
+            prev.map((m) => (m.id === ariaMsgId ? { ...m, content: t('aria.errorGeneric') } : m))
+          )
         }
       } catch (e) {
         console.error('[AriaWidget] stream error', e)
@@ -252,6 +426,7 @@ export default function AriaWidget() {
           prev.filter((m) => !(m.id === ariaMsgId && !m.content))
         )
       } finally {
+        if (tw.intervalId != null) clearInterval(tw.intervalId)
         setThinking(false)
         setStreamingMsgId(null)
       }
@@ -282,14 +457,20 @@ export default function AriaWidget() {
         <button
           ref={triggerRef}
           type="button"
-          className={`${styles.bubble} ${entered ? styles.bubbleEntered : ''}`}
+          className={`${styles.bubble} ${entered ? styles.bubbleEntered : ''} ${showBadge ? styles.bubbleBadged : ''}`}
           onClick={() => setOpen(true)}
           aria-label={t('aria.openLabel')}
         >
           <span className={styles.bubbleDot} aria-hidden="true" />
-          <span className={styles.bubbleIcon}>
-            <SparkleIcon size={22} />
+          <span className={styles.bubbleAvatar}>
+            <AriaVideoAvatar
+              state={showBadge ? 'caught' : 'idle'}
+              size={54}
+              loop={!showBadge}
+              fallbackSize={22}
+            />
           </span>
+          {showBadge && <span className={styles.bubbleBadge} aria-hidden="true">1</span>}
           <span className={styles.bubbleTooltip}>{t('aria.bubbleTooltip')}</span>
         </button>
       )}
@@ -297,14 +478,26 @@ export default function AriaWidget() {
       {/* Chat panel */}
       {open && (
         <div
-          className={styles.panel}
+          ref={panelRef}
+          className={`${styles.panel} ${isMobile ? styles.panelMobile : ''}`}
           role="dialog"
-          aria-modal="false"
+          aria-modal={isMobile ? 'true' : 'false'}
           aria-label={t('aria.header')}
         >
           <header className={styles.header}>
             <div className={styles.headerAv} aria-hidden="true">
-              <SparkleIcon size={15} />
+              <AriaVideoAvatar
+                state={
+                  thinking || streamingMsgId
+                    ? 'typing'
+                    : greetingPlaying
+                    ? 'greeting'
+                    : 'idle'
+                }
+                size={40}
+                loop={!greetingPlaying}
+                fallbackSize={15}
+              />
             </div>
             <div className={styles.headerInfo}>
               <div className={styles.headerTitle}>{t('aria.header')}</div>
