@@ -61,10 +61,12 @@ export const studioSubs = [
 ]
 // Spend rates (display only — authoritative rates live in the app)
 export const studioSpend = [
-  { key: 'photoEnhance', credits: 2 },
+  { key: 'photoEnhance', credits: 3 },
   { key: 'aiDescription', credits: 1 },
-  { key: 'videoFast',  credits: '20–40' },
-  { key: 'videoHd',    credits: '50–110' },
+  { key: 'story',        credits: 5 },
+  { key: 'reel',         credits: 20 },
+  { key: 'videoFast',    credits: '20–40' },
+  { key: 'videoHd',      credits: '50–110' },
 ]
 
 export const galleryPairs = [

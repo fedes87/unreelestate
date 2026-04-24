@@ -206,6 +206,8 @@
     "spend": {
       "photoEnhance": "Mejora de foto",
       "aiDescription": "Descripción IA",
+      "story": "Story IG 15s",
+      "reel": "Reel cinematográfico 60s",
       "videoFast": "Video — Fast",
       "videoHd": "Video — HD"
     },
