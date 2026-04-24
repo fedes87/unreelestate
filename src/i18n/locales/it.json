@@ -409,6 +409,20 @@
     "home": "Torna alla Home",
     "portfolio": "Vedi Portfolio"
   },
+  "ariaIntro": {
+    "label": "Ti presento Aria",
+    "role": "Il tuo agente AI",
+    "online": "Online · pensa in 3 lingue",
+    "messageHeader": "Da: Aria · a te",
+    "bubbles": [
+      "Ciao. Sono Aria.",
+      "Non sono il classico chatbot.",
+      "Penso. Ricordo. Parlo tre lingue.",
+      "Annunci, didascalie, reel — ti aiuto a scrivere, tradurre, chiudere.",
+      "Intelligenza vera. Risultati unreal."
+    ],
+    "cta": "Parla con me"
+  },
   "aria": {
     "bubbleTooltip": "Ciao, sono Aria — serve una mano?",
     "header": "Aria",

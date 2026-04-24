@@ -1,0 +1,320 @@
+/* ═══════════════════════════════════════════════════════
+   AriaIntro — iMessage-style hero introduction for Aria on
+   the marketing landing page. Ambient dark section with
+   Aria avatar + cascading chat bubbles.
+   ═══════════════════════════════════════════════════════ */
+
+.section {
+  position: relative;
+  padding: 120px 0;
+  background: var(--bg-primary);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* Subtle gold mesh in the background for atmosphere */
+.section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 900px 600px at 25% 50%, rgba(196, 149, 106, 0.12), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 80% 80%, rgba(196, 149, 106, 0.06), transparent 60%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: minmax(280px, 420px) 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+/* ─── Avatar column ─── */
+.avatarCol {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 28px;
+}
+
+.avatarRing {
+  position: relative;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(196, 149, 106, 0.65);
+  background: var(--bg-card);
+  box-shadow:
+    0 0 0 10px rgba(196, 149, 106, 0.1),
+    0 28px 60px -18px rgba(0, 0, 0, 0.7),
+    0 0 60px -10px rgba(196, 149, 106, 0.45);
+}
+
+.avatarHalo {
+  position: absolute;
+  inset: -30px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(196, 149, 106, 0.4), transparent 65%);
+  animation: ariaIntroHalo 4s ease-in-out infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@keyframes ariaIntroHalo {
+  0%, 100% { transform: scale(0.95); opacity: 0.5; }
+  50% { transform: scale(1.15); opacity: 0.9; }
+}
+
+.avatarVid {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.nameplate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.label {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.name {
+  font-family: 'Bodoni Moda', serif;
+  font-size: clamp(36px, 5vw, 52px);
+  font-weight: 600;
+  line-height: 1.05;
+  color: var(--text-primary);
+  letter-spacing: -0.005em;
+}
+
+.role {
+  font-size: 14px;
+  color: var(--text-secondary);
+  letter-spacing: 0.02em;
+  font-style: italic;
+}
+
+.onlineRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-top: 6px;
+}
+
+.onlineDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #6bcf8a;
+  box-shadow: 0 0 8px #6bcf8a;
+  animation: ariaIntroOnline 2.4s ease-in-out infinite;
+}
+
+@keyframes ariaIntroOnline {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+
+/* ─── Chat column ─── */
+.chatCol {
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.chatHeader {
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 10px;
+}
+
+.chatHeaderLabel {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.bubbles {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.bubble {
+  position: relative;
+  align-self: flex-start;
+  max-width: 78%;
+  padding: 14px 18px;
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--text-primary);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  border-bottom-left-radius: 6px;
+  opacity: 0;
+  transform: translateY(12px);
+  letter-spacing: 0.005em;
+  box-shadow: 0 6px 20px -8px rgba(0, 0, 0, 0.35);
+}
+
+.bubble:nth-child(3n + 1) {
+  background: linear-gradient(135deg, rgba(196, 149, 106, 0.16), rgba(196, 149, 106, 0.06));
+  border-color: rgba(196, 149, 106, 0.28);
+}
+
+.bubble:last-child {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 1.25;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  color: var(--bg-primary);
+  border-color: var(--gold);
+}
+
+.bubble:last-child .bubbleTail {
+  background: var(--gold);
+}
+
+.bubbleIn {
+  animation: ariaIntroBubbleIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes ariaIntroBubbleIn {
+  from { opacity: 0; transform: translateY(12px) scale(0.95); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.bubbleTail {
+  position: absolute;
+  left: -4px;
+  bottom: 0;
+  width: 14px;
+  height: 14px;
+  background: inherit;
+  border-bottom-left-radius: 10px;
+  transform: rotate(-45deg);
+  z-index: -1;
+  opacity: 0.6;
+}
+
+/* ─── CTA ─── */
+.cta {
+  align-self: flex-start;
+  margin-top: 18px;
+  padding: 14px 28px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bg-primary);
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: filter 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow:
+    0 10px 28px -8px rgba(196, 149, 106, 0.5),
+    0 0 0 1px rgba(196, 149, 106, 0.4);
+}
+
+.cta:hover {
+  filter: brightness(1.08);
+  transform: translateY(-2px);
+  box-shadow:
+    0 14px 36px -8px rgba(196, 149, 106, 0.6),
+    0 0 0 1px rgba(196, 149, 106, 0.6);
+}
+
+.ctaIn {
+  animation: ariaIntroBubbleIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.ctaIcon {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(13, 11, 9, 0.2);
+  color: var(--bg-primary);
+}
+
+/* ─── Mobile (≤ 900px) — stack columns, smaller avatar ─── */
+@media (max-width: 900px) {
+  .section {
+    padding: 80px 0;
+  }
+
+  .inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .avatarRing {
+    width: 200px;
+    height: 200px;
+  }
+
+  .chatCol {
+    max-width: 100%;
+  }
+
+  .bubble {
+    font-size: 15px;
+  }
+
+  .bubble:last-child {
+    font-size: 19px;
+  }
+
+  .cta {
+    align-self: stretch;
+    justify-content: center;
+  }
+}
+
+/* ─── Reduced motion ─── */
+@media (prefers-reduced-motion: reduce) {
+  .avatarHalo,
+  .onlineDot,
+  .avatarVid {
+    animation: none !important;
+  }
+
+  .bubble,
+  .cta {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+}

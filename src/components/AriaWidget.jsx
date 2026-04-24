@@ -129,6 +129,9 @@ export default function AriaWidget() {
   const [entered, setEntered] = useState(false)
   const [showBadge, setShowBadge] = useState(false)
   const [greetingPlaying, setGreetingPlaying] = useState(false)
+  const [hoveringBubble, setHoveringBubble] = useState(false)
+  const [lookingAround, setLookingAround] = useState(false)
+  const [justFinished, setJustFinished] = useState(false)
   const [isMobile, setIsMobile] = useState(
     typeof window !== 'undefined' && window.innerWidth < 640
   )
@@ -186,6 +189,27 @@ export default function AriaWidget() {
       document.removeEventListener('mousedown', onClick)
     }
   }, [open, isMobile])
+
+  // "Looking around" — when panel has been open and idle for 12s
+  useEffect(() => {
+    if (!open || thinking || streamingMsgId || greetingPlaying) {
+      setLookingAround(false)
+      return
+    }
+    const id = setTimeout(() => setLookingAround(true), 12000)
+    return () => {
+      clearTimeout(id)
+      setLookingAround(false)
+    }
+  }, [open, thinking, streamingMsgId, greetingPlaying, messages.length])
+
+  // Global "aria:open" event so other components (e.g. AriaIntro hero)
+  // can trigger the widget to open via a decoupled custom event.
+  useEffect(() => {
+    const handler = () => setOpen(true)
+    window.addEventListener('aria:open', handler)
+    return () => window.removeEventListener('aria:open', handler)
+  }, [])
 
   // Play greeting animation once when opening the panel
   useEffect(() => {
@@ -429,6 +453,9 @@ export default function AriaWidget() {
         if (tw.intervalId != null) clearInterval(tw.intervalId)
         setThinking(false)
         setStreamingMsgId(null)
+        // Celebratory "selfie" flash for 2.4s after a successful turn
+        setJustFinished(true)
+        setTimeout(() => setJustFinished(false), 2400)
       }
     },
     [draft, thinking, streamingMsgId, rateLimited, messages, leadSubmitted, i18n.language, t]
@@ -459,12 +486,20 @@ export default function AriaWidget() {
           type="button"
           className={`${styles.bubble} ${entered ? styles.bubbleEntered : ''} ${showBadge ? styles.bubbleBadged : ''}`}
           onClick={() => setOpen(true)}
+          onMouseEnter={() => setHoveringBubble(true)}
+          onMouseLeave={() => setHoveringBubble(false)}
           aria-label={t('aria.openLabel')}
         >
           <span className={styles.bubbleDot} aria-hidden="true" />
           <span className={styles.bubbleAvatar}>
             <AriaVideoAvatar
-              state={showBadge ? 'caught' : 'idle'}
+              state={
+                showBadge
+                  ? 'caught'
+                  : hoveringBubble
+                  ? 'looking'
+                  : 'idle'
+              }
               size={isMobile ? 62 : 72}
               loop={!showBadge}
               fallbackSize={28}
@@ -488,14 +523,24 @@ export default function AriaWidget() {
             <div className={styles.headerAv} aria-hidden="true">
               <AriaVideoAvatar
                 state={
-                  thinking || streamingMsgId
-                    ? 'typing'
-                    : greetingPlaying
+                  greetingPlaying
                     ? 'greeting'
+                    : streamingMsgId
+                    ? 'typing'
+                    : thinking
+                    ? 'thinking'
+                    : justFinished
+                    ? 'selfie'
+                    : lookingAround
+                    ? 'looking'
                     : 'idle'
                 }
                 size={52}
-                loop={!greetingPlaying}
+                loop={
+                  // All expressive states should loop so user sees them
+                  // play multiple times during their natural duration.
+                  !greetingPlaying && !justFinished
+                }
                 fallbackSize={22}
               />
             </div>

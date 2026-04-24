@@ -409,6 +409,20 @@
     "home": "Go Home",
     "portfolio": "View Portfolio"
   },
+  "ariaIntro": {
+    "label": "Meet Aria",
+    "role": "Your AI agent",
+    "online": "Online · thinking in 3 languages",
+    "messageHeader": "From: Aria · to you",
+    "bubbles": [
+      "Hey. I'm Aria.",
+      "I'm not your typical chatbot.",
+      "I think. I remember. I speak three languages.",
+      "Listings, captions, reels — I help you draft, translate, and close.",
+      "Real intelligence. Unreal results."
+    ],
+    "cta": "Start a conversation"
+  },
   "aria": {
     "bubbleTooltip": "Hey, I'm Aria — need a hand?",
     "header": "Aria",

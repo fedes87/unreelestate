@@ -19,11 +19,13 @@ import FAQ from './components/FAQ'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import AriaWidget from './components/AriaWidget'
+import AriaIntro from './components/AriaIntro'
 export default function App() {
   return (
     <>
       <Navbar />
       <Hero />
+      <AriaIntro />
       <BrandStatement />
       <Gallery />
       <CTABanner />
