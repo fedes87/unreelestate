@@ -465,9 +465,9 @@ export default function AriaWidget() {
           <span className={styles.bubbleAvatar}>
             <AriaVideoAvatar
               state={showBadge ? 'caught' : 'idle'}
-              size={54}
+              size={isMobile ? 62 : 72}
               loop={!showBadge}
-              fallbackSize={22}
+              fallbackSize={28}
             />
           </span>
           {showBadge && <span className={styles.bubbleBadge} aria-hidden="true">1</span>}
@@ -494,9 +494,9 @@ export default function AriaWidget() {
                     ? 'greeting'
                     : 'idle'
                 }
-                size={40}
+                size={52}
                 loop={!greetingPlaying}
-                fallbackSize={15}
+                fallbackSize={22}
               />
             </div>
             <div className={styles.headerInfo}>

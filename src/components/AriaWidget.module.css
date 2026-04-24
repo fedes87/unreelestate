@@ -6,29 +6,57 @@
 /* ─── Bubble trigger (closed state) ─── */
 .bubble {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
-  width: 60px;
-  height: 60px;
+  right: 22px;
+  bottom: 22px;
+  width: 78px;
+  height: 78px;
   border-radius: 50%;
-  border: 1px solid rgba(196, 149, 106, 0.4);
-  background: radial-gradient(
-    circle at 30% 30%,
-    rgba(196, 149, 106, 0.25),
-    var(--bg-card) 65%
-  );
+  border: 2px solid rgba(196, 149, 106, 0.7);
+  background: var(--bg-primary);
   color: var(--gold);
   cursor: pointer;
   display: grid;
   place-items: center;
   z-index: 9998;
   backdrop-filter: blur(14px);
-  box-shadow: 0 12px 32px -6px rgba(0, 0, 0, 0.55),
-    0 0 0 6px rgba(196, 149, 106, 0.06);
+  box-shadow:
+    0 0 0 6px rgba(196, 149, 106, 0.12),
+    0 14px 38px -8px rgba(0, 0, 0, 0.65),
+    0 0 30px -8px rgba(196, 149, 106, 0.4);
   transform: translateY(80px) scale(0.6);
   opacity: 0;
   transition: transform 0.45s cubic-bezier(0.175, 0.885, 0.32, 1.15),
     opacity 0.45s ease-out, box-shadow 0.25s ease, border-color 0.2s;
+  /* Subtle idle "breathing" so Aria feels alive at a glance */
+  animation: ariaBubbleBreathe 4.5s ease-in-out infinite;
+}
+
+/* Ambient halo — soft gold glow that pulses around the bubble
+   so peripheral vision catches it even when user isn't focused on it. */
+.bubble::before {
+  content: '';
+  position: absolute;
+  inset: -14px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(196, 149, 106, 0.35) 0%,
+    rgba(196, 149, 106, 0.12) 45%,
+    transparent 72%
+  );
+  animation: ariaBubbleHalo 3.6s ease-in-out infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes ariaBubbleBreathe {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(0) scale(1.025); }
+}
+
+@keyframes ariaBubbleHalo {
+  0%, 100% { transform: scale(0.85); opacity: 0.45; }
+  50% { transform: scale(1.2); opacity: 0.85; }
 }
 
 .bubbleEntered {
@@ -38,14 +66,21 @@
 
 .bubble:hover {
   border-color: var(--gold);
-  box-shadow: 0 16px 40px -8px rgba(196, 149, 106, 0.35),
-    0 0 0 8px rgba(196, 149, 106, 0.08);
+  box-shadow:
+    0 0 0 10px rgba(196, 149, 106, 0.18),
+    0 18px 44px -8px rgba(196, 149, 106, 0.5),
+    0 0 40px -6px rgba(196, 149, 106, 0.5);
+  animation-play-state: paused;
+}
+.bubble:hover::before {
+  opacity: 1;
+  transform: scale(1.3);
 }
 
 .bubble:focus-visible {
   outline: none;
   border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(196, 149, 106, 0.5);
+  box-shadow: 0 0 0 4px rgba(196, 149, 106, 0.55);
 }
 
 .bubbleIcon {
@@ -151,15 +186,19 @@
 }
 
 .headerAv {
-  width: 36px;
-  height: 36px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  background: var(--bg-primary);
   color: var(--bg-primary);
   display: grid;
   place-items: center;
   flex-shrink: 0;
-  box-shadow: 0 0 18px -4px rgba(196, 149, 106, 0.6);
+  overflow: hidden;
+  border: 2px solid rgba(196, 149, 106, 0.5);
+  box-shadow:
+    0 0 0 3px rgba(196, 149, 106, 0.1),
+    0 0 22px -4px rgba(196, 149, 106, 0.5);
 }
 
 .headerInfo {
@@ -590,8 +629,11 @@
   .bubble {
     right: 16px;
     bottom: 16px;
-    width: 56px;
-    height: 56px;
+    width: 68px;
+    height: 68px;
+  }
+  .bubble::before {
+    inset: -10px;
   }
 
   .bubbleTooltip {
