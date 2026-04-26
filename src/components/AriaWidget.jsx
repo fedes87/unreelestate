@@ -141,6 +141,20 @@ export default function AriaWidget() {
   const scrollRef = useRef(null)
   const textareaRef = useRef(null)
   const triggerRef = useRef(null)
+  // Tracked so the celebratory "selfie flash" timer is cancelled when the
+  // component unmounts mid-animation (otherwise: setState on unmounted + leak).
+  const justFinishedTimeoutRef = useRef(null)
+
+  // Cleanup any pending justFinished timer on unmount.
+  useEffect(
+    () => () => {
+      if (justFinishedTimeoutRef.current) {
+        clearTimeout(justFinishedTimeoutRef.current)
+        justFinishedTimeoutRef.current = null
+      }
+    },
+    []
+  )
 
   const chips = (() => {
     const raw = t('aria.chips', { returnObjects: true })
@@ -453,9 +467,14 @@ export default function AriaWidget() {
         if (tw.intervalId != null) clearInterval(tw.intervalId)
         setThinking(false)
         setStreamingMsgId(null)
-        // Celebratory "selfie" flash for 2.4s after a successful turn
+        // Celebratory "selfie" flash for 2.4s after a successful turn.
+        // Track timer ref so unmount cleanup can cancel it (no setState-on-unmounted).
         setJustFinished(true)
-        setTimeout(() => setJustFinished(false), 2400)
+        if (justFinishedTimeoutRef.current) clearTimeout(justFinishedTimeoutRef.current)
+        justFinishedTimeoutRef.current = setTimeout(() => {
+          setJustFinished(false)
+          justFinishedTimeoutRef.current = null
+        }, 2400)
       }
     },
     [draft, thinking, streamingMsgId, rateLimited, messages, leadSubmitted, i18n.language, t]
