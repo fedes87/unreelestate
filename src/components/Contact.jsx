@@ -124,7 +124,7 @@ export default function Contact() {
 
                 <div className={styles.group}>
                   <label htmlFor="message">{t('contact.message')}</label>
-                  <textarea id="message" name="message" rows={4} placeholder={t('contact.messagePlaceholder')} value={form.message} onChange={handleChange} />
+                  <textarea id="message" name="message" rows={4} maxLength={2000} placeholder={t('contact.messagePlaceholder')} value={form.message} onChange={handleChange} />
                 </div>
 
                 <div className={styles.group}>
