@@ -1,0 +1,175 @@
+.section {
+  padding: 110px 0 90px;
+  background: var(--bg-primary);
+  border-top: 1px solid rgba(196,149,106,0.06);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 56px;
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  font-family: 'Bodoni Moda', serif;
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin: 14px 0 14px;
+}
+
+.title em { font-style: italic; color: var(--gold); }
+
+.subtitle {
+  font-size: 16px;
+  color: rgba(250,247,242,0.6);
+  font-weight: 300;
+  line-height: 1.65;
+}
+
+/* ────────── 3-card grid ────────── */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1140px;
+  margin: 0 auto 36px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(196,149,106,0.16);
+  border-radius: 18px;
+  padding: 32px 28px 28px;
+  transition: all 0.3s ease;
+  color: inherit;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(196,149,106,0.45);
+  background: rgba(255,255,255,0.04);
+  box-shadow: 0 24px 48px rgba(0,0,0,0.32);
+}
+
+.cardIcon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(196,149,106,0.10);
+  color: var(--gold);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+
+.cardHeadline {
+  font-family: 'Bodoni Moda', serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: 0.3px;
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+
+.cardBody {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(250,247,242,0.66);
+  font-weight: 300;
+  margin: 0 0 22px;
+  flex: 1;
+}
+
+.cardMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 18px;
+  border-top: 1px solid rgba(196,149,106,0.12);
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.priceHint {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.cta {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.2px;
+}
+
+/* ────────── Per-path accent variations ────────── */
+
+/* Studio = self-serve, dominant gold (the "default" path Federico positions central) */
+.accentStudio {
+  background: linear-gradient(180deg, rgba(196,149,106,0.10), rgba(196,149,106,0.02));
+  border-color: rgba(196,149,106,0.32);
+}
+.accentStudio:hover { border-color: var(--gold); }
+.accentStudio .cardIcon {
+  background: rgba(196,149,106,0.18);
+  color: var(--gold);
+}
+
+/* Team = warm neutral, balanced */
+.accentTeam .cardIcon {
+  background: rgba(196,149,106,0.08);
+}
+
+/* Crew = luxury premium, deeper backdrop */
+.accentCrew {
+  background:
+    radial-gradient(circle at 80% 0%, rgba(196,149,106,0.10), transparent 55%),
+    rgba(255,255,255,0.02);
+}
+.accentCrew .cardIcon {
+  background:
+    radial-gradient(circle at 50% 50%, rgba(196,149,106,0.22), rgba(196,149,106,0.06));
+  color: var(--gold);
+}
+
+/* ────────── Compare-side-by-side hint ────────── */
+
+.compareLink {
+  text-align: center;
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: rgba(250,247,242,0.5);
+  font-style: italic;
+}
+
+.compareLink a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-style: normal;
+  margin-left: 4px;
+  font-weight: 500;
+}
+
+.compareLink a:hover { color: var(--text-primary); }
+
+/* ────────── Responsive ────────── */
+
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: 1fr; gap: 14px; max-width: 560px; }
+  .section { padding: 80px 0 70px; }
+}

@@ -524,6 +524,34 @@
     ],
     "soon": []
   },
+  "chooseYourPath": {
+    "label": "Choose your path",
+    "title1": "Three ways to",
+    "titleEm": "work with us.",
+    "subtitle": "Pick how you want to sell the listing — and we'll get out of the way.",
+    "compare": "Want a side-by-side breakdown?",
+    "compareLink": "See FAQ →",
+    "cards": [
+      {
+        "headline": "Create it yourself.",
+        "body": "Subscribe monthly. Upload your iPhone photos, get magazine-grade output. Then animate, generate Stories, build Carousels — your stack, your pace.",
+        "priceHint": "From $14.99/mo",
+        "cta": "See Studio plans"
+      },
+      {
+        "headline": "We finish the listing.",
+        "body": "One-shot, per-listing. Upload photos, our editors deliver polished assets in 24-48 hours. Pay per listing, no monthly commitment.",
+        "priceHint": "From $199/listing",
+        "cta": "See packages"
+      },
+      {
+        "headline": "Cinema crew on site.",
+        "body": "Houston luxury listings ($1.2M+). Galli Productions sends a Netflix-approved cinema crew with drone, gimbal, and on-site editor.",
+        "priceHint": "From $1,200/shoot",
+        "cta": "Book a shoot"
+      }
+    ]
+  },
   "pricingV2": {
     "label": "Studio Subscriptions",
     "title1": "Pick your pace.",

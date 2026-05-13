@@ -4,6 +4,7 @@ import ReassuranceBlock from './components/ReassuranceBlock'
 import BeforeAfterShowcase from './components/BeforeAfterShowcase'
 import VideoDemo from './components/VideoDemo'
 import FunnelLadder from './components/FunnelLadder'
+import ChooseYourPath from './components/ChooseYourPath'
 import PricingV2 from './components/PricingV2'
 import TeamServices from './components/TeamServices'
 import GalliPartnership from './components/GalliPartnership'
@@ -21,6 +22,7 @@ export default function App() {
       <BeforeAfterShowcase />
       <VideoDemo />
       <FunnelLadder />
+      <ChooseYourPath />
       <PricingV2 />
       <TeamServices />
       <GalliPartnership />
