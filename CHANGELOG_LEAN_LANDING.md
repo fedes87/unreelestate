@@ -1,180 +1,134 @@
-# 🌑 Unreel Lean Landing — Concilio Notturno
+# 🌑 Unreel Lean Landing — Concilio Notturno (finale)
 
-> Federico è andato a dormire alle ~2:30am del 2026-05-13.
-> Questo file documenta tutto il lavoro fatto durante la notte, sotto i suoi vincoli espliciti:
-> - Branch separato, `main` NON toccato
-> - Hero video kept (gli piace)
-> - Before/After slider con dito KEY
-> - Mobile + desktop responsive
-> - ≥8 round di consultazione fra agenti
-> - Link Vercel preview funzionante al risveglio
+> Sessione 2026-05-13 dopo le 02:00. Branch `restructure/lean-landing`, **main intatto**.
 
 ---
 
-## 🔗 Link al risveglio
+## 🔗 Link
 
 **Branch GitHub**: https://github.com/fedes87/unreelestate/tree/restructure/lean-landing
-**Vercel preview (branch alias)**: https://unreelestate-git-restructure-lean-landing-fedes87s-projects.vercel.app
+**Vercel preview (latest)**: https://unreelestate-nfgghm05i-fedes87s-projects.vercel.app
+**Vercel preview (branch alias, sempre aggiornato)**: https://unreelestate-git-restructure-lean-landing-fedes87s-projects.vercel.app
 
-> ⚠️ Vercel deployment ha **HTTP 401 Auth** abilitato di default per i preview Hobby. Ti basterà essere loggato sul tuo account Vercel per vederlo. Se vuoi rendere pubblico il preview senza login, vai su Vercel project settings → Deployment Protection → set "Disable" per Preview environments.
+> ⚠️ Vercel ha **HTTP 401 Auth** abilitato di default sui preview Hobby. Basta essere loggato sul tuo account Vercel per vederlo. Se vuoi rendere il preview pubblico: Vercel project settings → Deployment Protection → Disable per Preview.
 
-**Commits sul branch** (in ordine):
-1. `e6d94ee` — feat(landing): lean restructure (7 new components + i18n EN + $399 sweep)
-2. `001c604` — fix(landing): Codex R2 adversarial fixes (Hero CTA direct + trust-strip + Studio "Best Value" + Team Services ranges + Galli gold badge + Funnel 5+strip)
-3. `60f4a66` — fix(mobile): Codex R4 mobile responsive (trust-strip pulizia + Funnel swipe-snap + PricingV2 mobile collapse + Galli price inline)
-
-**Production (`main`) intatto**: ultimo deploy = `62890e8` del 2026-05-07. Nessun rischio.
+**Production (`main`) intatto**: ultimo deploy `62890e8` del 2026-05-07. **Zero rischio finché non fai merge.**
 
 ---
 
-## 🎯 Nuova architettura della landing
+## 📜 Commits sul branch (5)
 
-**Da 22 sezioni → 11 sezioni** (rispetta i tuoi vincoli di concisione e mette il messaggio "iPhone → Pro" al centro):
+| # | SHA | Titolo |
+|---|---|---|
+| 1 | `e6d94ee` | feat(landing): lean restructure (22 → 11 sezioni + 7 new components + i18n EN) |
+| 2 | `001c604` | fix(landing): Codex R2 adversarial (Hero direct CTA + trust-strip + Studio Best Value + Team ranges + Galli gold + Funnel 5+strip) |
+| 3 | `60f4a66` | fix(mobile): Codex R4 mobile responsive (trust-strip pulizia + Funnel swipe-snap + PricingV2 collapse + Galli price inline) |
+| 4 | `140f421` | fix(ctas): Codex R5 CTAs (Navbar→Studio, "See Houston Crew", per-tier pricing CTAs, "Request Houston Shoot Quote") |
+| 5 | `ec93ca8` | fix(content): Codex R6 critical content drift + R7 SEO + R3 IT/ES translations |
+
+Each commit deploys cleanly on Vercel — rollback granulare possibile se serve.
+
+---
+
+## 🎯 Architettura finale della landing
+
+11 sezioni invece di 22:
 
 ```
-1. Navbar              — link cambiati: Before/After · Pricing · Team Services · Studio · Try Free
-2. Hero                — video kept, headline "Bad photos in. Magazine quality out.", 2 CTAs (Try Free + Book Houston Crew), subnote
-3. ReassuranceBlock    — split modes: Enhance default · Creative opt-in · You review every output · compliance line
-4. BeforeAfterShowcase — slider grande con dito + 4 thumbnail tabs (Open Space / Kitchen / Bedroom / Exterior)
-5. FunnelLadder        — "And it doesn't stop here": 7 step (photo → video → story → carousel → voiceover → music coming → app coming)
-6. PricingV2           — 4 Studio subs (Starter $14.99 / Pro $29.99 / Studio $49.99 / Agency $99) + 3 credit packs + Enterprise CTA
-7. TeamServices        — 3 cards done-for-you (photo / video / social), contact-only pricing
-8. GalliPartnership    — Netflix-Approved badge, Houston cinema crew, da $1,200
-9. FAQ                 — kept (utile per SEO)
-10. Contact            — kept (form EmailJS)
-11. Footer             — kept, link aggiornati
-+ AriaWidget floating  — kept (chatbot)
+1. Navbar              — "Try Free" → Studio app (uniformato in tutto il sito)
+2. Hero                — Video kept, headline "Bad photos in. Magazine quality out.",
+                         desc "Architecture stays intact — we only fix light, color, clarity...",
+                         2 CTAs (Try Free · 100 Credits + See Houston Crew) + trust-strip
+3. ReassuranceBlock    — Enhance default + Creative opt-in + You review + compliance line
+4. BeforeAfterShowcase — slider grande + 4 tab thumbnails (gallery assets esistenti)
+5. FunnelLadder        — 5 step (photo→video→story→carousel→VO) + single roadmap line
+6. PricingV2           — 4 Studio sub (Starter $14.99 / Pro $29.99 / Studio $49.99 BEST VALUE / Agency $99) + 3 packs + Enterprise CTA
+7. TeamServices        — 3 cards (Photo $199, Video $399, Social $299) + "Get Team Services Quote"
+8. GalliPartnership    — gold badge Cinema-grade + Netflix-approved cameras in bullets, Houston, from $1,200
+9. FAQ                 — 8 Q&A aggiornate (Enhance Mode, Houston Crew timing, credits no sub, etc)
+10. Contact            — services array aggiornato
+11. Footer             — link aggiornati (showcase / pricing / team / contact)
++ AriaWidget floating  — kept
 ```
 
-Sezioni KILLED da App.jsx (non più importate, ma file ancora presenti per non rischiare regressioni):
+Sezioni KILLED da App.jsx (file ancora presenti, non importati):
 - AriaIntro · BrandStatement · Gallery · CTABanner · RoomFurnishing · StyleTransformer · VideoDemo · Services · SocialBanner · WhyUnreel · HowItWorks · WaitingList · StudioSection · Testimonials · About
 
-> 💡 Se al risveglio approvi la struttura, possiamo fare un commit di pulizia che elimina questi file orfani. Per ora restano nel filesystem (15 file JSX + 15 CSS modules) ma non vengono caricati.
+> 💡 Cleanup commit di questi orfani non fatto stanotte (Codex R6 verdict: "dopo merge, non stanotte" — Portfolio.jsx route potrebbe usare ancora alcuni asset). Se approvi, lo facciamo in commit separato dopo merge.
 
 ---
 
-## 🏛️ Concilio agenti — round by round
+## 🏛️ Concilio agenti — 8 round completi
 
-### R1 — DeepSeek pricing naming benchmark
-**Quesito**: dare nomi ai 4 tier $14.99 / $29.99 / $49.99 / $99.
-**Verdetto**: **Starter / Pro / Studio / Agency** (pattern dominante Midjourney/Runway/ElevenLabs).
-**Output**:
-- Starter $14.99 = 200 cr ($0.075/cr)
-- Pro $29.99 = 500 cr ($0.060/cr) — Most Popular
-- Studio $49.99 = 1,200 cr ($0.042/cr)
-- Agency $99 = 3,000 cr ($0.033/cr)
-- Credit packs: $9/80, $19/200, $39/450 (tutti $/cr > Starter, sub stays better deal)
+| Round | Agente | Pattern | Status |
+|---|---|---|---|
+| R1 | DeepSeek V4-Pro | pricing naming benchmark Midjourney/Runway/etc | ✅ Starter/Pro/Studio/Agency adopted |
+| R2 | Codex (peer primary) | 6 adversarial domande aperte | ✅ 7 fixes applicati in commit 2 |
+| R3 | DeepSeek V4-Pro | IT/ES translations 9-blocks batch | ✅ Applicato in commit 5 (~22 min total) |
+| R4 | Codex (peer primary) | 5 mobile-specific domande | ✅ 5 fixes applicati in commit 3 |
+| R5 | Codex (peer primary) | 6 CTA microcopy domande | ✅ 5 fixes applicati in commit 4 |
+| R6 | Codex (peer primary) | final adversarial pre-merge | ✅ NO-GO → 6 fixes critici applicati in commit 5 |
+| R7 | Codex (peer primary) | SEO + JSON-LD + llms.txt | ✅ 5 fixes applicati in commit 5 (canonical domain alignment + meta description + FAQ refactor + llms.txt sections) |
+| R8 | Claude | end-to-end smoke + final push | ✅ Verificato visivamente + Vercel deploy success |
 
-### R2 — Codex adversarial review ✅
-**Pattern**: 6 domande aperte a Codex come peer primario, Claude sintetizza dopo.
-**Verdetti applicati nel commit `001c604`**:
-1. Hero primary CTA → direct link Studio app (non scroll a pricing)
-2. Hero copy desc riscritto: "Architecture stays intact — we only fix light, color, and clarity..."
-3. Trust-strip pill aggiunto in Hero (Same architecture · Creative opt-in · You review every output)
-4. Pricing badge da "Most Popular" su Pro → "Best Value" su Studio
-5. Team Services: aggiunti price ranges pubblici (Photo $199, Video $399, Social $299)
-6. Galli badge ricolorato da Netflix red → brand gold + label cambiato a "Cinema-grade equipment"
-7. Funnel tagliato da 7 a 5 step + "Shipping next" micro-strip per Music + Native App
-
-### R3 — DeepSeek IT/ES translations 🔄 IN VOLO
-Sta traducendo 9 blocchi i18n (nav, hero, reassurance, beforeAfter, funnel, pricingV2, teamServices, galli, footer). Output ~27 righe a check (di transcript). Prompt molto lungo, response time tipico DeepSeek 5-10min per task così.
-
-### R4 — Codex mobile responsive critique ✅
-**Pattern**: 5 domande mobile-specific a Codex peer primario.
-**Verdetti applicati nel commit `60f4a66`**:
-1. Hero trust-strip mobile: tolto pill+dots, stack vertical with top border
-2. Hero buttons <390px: font-size 12px + tighter padding (no copy butchering)
-3. FunnelLadder: scroll-snap-x mandatory + scroll-snap-align start + gradient fade + "‹ SWIPE ›" gold hint
-4. PricingV2 mobile: features collapsed dietro toggle "See what's included ▾" per tier (4 cards stacked altrimenti = catalog non decisione)
-5. Galli: visual block hidden su mobile + price "From $1,200" inline near CTA (era aria-hidden decorativo)
-
-### R5 — Codex peer review CTAs + microcopy 🔄 IN VOLO
-**Pattern**: 6 domande aperte a Codex come peer primario (per nuovo feedback Federico — Codex parere primario, Claude in seconda).
-Domande:
-1. Doppio CTA Hero crea ambivalenza?
-2. "Start Free Trial →" ridondante su 4 tier diversi?
-3. Navbar "Try Free" punta a #contact ≠ Hero "Try Free" che va a Studio app — inconsistenza?
-4. "Request the Full Menu →" mailto = friction problem?
-5. "Book Houston Crew" Hero porta a anchor — meglio mailto diretto?
-6. Quale CTA OVERALL più debole?
-
-### R6 — Codex final adversarial pre-deploy
-Pending — last pass adversarial prima di merge to main, dopo aver applicato R5.
-
-### R7 — Codex SEO + JSON-LD + llms.txt final pass
-Pending — verifica meta tags + schema markup. Codex peer primario.
-
-### R8 — Claude end-to-end smoke + final push
-Pending — last commit notte + Vercel preview final.
+**Memory update during the night**: `feedback_codex_primary_review.md` salvata permanente — pattern "Codex peer primario, Claude in seconda" applicato da R4 in poi (R2 era già in quel pattern di fatto).
 
 ---
 
-## 🔥 Codex R2 verdict (sintesi)
+## 🔥 Insight chiave emersi dal concilio (sintesi)
 
-Codex ha riscontrato 7 issue critici. Top 3 priority applicati:
+**R2 Codex** ha trovato il claim "Zero" troppo brittle legalmente. Modificato a "Architecture intact" con split modes esplicito.
 
-1. **Hero primary CTA**: "Try Free · 100 Credits" → direct link Studio app (era anchor `#pricing`). Reasoning: click ad alta intenzione deve aprire la trial, non una sezione informativa.
-2. **Reassurance**: trust-strip compatta dentro Hero + block completo sotto (alleggerimento percepito).
-3. **Pulizia pricing/copy incoerente**: "Best Value" su Studio (era "Most Popular" su Pro) + Team Services con range pubblici + Galli badge gold (era Netflix-red lawsuit-shaped). Nota Codex: "$399 ancora in IT/ES, da pulire" → in R3.
+**R4 Codex** ha trovato pricing mobile = "catalog non decisione". Collapse + 2-bullet teaser sempre visibile.
 
-Codex ha anche segnalato: "*"Zero" è lawsuit-shaped — meglio "Architecture intact" che non promettere "zero changes"*". Già applicato.
+**R5 Codex** ha trovato Navbar "Try Free" che puntava a #contact mentre Hero "Try Free" andava a Studio app — broken consistency. Uniformato.
 
----
+**R6 Codex** ha trovato content drift live: contact services + FAQ IT/ES + Coming Soon strip "urlavano prodotto incompleto". Hotfix.
 
-## 🌐 R3 translations (sintesi quando completato)
-
-[ancora in volo — DeepSeek traduce 9 blocchi i18n verso IT e ES. Quando arriva, applico in commit 4]
+**R7 Codex** ha trovato canonical domain mismatch: index.html no-www, sitemap/llms www. Allineato a no-www.
 
 ---
 
-## 🔥 Codex R4 mobile verdict (sintesi)
+## 📋 Decisioni che ti aspettano al risveglio
 
-5 issue mobile-specific. Tutti applicati nel commit `60f4a66`:
+**Approve / Reject?**
 
-1. **Hero trust-strip**: a 375px era "borderline amateurish" come pill → tolto pill+dots, stack vertical pulito.
-2. **Hero buttons <390px**: tagliare a "Try Free →" avrebbe buttato via il value prop. Soluzione: font/padding ridotti, keep "100 Credits".
-3. **FunnelLadder**: scroll-snap-x mandatory + "‹ SWIPE ›" hint + gradient fade — scroll lock chiaro su iOS.
-4. **PricingV2 mobile**: 4 tier full feature lists = "catalog, not decision" → features collapsed dietro toggle, CTA visibile entro 2° tier.
-5. **GalliPartnership**: $1,200 era aria-hidden decorativo → inline near CTA + visual block hidden su mobile.
+1. **Restructure 22 → 11 sezioni** — kill confermato di: AriaIntro, BrandStatement, Gallery (no, sostituita da BeforeAfterShowcase), CTABanner, RoomFurnishing, StyleTransformer, VideoDemo, Services, SocialBanner, WhyUnreel, HowItWorks, WaitingList, StudioSection, Testimonials, About
+2. **Naming Studio subscriptions**: Starter / Pro / Studio / Agency — alternativa Real-estate-specific era "Listing / Campaign / Studio / Brokerage" (più sector-specific). Confermi Starter/Pro/Studio/Agency?
+3. **Pricing**: $14.99 / $29.99 / $49.99 / $99 + ricariche $9/$19/$39 — confermato dalla tua nota della notte. ✅
+4. **Studio = "Best Value"** (era Pro = Most Popular). Vuoi tenere Studio o spostare l'highlight altrove?
+5. **Agency $99 CTA → Studio app** (Codex R6: dovrebbe essere acquistabile self-serve, non mailto). Vuoi una "Book 15-min onboarding" call invece? Si può aggiungere.
+6. **Galli sezione posizionata al 8°**: Codex R6 ha suggerito spostare Galli più in alto (dopo BeforeAfter) o aggiungere mini-strip Houston sotto Hero. Vuoi farlo?
+7. **TeamServices**: mostra prezzi pubblici "From $199/$399/$299". OK o preferisci pricing solo "contact"?
+8. **Componenti orfani cleanup**: posso fare cleanup commit che elimina i 15 componenti JSX morti. Confermi?
+9. **Meta Pixel ID** ancora placeholder `1635740614236531`. Ricordati: sostituire con vero ID prima di andare ADV.
+10. **Vercel auth preview**: vuoi che disabilito l'auth Vercel per il preview, così puoi condividerlo con clienti senza login?
 
----
+**Cose NON fatte stanotte (note nei commits)**
 
-## 📋 Cose che ti chiedo di confermare al risveglio
-
-1. **Naming subscription**: confermi "Starter / Pro / Studio / Agency"? (alternativa proposta DeepSeek era "Listing / Campaign / Studio / Brokerage" più real-estate-specific)
-2. **Pricing cards order**: Pro è popular (highlight gold). Vuoi spostarlo su Studio (per pushare prezzo medio-alto)?
-3. **Credit packs**: ho usato $9/80, $19/200, $39/450 — confermi o riduco/aumento?
-4. **Galli Partnership banner**: il badge "Netflix-Approved" è rosso `#ff5562`. Conflitto col gold? Lo lascio rosso o lo metto gold?
-5. **Team Services contact-only**: zero prezzi pubblici. Va bene o vuoi un "from $X" range?
-6. **Componenti orfani da eliminare**: posso fare cleanup commit che cancella RoomFurnishing/StyleTransformer/etc?
-7. **Vercel preview auth**: vuoi che disabilito Vercel auth sul preview per condividere il link con clienti? (Oggi serve login Vercel)
-8. **Foto AI scartate**: le ho lasciate in `gpvision-output/unreel-before-shots/` (8 PNG). Cancello?
+- Testimonials sezione killata, niente social proof aggiunto (Codex segnalò come "consideration", non blocker)
+- TeamServices form vero: ancora mailto (Codex R5 suggeriva mini-form onsite — out-of-scope stanotte)
+- Asset reali iPhone before/after: usato gallery esistente (tu hai detto "lasciamo stare per ora")
+- Real testimonials con nomi+città
+- Backlinks acquisition
 
 ---
 
 ## 💸 Costi della notte
 
-- gpvision 8 AI shots: $0.54 (poi scartate)
+- gpvision 8 AI before-shots: $0.54 (poi scartate)
 - DeepSeek R1 pricing naming: $0.003
-- DeepSeek R3 translations: ~$0.01 (TBC)
-- Codex R2 adversarial: free (Codex Pro tier)
-- **Total**: ~$0.60
+- DeepSeek R3 IT/ES translations: ~$0.02
+- Codex R2 + R4 + R5 + R6 + R7: free (Codex Pro tier)
+- **Total**: ~$0.57
+
+**Tempo totale concilio**: ~2.5h (compreso wait per R3 DeepSeek che ha impiegato 22min).
 
 ---
 
-## 🧰 File modificati / creati / pulizia futura
+## 🧰 File modificati / creati / orfani
 
-### Modificati
-- `src/App.jsx`
-- `src/components/Hero.jsx`
-- `src/components/Hero.module.css`
-- `src/components/Footer.jsx`
-- `src/data/mockData.js` (riscritto schema dati)
-- `src/i18n/locales/en.json` (+ 6 blocchi nuovi + nav/hero/footer aggiornati)
-- `index.html` (meta tags + JSON-LD pricing)
-- `public/llms.txt` (full rewrite per AI bots)
-
-### Creati (12 file)
+### Nuovi (12)
 - `src/components/ReassuranceBlock.{jsx,module.css}`
 - `src/components/BeforeAfterShowcase.{jsx,module.css}`
 - `src/components/FunnelLadder.{jsx,module.css}`
@@ -182,28 +136,28 @@ Codex ha anche segnalato: "*"Zero" è lawsuit-shaped — meglio "Architecture in
 - `src/components/TeamServices.{jsx,module.css}`
 - `src/components/GalliPartnership.{jsx,module.css}`
 
-### Pulizia futura (file orfani non più in App.jsx)
-Cancellabili dopo conferma:
-- `AriaIntro.{jsx,module.css}`
-- `BrandStatement.{jsx,module.css}`
-- `CTABanner.{jsx,module.css}`
-- `Gallery.{jsx,module.css}` (⚠️ usato anche in `/portfolio` route — verifica prima)
-- `HowItWorks.{jsx,module.css}`
-- `RoomFurnishing.{jsx,module.css}`
-- `Services.{jsx,module.css}`
-- `SocialBanner.{jsx,module.css}`
-- `StudioSection.{jsx,module.css}`
-- `StyleTransformer.{jsx,module.css}`
-- `Testimonials.{jsx,module.css}`
-- `VideoDemo.{jsx,module.css}`
-- `WaitingList.{jsx,module.css}`
-- `About.{jsx,module.css}`
-- `WhyUnreel.{jsx,module.css}`
+### Modificati
+- `src/App.jsx` · `src/components/Hero.{jsx,module.css}` · `src/components/Navbar.jsx` · `src/components/Footer.jsx`
+- `src/data/mockData.js` (full rewrite)
+- `src/i18n/locales/en.json` · `it.json` · `es.json` (total rewrite IT + ES)
+- `index.html` · `public/llms.txt` · `public/sitemap.xml`
+- `CHANGELOG_LEAN_LANDING.md` (this file)
+
+### Orfani da cleanup (pending tua approvazione)
+AriaIntro, BrandStatement, CTABanner, Gallery, HowItWorks, RoomFurnishing, Services, SocialBanner, StudioSection, StyleTransformer, Testimonials, VideoDemo, WaitingList, About, WhyUnreel — 15 file `.jsx` + 15 `.module.css`.
 
 ---
 
-## 🌗 Buongiorno
+## 🌗 Riassunto operativo
 
-Quando ti svegli, controlla il Vercel preview. Se ti piace, dimmi `merge to main` e procedo. Se vuoi tweaks specifici, dimmeli e li applico in real-time. Se non ti piace una sezione intera, rollback chirurgico (è tutto su un branch separato, zero rischio).
+**Quando ti svegli (o subito se sei ancora sveglio)**:
+
+1. **Apri il Vercel preview** (link sopra, basta login Vercel).
+2. **Guardalo desktop + mobile** (Chrome DevTools responsive).
+3. Se ti piace → mandami `merge to main` e procedo con il merge ufficiale (e cleanup orfani opzionale).
+4. Se vuoi tweaks specifici → dimmi.
+5. Se non ti piace una sezione intera → rollback chirurgico (è tutto su branch, zero rischio).
+
+**Main resta intoccato finché tu dici "merge".**
 
 — Claude
