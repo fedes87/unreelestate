@@ -63,7 +63,12 @@ export default function Navbar() {
                 <path d="M7 17L17 7M9 7h8v8" />
               </svg>
             </a>
-            <a href="#contact" className={`btn-primary ${styles.cta}`}>
+            <a
+              href="https://app.unreelestate.com/dashboard/studio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`btn-primary ${styles.cta}`}
+            >
               {t('nav.cta')}
             </a>
           </div>
@@ -104,7 +109,15 @@ export default function Navbar() {
               </a>
             </li>
             <li>
-              <a href="#contact" className={styles.mobileCta} onClick={handleLink}>{t('nav.ctaMobile')}</a>
+              <a
+                href="https://app.unreelestate.com/dashboard/studio"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.mobileCta}
+                onClick={handleLink}
+              >
+                {t('nav.ctaMobile')}
+              </a>
             </li>
           </ul>
           <div className={styles.mobileLangSwitcher} aria-label="Language selector">

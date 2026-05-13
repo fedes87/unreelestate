@@ -14,7 +14,7 @@
     "titleEm": "Magazine quality out.",
     "desc": "Architecture stays intact — we only fix light, color, and clarity. Then unlock the rest: video, stories, carousels, voiceover. Virtual staging only if you opt in inside the Studio.",
     "btnUpload": "Try Free · 100 Credits",
-    "btnCrew": "Book Houston Crew",
+    "btnCrew": "See Houston Crew",
     "trust1": "Same architecture",
     "trust2": "Creative opt-in",
     "trust3": "You review every output",
@@ -548,6 +548,7 @@
       {
         "name": "Starter",
         "tagline": "For agents starting their content game.",
+        "cta": "Start Free →",
         "features": [
           "AI photo enhancement",
           "AI listing descriptions",
@@ -559,6 +560,7 @@
       {
         "name": "Pro",
         "tagline": "For active agents — regular listings, regular content.",
+        "cta": "Try Pro →",
         "features": [
           "Everything in Starter",
           "Voiceover narration",
@@ -570,6 +572,7 @@
       {
         "name": "Studio",
         "tagline": "For small teams and heavy producers.",
+        "cta": "Choose Studio →",
         "features": [
           "Everything in Pro",
           "Cinematic 60s Reels",
@@ -581,6 +584,7 @@
       {
         "name": "Agency",
         "tagline": "For brokerages running content at scale.",
+        "cta": "Talk to Sales →",
         "features": [
           "Everything in Studio",
           "3 team seats",
@@ -608,7 +612,7 @@
     "title1": "Prefer our team",
     "titleEm": "to handle it?",
     "subtitle": "Skip the Studio. Hand your shoot to our editors — photo, video, social. Polished delivery in 24-48 hours.",
-    "cta": "Request the Full Menu →",
+    "cta": "Get a Team Services Quote →",
     "note": "Full price sheet within one business day. Volume discounts available.",
     "fromLabel": "From",
     "perListing": "/ listing",
@@ -660,7 +664,7 @@
       "On-site editor and colorist included",
       "Full gallery + cinematic reel delivered within 48–72h"
     ],
-    "cta": "Book a Consultation →",
+    "cta": "Request Houston Shoot Quote →",
     "priceHint": "Custom quote within 24h",
     "locationTag": "Houston, TX",
     "from": "From",

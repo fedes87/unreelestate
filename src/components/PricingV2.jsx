@@ -56,12 +56,12 @@ export default function PricingV2() {
               <p className={styles.tagline}>{tiers[i].tagline}</p>
 
               <a
-                href={APP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={tier.key === 'agency' ? 'mailto:info@unreelestate.com?subject=Agency%20Plan%20Inquiry' : APP_URL}
+                target={tier.key === 'agency' ? undefined : '_blank'}
+                rel={tier.key === 'agency' ? undefined : 'noopener noreferrer'}
                 className={tier.popular ? 'btn-primary' : 'btn-secondary'}
               >
-                {t('pricingV2.startCta')}
+                {tiers[i].cta}
               </a>
 
               <button

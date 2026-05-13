@@ -14,12 +14,15 @@
 ## 🔗 Link al risveglio
 
 **Branch GitHub**: https://github.com/fedes87/unreelestate/tree/restructure/lean-landing
-**Vercel preview (random URL)**: https://unreelestate-hvzywtroi-fedes87s-projects.vercel.app
 **Vercel preview (branch alias)**: https://unreelestate-git-restructure-lean-landing-fedes87s-projects.vercel.app
 
 > ⚠️ Vercel deployment ha **HTTP 401 Auth** abilitato di default per i preview Hobby. Ti basterà essere loggato sul tuo account Vercel per vederlo. Se vuoi rendere pubblico il preview senza login, vai su Vercel project settings → Deployment Protection → set "Disable" per Preview environments.
 
-**Commit principale**: `e6d94ee` — "feat(landing): lean restructure"
+**Commits sul branch** (in ordine):
+1. `e6d94ee` — feat(landing): lean restructure (7 new components + i18n EN + $399 sweep)
+2. `001c604` — fix(landing): Codex R2 adversarial fixes (Hero CTA direct + trust-strip + Studio "Best Value" + Team Services ranges + Galli gold badge + Funnel 5+strip)
+3. `60f4a66` — fix(mobile): Codex R4 mobile responsive (trust-strip pulizia + Funnel swipe-snap + PricingV2 mobile collapse + Galli price inline)
+
 **Production (`main`) intatto**: ultimo deploy = `62890e8` del 2026-05-07. Nessun rischio.
 
 ---
@@ -62,51 +65,77 @@ Sezioni KILLED da App.jsx (non più importate, ma file ancora presenti per non r
 - Agency $99 = 3,000 cr ($0.033/cr)
 - Credit packs: $9/80, $19/200, $39/450 (tutti $/cr > Starter, sub stays better deal)
 
-### R2 — Codex adversarial review (in progress al momento di questa scrittura)
-Domande poste:
-1. Funnel ladder coherence (7 step troppi?)
-2. Pricing cards — Pro popular badge corretto?
-3. Reassurance posizionamento (sotto Hero o dentro?)
-4. Hero copy "Architecture intact" abbastanza punchy?
-5. Galli Partnership Netflix-red vs gold brand
-6. Team Services contact-only kills conversion?
-7. Cose non fatte (Studio direct link, cleanup orfani, testimonials, schema MonetaryAmount)
+### R2 — Codex adversarial review ✅
+**Pattern**: 6 domande aperte a Codex come peer primario, Claude sintetizza dopo.
+**Verdetti applicati nel commit `001c604`**:
+1. Hero primary CTA → direct link Studio app (non scroll a pricing)
+2. Hero copy desc riscritto: "Architecture stays intact — we only fix light, color, and clarity..."
+3. Trust-strip pill aggiunto in Hero (Same architecture · Creative opt-in · You review every output)
+4. Pricing badge da "Most Popular" su Pro → "Best Value" su Studio
+5. Team Services: aggiunti price ranges pubblici (Photo $199, Video $399, Social $299)
+6. Galli badge ricolorato da Netflix red → brand gold + label cambiato a "Cinema-grade equipment"
+7. Funnel tagliato da 7 a 5 step + "Shipping next" micro-strip per Music + Native App
 
-**Verdetto Codex**: [VEDI SEZIONE "🔥 Codex R2 verdict" più sotto]
+### R3 — DeepSeek IT/ES translations 🔄 IN VOLO
+Sta traducendo 9 blocchi i18n (nav, hero, reassurance, beforeAfter, funnel, pricingV2, teamServices, galli, footer). Output ~27 righe a check (di transcript). Prompt molto lungo, response time tipico DeepSeek 5-10min per task così.
 
-### R3 — DeepSeek IT/ES translations
-Tradotti EN→IT, EN→ES per tutti i nuovi blocchi i18n:
-- nav, hero, reassurance, beforeAfter, funnel, pricingV2, teamServices, galli, footer (parziale)
-- Tono: cinematic+luxury, "Unreal" / "Listing" untranslated, latam-neutral ES, no formal "Lei" IT
+### R4 — Codex mobile responsive critique ✅
+**Pattern**: 5 domande mobile-specific a Codex peer primario.
+**Verdetti applicati nel commit `60f4a66`**:
+1. Hero trust-strip mobile: tolto pill+dots, stack vertical with top border
+2. Hero buttons <390px: font-size 12px + tighter padding (no copy butchering)
+3. FunnelLadder: scroll-snap-x mandatory + scroll-snap-align start + gradient fade + "‹ SWIPE ›" gold hint
+4. PricingV2 mobile: features collapsed dietro toggle "See what's included ▾" per tier (4 cards stacked altrimenti = catalog non decisione)
+5. Galli: visual block hidden su mobile + price "From $1,200" inline near CTA (era aria-hidden decorativo)
 
-**Status traduzioni**: [VEDI SEZIONE "🌐 R3 translations" più sotto]
-
-### R4 — Codex mobile responsive critique
-Pending — partirà dopo R3 commit.
-
-### R5 — DeepSeek CTA microcopy A/B
-Pending — finetuning dei pulsanti più importanti.
+### R5 — Codex peer review CTAs + microcopy 🔄 IN VOLO
+**Pattern**: 6 domande aperte a Codex come peer primario (per nuovo feedback Federico — Codex parere primario, Claude in seconda).
+Domande:
+1. Doppio CTA Hero crea ambivalenza?
+2. "Start Free Trial →" ridondante su 4 tier diversi?
+3. Navbar "Try Free" punta a #contact ≠ Hero "Try Free" che va a Studio app — inconsistenza?
+4. "Request the Full Menu →" mailto = friction problem?
+5. "Book Houston Crew" Hero porta a anchor — meglio mailto diretto?
+6. Quale CTA OVERALL più debole?
 
 ### R6 — Codex final adversarial pre-deploy
-Pending — last pass adversarial prima di merge to main.
+Pending — last pass adversarial prima di merge to main, dopo aver applicato R5.
 
-### R7 — DeepSeek SEO + JSON-LD final pass
-Pending — verifica meta tags + schema markup.
+### R7 — Codex SEO + JSON-LD + llms.txt final pass
+Pending — verifica meta tags + schema markup. Codex peer primario.
 
 ### R8 — Claude end-to-end smoke + final push
 Pending — last commit notte + Vercel preview final.
 
 ---
 
-## 🔥 Codex R2 verdict (placeholder — fill in al rientro)
+## 🔥 Codex R2 verdict (sintesi)
 
-[da compilare quando Codex termina round 2]
+Codex ha riscontrato 7 issue critici. Top 3 priority applicati:
+
+1. **Hero primary CTA**: "Try Free · 100 Credits" → direct link Studio app (era anchor `#pricing`). Reasoning: click ad alta intenzione deve aprire la trial, non una sezione informativa.
+2. **Reassurance**: trust-strip compatta dentro Hero + block completo sotto (alleggerimento percepito).
+3. **Pulizia pricing/copy incoerente**: "Best Value" su Studio (era "Most Popular" su Pro) + Team Services con range pubblici + Galli badge gold (era Netflix-red lawsuit-shaped). Nota Codex: "$399 ancora in IT/ES, da pulire" → in R3.
+
+Codex ha anche segnalato: "*"Zero" è lawsuit-shaped — meglio "Architecture intact" che non promettere "zero changes"*". Già applicato.
 
 ---
 
-## 🌐 R3 translations (placeholder — fill in al rientro)
+## 🌐 R3 translations (sintesi quando completato)
 
-[da compilare quando DeepSeek R3 termina]
+[ancora in volo — DeepSeek traduce 9 blocchi i18n verso IT e ES. Quando arriva, applico in commit 4]
+
+---
+
+## 🔥 Codex R4 mobile verdict (sintesi)
+
+5 issue mobile-specific. Tutti applicati nel commit `60f4a66`:
+
+1. **Hero trust-strip**: a 375px era "borderline amateurish" come pill → tolto pill+dots, stack vertical pulito.
+2. **Hero buttons <390px**: tagliare a "Try Free →" avrebbe buttato via il value prop. Soluzione: font/padding ridotti, keep "100 Credits".
+3. **FunnelLadder**: scroll-snap-x mandatory + "‹ SWIPE ›" hint + gradient fade — scroll lock chiaro su iOS.
+4. **PricingV2 mobile**: 4 tier full feature lists = "catalog, not decision" → features collapsed dietro toggle, CTA visibile entro 2° tier.
+5. **GalliPartnership**: $1,200 era aria-hidden decorativo → inline near CTA + visual block hidden su mobile.
 
 ---
 
