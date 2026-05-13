@@ -148,6 +148,28 @@
   .buttons { flex-direction: column; width: 100%; }
   .buttons a { text-align: center; justify-content: center; }
   .subnote { font-size: 12px; margin-top: 16px; }
-  .trustStrip { gap: 8px; padding: 8px 14px; }
-  .trustItem { font-size: 10.5px; letter-spacing: 0.4px; }
+
+  /* Codex R4: trust-strip is borderline amateurish as a pill at 375px.
+     Remove the pill + dots, stack vertically — feels like trust signals, not a broken badge. */
+  .trustStrip {
+    background: transparent;
+    border: none;
+    backdrop-filter: none;
+    flex-direction: column;
+    gap: 6px;
+    padding: 14px 0 0;
+    margin-top: 18px;
+    border-top: 1px solid rgba(196,149,106,0.18);
+  }
+  .trustItem { font-size: 11px; letter-spacing: 0.6px; }
+  .trustDot { display: none; }
+}
+
+@media (max-width: 390px) {
+  /* Codex R4: avoid 2-line wrap on primary CTA */
+  .buttons a {
+    font-size: 12px;
+    padding-inline: 22px;
+    letter-spacing: 1px;
+  }
 }

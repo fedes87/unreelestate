@@ -493,6 +493,7 @@
     "cta": "Open the Studio →",
     "comingSoon": "Coming Soon",
     "comingSoonLabel": "Shipping next",
+    "swipeHint": "Swipe",
     "steps": [
       {
         "title": "Enhance",
@@ -541,6 +542,8 @@
     "creditsPerMonth": "credits / month",
     "creditsUnit": "credits",
     "startCta": "Start Free Trial →",
+    "viewFeatures": "See what's included ▾",
+    "hideFeatures": "Hide details ▴",
     "tiers": [
       {
         "name": "Starter",

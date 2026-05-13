@@ -33,16 +33,48 @@
 }
 
 .scrollWrap {
+  position: relative;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
   scrollbar-width: thin;
   scrollbar-color: rgba(196,149,106,0.3) transparent;
   padding-bottom: 14px;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
+  /* Codex R4: scroll-snap so cards lock; clearer pagination on mobile */
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 4px;
 }
 
 .scrollWrap::-webkit-scrollbar { height: 6px; }
 .scrollWrap::-webkit-scrollbar-thumb { background: rgba(196,149,106,0.3); border-radius: 3px; }
+
+/* Codex R4: gradient fade on the right edge so users know there's more to swipe */
+.scrollWrap::after {
+  content: "";
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: calc(100% - 14px);
+  background: linear-gradient(to right, transparent, var(--bg-primary));
+  pointer-events: none;
+}
+
+.swipeHint {
+  display: none;
+  text-align: center;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin: 0 0 16px;
+  opacity: 0.75;
+}
+
+.swipeHint::before { content: "‹  "; }
+.swipeHint::after { content: "  ›"; }
 
 .ladder {
   display: grid;
@@ -51,6 +83,8 @@
   min-width: max-content;
   padding: 0 4px;
 }
+
+.card { scroll-snap-align: start; }
 
 .card {
   position: relative;
@@ -234,7 +268,9 @@
     gap: 12px;
   }
   .card { min-height: 200px; padding: 18px 16px; }
-  .header { margin-bottom: 36px; }
+  .header { margin-bottom: 28px; }
+  .swipeHint { display: block; }
+  .scrollWrap::after { display: block; }
   .comingStrip {
     flex-direction: column;
     align-items: stretch;

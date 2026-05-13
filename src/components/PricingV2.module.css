@@ -145,6 +145,26 @@
   padding-top: 18px;
 }
 
+.featuresMobileToggle {
+  display: none;
+  background: transparent;
+  border: 1px solid rgba(196,149,106,0.25);
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  align-self: center;
+  margin-bottom: 4px;
+  width: 100%;
+  transition: background 0.2s ease;
+}
+
+.featuresMobileToggle:hover { background: rgba(196,149,106,0.08); }
+
 .features li {
   font-size: 13px;
   line-height: 1.55;
@@ -315,4 +335,15 @@
   .enterpriseInner { grid-template-columns: 1fr; gap: 18px; text-align: center; }
   .enterpriseDesc { margin: 0 auto; }
   .tagline { min-height: 0; }
+
+  /* Codex R4 mobile fix: collapse features behind a toggle so 4 stacked cards stay scannable */
+  .features {
+    display: none;
+    border-top: none;
+    padding-top: 14px;
+    margin-top: 6px;
+  }
+  .featuresOpen { display: block; }
+  .featuresMobileToggle { display: inline-block; }
+  .tier { padding: 26px 22px 22px; }
 }

@@ -40,6 +40,8 @@ export default function FunnelLadder() {
           <p className={styles.subtitle}>{t('funnel.subtitle')}</p>
         </motion.div>
 
+        <div className={styles.swipeHint} aria-hidden="true">{t('funnel.swipeHint')}</div>
+
         <div className={styles.scrollWrap}>
           <div className={styles.ladder}>
             {funnelSteps.map((step, i) => (

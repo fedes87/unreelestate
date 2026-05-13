@@ -39,6 +39,13 @@ export default function GalliPartnership() {
               ))}
             </ul>
 
+            {/* Codex R4: price next to CTA on mobile (visual block hidden) so $1,200 lands when it matters */}
+            <div className={styles.priceInline}>
+              <span className={styles.priceInlineFrom}>{t('galli.from')}</span>
+              <span className={styles.priceInlineValue}>$1,200</span>
+              <span className={styles.priceInlineScope}>{t('galli.priceScope')}</span>
+            </div>
+
             <div className={styles.actions}>
               <a href={MAILTO} className="btn-primary">{t('galli.cta')}</a>
               <span className={styles.priceHint}>{t('galli.priceHint')}</span>

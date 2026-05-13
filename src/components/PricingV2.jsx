@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { useInView } from '../hooks/useInView'
@@ -11,6 +12,9 @@ export default function PricingV2() {
   const [ref, inView] = useInView()
   const tiers = t('pricingV2.tiers', { returnObjects: true })
   const packs = t('pricingV2.packs', { returnObjects: true })
+  // Codex R4 mobile fix: on small screens features are collapsed behind a toggle
+  const [openFeatures, setOpenFeatures] = useState({})
+  const toggle = (key) => setOpenFeatures(o => ({ ...o, [key]: !o[key] }))
 
   return (
     <section className={styles.section} id="pricing" ref={ref}>
@@ -60,7 +64,16 @@ export default function PricingV2() {
                 {t('pricingV2.startCta')}
               </a>
 
-              <ul className={styles.features}>
+              <button
+                type="button"
+                className={styles.featuresMobileToggle}
+                onClick={() => toggle(tier.key)}
+                aria-expanded={!!openFeatures[tier.key]}
+              >
+                {openFeatures[tier.key] ? t('pricingV2.hideFeatures') : t('pricingV2.viewFeatures')}
+              </button>
+
+              <ul className={`${styles.features} ${openFeatures[tier.key] ? styles.featuresOpen : ''}`}>
                 {tiers[i].features.map((f, j) => (
                   <li key={j}>
                     <span className={styles.check} aria-hidden="true">✓</span>
