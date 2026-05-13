@@ -2,6 +2,7 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import ReassuranceBlock from './components/ReassuranceBlock'
 import BeforeAfterShowcase from './components/BeforeAfterShowcase'
+import VideoDemo from './components/VideoDemo'
 import FunnelLadder from './components/FunnelLadder'
 import PricingV2 from './components/PricingV2'
 import TeamServices from './components/TeamServices'
@@ -18,6 +19,7 @@ export default function App() {
       <Hero />
       <ReassuranceBlock />
       <BeforeAfterShowcase />
+      <VideoDemo />
       <FunnelLadder />
       <PricingV2 />
       <TeamServices />

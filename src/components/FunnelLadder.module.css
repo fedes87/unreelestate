@@ -77,14 +77,47 @@
 .swipeHint::after { content: "  ›"; }
 
 .ladder {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(180px, 1fr));
+  display: flex;
   gap: 14px;
   min-width: max-content;
   padding: 0 4px;
 }
 
-.card { scroll-snap-align: start; }
+.card {
+  flex: 0 0 200px;
+  scroll-snap-align: start;
+}
+
+@keyframes marqueeScrollLeft {
+  from { transform: translateX(0); }
+  to   { transform: translateX(calc(-50% - 7px)); }
+}
+
+/* Codex R9: marquee scroll desktop-only, pause on hover, respect prefers-reduced-motion */
+@media (min-width: 1024px) {
+  .scrollWrap {
+    overflow: hidden;
+    scroll-snap-type: none;
+  }
+  .ladder {
+    animation: marqueeScrollLeft 48s linear infinite;
+    will-change: transform;
+  }
+  .scrollWrap:hover .ladder,
+  .scrollWrap:focus-within .ladder {
+    animation-play-state: paused;
+  }
+  .card { flex: 0 0 220px; }
+  .swipeHint { display: none; }
+  .scrollWrap::after { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ladder {
+    animation: none !important;
+    transform: none !important;
+  }
+}
 
 .card {
   position: relative;
@@ -270,13 +303,15 @@
   .arrow { display: none; }
 }
 
+@media (max-width: 1023px) {
+  .ladder { animation: none; }
+  .card { flex: 0 0 240px; }
+}
+
 @media (max-width: 768px) {
   .section { padding: 70px 0 60px; }
-  .ladder {
-    grid-template-columns: repeat(5, 240px);
-    gap: 12px;
-  }
-  .card { min-height: 200px; padding: 18px 16px; }
+  .ladder { gap: 12px; }
+  .card { min-height: 200px; padding: 18px 16px; flex: 0 0 240px; }
   .header { margin-bottom: 28px; }
   .swipeHint { display: block; }
   .scrollWrap::after { display: block; }

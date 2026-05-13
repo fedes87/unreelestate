@@ -41,27 +41,30 @@ export default function FunnelLadder() {
 
         <div className={styles.swipeHint} aria-hidden="true">{t('funnel.swipeHint')}</div>
 
+        {/* Codex R9: marquee desktop, swipe-snap mobile. Cards duplicate for seamless loop. */}
         <div className={styles.scrollWrap}>
           <div className={styles.ladder}>
-            {funnelSteps.map((step, i) => (
-              <motion.div
-                key={step.key}
-                className={styles.card}
-                initial={{ opacity: 0, y: 24 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.08 * i }}
-              >
-                <div className={styles.cardIcon}>
-                  <StepIcon name={step.icon} />
-                </div>
-                <div className={styles.cardLabel}>{steps[i].title}</div>
-                <p className={styles.cardBody}>{steps[i].body}</p>
-                <div className={styles.cardMeta}>{steps[i].meta}</div>
-                {i < funnelSteps.length - 1 && (
-                  <span className={styles.arrow} aria-hidden="true">→</span>
-                )}
-              </motion.div>
-            ))}
+            {[...funnelSteps, ...funnelSteps].map((step, i) => {
+              const idx = i % funnelSteps.length
+              const isOriginal = i < funnelSteps.length
+              return (
+                <motion.div
+                  key={`${step.key}-${i}`}
+                  className={styles.card}
+                  aria-hidden={isOriginal ? undefined : true}
+                  initial={isOriginal ? { opacity: 0, y: 24 } : false}
+                  animate={isOriginal && inView ? { opacity: 1, y: 0 } : (isOriginal ? {} : { opacity: 1 })}
+                  transition={{ duration: 0.5, delay: 0.08 * idx }}
+                >
+                  <div className={styles.cardIcon}>
+                    <StepIcon name={step.icon} />
+                  </div>
+                  <div className={styles.cardLabel}>{steps[idx].title}</div>
+                  <p className={styles.cardBody}>{steps[idx].body}</p>
+                  <div className={styles.cardMeta}>{steps[idx].meta}</div>
+                </motion.div>
+              )
+            })}
           </div>
         </div>
 

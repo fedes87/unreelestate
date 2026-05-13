@@ -10,9 +10,9 @@
   },
   "hero": {
     "badge": "Contenuti immobiliari · Potenziati dall'AI · Stile cinematografico",
-    "title1": "Foto brutte dentro.",
-    "titleEm": "Qualità magazine fuori.",
-    "desc": "L'architettura resta intatta — correggiamo solo luce, colore e nitidezza. Poi sblocca il resto: video, storie, caroselli, voce fuori campo. Lo staging virtuale solo se lo attivi nello Studio.",
+    "title1": "Media per listing AI da",
+    "titleEm": "qualsiasi foto iPhone.",
+    "desc": "Stessa proprietà, stessa architettura — luce migliore, colore più pulito, inquadrature rifinite. Poi trasformi ogni foto in video, storia, carosello, voce fuori campo. Lo staging virtuale solo se lo attivi tu.",
     "btnUpload": "Prova gratis · 100 Crediti",
     "btnCrew": "Scopri la crew Houston",
     "trust1": "Stessa architettura",
@@ -45,7 +45,7 @@
     "title1": "Trascina per vedere",
     "titleEm": "la trasformazione.",
     "subtitle": "Listing reali. Stessa stanza, stessi mobili, stessa architettura. Luce migliore, colore migliore, storia migliore.",
-    "tabs": ["Open Space", "Cucina", "Camera da letto", "Esterno"],
+    "tabs": ["Esterno", "Open Space", "Cucina", "Camera da letto"],
     "tabsLabel": "Scegli una stanza per l'anteprima",
     "dragHint": "Trascina per confrontare"
   },
@@ -166,6 +166,23 @@
     "locationTag": "Houston, TX",
     "from": "Da",
     "priceScope": "per shooting · scala con i mq"
+  },
+  "videoDemo": {
+    "label": "Dalla foto al reel",
+    "title1": "La tua foto.",
+    "titleEm": "Migliorata. Animata.",
+    "subtitle": "Guarda il workflow completo dal vivo — dallo scatto del telefono a una foto listing rifinita e a un clip cinematografico da 4 secondi.",
+    "rooms": ["Soggiorno", "Cucina", "Camera da letto"],
+    "steps": ["La tua foto", "Look approvato", "Animata"],
+    "badgeBefore": "La tua foto",
+    "badgeAfter": "Look approvato",
+    "badgeVideo": "Clip cinematografica",
+    "descBefore": "Foto originale del listing — direttamente dal telefono, nessun editing.",
+    "descAfter": "Migliorata. Stessa proprietà, stessa architettura, luce e colore migliori. Approvato dalla Modalità Enhance — il restyle si attiva solo nello Studio.",
+    "descVideo": "Stessa immagine, animata delicatamente in un clip cinematografico da 4 secondi — pronto per Reels, TikTok e YouTube Shorts.",
+    "ctaTransform": "Vedi la versione migliorata",
+    "ctaAnimate": "Guarda il video",
+    "ctaContact": "Provalo tu →"
   },
   "studio": {
     "label": "Self-serve",

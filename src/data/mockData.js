@@ -31,11 +31,13 @@ export const portfolioPairs = [
 // BeforeAfterShowcase — tabs to switch the prominent slider scene.
 // Keys reference i18n labels at `beforeAfter.tabs`.
 // ─────────────────────────────────────────────────────────────────
+// Codex R9 verdict: Federico said exterior is the most legible before/after — move it first.
+// Exterior reads in 1 second (curb appeal swap) and is most aligned with "architecture intact" claim.
 export const showcaseScenes = [
+  { key: 'exterior',  before: '/gallery/before/exterior.webp',  after: '/gallery/after/exterior.webp'  },
   { key: 'openspace', before: '/gallery/before/openspace.webp', after: '/gallery/after/openspace.webp' },
   { key: 'kitchen',   before: '/gallery/before/kitchen.webp',   after: '/gallery/after/kitchen.webp'   },
   { key: 'bedroom',   before: '/gallery/before/bedroom.webp',   after: '/gallery/after/bedroom.webp'   },
-  { key: 'exterior',  before: '/gallery/before/exterior.webp',  after: '/gallery/after/exterior.webp'  },
 ]
 
 // ─────────────────────────────────────────────────────────────────
