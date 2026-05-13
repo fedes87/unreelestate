@@ -77,7 +77,7 @@ export default function Hero() {
             >
               {t('hero.btnUpload')}
             </a>
-            <a href="#crew" className="btn-secondary">{t('hero.btnCrew')}</a>
+            <a href="#galli-crew" className="btn-secondary">{t('hero.btnCrew')}</a>
           </motion.div>
 
           <motion.div

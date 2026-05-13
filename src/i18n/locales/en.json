@@ -305,9 +305,11 @@
   },
   "footer": {
     "tagline": "AI-powered real estate content — and the cinema crew to back it up.",
+    "paths": "Choose your path",
     "showcase": "Before / After",
-    "pricing": "Pricing",
-    "team": "Team Services",
+    "pricing": "Studio Subscriptions",
+    "team": "Done-for-you Packages",
+    "crew": "Houston Cinema Crew",
     "contact": "Contact",
     "copyright": "© {{year}} Unreel Estate. All rights reserved."
   },

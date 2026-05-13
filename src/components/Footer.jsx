@@ -16,9 +16,10 @@ export default function Footer() {
             <p>{t('footer.tagline')}</p>
           </div>
           <div className={styles.links}>
-            <a href="#showcase">{t('footer.showcase')}</a>
-            <a href="#pricing">{t('footer.pricing')}</a>
-            <a href="#team">{t('footer.team')}</a>
+            <a href="#paths">{t('footer.paths')}</a>
+            <a href="#studio-sub">{t('footer.pricing')}</a>
+            <a href="#done-for-you">{t('footer.team')}</a>
+            <a href="#galli-crew">{t('footer.crew')}</a>
             <a href="#contact">{t('footer.contact')}</a>
           </div>
           <div className={styles.contact}>

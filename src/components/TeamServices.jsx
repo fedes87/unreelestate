@@ -22,7 +22,8 @@ export default function TeamServices() {
   const cards = t('teamServices.cards', { returnObjects: true })
 
   return (
-    <section className={styles.section} id="team" ref={ref}>
+    <section className={styles.section} id="done-for-you" ref={ref}>
+      <span id="team" style={{ position: 'absolute', marginTop: '-80px' }} aria-hidden="true" />
       <div className="container">
         <motion.div
           className={styles.header}

@@ -11,7 +11,8 @@ export default function GalliPartnership() {
   const bullets = t('galli.bullets', { returnObjects: true })
 
   return (
-    <section className={styles.section} id="crew" ref={ref}>
+    <section className={styles.section} id="galli-crew" ref={ref}>
+      <span id="crew" style={{ position: 'absolute', marginTop: '-80px' }} aria-hidden="true" />
       <div className="container">
         <motion.div
           className={styles.shell}

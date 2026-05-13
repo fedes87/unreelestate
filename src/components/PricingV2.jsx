@@ -18,7 +18,9 @@ export default function PricingV2() {
   const toggle = (key) => setOpenFeatures(o => ({ ...o, [key]: !o[key] }))
 
   return (
-    <section className={styles.section} id="pricing" ref={ref}>
+    <section className={styles.section} id="studio-sub" ref={ref}>
+      {/* backward-compat alias: old footer/anchor links still resolve */}
+      <span id="pricing" style={{ position: 'absolute', marginTop: '-80px' }} aria-hidden="true" />
       <div className="container">
         <motion.div
           className={styles.header}
