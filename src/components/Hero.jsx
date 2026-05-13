@@ -69,9 +69,18 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.45 }}
           >
-            <a href="#gallery" className="btn-primary">{t('hero.btnWork')}</a>
-            <a href="#contact" className="btn-secondary">{t('hero.btnContact')}</a>
+            <a href="#pricing" className="btn-primary">{t('hero.btnUpload')}</a>
+            <a href="#crew" className="btn-secondary">{t('hero.btnCrew')}</a>
           </motion.div>
+
+          <motion.p
+            className={styles.subnote}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+          >
+            {t('hero.subnote')}
+          </motion.p>
         </motion.div>
       </div>
     </section>

@@ -9,7 +9,7 @@
 
     <!-- Primary SEO -->
     <title>AI Real Estate Photos & Cinematic Video | Unreel Estate</title>
-    <meta name="description" content="Transform your real estate listings with AI-enhanced photography, virtual staging, and cinematic video reels. 48-hour delivery, starting at $399. Serving Houston TX and nationwide." />
+    <meta name="description" content="Upload iPhone shots, get magazine-quality real estate photos in one click. AI-enhanced photography, video, stories, carousels — Studio subscriptions from $14.99/mo. Optional Houston cinema crew for luxury listings." />
     <meta name="keywords" content="real estate photography Houston, luxury listing video, AI real estate photos, cinematic real estate, virtual staging, real estate reels" />
     <meta name="author" content="Unreel Estate" />
     <link rel="canonical" href="https://unreelestate.com/" />
@@ -18,7 +18,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://unreelestate.com/" />
     <meta property="og:title" content="AI Real Estate Photos & Cinematic Video | Unreel Estate" />
-    <meta property="og:description" content="AI-enhanced real estate photos + cinematic video reels. Send us your photos — we transform them. 48-hour delivery. Starting at $399." />
+    <meta property="og:description" content="Bad photos in. Magazine quality out. AI-enhanced real estate photography, video, stories — Studio subscriptions from $14.99/mo. Optional Houston cinema crew for luxury listings." />
     <meta property="og:image" content="https://unreelestate.com/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -31,7 +31,7 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:url" content="https://unreelestate.com/" />
     <meta name="twitter:title" content="AI Real Estate Photos & Cinematic Video | Unreel Estate" />
-    <meta name="twitter:description" content="AI-enhanced photos + cinematic video reels for real estate agents. Starting at $399." />
+    <meta name="twitter:description" content="Bad photos in. Magazine quality out. AI Studio subscriptions from $14.99/mo + optional Houston cinema crew." />
     <meta name="twitter:image" content="https://unreelestate.com/og-image.png" />
 
     <!-- Theme color & PWA -->
@@ -140,7 +140,7 @@
             "addressRegion": "TX",
             "addressCountry": "US"
           },
-          "priceRange": "$399-$599",
+          "priceRange": "$14.99-$1200",
           "currenciesAccepted": "USD",
           "openingHours": "Mo-Fr 09:00-18:00",
           "sameAs": [
@@ -150,28 +150,80 @@
         },
         {
           "@type": "Service",
-          "name": "AI Real Estate Photo Enhancement",
+          "name": "Unreel Studio — AI Real Estate Content Subscriptions",
           "provider": { "@id": "https://unreelestate.com/#organization" },
-          "description": "Professional AI-powered photo enhancement for real estate listings. Raw photos transformed into magazine-quality images with virtual staging and remodeling.",
+          "description": "AI-powered Studio: photo enhancement, video animation, stories, carousels, voiceover, and listing descriptions. Self-serve monthly subscriptions with credits, plus optional done-for-you team services.",
           "offers": [
             {
               "@type": "Offer",
-              "name": "Listing Package",
-              "price": "399",
+              "name": "Starter — Studio Subscription",
+              "price": "14.99",
               "priceCurrency": "USD",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "14.99",
+                "priceCurrency": "USD",
+                "billingDuration": "P1M"
+              },
               "availability": "https://schema.org/InStock",
-              "description": "20 AI-enhanced photos + 40-second cinematic reel"
+              "description": "200 credits / month — AI photo enhance, AI descriptions, short video animation, IG Story format. First 100 credits free."
             },
             {
               "@type": "Offer",
-              "name": "Signature Package",
-              "price": "599",
+              "name": "Pro — Studio Subscription",
+              "price": "29.99",
+              "priceCurrency": "USD",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "29.99",
+                "priceCurrency": "USD",
+                "billingDuration": "P1M"
+              },
+              "availability": "https://schema.org/InStock",
+              "description": "500 credits / month — everything in Starter plus voiceover, HD video clips, brand-matched outputs."
+            },
+            {
+              "@type": "Offer",
+              "name": "Studio — Studio Subscription",
+              "price": "49.99",
+              "priceCurrency": "USD",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "49.99",
+                "priceCurrency": "USD",
+                "billingDuration": "P1M"
+              },
+              "availability": "https://schema.org/InStock",
+              "description": "1,200 credits / month — everything in Pro plus cinematic Reels, auto-layout Carousels, Brand Kit, saved presets."
+            },
+            {
+              "@type": "Offer",
+              "name": "Agency — Studio Subscription",
+              "price": "99",
+              "priceCurrency": "USD",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "99",
+                "priceCurrency": "USD",
+                "billingDuration": "P1M"
+              },
+              "availability": "https://schema.org/InStock",
+              "description": "3,000 credits / month — everything in Studio plus team seats, priority render queue, analytics, white-label."
+            },
+            {
+              "@type": "Offer",
+              "name": "Houston In-Location Cinema Crew",
+              "price": "1200",
               "priceCurrency": "USD",
               "availability": "https://schema.org/InStock",
-              "description": "40 AI-enhanced photos + 1-minute 4K cinematic reel + 40 vertical clips"
+              "description": "Full on-site cinema crew in partnership with Galli Productions. Netflix-approved cameras and lenses. From $1,200 — scales with property size. Luxury listings ($1M+) and properties without strong source photos."
             }
           ],
-          "areaServed": "Houston, TX"
+          "areaServed": [
+            { "@type": "Country", "name": "United States" },
+            { "@type": "Country", "name": "Italy" },
+            { "@type": "City", "name": "Houston" }
+          ]
         },
         {
           "@type": "AggregateRating",
@@ -187,8 +239,8 @@
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "How much does AI real estate photography cost?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Our Listing package starts at $399 and includes 20 AI-enhanced photos plus a complete 40-second cinematic reel. The Signature package is $599 and includes 40 photos, a 4K 1-minute reel, 40 vertical clips for social media, AI voiceover, and a full property PDF. There are no hidden fees — all formats and platforms are included." }
+              "name": "How much does Unreel Estate cost?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Self-serve Studio subscriptions start at $14.99/mo (Starter — 200 credits) and scale up to $99/mo Agency (3,000 credits with team seats). One-time credit packs are available from $9. For done-for-you team services (photo + video editing), we send a custom price sheet on request. For luxury Houston shoots with full cinema crew (Galli Productions partnership), pricing starts from $1,200 and scales with property size." }
             },
             {
               "@type": "Question",

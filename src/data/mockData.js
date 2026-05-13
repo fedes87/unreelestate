@@ -1,78 +1,13 @@
 // Static metadata (non-translatable) — text content lives in src/i18n/locales/
 
-export const servicesMeta = [
-  { number: '01', image: '/img/service-photo.webp' },
-  { number: '02', image: '/img/service-staging.webp' },
-  { number: '03', image: '/img/service-land.webp' },
-  { number: '04', image: '/img/service-social.webp' },
-]
-
-export const whyStats = ['100%', '10×', '$399', '∞']
-
-export const howSteps = ['01', '02', '03']
-
-export const testimonialMeta = [
-  { name: 'B. W.', role: 'Real Estate Agent, Houston TX' },
-  { name: 'A. T.', role: 'Real Estate Broker, Houston TX' },
-  { name: 'D. C.', role: 'Property Developer, Houston TX' },
-]
-
-// Three done-for-you packages — graduated by scope + price.
-// In-Location is Houston-only cinema crew; Signature + Light are remote worldwide.
-export const pricingMeta = [
-  {
-    key: 'inLocation',
-    name: 'In-Location',
-    price: 1200,
-    priceLabel: 'from',
-    highlight: false,
-    isHouston: true,
-    isPremium: true,
-    ctaType: 'mailto', // opens info@unreelestate.com
-    addonPrices: [],
-  },
-  {
-    key: 'signature',
-    name: 'Signature',
-    price: 599,
-    highlight: true,
-    ctaType: 'anchor', // scroll to #contact
-    addonPrices: [29, 49, 99], // extra video, rush 12h, add-on reel cuts
-  },
-  {
-    key: 'light',
-    name: 'Light',
-    price: 199,
-    highlight: false,
-    ctaType: 'anchor',
-    addonPrices: [29, 19], // extra video, rush 12h
-  },
-]
-
-// Studio self-serve — credits-based pricing for DIY agents.
-export const studioPacks = [
-  { key: 'starter', price: 9,  credits: 100  },
-  { key: 'std',     price: 29, credits: 350  },
-  { key: 'pro',     price: 99, credits: 1250 },
-]
-export const studioSubs = [
-  { key: 'pro',    price: 39, credits: 500,  popular: true },
-  { key: 'agency', price: 89, credits: 1500, popular: false },
-]
-// Spend rates (display only — authoritative rates live in the app)
-export const studioSpend = [
-  { key: 'photoEnhance', credits: 3 },
-  { key: 'aiDescription', credits: 1 },
-  { key: 'story',        credits: 5 },
-  { key: 'reel',         credits: 20 },
-  { key: 'videoFast',    credits: '20–40' },
-  { key: 'videoHd',      credits: '50–110' },
-]
-
+// ─────────────────────────────────────────────────────────────────
+// BeforeAfter showcase — pairs from existing /public/gallery/
+// (Re-used across HeroProof, BeforeAfterShowcase, and /portfolio route.)
+// ─────────────────────────────────────────────────────────────────
 export const galleryPairs = [
-  { before: '/gallery/before/exterior.webp',  after: '/gallery/after/exterior.webp'  },
-  { before: '/gallery/before/entryway.webp',  after: '/gallery/after/entryway.webp'  },
-  { before: '/gallery/before/openspace.webp', after: '/gallery/after/openspace.webp' },
+  { key: 'exterior',  before: '/gallery/before/exterior.webp',  after: '/gallery/after/exterior.webp'  },
+  { key: 'entryway',  before: '/gallery/before/entryway.webp',  after: '/gallery/after/entryway.webp'  },
+  { key: 'openspace', before: '/gallery/before/openspace.webp', after: '/gallery/after/openspace.webp' },
 ]
 
 export const portfolioPairs = [
@@ -92,8 +27,95 @@ export const portfolioPairs = [
   { before: '/gallery/before/dining.webp',     after: '/gallery/after/dining.webp'     },
 ]
 
+// ─────────────────────────────────────────────────────────────────
+// BeforeAfterShowcase — tabs to switch the prominent slider scene.
+// Keys reference i18n labels at `beforeAfter.tabs`.
+// ─────────────────────────────────────────────────────────────────
+export const showcaseScenes = [
+  { key: 'openspace', before: '/gallery/before/openspace.webp', after: '/gallery/after/openspace.webp' },
+  { key: 'kitchen',   before: '/gallery/before/kitchen.webp',   after: '/gallery/after/kitchen.webp'   },
+  { key: 'bedroom',   before: '/gallery/before/bedroom.webp',   after: '/gallery/after/bedroom.webp'   },
+  { key: 'exterior',  before: '/gallery/before/exterior.webp',  after: '/gallery/after/exterior.webp'  },
+]
+
+// ─────────────────────────────────────────────────────────────────
+// FunnelLadder — "It doesn't stop here." Each step is one capability,
+// stepping the user from a single photo to the full content stack.
+// `comingSoon: true` shows the soft-launch badge.
+// Labels live at `funnel.steps[i]`.
+// ─────────────────────────────────────────────────────────────────
+export const funnelSteps = [
+  { key: 'enhance',   icon: 'photo',    available: true  },
+  { key: 'video',     icon: 'play',     available: true  },
+  { key: 'story',     icon: 'square',   available: true  },
+  { key: 'carousel',  icon: 'layers',   available: true  },
+  { key: 'voiceover', icon: 'wave',     available: true  },
+  { key: 'music',     icon: 'music',    available: false },
+  { key: 'app',       icon: 'mobile',   available: false },
+]
+
+// ─────────────────────────────────────────────────────────────────
+// ReassuranceBlock — split modes + compliance copy.
+// Labels at `reassurance.points[i]`.
+// ─────────────────────────────────────────────────────────────────
+export const reassurancePoints = [
+  { key: 'enhance',    icon: 'shield' },
+  { key: 'creative',   icon: 'palette' },
+  { key: 'compliance', icon: 'check' },
+]
+
+// ─────────────────────────────────────────────────────────────────
+// PRICING V2 — 4 monthly subscription tiers + 3 credit packs.
+// All labels at `pricingV2.tiers[i]` / `pricingV2.packs[i]`.
+// Naming source: DeepSeek R1 benchmark (Midjourney / Runway / ElevenLabs / Leonardo).
+// Math:
+//   $14.99 /  200 cr = $0.075/cr (Starter)
+//   $29.99 /  500 cr = $0.060/cr (Pro)        -20%
+//   $49.99 / 1200 cr = $0.042/cr (Studio)     -44%
+//   $99.00 / 3000 cr = $0.033/cr (Agency)     -56%
+//   Recharges: $9/80 = $0.113/cr · $19/200 = $0.095/cr · $39/450 = $0.087/cr
+//   ALL recharges > $0.075/cr Starter → sub stays the better deal.
+// ─────────────────────────────────────────────────────────────────
+export const subscriptionTiers = [
+  { key: 'starter', price: 14.99, credits: 200,  popular: false, ctaType: 'app'     },
+  { key: 'pro',     price: 29.99, credits: 500,  popular: true,  ctaType: 'app'     },
+  { key: 'studio',  price: 49.99, credits: 1200, popular: false, ctaType: 'app'     },
+  { key: 'agency',  price: 99,    credits: 3000, popular: false, ctaType: 'app'     },
+]
+
+export const creditPacks = [
+  { key: 'pack1', price: 9,  credits: 80  },
+  { key: 'pack2', price: 19, credits: 200 },
+  { key: 'pack3', price: 39, credits: 450 },
+]
+
+// Credit spend rates (display-only, authoritative rates live in the Studio app).
+export const studioSpend = [
+  { key: 'photoEnhance',  credits: 3   },
+  { key: 'aiDescription', credits: 1   },
+  { key: 'story',         credits: 5   },
+  { key: 'carousel',      credits: 8   },
+  { key: 'voiceover',     credits: 4   },
+  { key: 'videoFast',     credits: 20  },
+  { key: 'videoHd',       credits: 50  },
+  { key: 'reel',          credits: 20  },
+]
+
+// ─────────────────────────────────────────────────────────────────
+// TeamServices — done-for-you dedicated team, contact-only pricing.
+// Labels at `teamServices.cards[i]`.
+// ─────────────────────────────────────────────────────────────────
+export const teamServices = [
+  { key: 'photo',   icon: 'photo' },
+  { key: 'video',   icon: 'film'  },
+  { key: 'social',  icon: 'grid'  },
+]
+
+// ─────────────────────────────────────────────────────────────────
+// Navigation — anchor IDs the page exposes. Updated for v2.
+// ─────────────────────────────────────────────────────────────────
 export const navHrefs = [
-  { key: 'services', href: '#services' },
-  { key: 'portfolio', href: '#gallery'   },
-  { key: 'about',    href: '#about'     },
+  { key: 'showcase', href: '#showcase' },
+  { key: 'pricing',  href: '#pricing'  },
+  { key: 'team',     href: '#team'     },
 ]

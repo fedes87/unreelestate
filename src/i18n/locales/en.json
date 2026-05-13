@@ -1,20 +1,21 @@
 {
   "nav": {
-    "services": "Services",
-    "portfolio": "Portfolio",
-    "about": "About",
+    "showcase": "Before / After",
+    "pricing": "Pricing",
+    "team": "Team Services",
     "studio": "Studio",
     "studioAria": "Open the Studio app in a new tab",
-    "cta": "Get a Quote",
-    "ctaMobile": "Get a Quote →"
+    "cta": "Try Free",
+    "ctaMobile": "Try Free →"
   },
   "hero": {
-    "badge": "Netflix-Approved Cinema Equipment · Houston",
-    "title1": "Make Your Listings",
-    "titleEm": "Unreal.",
-    "desc": "Unreel Estate turns extraordinary properties into cinematic productions that sell emotions before they sell square footage.",
-    "btnWork": "Explore Our Work →",
-    "btnContact": "Tell Us About Your Property"
+    "badge": "Real Estate Content · AI-Powered · Cinema-Crafted",
+    "title1": "Bad photos in.",
+    "titleEm": "Magazine quality out.",
+    "desc": "Upload your iPhone shots. One click later you have professional listing photography — same property, same architecture, just clean light and polished frames. Then turn them into video, stories, carousels — everything you need to publish.",
+    "btnUpload": "Try Free · 100 Credits",
+    "btnCrew": "Book Houston Crew",
+    "subnote": "For luxury listings or properties without strong source photos, book the on-site cinema crew."
   },
   "brand": {
     "label": "What we actually do.",
@@ -300,10 +301,10 @@
     "note": "No spam, ever. We'll reach out personally."
   },
   "footer": {
-    "tagline": "Luxury real estate content, crafted for properties that deserve it most.",
-    "services": "Services",
-    "portfolio": "Portfolio",
+    "tagline": "AI-powered real estate content — and the cinema crew to back it up.",
+    "showcase": "Before / After",
     "pricing": "Pricing",
+    "team": "Team Services",
     "contact": "Contact",
     "copyright": "© {{year}} Unreel Estate. All rights reserved."
   },
@@ -372,8 +373,8 @@
     "cta": "Get a Quote →",
     "items": [
       {
-        "q": "How much does AI real estate photography cost?",
-        "a": "Our Listing package starts at $399 and includes 20 AI-enhanced photos plus a complete 40-second cinematic reel. The Signature package is $599 and includes 40 photos, a 4K 1-minute reel, 40 vertical clips for social media, AI voiceover, and a full property PDF. There are no hidden fees — all formats and platforms are included."
+        "q": "How much does Unreel Estate cost?",
+        "a": "Self-serve Studio subscriptions start at $14.99/mo (Starter — 200 credits) and scale to $99/mo (Agency — 3,000 credits with team seats). One-time credit packs are available from $9. For done-for-you team services (photo + video editing), we send a custom price sheet on request. For luxury Houston shoots with full cinema crew (Galli Productions partnership), pricing starts from $1,200 and scales with property size."
       },
       {
         "q": "How long does delivery take?",
@@ -451,5 +452,206 @@
     "errorGeneric": "Something hiccupped. Try again in a moment?",
     "errorRate": "We've covered a lot of ground! For detailed follow-up, email info@unreelestate.com — Federico will reply within 24h.",
     "poweredBy": "Powered by Unreel Estate"
+  },
+  "reassurance": {
+    "label": "How it works (no surprises)",
+    "title1": "Same property.",
+    "titleEm": "Cleaner photos.",
+    "points": [
+      {
+        "title": "Enhance Mode — default",
+        "body": "We preserve your layout, fixtures, and architecture. We fix light, color, and clarity. That's it. No furniture teleports."
+      },
+      {
+        "title": "Creative Mode — opt-in only",
+        "body": "Want virtual staging, restyle, or a remodel preview? Open the Studio explicitly. We never apply it by default."
+      },
+      {
+        "title": "You review every output",
+        "body": "Nothing publishes without your sign-off. Approve, tweak, or regenerate any photo before it goes anywhere."
+      }
+    ],
+    "compliance": "Client reviews final assets for MLS and local advertising compliance."
+  },
+  "beforeAfter": {
+    "label": "Before / After",
+    "title1": "Drag to see",
+    "titleEm": "the transformation.",
+    "subtitle": "Real listings. Same room, same furniture, same architecture. Better light, better color, better story.",
+    "tabs": ["Open Space", "Kitchen", "Bedroom", "Exterior"],
+    "tabsLabel": "Choose a room to preview",
+    "dragHint": "Drag to compare"
+  },
+  "funnel": {
+    "label": "And it doesn't stop here",
+    "title1": "One photo unlocks",
+    "titleEm": "your entire content stack.",
+    "subtitle": "Upload once. Enhance it. Then turn it into video, stories, carousels, voiceover — everything formatted and ready to post.",
+    "cta": "Open the Studio →",
+    "comingSoon": "Coming Soon",
+    "steps": [
+      {
+        "title": "Enhance",
+        "body": "Magazine-quality photos. Same room, no architectural changes by default.",
+        "meta": "3 cr / photo"
+      },
+      {
+        "title": "Video",
+        "body": "Animate any still into a cinematic 4–8 second clip — same room, gently moving.",
+        "meta": "20–50 cr"
+      },
+      {
+        "title": "IG Story",
+        "body": "A 15-second vertical ready for Instagram + TikTok. Music, transitions, captions.",
+        "meta": "5 cr / story"
+      },
+      {
+        "title": "Carousel",
+        "body": "Multi-slide post auto-laid out — 8-12 frames, branded captions included.",
+        "meta": "8 cr / carousel"
+      },
+      {
+        "title": "Voiceover",
+        "body": "AI narration of your listing brief — three languages, your voice and pace.",
+        "meta": "4 cr / clip"
+      },
+      {
+        "title": "Custom Music",
+        "body": "Royalty-free tracks generated to match your reel's mood. No licensing headaches.",
+        "meta": ""
+      },
+      {
+        "title": "Native App",
+        "body": "Shoot it, transform it, post it — before you leave the property. iOS + Android, free.",
+        "meta": ""
+      }
+    ]
+  },
+  "pricingV2": {
+    "label": "Studio Subscriptions",
+    "title1": "Pick your pace.",
+    "titleEm": "Pay as you grow.",
+    "subtitle": "Monthly subscriptions unlock the best credit value. Top up anytime with one-time packs. Cancel from your dashboard.",
+    "popular": "Most Popular",
+    "perMonth": "/mo",
+    "creditsPerMonth": "credits / month",
+    "creditsUnit": "credits",
+    "startCta": "Start Free Trial →",
+    "tiers": [
+      {
+        "name": "Starter",
+        "tagline": "For agents starting their content game.",
+        "features": [
+          "AI photo enhancement",
+          "AI listing descriptions",
+          "Short video animation (4s)",
+          "IG Story format",
+          "First 100 credits free"
+        ]
+      },
+      {
+        "name": "Pro",
+        "tagline": "For active agents — regular listings, regular content.",
+        "features": [
+          "Everything in Starter",
+          "Voiceover narration",
+          "8s HD video clips",
+          "Brand-matched outputs",
+          "Priority email support"
+        ]
+      },
+      {
+        "name": "Studio",
+        "tagline": "For small teams and heavy producers.",
+        "features": [
+          "Everything in Pro",
+          "Cinematic 60s Reels",
+          "Auto-layout Carousels",
+          "Brand Kit (colors + fonts)",
+          "5 saved presets"
+        ]
+      },
+      {
+        "name": "Agency",
+        "tagline": "For brokerages running content at scale.",
+        "features": [
+          "Everything in Studio",
+          "3 team seats",
+          "Priority render queue",
+          "Advanced analytics",
+          "White-label mobile (when live)"
+        ]
+      }
+    ],
+    "packsTitle": "One-time credit packs",
+    "packsSubtitle": "Top up anytime — no subscription required. Credits roll over while you have an active sub.",
+    "packs": [
+      { "label": "Quick Top-up" },
+      { "label": "Best Recharge" },
+      { "label": "Power Pack" }
+    ],
+    "packsNote": "Recharge rate is slightly higher than monthly subscriptions — the sub is always the better long-term value.",
+    "enterpriseLabel": "Enterprise",
+    "enterpriseTitle": "Running a brokerage, MLS, or franchise?",
+    "enterpriseDesc": "Custom volume pricing, dedicated success manager, SSO + permissions, white-label, and bespoke integrations. We'll send you a tailored quote within 24 hours.",
+    "enterpriseCta": "Contact Sales →"
+  },
+  "teamServices": {
+    "label": "Done-for-you",
+    "title1": "Prefer our team",
+    "titleEm": "to handle it?",
+    "subtitle": "Skip the Studio. Hand your shoot to our editors — photo, video, social — and get a polished delivery in 24-48 hours. Custom pricing, scoped to your listing.",
+    "cta": "Request the Full Menu →",
+    "note": "We send a detailed price sheet within one business day.",
+    "cards": [
+      {
+        "title": "Photo Editor",
+        "body": "Hand-edited enhancement by a real photo editor — selection, color grading, retouching.",
+        "bullets": [
+          "Listing photo retouching",
+          "Twilight conversion",
+          "Sky replacement + cleanup",
+          "MLS-ready 4K delivery"
+        ]
+      },
+      {
+        "title": "Video Editor",
+        "body": "Custom cinematic edits for your most important listings — your music, your pace, your voice.",
+        "bullets": [
+          "Cinematic reels 30–90s",
+          "Multi-platform formats",
+          "Custom voiceover available",
+          "1 round of revisions"
+        ]
+      },
+      {
+        "title": "Social Package",
+        "body": "Full social media bundle for one listing — carousels, stories, captions, hashtags.",
+        "bullets": [
+          "12-frame carousel",
+          "3 vertical stories",
+          "Caption + hashtag set",
+          "Scheduled-ready files"
+        ]
+      }
+    ]
+  },
+  "galli": {
+    "label": "In-Location · Houston",
+    "title1": "Need full cinema crew?",
+    "titleEm": "We come to you.",
+    "desc": "Unreel Estate is the AI half of a partnership. The cinema half is Galli Productions — a full production house in Houston with Netflix-approved camera and lens packages. For luxury listings (typically $1M+) or properties where source photos won't do, the crew shows up on site.",
+    "netflixBadge": "Netflix-Approved Cinema Equipment",
+    "bullets": [
+      "Sony Venice / Alexa Mini cinema cameras + cinema lenses",
+      "Aerial 4K drone + stabilizers + slider + professional lighting",
+      "On-site editor and colorist included",
+      "Full gallery + cinematic reel delivered within 48–72h"
+    ],
+    "cta": "Book a Consultation →",
+    "priceHint": "Custom quote within 24h",
+    "locationTag": "Houston, TX",
+    "from": "From",
+    "priceScope": "per shoot · scales with sqft"
   }
 }

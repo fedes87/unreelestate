@@ -1,41 +1,68 @@
 # Unreel Estate — llms.txt
 # https://www.unreelestate.com
 
-> Unreel Estate is a luxury real estate content production service that transforms standard listing photos into AI-enhanced images, virtual stagings, and cinematic video reels. The service is fully remote, delivered within 48 hours, and starts at $399.
+> Unreel Estate is an AI-powered real estate content platform. Agents upload listing photos (iPhone shots accepted) and get magazine-quality photos in one click — same property, same architecture, just clean light and polished frames. Then turn them into video, stories, carousels, voiceover. Self-serve Studio subscriptions from $14.99/mo with optional Houston cinema crew partnership (Galli Productions) for luxury listings.
 
 ## About
-Unreel Estate combines AI technology with cinematic production to create real estate marketing content. Real estate agents send their existing photos — including iPhone shots — and receive professionally enhanced images, virtual staging in multiple interior styles, and a complete cinematic video reel formatted for MLS, Instagram Reels, TikTok, and YouTube Shorts. No film crew, no location visits. Everything is delivered remotely.
+Unreel Estate is a self-serve AI Studio plus an optional done-for-you team and an optional on-site Houston cinema crew. The core promise: upload your iPhone shots, get professional listing photography in one click, with the architecture preserved by default. The Studio also generates video animations, 15s Instagram Stories, multi-frame carousels, AI voiceover, and (coming soon) custom royalty-free music and a free native mobile app.
 
-## Services
-- AI Photo Enhancement: Raw listing photos transformed to editorial quality. Retouched, staged, or fully remodeled to any interior style.
-- Virtual Staging & Restyling: Empty or furnished rooms redesigned in 8+ interior styles (Neutral, Luxury, Scandinavian, Modern, Contemporary, Industrial, Mediterranean, Transitional).
-- Land & Development Visualization: Vacant lots and development sites visualized as completed luxury properties from rough sketches or photos.
-- Cinematic Video Reels: 4-second animated clips per photo, assembled into a full 40-second (FHD) or 1-minute (4K) cinematic reel with royalty-free music.
-- Social & Listing Ready Delivery: All assets formatted for MLS, Zillow, Realtor.com, Instagram Reels, TikTok, YouTube Shorts, and Stories.
+## Core promise
+- Enhance Mode (default): preserves layout, fixtures, and architecture. We fix light, color, and clarity only. No furniture teleports.
+- Creative Mode (opt-in only): virtual staging, restyle, and remodel previews available when explicitly enabled inside the Studio.
+- Client reviews every output before publishing. Nothing auto-publishes.
 
-## Pricing
-- Listing Package: $399 — 20 AI-enhanced photos + 40-second FHD cinematic reel + royalty-free music. Add-ons: +$20/extra photo, +$50 AI voiceover, +$20 cover diagram & PDF.
-- Signature Package: $599 — 40 AI-enhanced photos + 1-minute 4K cinematic reel + 40 individual vertical clips + AI voiceover included + cover diagram & PDF included.
+## Studio Subscriptions (self-serve, monthly)
+- Starter — $14.99/mo — 200 credits — Photo enhance + AI descriptions + short video animation + IG Story format. First 100 credits free trial.
+- Pro — $29.99/mo — 500 credits — Everything in Starter plus voiceover narration, 8s HD video, brand-matched outputs.
+- Studio — $49.99/mo — 1,200 credits — Everything in Pro plus cinematic 60s Reels, auto-layout Carousels, Brand Kit, 5 saved presets.
+- Agency — $99/mo — 3,000 credits — Everything in Studio plus 3 team seats, priority render queue, advanced analytics, white-label mobile app (when live).
+
+## One-time Credit Packs (no subscription required)
+- $9 — 80 credits (Quick Top-up)
+- $19 — 200 credits (Best Recharge)
+- $39 — 450 credits (Power Pack)
+Recharge per-credit rate is slightly higher than monthly subscriptions, so the sub is always the better long-term value.
+
+## Credit Spend (display rates)
+- Photo enhance: 3 cr
+- AI description: 1 cr
+- IG Story 15s: 5 cr
+- Carousel (multi-slide post): 8 cr
+- Voiceover clip: 4 cr
+- Video 4s Fast: 20 cr
+- Video 8s Fast: 40 cr
+- Cinematic Reel 60s: 20 cr
+- Video HD: 50–110 cr
+
+## Done-for-you Team Services (contact pricing)
+For agents who prefer to hand off the work entirely, we offer a dedicated team of photo editors, video editors, and a full social package. Pricing is custom and scoped to the listing — a detailed menu is sent within one business day on request.
+
+## Houston In-Location Cinema Crew (Galli Productions partnership)
+For luxury listings (typically $1M+) or properties where source photos won't do, the full cinema crew shows up on site. Equipment: Sony Venice / Alexa Mini cinema cameras with Netflix-approved lens packages, 4K aerial drone, stabilizers, slider, professional lighting, on-site editor and colorist. Pricing from $1,200 — scales with property size. Custom quote within 24 hours.
+
+## Enterprise (brokerages, MLS, franchises)
+Custom volume pricing, dedicated success manager, SSO, white-label, and bespoke integrations. Quote within 24 hours by request.
 
 ## Markets Served
-- United States (Houston, TX — primary market)
-- Italy (Milan, Tuscany, Lake Como — luxury market)
-- Spanish-speaking US market
+- United States (Houston, TX — primary market for in-location cinema crew; remote service nationwide)
+- Italy (remote service)
+- Spanish-speaking US market (remote service)
 
 ## How It Works
-1. Client sends existing listing photos (any format, any quality, iPhone shots accepted)
-2. Unreel Estate AI and creative team enhances, restyles, animates, and edits all photos
-3. Complete delivery within 48 hours: enhanced photos + cinematic video + all social formats
+1. Sign up for the Studio (first 100 credits free).
+2. Upload your existing listing photos — iPhone shots accepted, any format, any quality.
+3. Enhance in one click. Then animate, generate Stories, build Carousels, add Voiceover — your stack.
+4. Download in MLS/Zillow/Realtor.com formats plus Instagram Reels, TikTok, YouTube Shorts.
 
 ## Languages
 English, Italian (Italiano), Spanish (Español)
 
 ## Contact
 - Email: info@unreelestate.com
-- WhatsApp available
 - Website: https://www.unreelestate.com
+- Studio app: https://app.unreelestate.com
 - Contact form: https://www.unreelestate.com/#contact
 
 ## Site Map
-- / — Homepage: full service overview, before/after portfolio, pricing, testimonials, contact form
+- / — Homepage: Hero, Reassurance, Before/After, content stack, Pricing, Team Services, Houston Crew, FAQ, Contact
 - /portfolio — Full portfolio of before/after transformations across 14 property types
