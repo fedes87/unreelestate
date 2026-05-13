@@ -1,193 +1,178 @@
 {
   "nav": {
-    "services": "Servicios",
-    "portfolio": "Portafolio",
-    "about": "Nosotros",
+    "showcase": "Antes / Después",
+    "pricing": "Precios",
+    "team": "Servicios de equipo",
     "studio": "Studio",
-    "studioAria": "Abrir la app Studio en una nueva pestaña",
-    "cta": "Cotización",
-    "ctaMobile": "Solicitar Cotización →"
+    "studioAria": "Abrir la app Studio en una pestaña nueva",
+    "cta": "Prueba gratis",
+    "ctaMobile": "Prueba gratis →"
   },
   "hero": {
-    "badge": "Netflix-Approved Cinema Equipment · Houston",
-    "title1": "Haz que tus Propiedades",
-    "titleEm": "Sean Increíbles.",
-    "desc": "Unreel Estate transforma propiedades extraordinarias en producciones cinematográficas que venden emociones antes que metros cuadrados.",
-    "btnWork": "Explora Nuestro Trabajo →",
-    "btnContact": "Cuéntanos tu Propiedad"
+    "badge": "Contenido inmobiliario · Potenciado por IA · Con calidad cinematográfica",
+    "title1": "Entran fotos malas.",
+    "titleEm": "Sale calidad de revista.",
+    "desc": "La arquitectura permanece intacta — solo corregimos luz, color y nitidez. Luego desbloquea el resto: video, historias, carruseles, voz en off. Staging virtual solo si lo activas dentro de Studio.",
+    "btnUpload": "Prueba gratis · 100 Créditos",
+    "btnCrew": "Conoce el equipo Houston",
+    "trust1": "Misma arquitectura",
+    "trust2": "Modo Creativo bajo solicitud",
+    "trust3": "Tú revisas cada salida",
+    "subnote": "Para listings de lujo o propiedades sin buenas fotos de origen, reserva al equipo de filmación en sitio."
   },
-  "brand": {
-    "label": "Lo que realmente hacemos.",
-    "line1": "Nos envías tus fotos —",
-    "line2prefix": "incluso",
-    "line2em": "las del teléfono sin editar.",
-    "line3": "Las transformamos. Las",
-    "line3em": "animamos.",
-    "sub1": "Tu listado supera a la competencia. Tus redes explotan.",
-    "sub2": "Y todos querrán saber cómo lo lograste."
-  },
-  "ctaBanner": {
-    "label": "El Proceso Unreel",
-    "title1": "Tu Foto de iPhone.",
-    "titleEm": "Nuestro Estándar Cinematográfico.",
-    "sub": "Tomamos cualquier foto — incluso directamente de tu teléfono — y la transformamos en una imagen de nivel profesional. Luego la animamos en un clip cinematográfico de 4 segundos, listo para publicar.",
-    "link": "Ver Cómo Funciona →"
-  },
-  "services": {
-    "label": "Fotografía Inmobiliaria AI & Virtual Staging",
-    "title1": "Cuatro Formas de Hacer",
-    "title2": "una Propiedad",
-    "titleEm": "Irresistible.",
-    "subtitle": "Todo comienza con tus fotos existentes. Sin equipo de filmación, sin visitas — solo resultados extraordinarios entregados de forma remota.",
-    "items": [
+  "reassurance": {
+    "label": "Cómo funciona (sin sorpresas)",
+    "title1": "Misma propiedad.",
+    "titleEm": "Fotos más limpias.",
+    "points": [
       {
-        "tag": "Mejora de Fotos con IA",
-        "title": "¿Ya Renovada? La Convertimos en Nivel Revista.",
-        "includes": [
-          "Foto original — elevada a calidad editorial",
-          "¿Necesita remodelación? Elige un estilo, nosotros nos encargamos",
-          "Luz, atmósfera, texturas — completamente transformados",
-          "Entrega en alta resolución para MLS, web y redes"
-        ]
+        "title": "Modo Mejora — predeterminado",
+        "body": "Conservamos tu distribución, accesorios y arquitectura. Arreglamos luz, color y nitidez. Eso es todo. Sin teletransportar muebles."
       },
       {
-        "tag": "Staging & Restyling Virtual",
-        "title": "Cualquier Estilo. Cualquier Mueble. Tu Visión.",
-        "includes": [
-          "Agrega muebles y decoración de cualquier estilo — en fotos",
-          "Moderno, clásico, escandinavo, lujo — tú eliges",
-          "Cada foto amueblada se convierte en un clip cinematográfico de 4 segundos",
-          "Entrega 4K disponible en el paquete Premium"
-        ]
+        "title": "Modo Creativo — solo bajo solicitud",
+        "body": "¿Quieres staging virtual, cambio de estilo o vista previa de remodelación? Abre Studio explícitamente. Nunca lo aplicamos por defecto."
       },
       {
-        "tag": "Terrenos & Desarrollo",
-        "title": "¿Lote Vacío? Mostramos Lo Que Podría Ser.",
-        "includes": [
-          "Funciona en terrenos, lotes y desarrollos",
-          "De un boceto o dibujo a mano al fotorrealismo",
-          "Visualiza la construcción terminada antes de empezar",
-          "Transforma el potencial en un listado convincente"
-        ]
-      },
-      {
-        "tag": "Listo para Redes y Listados",
-        "title": "Una Entrega. Cada Plataforma. Sin Esfuerzo.",
-        "includes": [
-          "Todo formateado para MLS, Zillow y Realtor.com",
-          "Instagram Reels, TikTok, YouTube Shorts — todo incluido",
-          "Branding del agente, captions y miniaturas listos",
-          "Publica el mismo día que recibes la entrega"
-        ]
+        "title": "Tú revisas cada resultado",
+        "body": "Nada se publica sin tu aprobación. Aprueba, ajusta o regenera cualquier foto antes de que salga."
       }
-    ]
+    ],
+    "compliance": "El cliente revisa los assets finales para cumplir con MLS y normativas locales de publicidad."
   },
-  "why": {
-    "items": [
-      {
-        "label": "Remoto",
-        "body": "Sin equipo, sin visitas. Envíanos tus fotos y nosotros nos encargamos de todo."
-      },
-      {
-        "label": "Más Engagement",
-        "body": "Los listados con visuales cinematográficos superan consistentemente la fotografía estándar."
-      },
-      {
-        "label": "Precio Inicial",
-        "body": "Resultados de calidad de lujo a un precio accesible para agentes activos."
-      },
-      {
-        "label": "Formatos Incluidos",
-        "body": "MLS, Instagram, TikTok, YouTube — cada asset, cada plataforma, una entrega."
-      }
-    ]
+  "beforeAfter": {
+    "label": "Antes / Después",
+    "title1": "Arrastra para ver",
+    "titleEm": "la transformación.",
+    "subtitle": "Listings reales. Misma habitación, mismos muebles, misma arquitectura. Mejor luz, mejor color, mejor historia.",
+    "tabs": ["Espacio abierto", "Cocina", "Dormitorio", "Exterior"],
+    "tabsLabel": "Elige una habitación para previsualizar",
+    "dragHint": "Arrastra para comparar"
   },
-  "how": {
-    "label": "Cómo Funciona Nuestro Proceso de Fotografía Inmobiliaria AI",
-    "title1": "Tres Pasos hacia lo",
-    "titleEm": "Cinematográfico.",
-    "cta": "Empieza tu Listado →",
-    "imgAlt": "Tus listados entregados en todos los dispositivos",
+  "funnel": {
+    "label": "Y no termina aquí",
+    "title1": "Una foto desbloquea",
+    "titleEm": "todo tu stack de contenido.",
+    "subtitle": "Sube una vez. Mejórala. Luego conviértela en video, historias, carruseles, voz en off — todo formateado y listo para publicar.",
+    "cta": "Abrir Studio →",
+    "roadmap": "Próximas etapas: música AI personalizada y app nativa móvil.",
+    "comingSoon": "Próximamente",
+    "comingSoonLabel": "Próximamente",
+    "swipeHint": "Desliza",
     "steps": [
+      {"title": "Mejora", "body": "Fotos calidad de revista. Misma habitación, sin cambios arquitectónicos por defecto.", "meta": "3 cr / foto"},
+      {"title": "Video", "body": "Anima cualquier imagen fija en un clip cinematográfico de 4–8 segundos — misma habitación, movimiento suave.", "meta": "20–50 cr"},
+      {"title": "Historia de IG", "body": "Un vertical de 15 segundos listo para Instagram + TikTok. Música, transiciones, subtítulos.", "meta": "5 cr / historia"},
+      {"title": "Carrusel", "body": "Post multi-diapositiva diseñado automáticamente — 8-12 cuadros, subtítulos con marca incluidos.", "meta": "8 cr / carrusel"},
+      {"title": "Voz en off", "body": "Narración con IA del resumen de tu listing — tres idiomas, tu voz y ritmo.", "meta": "4 cr / clip"}
+    ],
+    "soon": []
+  },
+  "pricingV2": {
+    "label": "Suscripciones de Studio",
+    "title1": "Elige tu ritmo.",
+    "titleEm": "Paga según creces.",
+    "subtitle": "Las suscripciones mensuales desbloquean el mejor valor en créditos. Recarga en cualquier momento con paquetes únicos. Cancela desde tu panel.",
+    "popular": "Mejor Valor",
+    "perMonth": "/mes",
+    "creditsPerMonth": "créditos / mes",
+    "creditsUnit": "créditos",
+    "startCta": "Comenzar prueba gratis →",
+    "viewFeatures": "Ver lo incluido ▾",
+    "hideFeatures": "Ocultar detalles ▴",
+    "tiers": [
       {
-        "title": "Envíanos Tus Fotos",
-        "body": "Sube tus fotos existentes del listado — incluso las de iPhone funcionan. Aceptamos cualquier formato, cualquier calidad. Cuanto más contexto nos des (preferencias de estilo, comprador objetivo), mejor será el resultado."
+        "name": "Starter",
+        "tagline": "Para agentes que inician su juego de contenido.",
+        "cta": "Empezar gratis →",
+        "features": ["Mejora de fotos con IA", "Descripciones de listings con IA", "Animación de video corto (4s)", "Formato Historia de IG", "Primeros 100 créditos gratis"]
       },
       {
-        "title": "Transformamos y Producimos",
-        "body": "Nuestro equipo de IA y creativos se pone a trabajar. Mejoramos, rediseñamos, animamos y editamos — produciendo una suite completa de contenido cinematográfico adaptado al carácter único de tu propiedad."
+        "name": "Pro",
+        "tagline": "Para agentes activos — listings regulares, contenido regular.",
+        "cta": "Probar Pro →",
+        "features": ["Todo lo de Starter", "Narración con voz en off", "Clips de video HD de 8s", "Resultados con identidad de marca", "Soporte prioritario por correo"]
       },
       {
-        "title": "Recibes y Publicas",
-        "body": "En 48 horas recibes una entrega completa: fotos mejoradas, video cinematográfico y todos los formatos sociales. Listo para subir, compartir y vender."
+        "name": "Studio",
+        "tagline": "Para equipos pequeños y grandes productores de contenido.",
+        "cta": "Elegir Studio →",
+        "features": ["Todo lo de Pro", "Reels cinematográficos de 60s", "Carruseles con diseño automático", "Kit de marca (colores + fuentes)", "5 preajustes guardados"]
+      },
+      {
+        "name": "Agency",
+        "tagline": "Para agencias que crean contenido a gran escala.",
+        "cta": "Empezar Agency →",
+        "features": ["Todo lo de Studio", "3 asientos de equipo", "Cola de renderizado prioritaria", "Analíticas avanzadas", "App móvil white-label (cuando esté disponible)"]
+      }
+    ],
+    "packsTitle": "Paquetes de créditos únicos",
+    "packsSubtitle": "Recarga en cualquier momento — sin suscripción requerida. Los créditos se acumulan mientras tengas una suscripción activa.",
+    "packs": [
+      {"label": "Recarga rápida"},
+      {"label": "Mejor recarga"},
+      {"label": "Paquete Power"}
+    ],
+    "packsNote": "La tarifa de recarga es ligeramente más alta que las suscripciones mensuales — la suscripción siempre es mejor valor a largo plazo.",
+    "enterpriseLabel": "Empresarial",
+    "enterpriseTitle": "¿Manejas una agencia, MLS o franquicia?",
+    "enterpriseDesc": "Precios por volumen personalizados, gerente de éxito dedicado, SSO + permisos, white-label e integraciones a medida. Te enviaremos una cotización personalizada en 24 horas.",
+    "enterpriseCta": "Contactar a Ventas →"
+  },
+  "teamServices": {
+    "label": "Lo hacemos por ti",
+    "title1": "¿Prefieres que nuestro equipo",
+    "titleEm": "lo maneje?",
+    "subtitle": "Sáltate Studio. Entrega tu sesión a nuestros editores — foto, video, social — y obtén una entrega pulida en 24-48 horas. Precios personalizados, adaptados a tu listing.",
+    "cta": "Solicitar cotización de Team Services →",
+    "note": "Enviamos una hoja de precios detallada en un día hábil. Descuentos por volumen disponibles.",
+    "fromLabel": "Desde",
+    "perListing": "/ listing",
+    "cards": [
+      {
+        "title": "Editor de fotografía",
+        "priceFrom": "199",
+        "body": "Mejora editada a mano por un editor de fotos real — selección, gradación de color, retoque.",
+        "bullets": ["Retoque de fotos de listing", "Conversión a crepúsculo", "Reemplazo de cielo + limpieza", "Entrega en 4K lista para MLS"]
+      },
+      {
+        "title": "Editor de video",
+        "priceFrom": "399",
+        "body": "Ediciones cinematográficas personalizadas para tus listings más importantes — tu música, tu ritmo, tu voz.",
+        "bullets": ["Reels cinematográficos de 30–90s", "Formatos multi-plataforma", "Voz en off personalizada disponible", "1 ronda de revisiones"]
+      },
+      {
+        "title": "Paquete social",
+        "priceFrom": "299",
+        "body": "Paquete completo de redes sociales para un listing — carruseles, historias, subtítulos, hashtags.",
+        "bullets": ["Carrusel de 12 cuadros", "3 historias verticales", "Conjunto de subtítulos + hashtags", "Archivos listos para programar"]
       }
     ]
   },
-  "pricing": {
-    "label": "Paquetes",
-    "title1": "Tres paquetes.",
-    "titleEm": "Un solo studio.",
-    "subtitle": "Elige cómo trabajar con nosotros — vamos a ti, lo gestionamos en remoto, o tú tomas las llaves.",
-    "popular": "Más Popular",
-    "netflixBadge": "Netflix-Approved",
-    "houstonOnly": "Houston y alrededores",
-    "ctaInLocation": "Agendar una Consulta →",
-    "ctaRemote": "Empezar Ahora →",
-    "addonsLabel": "Extras",
-    "note": "Todas las entregas incluyen formatos multi-plataforma · Sin costos ocultos",
-    "from": "desde",
-    "packages": [
-      {
-        "tagline": "Vamos nosotros a ti — cine Netflix-approved, no DSLR baratas.",
-        "includes": [
-          "3–4h de shoot en sitio + 2h de edición — ajustado al tamaño de la propiedad",
-          "Cámaras cinema + ópticas cinema (Netflix-approved)",
-          "Dron aéreo 4K + estabilizadores + slider + luces profesionales",
-          "Fotos + video + reel cinematográfico — galería completa entregada",
-          "Editor y colorista in-house en cada proyecto",
-          "Tarifas: $1,200 hasta 3,000 sqft · $1,800 3K–5K · $2,500+ luxury"
-        ],
-        "addons": []
-      },
-      {
-        "tagline": "Sube tus fotos. Nosotros nos encargamos de edición cinematográfica, video, reel — todo.",
-        "includes": [
-          "40 fotos mejoradas — selección asistida por IA",
-          "20 clips de video cinematográficos de 5 segundos",
-          "Reel completo de 1 minuto + cortes de 30s y 15s",
-          "Formatos multi-plataforma: 16:9, 9:16, 1:1",
-          "AI Enhancement: retocada, amueblada o completamente remodelada",
-          "Entregado en 24–48 horas"
-        ],
-        "addons": [
-          "por cada clip de video cinematográfico extra",
-          "entrega exprés en 12 horas",
-          "versión / corte de reel adicional"
-        ]
-      },
-      {
-        "tagline": "Sube tus fotos. Máxima calidad, solo lo esencial.",
-        "includes": [
-          "20 fotos mejoradas — selección asistida por IA",
-          "5 clips de video cinematográficos",
-          "Formatos multi-plataforma básicos",
-          "AI Enhancement: retocada, amueblada o completamente remodelada",
-          "Entregado en 24–48 horas",
-          "Misma calidad que Signature, alcance reducido"
-        ],
-        "addons": [
-          "por cada clip de video cinematográfico extra",
-          "entrega exprés en 12 horas"
-        ]
-      }
-    ]
+  "galli": {
+    "label": "En locación · Houston",
+    "title1": "¿Necesitas equipo completo de filmación?",
+    "titleEm": "Vamos a ti.",
+    "desc": "Unreel Estate es la mitad de IA de una alianza. La mitad cinematográfica es Galli Productions — una casa productora completa en Houston con paquetes de cámara y lentes aprobados por Netflix. Para listings de lujo (normalmente de más de $1M) o propiedades donde las fotos de origen no son suficientes, el equipo se presenta en el lugar.",
+    "netflixBadge": "Equipo cinema-grade",
+    "bullets": [
+      "Cámaras de cine Sony Venice / Alexa Mini + paquete de lentes aprobado por Netflix",
+      "Drone aéreo 4K + estabilizadores + slider + iluminación profesional",
+      "Editor y colorista en sitio incluidos",
+      "Galería completa + reel cinematográfico entregado en 48–72h"
+    ],
+    "cta": "Solicitar cotización shoot Houston →",
+    "priceHint": "Cotización personalizada en 24h",
+    "locationTag": "Houston, TX",
+    "from": "Desde",
+    "priceScope": "por sesión · escala con pies cuadrados"
   },
   "studio": {
     "label": "Self-serve",
     "title1": "¿Prefieres hacerlo tú?",
     "titleEm": "Aquí tienes las llaves del Studio.",
-    "subtitle": "Web app con IA. Créditos pay-as-you-go o planes mensuales. Tu ritmo, tu control, 24/7.",
-    "imageAlt": "Agente de Unreel Estate entregando las llaves del Studio",
+    "subtitle": "Web app AI. Créditos pay-as-you-go o planes mensuales. Tu ritmo, tu control, 24/7.",
+    "imageAlt": "Agente de Unreel Estate entrega las llaves del Studio",
     "featuresLabel": "Todo lo que encuentras en el Studio",
     "features": [
       { "name": "Enhance", "desc": "Luz profesional, nitidez, corrección de color" },
@@ -197,7 +182,7 @@
       { "name": "AI Descriptions", "desc": "Textos para anuncios MLS, generados automáticamente" },
       { "name": "Palette Presets", "desc": "Cinco moods curados + biblioteca de materiales" }
     ],
-    "packsLabel": "Paquetes de créditos (pay-as-you-go)",
+    "packsLabel": "Paquetes créditos (pay-as-you-go)",
     "subsLabel": "Suscripciones mensuales",
     "creditsSuffix": "créditos",
     "monthSuffix": "/mes",
@@ -208,64 +193,33 @@
       "aiDescription": "Descripción IA",
       "story": "Story IG 15s",
       "reel": "Reel cinematográfico 60s",
-      "videoFast": "Video — Fast",
+      "videoFast": "Video — Rápido",
       "videoHd": "Video — HD"
     },
     "creditsUnit": "cr",
     "cta": "Abrir el Studio →",
-    "ctaSecondary": "Los primeros 100 créditos son nuestros — sin tarjeta",
-    "footNote": "Con una suscripción activa los créditos no caducan. ¿Superaste tus créditos mensuales? Compra cualquier paquete y sigue adelante."
+    "ctaSecondary": "Primeros 100 créditos gratis — sin tarjeta",
+    "footNote": "Con una suscripción activa los créditos no caducan. ¿Superas los créditos mensuales? Compra un paquete y continúa."
   },
   "mobileApp": {
     "label": "Próximamente",
     "title1": "El Studio —",
     "titleEm": "en tu bolsillo.",
-    "subtitle": "App nativa iOS + Android próximamente. Descarga gratis. Dispara, transforma, publica — antes de salir de la propiedad.",
-    "waitlistCta": "Avísame en el lanzamiento",
-    "placeholder": "your@email.com",
+    "subtitle": "App nativa iOS + Android próximamente. Descarga gratuita. Graba, transforma, publica — antes de irte de la propiedad.",
+    "waitlistCta": "Avísame al lanzamiento",
+    "placeholder": "tu@email.com",
     "successMsg": "Estás en la lista. Te escribiremos al lanzamiento.",
     "errorMsg": "Algo salió mal. Inténtalo de nuevo."
-  },
-  "testimonials": {
-    "label": "Lo Que Dicen Nuestros Clientes",
-    "title1": "Resultados Que",
-    "titleEm": "Hablan.",
-    "items": [
-      "La calidad de las fotos mejoradas superó mis expectativas. Mis listados se ven completamente diferentes ahora, y he notado que los compradores interactúan mucho más rápido.",
-      "Al principio estaba indeciso, pero el tiempo de entrega y el producto final realmente me impresionaron. Los videos cinematográficos se han convertido en una parte clave de cómo presento las propiedades.",
-      "Trabajar con Unreel Estate simplificó todo mi flujo de trabajo. Envío fotos desde mi teléfono y recibo contenido profesional listo para publicar en todas partes. Ha sido un cambio total para mi negocio."
-    ],
-    "disclaimer": "Nombres cambiados por privacidad."
-  },
-  "about": {
-    "label": "Sobre Nosotros",
-    "title1": "Creado para Agentes Que",
-    "titleEm": "Exigen Más.",
-    "desc": "Unreel Estate nació de una idea simple: cada propiedad merece verse en su mejor versión. Combinamos tecnología AI con narrativa cinematográfica para crear contenido que vende — de forma remota, accesible y rápida.",
-    "points": [
-      {
-        "title": "100% Remoto",
-        "body": "Sin equipo en sitio, sin complicaciones de agenda. Envíanos tus fotos desde cualquier parte del mundo y nosotros nos encargamos del resto."
-      },
-      {
-        "title": "Calidad con IA",
-        "body": "Nuestro sistema de IA mejora, rediseña y anima cada imagen — con resultados que rivalizan con producciones cinematográficas tradicionales."
-      },
-      {
-        "title": "Entrega en 48 Horas",
-        "body": "Desde la carga hasta la entrega final en menos de dos días. El contenido de tu anuncio estará listo antes del open house."
-      }
-    ]
   },
   "contact": {
     "label": "Hablemos",
     "title1": "Cuéntanos sobre",
     "titleEm": "tu Propiedad.",
     "desc": "Respondemos en 24 horas con una propuesta personalizada.",
-    "location": "USA · Europa · Worldwide",
+    "location": "USA · Europa · Mundial",
     "whatsapp": "WhatsApp",
     "successTitle": "Solicitud Recibida.",
-    "successDesc": "Nos pondremos en contacto en 24 horas con tu propuesta personalizada.",
+    "successDesc": "Nos pondremos en contacto contigo en 24 horas con tu propuesta personalizada.",
     "name": "Nombre Completo *",
     "namePlaceholder": "Tu nombre",
     "email": "Email *",
@@ -276,71 +230,23 @@
     "propertyTypes": ["Casa de Lujo", "Condominio / Apartamento", "Propiedad Comercial", "Terreno / Desarrollo", "Otro"],
     "service": "Servicio de Interés",
     "servicePlaceholder": "Selecciona servicio...",
-    "services": ["Paquete Listing ($399)", "Mejora de Fotos con IA", "Staging & Restyling Virtual", "Video Cinematográfico desde Fotos", "Presentación Completa del Listado"],
+    "services": ["Suscripción de Studio (desde $14.99/mes)", "Servicios de equipo — Foto / Video / Social (cotización personalizada)", "Equipo de filmación Houston (desde $1,200)", "Plan Enterprise / Agencia", "No estoy seguro — recomienda algo"],
     "message": "Mensaje / Detalles de la Propiedad",
-    "messagePlaceholder": "Cuéntanos sobre la propiedad y lo que buscas...",
+    "messagePlaceholder": "Cuéntanos sobre la propiedad y lo que estás buscando...",
     "source": "¿Cómo nos conociste?",
-    "sourcePlaceholder": "Instagram, referido, Google...",
-    "submit": "Enviar Solicitud →",
+    "sourcePlaceholder": "Instagram, referencia, Google...",
+    "submit": "Envía tu Solicitud →",
     "sending": "Enviando...",
     "error": "Algo salió mal. Inténtalo de nuevo o escríbenos directamente por email.",
     "privacy": "Tus datos están seguros con nosotros. Nunca los compartiremos con terceros."
   },
-  "waitlist": {
-    "badge": "Acceso Anticipado · Ahora Abierto",
-    "title1": "Estamos Apenas",
-    "titleEm": "Empezando.",
-    "desc": "Unreel Estate está en fase de lanzamiento. Estamos incorporando a nuestros primeros clientes uno por uno — y los primeros reciben algo especial.",
-    "offer": "Los primeros clientes reciben un proyecto gratuito — nosotros creamos el caso de estudio, tú te quedas con todo el contenido.",
-    "placeholder": "Ingresa tu correo electrónico",
-    "cta": "Únete a la Lista de Espera →",
-    "sending": "Enviando...",
-    "success": "Estás en la lista. Te contactaremos pronto.",
-    "error": "Algo salió mal. Inténtalo de nuevo.",
-    "note": "Sin spam, nunca. Te contactaremos personalmente."
-  },
   "footer": {
-    "tagline": "Contenido inmobiliario de lujo, creado para las propiedades que más lo merecen.",
-    "services": "Servicios",
-    "portfolio": "Portafolio",
+    "tagline": "Contenido inmobiliario potenciado por IA — y el equipo de filmación que lo respalda.",
+    "showcase": "Antes / Después",
     "pricing": "Precios",
+    "team": "Servicios de equipo",
     "contact": "Contacto",
     "copyright": "© {{year}} Unreel Estate. Todos los derechos reservados."
-  },
-  "roomFurnishing": {
-    "label": "Virtual Staging",
-    "title1": "Mira una Habitación Cobrar",
-    "titleEm": "Vida.",
-    "subtitle": "Desplázate para ver un espacio vacío transformarse en un hogar de lujo completamente amueblado.",
-    "stageEmpty": "Espacio Vacío",
-    "stageVision": "Tu Visión",
-    "stageComplete": "Nuestra Creación"
-  },
-  "styleTransformer": {
-    "label": "Style Transformer",
-    "title1": "Cada Propiedad Tiene",
-    "titleEm": "Una Visión. Encuéntrala.",
-    "subtitle": "Haz clic en un estilo para ver esta casa transformada. El mismo espacio, infinitas posibilidades.",
-    "hint": "Elige un estilo para transformar",
-    "rooms": ["Sala de Estar", "Cocina", "Dormitorio"],
-    "cta": "Transforma tu Propiedad →"
-  },
-  "videoDemo": {
-    "label": "El Proceso Unreel",
-    "title1": "Tu Foto.",
-    "titleEm": "Nuestro Resultado Cinematográfico.",
-    "subtitle": "Ve la transformación completa en vivo — desde una foto de teléfono hasta una foto en estilo Moderno y un clip cinematográfico de 4 segundos.",
-    "rooms": ["Sala de Estar", "Cocina", "Dormitorio"],
-    "steps": ["Tu Foto", "Transformada", "Animada"],
-    "badgeBefore": "Tu Foto",
-    "badgeAfter": "Estilo Moderno",
-    "badgeVideo": "Video Cinematográfico",
-    "descBefore": "Así se ve la foto original del listado — directo del teléfono, sin staging, sin edición.",
-    "descAfter": "Mejoramos la foto, añadimos staging en estilo Moderno y corregimos la iluminación. Misma habitación, completamente transformada.",
-    "descVideo": "Luego la animamos en un clip cinematográfico de 4 segundos. Así se ven tus publicaciones de listado.",
-    "ctaTransform": "Ver la Transformación",
-    "ctaAnimate": "Ver el Video",
-    "ctaContact": "Transforma tu Propiedad →"
   },
   "gallery": {
     "label": "Transformaciones de Fotos Inmobiliarias AI",
@@ -372,84 +278,70 @@
     "cta": "Solicitar Cotización →",
     "items": [
       {
-        "q": "¿Cuánto cuesta la fotografía inmobiliaria con IA?",
-        "a": "Nuestro paquete Listing comienza en $399 e incluye 20 fotos mejoradas con IA más un reel cinematográfico completo de 40 segundos. El paquete Signature es $599 e incluye 40 fotos, un reel 4K de 1 minuto, 40 clips verticales para redes sociales, voz en off con IA y un PDF completo de la propiedad. Sin costos ocultos — todos los formatos y plataformas están incluidos."
+        "q": "¿Cuánto cuesta Unreel Estate?",
+        "a": "Las suscripciones Studio self-serve comienzan en $14.99/mes (Starter — 200 créditos) y escalan hasta $99/mes (Agency — 3,000 créditos con asientos de equipo). Los paquetes de créditos únicos están disponibles desde $9. Para servicios done-for-you del equipo (edición de foto + video), enviamos una hoja de precios personalizada bajo petición. Para sesiones de lujo en Houston con equipo de filmación completo (alianza Galli Productions), los precios comienzan en $1,200 y escalan con el tamaño de la propiedad."
       },
       {
-        "q": "¿Cuánto tiempo tarda la entrega?",
-        "a": "Entregamos tu paquete completo de contenido en 48 horas después de recibir tus fotos. Incluye fotos mejoradas, video cinematográfico y todos los formatos sociales — listo para publicar el mismo día que lo recibes."
+        "q": "¿Cuánto tarda la entrega?",
+        "a": "El Studio self-serve entrega en pocos minutos por asset. Los Team Services done-for-you entregan en 24-48 horas. El equipo de filmación de Houston filma y entrega galería completa + reel cinematográfico en 48-72 horas tras la sesión."
       },
       {
-        "q": "¿Necesito contratar un fotógrafo o equipo de filmación?",
-        "a": "No. Unreel Estate es 100% remoto. Nos envías tus fotos existentes del listado — incluso las fotos de iPhone funcionan — y nosotros las transformamos con IA. Sin equipo, sin visitas al lugar, sin complicaciones de agenda."
+        "q": "¿El Modo Mejora cambia mi propiedad?",
+        "a": "No. El Modo Mejora preserva tu distribución, accesorios y arquitectura. Solo corregimos luz, color y nitidez. Si quieres staging virtual, restyling o vistas previas de remodelación, debes activar explícitamente el Modo Creativo dentro de Studio — nunca se aplica por defecto."
+      },
+      {
+        "q": "¿Cuándo debería reservar al equipo de Houston?",
+        "a": "Reserva al equipo de filmación en sitio (alianza Galli Productions) para listings de lujo típicamente de $1M+, propiedades donde las fotos originales no son suficientes, contenido para la marca del agente, o cuando se necesitan drone y walkthrough. Los precios comienzan en $1,200 y escalan con el tamaño de la propiedad. Solo Houston, TX y áreas cercanas."
+      },
+      {
+        "q": "¿Puedo comprar créditos sin suscripción?",
+        "a": "Sí. Paquetes únicos disponibles desde $9 (80 créditos), $19 (200 créditos) y $39 (450 créditos). La tarifa por crédito es ligeramente más alta que una suscripción mensual, pero sin compromiso. Con una suscripción activa, los créditos mensuales no utilizados se acumulan."
       },
       {
         "q": "¿Qué tipo de fotos puedo enviar?",
         "a": "Aceptamos cualquier formato y cualquier calidad. Fotos de iPhone, tomas DSLR, fotos antiguas de listados — todo funciona. Cuanto más contexto nos des (preferencias de estilo, comprador objetivo, puntos destacados de la propiedad), mejor será el resultado."
       },
       {
-        "q": "¿Qué es el staging virtual y cómo funciona?",
-        "a": "El staging virtual es el proceso de agregar digitalmente muebles, decoración y acabados a fotos de espacios vacíos o sin amueblar. Tomamos las fotos de tus habitaciones vacías y las transformamos en imágenes de calidad de revista completamente estilizadas — en el estilo que elijas (moderno, clásico, escandinavo, lujo y más)."
-      },
-      {
-        "q": "¿Trabajan con terrenos o proyectos de desarrollo?",
-        "a": "Sí. Trabajamos con lotes vacíos, terrenos no desarrollados y proyectos de pre-construcción. Desde un boceto o dibujo a mano, creamos renders fotorrealistas que muestran el edificio terminado — convirtiendo el potencial bruto en un listado convincente."
-      },
-      {
         "q": "¿Qué formatos recibo en la entrega final?",
-        "a": "Cada entrega incluye formatos listos para MLS, Zillow y Realtor.com, más Instagram Reels, TikTok y YouTube Shorts (tanto 16:9 como 9:16). El branding del agente, las captions y las miniaturas están incluidos. Publicas el mismo día que recibes."
+        "a": "Cada entrega incluye formatos listos para MLS, Zillow y Realtor.com, más Instagram Reels, TikTok y YouTube Shorts (tanto 16:9 como 9:16). El branding del agente, las captions y las miniaturas están incluidos."
       },
       {
         "q": "¿Trabajan con agentes fuera de los Estados Unidos?",
-        "a": "Sí. Atendemos clientes en los EE.UU., Italia e internacionalmente. Nuestro servicio es completamente remoto, por lo que la ubicación nunca es una barrera. Trabajamos en inglés, italiano y español."
+        "a": "Sí. Servimos clientes en USA, Italia e internacionalmente. Nuestro servicio Studio y Team Services es completamente remoto. El equipo de filmación en sitio está disponible solo en Houston, TX. Trabajamos en inglés, italiano y español."
       }
     ]
   },
   "notFound": {
-    "title": "Pagina No Encontrada",
-    "desc": "La pagina que buscas no existe o ha sido movida.",
+    "title": "Página No Encontrada",
+    "desc": "La página que buscas no existe o ha sido movida.",
     "home": "Ir al Inicio",
     "portfolio": "Ver Portafolio"
   },
-  "ariaIntro": {
-    "label": "Conoce a Aria",
-    "role": "Tu agente AI",
-    "online": "Online · piensa en 3 idiomas",
-    "messageHeader": "De: Aria · para ti",
-    "bubbles": [
-      "Hola. Soy Aria.",
-      "No soy el chatbot típico.",
-      "Pienso. Recuerdo. Hablo tres idiomas.",
-      "Listados, captions, reels — te ayudo a redactar, traducir, cerrar.",
-      "Inteligencia real. Resultados unreal."
-    ],
-    "cta": "Habla conmigo"
-  },
   "aria": {
-    "bubbleTooltip": "Hola, soy Aria — ¿te ayudo?",
+    "bubbleTooltip": "Hola, soy Aria — ¿necesitas ayuda?",
     "header": "Aria",
     "subheader": "AI concierge · online",
     "closeLabel": "Cerrar Aria",
-    "openLabel": "Abrir chat de Aria",
-    "greeting": "¡Hola! Soy Aria. ¿Buscas un shoot en Houston, una producción remota o prefieres probar el Studio por tu cuenta?",
-    "placeholder": "Pregúntame por precios, paquetes, cualquier cosa…",
+    "openLabel": "Abrir chat Aria",
+    "greeting": "¡Hola! Soy Aria. ¿Buscas un shoot en Houston, una producción remota o quieres probar Studio tú mismo?",
+    "placeholder": "Pregúntame sobre precios, paquetes, lo que sea…",
     "send": "Enviar",
     "thinking": "Aria está pensando…",
     "you": "Tú",
     "chips": [
       "Shoot en Houston",
       "Producción remota",
-      "Probar el Studio",
+      "Probar Studio",
       "Ver precios"
     ],
     "leadTitle": "¿Quieres una propuesta personalizada?",
-    "leadDesc": "Déjame tu email — respondemos en 24h con un plan a medida.",
+    "leadDesc": "Déjanos tu email — te respondemos en 24h con un plan a medida.",
     "leadPlaceholder": "tu@inmobiliaria.com",
-    "leadSubmit": "Enviar email",
-    "leadSuccess": "Recibido — te escribimos pronto.",
-    "leadSkip": "Más tarde",
-    "errorGeneric": "Algo falló. ¿Pruebas de nuevo en un momento?",
-    "errorRate": "¡Hemos hablado de muchas cosas! Para un seguimiento completo escribe a info@unreelestate.com — Federico responde en 24h.",
+    "leadSubmit": "Enviar mi email",
+    "leadSuccess": "Recibido — pronto te contactaremos.",
+    "leadSkip": "Quizás más tarde",
+    "errorGeneric": "Algo falló. ¿Inténtalo de nuevo en un momento?",
+    "errorRate": "¡Hemos cubierto bastante terreno! Para seguimiento detallado escribe a info@unreelestate.com — Federico te responde en 24h.",
     "poweredBy": "Powered by Unreel Estate"
   }
 }

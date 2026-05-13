@@ -12,8 +12,9 @@ export default function PricingV2() {
   const [ref, inView] = useInView()
   const tiers = t('pricingV2.tiers', { returnObjects: true })
   const packs = t('pricingV2.packs', { returnObjects: true })
-  // Codex R4 mobile fix: on small screens features are collapsed behind a toggle
-  const [openFeatures, setOpenFeatures] = useState({})
+  // Codex R4 mobile fix: on small screens features are collapsed behind a toggle.
+  // Codex R6 follow-up: open the popular (Studio) tier by default so users see value, not just monetary boxes.
+  const [openFeatures, setOpenFeatures] = useState(() => ({ studio: true }))
   const toggle = (key) => setOpenFeatures(o => ({ ...o, [key]: !o[key] }))
 
   return (
@@ -56,13 +57,23 @@ export default function PricingV2() {
               <p className={styles.tagline}>{tiers[i].tagline}</p>
 
               <a
-                href={tier.key === 'agency' ? 'mailto:info@unreelestate.com?subject=Agency%20Plan%20Inquiry' : APP_URL}
-                target={tier.key === 'agency' ? undefined : '_blank'}
-                rel={tier.key === 'agency' ? undefined : 'noopener noreferrer'}
+                href={APP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={tier.popular ? 'btn-primary' : 'btn-secondary'}
               >
                 {tiers[i].cta}
               </a>
+
+              {/* Codex R6: always-visible 2-bullet teaser on mobile so prices don't feel like empty boxes */}
+              <ul className={styles.teaserBullets} aria-hidden="true">
+                {tiers[i].features.slice(0, 2).map((f, j) => (
+                  <li key={j}>
+                    <span className={styles.check} aria-hidden="true">✓</span>
+                    {f}
+                  </li>
+                ))}
+              </ul>
 
               <button
                 type="button"

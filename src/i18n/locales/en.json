@@ -280,7 +280,7 @@
     "propertyTypes": ["Luxury Home", "Condo / Apartment", "Commercial Property", "Land / Development", "Other"],
     "service": "Service of Interest",
     "servicePlaceholder": "Select service...",
-    "services": ["Listing Package ($399)", "AI Photo Enhancement", "Virtual Restyling & Staging", "Cinematic Video from Photos", "Full Listing Presentation"],
+    "services": ["Studio Subscription (from $14.99/mo)", "Team Services — Photo / Video / Social (custom quote)", "Houston Cinema Crew (from $1,200)", "Enterprise / Brokerage Plan", "Not sure yet — recommend something"],
     "message": "Message / Property Details",
     "messagePlaceholder": "Tell us about the property and what you're looking for...",
     "source": "How did you hear about us?",
@@ -491,6 +491,7 @@
     "titleEm": "your entire content stack.",
     "subtitle": "Upload once. Enhance it. Then turn it into video, stories, carousels, voiceover — everything formatted and ready to post.",
     "cta": "Open the Studio →",
+    "roadmap": "Next on the roadmap: custom AI music and the native mobile app.",
     "comingSoon": "Coming Soon",
     "comingSoonLabel": "Shipping next",
     "swipeHint": "Swipe",
@@ -521,16 +522,7 @@
         "meta": "4 cr / clip"
       }
     ],
-    "soon": [
-      {
-        "title": "Custom Music",
-        "body": "Royalty-free tracks generated to match your reel's mood."
-      },
-      {
-        "title": "Native App",
-        "body": "Shoot, transform, post — before you leave the property. iOS + Android, free."
-      }
-    ]
+    "soon": []
   },
   "pricingV2": {
     "label": "Studio Subscriptions",
@@ -584,7 +576,7 @@
       {
         "name": "Agency",
         "tagline": "For brokerages running content at scale.",
-        "cta": "Talk to Sales →",
+        "cta": "Start Agency →",
         "features": [
           "Everything in Studio",
           "3 team seats",

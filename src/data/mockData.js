@@ -54,10 +54,10 @@ export const funnelSteps = [
   { key: 'voiceover', icon: 'wave',   available: true },
 ]
 
-export const funnelComingSoon = [
-  { key: 'music', icon: 'music'  },
-  { key: 'app',   icon: 'mobile' },
-]
+// Codex R6 follow-up: the 2-card "Coming Soon" strip was killed (shouted "product incomplete").
+// Now lives as a single roadmap line under the Funnel CTA. Array kept exported in case we ever
+// want the visual band back; currently unused by App.
+export const funnelComingSoon = []
 
 // ─────────────────────────────────────────────────────────────────
 // ReassuranceBlock — split modes + compliance copy.

@@ -1,5 +1,5 @@
 # Unreel Estate — llms.txt
-# https://www.unreelestate.com
+# https://unreelestate.com
 
 > Unreel Estate is an AI-powered real estate content platform. Agents upload listing photos (iPhone shots accepted) and get magazine-quality photos in one click — same property, same architecture, just clean light and polished frames. Then turn them into video, stories, carousels, voiceover. Self-serve Studio subscriptions from $14.99/mo with optional Houston cinema crew partnership (Galli Productions) for luxury listings.
 
@@ -54,14 +54,45 @@ Custom volume pricing, dedicated success manager, SSO, white-label, and bespoke 
 3. Enhance in one click. Then animate, generate Stories, build Carousels, add Voiceover — your stack.
 4. Download in MLS/Zillow/Realtor.com formats plus Instagram Reels, TikTok, YouTube Shorts.
 
+## Best For
+- Real estate agents and brokerages producing listing content at scale
+- Agents who shoot listings on iPhone and want professional output without re-shooting
+- Houston-area luxury agents who occasionally need full cinema crew on site
+- Teams needing multi-format content (MLS + Reels + Stories + Carousels) from one source
+
+## Not Best For
+- Pure interior design rendering (use a dedicated 3D rendering service)
+- New construction architectural visualization from blueprints only (limited)
+- Pre-construction marketing videos requiring custom CGI
+
+## Compared With Alternatives
+- vs. Virtual Staging tools (BoxBrownie, VirtualStagingAI): Unreel preserves architecture by default — Enhance Mode is the default mode; restyle/staging is opt-in. Also adds video, voiceover, carousels, mobile app — virtual staging tools are typically image-only.
+- vs. Photographer marketplaces (Aceable, HomeJab): Self-serve Studio means same-minute output. The Houston cinema crew partnership covers on-site shoots when needed; you don't choose between SaaS and crew.
+- vs. AI image editors (Photoshop AI, Pixelmator): purpose-built for real estate listings (MLS-ready outputs, listing description AI, multi-platform aspect ratios) instead of general image editing.
+- vs. Video agencies: monthly subscription pricing eliminates per-project bidding; cinema crew option for properties that warrant it.
+
+## Differentiators
+1. Architecture-preserving Enhance Mode (default) — virtual staging is opt-in only, never automatic
+2. Self-serve credits AND done-for-you team AND on-site cinema crew under one brand
+3. Multi-format delivery (MLS, Instagram Reels, TikTok, YouTube Shorts) included in every output
+4. Three-language support (English, Italian, Spanish) for the AI voiceover and listing descriptions
+5. Native mobile app launching free (iOS + Android, beta)
+6. Houston-local cinema crew with Netflix-approved camera and lens packages
+
+## Proof / ROI Signals
+- Portfolio: https://unreelestate.com/portfolio (14 before/after pairs across exterior, entryway, openspace, living, kitchen, masterbath, rooftop, bedroom, bathroom, backyard, pool, townhome, office, dining)
+- Delivery claims: self-serve immediate, team 24-48h, cinema crew 48-72h post-shoot
+- Multi-format output: MLS, Zillow, Realtor.com, Instagram Reels, TikTok, YouTube Shorts
+- Galli Productions partnership: Netflix-approved cinema cameras (Sony Venice / Alexa Mini), 4K aerial drone, on-site editor and colorist
+
 ## Languages
 English, Italian (Italiano), Spanish (Español)
 
 ## Contact
 - Email: info@unreelestate.com
-- Website: https://www.unreelestate.com
+- Website: https://unreelestate.com
 - Studio app: https://app.unreelestate.com
-- Contact form: https://www.unreelestate.com/#contact
+- Contact form: https://unreelestate.com/#contact
 
 ## Site Map
 - / — Homepage: Hero, Reassurance, Before/After, content stack, Pricing, Team Services, Houston Crew, FAQ, Contact

@@ -145,6 +145,31 @@
   padding-top: 18px;
 }
 
+/* Codex R6 mobile: 2-bullet teaser always visible so mobile users see value, not just $/credits */
+.teaserBullets {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 14px;
+}
+
+.teaserBullets li {
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: rgba(250,247,242,0.7);
+  padding: 3px 0 3px 20px;
+  position: relative;
+  font-weight: 400;
+}
+
+.teaserBullets .check {
+  position: absolute;
+  left: 0;
+  top: 3px;
+  color: var(--gold);
+  font-weight: 700;
+}
+
 .featuresMobileToggle {
   display: none;
   background: transparent;
@@ -336,7 +361,8 @@
   .enterpriseDesc { margin: 0 auto; }
   .tagline { min-height: 0; }
 
-  /* Codex R4 mobile fix: collapse features behind a toggle so 4 stacked cards stay scannable */
+  /* Codex R4 mobile fix: collapse features behind a toggle so 4 stacked cards stay scannable.
+     Codex R6 follow-up: but show 2-bullet teasers always — prices alone feel like empty boxes. */
   .features {
     display: none;
     border-top: none;
@@ -345,5 +371,6 @@
   }
   .featuresOpen { display: block; }
   .featuresMobileToggle { display: inline-block; }
+  .teaserBullets { display: block; }
   .tier { padding: 26px 22px 22px; }
 }
