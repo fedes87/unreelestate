@@ -348,6 +348,26 @@
 
 /* ────────────── Responsive ────────────── */
 
+/* Cross-link footer to other paths (R11 — avoid "three islands") */
+.crossLink {
+  text-align: center;
+  margin: 28px 0 0;
+  font-size: 13px;
+  color: rgba(250,247,242,0.55);
+}
+.crossLink a {
+  color: var(--gold);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(196,149,106,0.32);
+  padding-bottom: 1px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.crossLink a:hover {
+  color: var(--text-primary);
+  border-bottom-color: var(--gold);
+}
+
 @media (max-width: 1100px) {
   .tiersGrid { grid-template-columns: repeat(2, 1fr); }
 }

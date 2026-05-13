@@ -148,6 +148,19 @@ export default function PricingV2() {
             </a>
           </div>
         </motion.div>
+
+        {/* Cross-link to other paths (R11 Plan agent: avoid 'three islands') */}
+        <motion.p
+          className={styles.crossLink}
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.85 }}
+        >
+          {t('pricingV2.crossLinkPrefix')}{' '}
+          <a href="#done-for-you">{t('pricingV2.crossLinkPackages')}</a>
+          {' · '}
+          <a href="#galli-crew">{t('pricingV2.crossLinkCrew')}</a>
+        </motion.p>
       </div>
     </section>
   )

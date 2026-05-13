@@ -51,6 +51,14 @@ export default function GalliPartnership() {
               <a href={MAILTO} className="btn-primary">{t('galli.cta')}</a>
               <span className={styles.priceHint}>{t('galli.priceHint')}</span>
             </div>
+
+            {/* Cross-link for non-Houston users — surface the other paths */}
+            <p className={styles.crossLink}>
+              {t('galli.crossLinkPrefix')}{' '}
+              <a href="#studio-sub">{t('galli.crossLinkStudio')}</a>
+              {' · '}
+              <a href="#done-for-you">{t('galli.crossLinkPackages')}</a>
+            </p>
           </div>
 
           <div className={styles.visual} aria-hidden="true">

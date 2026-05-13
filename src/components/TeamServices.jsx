@@ -75,7 +75,24 @@ export default function TeamServices() {
         >
           <a href={MAILTO} className="btn-primary">{t('teamServices.cta')}</a>
           <p className={styles.note}>{t('teamServices.note')}</p>
+          <p className={styles.commitmentBadge}>
+            <span className={styles.commitmentDot} aria-hidden="true" />
+            {t('teamServices.commitmentBadge')}
+          </p>
         </motion.div>
+
+        {/* Cross-link to other paths */}
+        <motion.p
+          className={styles.crossLink}
+          initial={{ opacity: 0 }}
+          animate={inView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.7 }}
+        >
+          {t('teamServices.crossLinkPrefix')}{' '}
+          <a href="#studio-sub">{t('teamServices.crossLinkStudio')}</a>
+          {' · '}
+          <a href="#galli-crew">{t('teamServices.crossLinkCrew')}</a>
+        </motion.p>
       </div>
     </section>
   )

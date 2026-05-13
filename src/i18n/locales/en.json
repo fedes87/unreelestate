@@ -627,7 +627,10 @@
     "enterpriseLabel": "Enterprise",
     "enterpriseTitle": "Running a brokerage, MLS, or franchise?",
     "enterpriseDesc": "Custom volume pricing, dedicated success manager, SSO + permissions, white-label, and bespoke integrations. We'll send you a tailored quote within 24 hours.",
-    "enterpriseCta": "Contact Sales →"
+    "enterpriseCta": "Contact Sales →",
+    "crossLinkPrefix": "Rather not edit yourself?",
+    "crossLinkPackages": "Done-for-you packages →",
+    "crossLinkCrew": "Houston cinema crew →"
   },
   "teamServices": {
     "label": "Done-for-you",
@@ -636,6 +639,10 @@
     "subtitle": "Skip the Studio. Hand your shoot to our editors — photo, video, social. Polished delivery in 24-48 hours.",
     "cta": "Get a Team Services Quote →",
     "note": "Full price sheet within one business day. Volume discounts available.",
+    "commitmentBadge": "Pay per listing · No monthly subscription",
+    "crossLinkPrefix": "Want full control?",
+    "crossLinkStudio": "Try Studio sub yourself →",
+    "crossLinkCrew": "Need a cinema crew? Houston shoot →",
     "fromLabel": "From",
     "perListing": "/ listing",
     "cards": [
@@ -690,6 +697,9 @@
     "priceHint": "Custom quote within 24h",
     "locationTag": "Houston, TX",
     "from": "From",
-    "priceScope": "per shoot · scales with sqft"
+    "priceScope": "per shoot · scales with sqft",
+    "crossLinkPrefix": "Outside Houston?",
+    "crossLinkStudio": "Try Studio sub (anywhere) →",
+    "crossLinkPackages": "Or done-for-you packages →"
   }
 }
