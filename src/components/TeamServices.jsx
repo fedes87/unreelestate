@@ -50,6 +50,12 @@ export default function TeamServices() {
                 <Icon name={s.icon} />
               </div>
               <div className={styles.cardTitle}>{cards[i].title}</div>
+              <div className={styles.priceRow}>
+                <span className={styles.fromLabel}>{t('teamServices.fromLabel')}</span>
+                <span className={styles.currency}>$</span>
+                <span className={styles.amount}>{cards[i].priceFrom}</span>
+                <span className={styles.perListing}>{t('teamServices.perListing')}</span>
+              </div>
               <p className={styles.cardBody}>{cards[i].body}</p>
               <ul className={styles.bullets}>
                 {cards[i].bullets.map((b, j) => (

@@ -12,9 +12,12 @@
     "badge": "Real Estate Content · AI-Powered · Cinema-Crafted",
     "title1": "Bad photos in.",
     "titleEm": "Magazine quality out.",
-    "desc": "Upload your iPhone shots. One click later you have professional listing photography — same property, same architecture, just clean light and polished frames. Then turn them into video, stories, carousels — everything you need to publish.",
+    "desc": "Architecture stays intact — we only fix light, color, and clarity. Then unlock the rest: video, stories, carousels, voiceover. Virtual staging only if you opt in inside the Studio.",
     "btnUpload": "Try Free · 100 Credits",
     "btnCrew": "Book Houston Crew",
+    "trust1": "Same architecture",
+    "trust2": "Creative opt-in",
+    "trust3": "You review every output",
     "subnote": "For luxury listings or properties without strong source photos, book the on-site cinema crew."
   },
   "brand": {
@@ -489,6 +492,7 @@
     "subtitle": "Upload once. Enhance it. Then turn it into video, stories, carousels, voiceover — everything formatted and ready to post.",
     "cta": "Open the Studio →",
     "comingSoon": "Coming Soon",
+    "comingSoonLabel": "Shipping next",
     "steps": [
       {
         "title": "Enhance",
@@ -514,16 +518,16 @@
         "title": "Voiceover",
         "body": "AI narration of your listing brief — three languages, your voice and pace.",
         "meta": "4 cr / clip"
-      },
+      }
+    ],
+    "soon": [
       {
         "title": "Custom Music",
-        "body": "Royalty-free tracks generated to match your reel's mood. No licensing headaches.",
-        "meta": ""
+        "body": "Royalty-free tracks generated to match your reel's mood."
       },
       {
         "title": "Native App",
-        "body": "Shoot it, transform it, post it — before you leave the property. iOS + Android, free.",
-        "meta": ""
+        "body": "Shoot, transform, post — before you leave the property. iOS + Android, free."
       }
     ]
   },
@@ -532,7 +536,7 @@
     "title1": "Pick your pace.",
     "titleEm": "Pay as you grow.",
     "subtitle": "Monthly subscriptions unlock the best credit value. Top up anytime with one-time packs. Cancel from your dashboard.",
-    "popular": "Most Popular",
+    "popular": "Best Value",
     "perMonth": "/mo",
     "creditsPerMonth": "credits / month",
     "creditsUnit": "credits",
@@ -600,12 +604,15 @@
     "label": "Done-for-you",
     "title1": "Prefer our team",
     "titleEm": "to handle it?",
-    "subtitle": "Skip the Studio. Hand your shoot to our editors — photo, video, social — and get a polished delivery in 24-48 hours. Custom pricing, scoped to your listing.",
+    "subtitle": "Skip the Studio. Hand your shoot to our editors — photo, video, social. Polished delivery in 24-48 hours.",
     "cta": "Request the Full Menu →",
-    "note": "We send a detailed price sheet within one business day.",
+    "note": "Full price sheet within one business day. Volume discounts available.",
+    "fromLabel": "From",
+    "perListing": "/ listing",
     "cards": [
       {
         "title": "Photo Editor",
+        "priceFrom": "199",
         "body": "Hand-edited enhancement by a real photo editor — selection, color grading, retouching.",
         "bullets": [
           "Listing photo retouching",
@@ -616,6 +623,7 @@
       },
       {
         "title": "Video Editor",
+        "priceFrom": "399",
         "body": "Custom cinematic edits for your most important listings — your music, your pace, your voice.",
         "bullets": [
           "Cinematic reels 30–90s",
@@ -626,6 +634,7 @@
       },
       {
         "title": "Social Package",
+        "priceFrom": "299",
         "body": "Full social media bundle for one listing — carousels, stories, captions, hashtags.",
         "bullets": [
           "12-frame carousel",
@@ -641,9 +650,9 @@
     "title1": "Need full cinema crew?",
     "titleEm": "We come to you.",
     "desc": "Unreel Estate is the AI half of a partnership. The cinema half is Galli Productions — a full production house in Houston with Netflix-approved camera and lens packages. For luxury listings (typically $1M+) or properties where source photos won't do, the crew shows up on site.",
-    "netflixBadge": "Netflix-Approved Cinema Equipment",
+    "netflixBadge": "Cinema-grade equipment",
     "bullets": [
-      "Sony Venice / Alexa Mini cinema cameras + cinema lenses",
+      "Sony Venice / Alexa Mini cinema cameras + Netflix-approved lens package",
       "Aerial 4K drone + stabilizers + slider + professional lighting",
       "On-site editor and colorist included",
       "Full gallery + cinematic reel delivered within 48–72h"

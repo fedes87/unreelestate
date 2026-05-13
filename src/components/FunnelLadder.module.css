@@ -46,7 +46,7 @@
 
 .ladder {
   display: grid;
-  grid-template-columns: repeat(7, minmax(160px, 1fr));
+  grid-template-columns: repeat(5, minmax(180px, 1fr));
   gap: 14px;
   min-width: max-content;
   padding: 0 4px;
@@ -148,6 +148,81 @@
   text-align: center;
 }
 
+/* ─── Coming-soon micro-strip (Codex R2: keeps Music + Native App in a separate band) ─── */
+
+.comingStrip {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  background: rgba(255,255,255,0.015);
+  border: 1px dashed rgba(196,149,106,0.22);
+  border-radius: 14px;
+  padding: 18px 22px;
+  margin: 28px auto 36px;
+  max-width: 760px;
+}
+
+.comingStripLabel {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  padding-right: 8px;
+  border-right: 1px solid rgba(196,149,106,0.2);
+}
+
+.comingItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
+}
+
+.comingIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(196,149,106,0.08);
+  color: rgba(196,149,106,0.75);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comingIcon svg { width: 18px; height: 18px; }
+
+.comingTextBlock { display: flex; flex-direction: column; }
+
+.comingTitle {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.2px;
+}
+
+.comingDesc {
+  font-size: 11.5px;
+  color: rgba(250,247,242,0.5);
+  margin-top: 2px;
+  max-width: 240px;
+  line-height: 1.4;
+}
+
+.comingPill {
+  padding: 3px 9px;
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(196,149,106,0.10);
+  border-radius: 50px;
+}
+
 @media (max-width: 1280px) {
   .arrow { display: none; }
 }
@@ -155,9 +230,24 @@
 @media (max-width: 768px) {
   .section { padding: 70px 0 60px; }
   .ladder {
-    grid-template-columns: repeat(7, 240px);
+    grid-template-columns: repeat(5, 240px);
     gap: 12px;
   }
   .card { min-height: 200px; padding: 18px 16px; }
   .header { margin-bottom: 36px; }
+  .comingStrip {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px;
+    gap: 10px;
+  }
+  .comingStripLabel {
+    border-right: none;
+    border-bottom: 1px solid rgba(196,149,106,0.2);
+    padding-right: 0;
+    padding-bottom: 6px;
+    text-align: center;
+  }
+  .comingItem { padding: 6px 0; }
+  .comingDesc { max-width: 100%; }
 }

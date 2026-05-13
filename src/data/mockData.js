@@ -44,14 +44,19 @@ export const showcaseScenes = [
 // `comingSoon: true` shows the soft-launch badge.
 // Labels live at `funnel.steps[i]`.
 // ─────────────────────────────────────────────────────────────────
+// Codex R2 feedback: cut from 7 to 5 to avoid two Coming Soon dragging the value chain.
+// "Custom Music" + "Native App" demoted to a coming-soon micro-strip after the ladder.
 export const funnelSteps = [
-  { key: 'enhance',   icon: 'photo',    available: true  },
-  { key: 'video',     icon: 'play',     available: true  },
-  { key: 'story',     icon: 'square',   available: true  },
-  { key: 'carousel',  icon: 'layers',   available: true  },
-  { key: 'voiceover', icon: 'wave',     available: true  },
-  { key: 'music',     icon: 'music',    available: false },
-  { key: 'app',       icon: 'mobile',   available: false },
+  { key: 'enhance',   icon: 'photo',  available: true },
+  { key: 'video',     icon: 'play',   available: true },
+  { key: 'story',     icon: 'square', available: true },
+  { key: 'carousel',  icon: 'layers', available: true },
+  { key: 'voiceover', icon: 'wave',   available: true },
+]
+
+export const funnelComingSoon = [
+  { key: 'music', icon: 'music'  },
+  { key: 'app',   icon: 'mobile' },
 ]
 
 // ─────────────────────────────────────────────────────────────────
@@ -76,11 +81,13 @@ export const reassurancePoints = [
 //   Recharges: $9/80 = $0.113/cr · $19/200 = $0.095/cr · $39/450 = $0.087/cr
 //   ALL recharges > $0.075/cr Starter → sub stays the better deal.
 // ─────────────────────────────────────────────────────────────────
+// Codex R2 feedback: moved the highlight from Pro to Studio.
+// Studio is the natural step where the full content stack unlocks (Reels + Carousels + Brand Kit).
 export const subscriptionTiers = [
-  { key: 'starter', price: 14.99, credits: 200,  popular: false, ctaType: 'app'     },
-  { key: 'pro',     price: 29.99, credits: 500,  popular: true,  ctaType: 'app'     },
-  { key: 'studio',  price: 49.99, credits: 1200, popular: false, ctaType: 'app'     },
-  { key: 'agency',  price: 99,    credits: 3000, popular: false, ctaType: 'app'     },
+  { key: 'starter', price: 14.99, credits: 200,  popular: false, ctaType: 'app' },
+  { key: 'pro',     price: 29.99, credits: 500,  popular: false, ctaType: 'app' },
+  { key: 'studio',  price: 49.99, credits: 1200, popular: true,  ctaType: 'app' },
+  { key: 'agency',  price: 99,    credits: 3000, popular: false, ctaType: 'app' },
 ]
 
 export const creditPacks = [

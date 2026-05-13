@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useTranslation } from 'react-i18next'
 import { useInView } from '../hooks/useInView'
-import { funnelSteps } from '../data/mockData'
+import { funnelSteps, funnelComingSoon } from '../data/mockData'
 import styles from './FunnelLadder.module.css'
 
 function StepIcon({ name }) {
@@ -22,6 +22,7 @@ export default function FunnelLadder() {
   const { t } = useTranslation()
   const [ref, inView] = useInView()
   const steps = t('funnel.steps', { returnObjects: true })
+  const soon = t('funnel.soon', { returnObjects: true })
 
   return (
     <section className={styles.section} ref={ref}>
@@ -44,7 +45,7 @@ export default function FunnelLadder() {
             {funnelSteps.map((step, i) => (
               <motion.div
                 key={step.key}
-                className={`${styles.card} ${!step.available ? styles.coming : ''}`}
+                className={styles.card}
                 initial={{ opacity: 0, y: 24 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.08 * i }}
@@ -54,10 +55,7 @@ export default function FunnelLadder() {
                 </div>
                 <div className={styles.cardLabel}>{steps[i].title}</div>
                 <p className={styles.cardBody}>{steps[i].body}</p>
-                {step.available
-                  ? <div className={styles.cardMeta}>{steps[i].meta}</div>
-                  : <div className={styles.comingBadge}>{t('funnel.comingSoon')}</div>
-                }
+                <div className={styles.cardMeta}>{steps[i].meta}</div>
                 {i < funnelSteps.length - 1 && (
                   <span className={styles.arrow} aria-hidden="true">→</span>
                 )}
@@ -67,12 +65,40 @@ export default function FunnelLadder() {
         </div>
 
         <motion.div
+          className={styles.comingStrip}
+          initial={{ opacity: 0, y: 12 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.6 }}
+        >
+          <span className={styles.comingStripLabel}>{t('funnel.comingSoonLabel')}</span>
+          {funnelComingSoon.map((s, i) => (
+            <div key={s.key} className={styles.comingItem}>
+              <div className={styles.comingIcon}>
+                <StepIcon name={s.icon} />
+              </div>
+              <div className={styles.comingTextBlock}>
+                <div className={styles.comingTitle}>{soon[i].title}</div>
+                <div className={styles.comingDesc}>{soon[i].body}</div>
+              </div>
+              <span className={styles.comingPill}>{t('funnel.comingSoon')}</span>
+            </div>
+          ))}
+        </motion.div>
+
+        <motion.div
           className={styles.cta}
           initial={{ opacity: 0 }}
           animate={inView ? { opacity: 1 } : {}}
           transition={{ duration: 0.6, delay: 0.8 }}
         >
-          <a href="#pricing" className="btn-primary">{t('funnel.cta')}</a>
+          <a
+            href="https://app.unreelestate.com/dashboard/studio"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-primary"
+          >
+            {t('funnel.cta')}
+          </a>
         </motion.div>
       </div>
     </section>

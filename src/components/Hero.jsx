@@ -69,15 +69,36 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.45 }}
           >
-            <a href="#pricing" className="btn-primary">{t('hero.btnUpload')}</a>
+            <a
+              href="https://app.unreelestate.com/dashboard/studio"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary"
+            >
+              {t('hero.btnUpload')}
+            </a>
             <a href="#crew" className="btn-secondary">{t('hero.btnCrew')}</a>
+          </motion.div>
+
+          <motion.div
+            className={styles.trustStrip}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
+            aria-label="Trust signals"
+          >
+            <span className={styles.trustItem}>{t('hero.trust1')}</span>
+            <span className={styles.trustDot} aria-hidden="true">·</span>
+            <span className={styles.trustItem}>{t('hero.trust2')}</span>
+            <span className={styles.trustDot} aria-hidden="true">·</span>
+            <span className={styles.trustItem}>{t('hero.trust3')}</span>
           </motion.div>
 
           <motion.p
             className={styles.subnote}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
+            transition={{ duration: 0.8, delay: 0.75 }}
           >
             {t('hero.subnote')}
           </motion.p>
